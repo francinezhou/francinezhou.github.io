@@ -1,8 +1,22 @@
-body {
-    background-color: black;
-    
-}
-
 * {
     cursor: url(imgs/cursor90.png),auto;
+}
+
+
+
+body {
+    background-color: black;
+   
+}
+
+h1, p {
+    color: white;
+    font-family: "dnp-shuei-nmincho-std", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    text-align: center;
+    font-size: 200px;
 }
