@@ -1,0 +1,57 @@
+* {
+    cursor: url(imgs/cursor90.png),auto;
+}
+
+body {
+    background-color: black;
+}
+
+h1, h2, h3, p {
+    color: white;
+    font-family: "dnp-shuei-nmincho-std", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+ 
+p {
+    line-height: 1.5;
+}
+
+h2 {
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+
+
+.menu {
+    position:fixed;
+    bottom: 2%;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 1rem;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease; 
+    cursor: pointer;
+    z-index: 99;
+}
+
+.menu:hover {
+    letter-spacing: 2rem; 
+    -webkit-animation: text_blur 2s; 
+  }
+
+@-webkit-keyframes text_blur {
+    0% { -webkit-filter: blur(0px);}
+    50% { -webkit-filter: blur(1px);}
+    100% { -webkit-filter: blur(0px);}
+}
+
+
+
+
+
+.para6 {
+    width: 300px;
+}
