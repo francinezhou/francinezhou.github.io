@@ -44,7 +44,7 @@ h2 {
 
 @-webkit-keyframes text_blur {
     0% { -webkit-filter: blur(0px);}
-    50% { -webkit-filter: blur(1px);}
+    50% { -webkit-filter: blur(1.5px);}
     100% { -webkit-filter: blur(0px);}
 }
 
