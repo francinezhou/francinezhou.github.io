@@ -39,17 +39,23 @@ h2 {
 
 .menu:hover {
     letter-spacing: 2rem; 
-    -webkit-animation: text_blur 2s; 
+    -webkit-animation: text_blur 1.5s; 
   }
 
 @-webkit-keyframes text_blur {
     0% { -webkit-filter: blur(0px);}
-    50% { -webkit-filter: blur(1.5px);}
+    50% { -webkit-filter: blur(2px);}
     100% { -webkit-filter: blur(0px);}
 }
 
 
+a:link { text-decoration: none; color: white;}
 
+a:visited { text-decoration: none; color: white;}
+
+a:hover { text-decoration: none; color: white;}
+
+a:active { text-decoration: none; }
 
 
 .para6 {
