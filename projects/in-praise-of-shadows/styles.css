@@ -225,6 +225,7 @@ video {
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 0.8;
 }
 .video-wrapper {
   border: 2px solid #000;
@@ -236,7 +237,9 @@ video {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: -1;
 }
+
 
 
 /* bottom text */
