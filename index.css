@@ -1,5 +1,6 @@
 html {
-    background-image: url("../imgs/street.jpg");
+    background-color: grey;
+    background-image: url("imgs/street.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
