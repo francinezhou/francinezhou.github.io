@@ -75,10 +75,13 @@ img {
   margin-bottom: 15px;
 }
 .hashtags span{
-   line-height: 1.7;
+   line-height: 1.8;
 }
 .hashtags a:hover{
-  border-bottom: 1px solid;
+  cursor:  pointer;
+  border-bottom: 2px solid;
+  border-color: rgb(145, 145, 145);
+  
 }
 
 footer {
@@ -107,6 +110,7 @@ footer {
     background-color: white;
     font-weight: 400;
 }
+
 .blink{
     overflow: hidden;
     border-right: .15em solid orange;
@@ -130,12 +134,13 @@ footer {
 
 iconify-icon { 
     font-size: 25px;
-    color: #000;
+    color: grey;
+
     transform: translate(0,3px); 
 }
 
 .email:hover iconify-icon{ 
-color: grey;
+color: rgb(88, 88, 88);
   
 }
 
@@ -145,21 +150,8 @@ color: grey;
     text-align: right;
   }
 
-.nav a{
-  background-color: rgba(255,255,255,.5);
-  color:  #fb01a3;
-  padding: 2px 10px;
-  border-radius: 10px;
-  margin-right: 10px;
-  text-decoration:  none;
-}
 
 
-.nav a:hover{
-  background-color: rgba(255,255,255,1);
-  cursor:  pointer;
-  text-decoration: none;
-}
 
 /*remove margin on third element*/
 .nav a:nth-child(3){
