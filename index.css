@@ -6,7 +6,26 @@
 }
 * {
     font-family: 'Noto Sans', sans-serif;
+    cursor: url(imgs/cloud.png),auto;
 }
+
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 1px black;
+  background: rgb(80, 190, 255);
+}
+::-webkit-scrollbar-thumb {
+  border: 0.5px solid black;
+  background: #F4F4ED;
+  border-radius: 10px;
+}  
+::-webkit-scrollbar-thumb: hover {
+  background: #5465FF;
+}
+
 
 h1 {
     font-family: 'Archivo', sans-serif;
@@ -59,17 +78,19 @@ img {
 }
 
 header {
-  padding:  5px;
+  padding:  10px;
   padding-top: 8px;
   padding-bottom: 10px;
-  position: fixed;
+  position: sticky;
   top:  0;
-  width:  100%;
+  right: 0;
+  width: calc(100% - 20px);
   color:  white;
   background-color: rgb(244, 244, 244);
   display:  flex;
   justify-content:space-between;
   align-items:  center;
+  cursor: auto;
 }
 
 .wrapper {
@@ -110,6 +131,7 @@ footer {
     display:  flex;
     justify-content:  center;
     align-items:  center;
+    cursor: auto;
 }
 
 .hashtags {
