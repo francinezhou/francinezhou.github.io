@@ -258,8 +258,18 @@ section {
   width: 90%;
 }
 
+.proj1-img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+
 #lab {
   background-color:  rgb(227, 239, 245);
+}
+#design {
+  height: 500px;
 }
 
 .column-1, .column-2 {
