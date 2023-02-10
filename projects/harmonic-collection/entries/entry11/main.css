@@ -1,0 +1,198 @@
+@font-face {
+    font-family: 'Helvetica Neue';
+    font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'Helvetica 25 UltraLight', sans-serif;
+    font-family: 'Helvetica 35 Thin', sans-serif;
+    font-family: 'Helvetica 45 Light', sans-serif;
+    font-family: 'Helvetica 55 Roman', sans-serif;
+    font-family: 'Helvetica 65 Medium', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+  font-family: Helvetica Neue;
+   line-height: 0.5;
+   font-size: 15px;
+   margin: 0;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+
+h1, h2 {
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 9vw;
+  line-height: 1.1;
+  font-family: Helvetica Neue;
+  margin-bottom: 0;
+  text-align: center;
+
+}
+
+h2 {
+  font-size: 19px;
+ 
+}
+
+h3 {
+  font-weight: normal;
+  font-size: 14px;
+  text-align: left;
+  line-height: 1;
+}
+
+h4 {
+  font-weight: normal;
+  font-size: 14px;
+  text-align: right;
+  line-height: 1;
+}
+
+.navigation {
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    padding: 10px;
+    z-index: 10;
+}
+
+.menuwrap {
+    position: fixed;
+    background-color: #fcfaf7;
+    height: 200px; 
+    width: 100%;
+    left: 0%;
+    top: 0%;
+    box-shadow: 0px 8px 10px lightgrey;
+    z-index: 0;
+}
+
+.menu{
+    position: absolute;
+    background-color: #f4f4f4;
+    height: 400px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 20%;
+    z-index: -5;
+}
+
+/*LED light*/
+
+
+.bulbLight{
+   position: relative;
+    margin-left: 110px;
+
+    top: 13%;
+    width: 20px;
+    height: 20px;
+    box-shadow: inset 0 1px 4px 3px limegreen;
+    background: white;
+    border: 3px #bbacdb solid;
+    border-radius: 30px;
+    z-index: 1;
+   
+}
+
+
+
+/*background*/
+
+
+
+
+.title {
+  
+  min-width: 100vw;
+  min-height: 100vh;
+  
+  font-size: 4ch;
+  margin-right: -500px;
+  z-index: 20;
+}
+
+
+/*interior*/
+
+.interior {
+    width: 100%;
+    margin:0;
+}
+
+
+.wallLeft{
+  position:fixed;
+    background-color: #fcfaf7;
+    box-shadow: inset -3px 8px 10px grey;
+    height: 550px; 
+    width: 20%;
+    left: 0%;
+    bottom: 0%;
+    margin:0;
+    z-index: 4;
+}
+
+.wallRight{
+  position:fixed;
+    background-color: white;
+    box-shadow: inset 3px 4px 10px grey;
+    height: 550px; 
+    width: 20%;
+    right: 0%;
+    bottom: 0%;
+    margin:0;
+    z-index: 4;
+}
+
+.doorLeft {
+  position:fixed;
+    background-color: #fcfaf7;
+    height: 550px; 
+    width: 20%;
+    left: 20%;
+    bottom: 0%;
+    margin:0;
+    z-index: 3;
+}
+
+
+
+
+/*.wall {
+  
+  background-color: #f4f4f4
+}*/
+
+
+/*info*/
+.about {
+  position: absolute;
+  width: 400px;
+  top: 10%;
+  left: 28%;
+  z-index: 2;
+}
+
+
+.heading:hover ~ .about {
+  display: block;
+}
+
+.credit {
+     position: fixed;
+    bottom: 0%;
+    right: 0%;
+    padding: 10px;
+    z-index: 10;
+}
+
+

@@ -1,0 +1,310 @@
+@font-face {
+    font-family: 'Helvetica Neue';
+    font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'Helvetica 25 UltraLight', sans-serif;
+    font-family: 'Helvetica 35 Thin', sans-serif;
+    font-family: 'Helvetica 45 Light', sans-serif;
+    font-family: 'Helvetica 55 Roman', sans-serif;
+    font-family: 'Helvetica 65 Medium', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+h1{
+ font-family: Helvetica Neue;
+
+}
+
+body{
+ font-family: Helvetica Neue;
+}
+
+p{
+    font-family: Helvetica Neue;
+   
+}
+img{
+   height: 100%;
+}
+.container{
+}
+
+.navigation {
+  position: absolute;
+  font-family:  Helvetica Neue;
+    
+    left: 1%;
+    top: 1%;
+
+}
+.section {
+    display: flex;
+    flex-direction: column; 
+}
+
+.text{
+    display: block;
+    height:15vh;
+    margin: 20px;
+    padding: 10px;
+    font-size: 2em;
+    font-family: 'PT Mono', monospace;
+    z-index: 1;
+}
+
+.desc {
+    margin: -15px;
+    padding: 5px;
+    font-family: Helvetica Neue;
+}
+
+/*
+.time {
+    font-family: 'PT Mono', monospace;
+}*/
+
+/*weep*/
+.imgsec-weep {
+    position: relative;
+    left: 20%;
+}
+
+.weep1 {
+    position: relative;
+    height: 350px;
+}
+
+.weep2 {
+    position: relative;
+    height: 350px;
+}
+
+.weep3 {
+    position: relative;
+    height: 350px;
+}
+
+
+.text-weep {
+    position: relative;
+    left: 20%;
+}
+
+.desc-weep{
+    display: none;
+    position: fixed;
+    top: 30%;
+}
+.section-weep:hover .desc-weep {
+    display: inline-block;
+}
+
+
+/*weep*/
+.imgsec-weep {
+    position: relative;
+    left: 20%;
+}
+
+.weep1 {
+    position: relative;
+    height: 350px;
+}
+
+.weep2 {
+    position: relative;
+    height: 350px;
+}
+
+.weep3 {
+    position: relative;
+    height: 350px;
+}
+
+
+.text-weep {
+    position: relative;
+    left: 20%;
+}
+
+.desc-weep{
+    display: none;
+    position: fixed;
+    top: 30%;
+}
+.section-weep:hover .desc-weep {
+    display: inline-block;
+}
+
+
+
+/*dog*/
+.imgsec-dog {
+    position: relative;
+    left: 10%;
+}
+
+.dog1 {
+    position: relative;
+    height: 270px;
+}
+
+.dog2 {
+    position: relative;
+    height: 270px;
+}
+
+.dog3 {
+    position: relative;
+    height: 270px;
+}
+
+.text-dog {
+    position: relative;
+    left: 10%;
+}
+.desc-dog{
+    display: none;
+    position: fixed;
+    top: 30%;
+}
+
+.section-dog:hover .desc-dog {
+    display: inline-block;
+}
+
+
+/*sunset*/
+.imgsec-sunset {
+    position: relative;
+    text-align: right;
+}
+
+.sunset1 {
+    position: relative;
+    height: 500px;
+    right: 10%;
+}
+
+.text-sunset {
+    position: relative;
+    left: 25%;
+}
+
+.desc-sunset{
+    display: none;
+    position: fixed;
+    top: 30%;
+}
+
+.section-sunset:hover .desc-sunset {
+    display: inline-block;
+}
+
+
+/*magnolia*/
+.imgsec-magnolia {
+    position: relative;
+    text-align: center;
+}
+
+.magnolia1 {
+    position: relative;
+    height: 500px;
+    left: 5%;
+}
+
+.text-magnolia {
+    position: relative;
+    left: 10%;
+}
+
+.desc-magnolia{
+    display: none;
+    position: fixed;
+    top: 30%;
+}
+
+.section-magnolia:hover .desc-magnolia {
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+.bottombar {
+    width: 100vw;
+    height: 41px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #ffffff;
+    border-top: 2px solid #000;
+    box-sizing: border-box;
+    color: #000000;
+}
+
+.menu-container1 {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    max-width: 1300px;
+    margin: 0 auto;
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.menu-group {
+    padding-left:8px;
+    padding-right:8px;
+    margin-top: -7px; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.menu-container1:before {
+  /*content: '2';*/
+/*  font-size: 100%;*/
+  animation-name: change-letter;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes change-letter {
+  0% {
+    content: "3"
+   
+  }
+  
+  50% {
+ 
+    content: "3"
+  }
+
+  75% {
+
+    content: "3"
+  }
+/*  0% {
+    opacity: 0;
+    content: "2"
+  }
+}
+*/
+
+  transition: width 2s, height 2.5s;
+
+  .t:hover {
+  width: 150px;
+  height:250px;
+}

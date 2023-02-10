@@ -1,0 +1,161 @@
+/*
+
+
+/*basic animation, spins once in one second*/
+div.item {
+  animation: spinType 1s;
+}*/
+
+body {
+  font-family:  'Heiti SC','黑体-简';
+  color: white;
+}
+.navigation {
+  position: absolute;
+  font-family:  'Heiti SC','黑体-简';
+    margin: 0;
+    padding: 5px;
+    font-size: 1.5vw;
+    left: 0%;
+    top: 0%;
+    z-index: 0;
+}
+
+.time-place {
+  position: absolute;
+  font-family:  'Heiti SC','黑体-简';
+    margin: 0;
+    padding: 5px;
+    font-size: 1.5vw;
+    text-align: right;
+    right: 0%;
+    top: 0%;
+    z-index: 0;
+}
+
+
+.quote {
+  font-family:  'Heiti SC','黑体-简';
+  position: fixed;
+  font-size: 3vw;
+  padding: 5px;
+  width: 25px;
+  right: 20%;
+  top: 40%;
+  z-index: 0;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@-webkit-keyframes animateSphere {
+  0% { transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg); }
+  50% { transform: rotateY(360deg) rotateX(0deg) rotateZ(0deg); }
+  100% { transform: rotateY(720deg) rotateX(0deg) rotateZ(0deg); }
+}
+
+html {
+  background: darkgray;
+}
+
+.scene {
+  perspective: 1000px;
+}
+.sphere {
+  margin-top: 5vh;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 350px;
+  height: 350px;
+  transform-style: preserve-3d;
+  animation-name: animateSphere; 
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.border {
+  border: 1px solid black;
+}
+.circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  /*background: rgba(204,250,102, 1);*/
+  background: linear-gradient(270deg, #b2ffeb, #dce1e6, #fbcbea, #b2aeb0);
+    background-size: 800% 800%;
+
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+}
+
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+/* X Axis */
+/*.circle:nth-child(1) {transform: rotate3d(1, 0, 0, 0deg);}
+.circle:nth-child(2) {transform: rotate3d(1, 0, 0, 36deg);}
+.circle:nth-child(3) {transform: rotate3d(1, 0, 0, 72deg);}
+.circle:nth-child(4) {transform: rotate3d(1, 0, 0, 108deg);}
+.circle:nth-child(5) {transform: rotate3d(1, 0, 0, 144deg);}*/
+/* Y Axis */
+.circle:nth-child(6) {transform: rotate3d(0, 1, 0, 0deg);}
+.circle:nth-child(7) {transform: rotate3d(0, 1, 0, 36deg);}
+.circle:nth-child(8) {transform: rotate3d(0, 1, 0, 72deg);}
+.circle:nth-child(9) {transform: rotate3d(0, 1, 0, 108deg);}
+.circle:nth-child(10) {transform: rotate3d(0, 1,0, 144deg);}
+/* Z Axis */
+.circle:nth-child(11) {transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 0deg);}
+.circle:nth-child(12) {transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 36deg);}
+.circle:nth-child(13) {transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 72deg);}
+.circle:nth-child(14) {transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 108deg);}
+.circle:nth-child(15) {transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 144deg);}
+
+/* Light effect */
+.light {
+   margin: auto;
+   border-radius: 50%;
+   width: 350px;
+   height: 350px;
+  box-shadow: 10px 1px 30px white;
+} 
+/* Clip the sphere a bit */
+.clip {
+  clip-path: circle(48%);
+}
+
+.sphere:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+.stick {
+  position: absolute;
+  left: 50%;
+  top: 43%;
+  width: 10px;
+  height: 400px;
+  background-color: black;
+  left: 50%;
+  top: 45%;
+  z-index: -1;
+}
+

@@ -1,0 +1,69 @@
+
+body {
+  background-color: #D4E4FC;
+  font-family: poppins, medium;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+}
+
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.floatTopClear { 
+    float: top; 
+    clear: top; 
+}
+
+.floatLeftClear { 
+    float: left; 
+    clear: left; 
+    margin-top: -150px; 
+}
+
+.floatRightClear { 
+    float: right; 
+    clear: right; 
+    margin-top: 130px; 
+}
+
+.floatBottomClear { 
+    float: bottom; 
+    clear: bottom; 
+    margin-top: -20px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 600px;
+  margin-top: -120px
+}
+
+h1, h2 {
+  font-weight: normal;
+  text-align: center;
+}
+
+h1 {
+  font-size: 70px;
+  line-height: 1.1;
+  font-family: 'Poppins', medium;
+  margin-bottom: 0;
+  color: #023179;
+}
+
+h2 {
+  font-size: 35px;
+  font-family: 'Source Han Sans CN Medium';
+  color: #16417F;
+  margin-top: -13px;
+}
+
+
+

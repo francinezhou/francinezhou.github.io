@@ -1,0 +1,193 @@
+@font-face {
+    font-family: 'Helvetica Neue';
+    font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'Helvetica 25 UltraLight', sans-serif;
+    font-family: 'Helvetica 35 Thin', sans-serif;
+    font-family: 'Helvetica 45 Light', sans-serif;
+    font-family: 'Helvetica 55 Roman', sans-serif;
+    font-family: 'Helvetica 65 Medium', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+  font-family: Helvetica Neue;
+   line-height: 0.5;
+   font-size: 15px;
+   margin: 0;
+   background-color: #f4f4f4;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+
+h1, h2 {
+  font-weight: normal;
+}
+
+h1 {
+    text-align: center;
+    font-size: 8vw;
+    line-height: 1.1;
+    font-family: Helvetica Neue;
+    margin-bottom: 0;
+}
+
+h2 {
+  font-size: 25px;
+  font-family:'PT Mono', monospace;
+}
+
+h3 {
+  text-align: center;
+  font-weight: normal;
+  font-size: 3vw;
+  font-family: Helvetica Neue;
+  line-height: 1.5;
+  margin: 0;
+}
+
+h4 {
+  text-align: center;
+  font-weight: normal;
+  font-size: 30px;
+  font-family: Helvetica Neue;
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+
+
+
+/*background*/
+
+.stationsign{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 650px;
+  height: 350px;
+  background-color: rgb(203, 195, 227);
+  padding: 30px;
+  margin-top: 130px;
+}
+
+
+.navigation {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    padding: 10px;
+    z-index: 10;
+}
+
+
+.welcome {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  width: 650px;
+  text-align: left;
+  top: 10%;
+  left: 30%;
+}
+
+.choose {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 650px;
+  text-align: center;
+  bottom: 20%;
+  z-index: 1;
+}
+
+button {
+  background-color: #2e333f;
+  color: white;
+  height: 70px;
+}
+
+button:hover {
+  background-color: #54565a;
+  color: white;
+}
+
+.acid {
+  position: absolute;
+  top: 10%;
+  left: 72%;
+}
+
+.rooftop {
+  position: absolute;
+  top: 25%;
+  left: 72%;
+}
+
+.fuxing {
+  position: absolute;
+  top: 40%;
+  left: 72%;
+}
+
+.tree {
+  position: absolute;
+  top: 55%;
+  left: 72%;
+}
+
+
+/*interior*/
+
+.interior {
+    width: 100%;
+    margin:0;
+}
+
+
+.wallLeft{
+  position:fixed;
+    background-color: #fcfaf7;
+    box-shadow: inset -3px 8px 10px grey;
+    height: 550px; 
+    width: 20%;
+    left: 0%;
+    bottom: 0%;
+    margin:0;
+    z-index: 4;
+}
+
+.wallRight{
+  position:fixed;
+    background-color: white;
+    box-shadow: inset 3px 4px 10px grey;
+    height: 550px; 
+    width: 20%;
+    right: 0%;
+    bottom: 0%;
+    margin:0;
+    z-index: 4;
+}
+
+
+
+
+
+
+/*.wall {
+  
+  background-color: #f4f4f4
+}*/
+
+
+
+
+
+
+
+

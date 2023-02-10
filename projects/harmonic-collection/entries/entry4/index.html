@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="main.css">
+    <link href="http://fonts.cdnfonts.com/css/helvetica-neue-9" rel="stylesheet">
+	<title>
+    Find the Moon!
+	</title>
+</head>
+<body>
+  <div class="Grid"> 	
+    <div class="Grid__box">
+    <div class="navigation"><a href="../jiaotong-uni/index.html">Return to Station</a> </div>   			
+		<div class="en-quote">
+                The <span class="full-moon">full moon</span> accompanied me the <span class="night">entire night</span>.
+                <div class="date">June 24, 2021</div>
+        </div>
+                <p><div class="cn-quote">月亮与我<span class="extend1">如<span class="extend2">影随<span class="extend3">行</span></span></span><br>那一晚,</div></p>
+
+        <button><span class="button1"><h2>⬤</h2></span></button>
+        <button><span class="button2"><h2>⬤</h2></span></button>
+        <button><span class="button3"><h2>⬤</h2></span></button>
+        <button><span class="button4"><h2>⬤</h2></span></button>
+        <button><span class="button5"><h3>⬤</h3></span></button>
+        <button><span class="button6"><h4>◗</h4></span></button>
+		<div class="foundmoon"> Found the <span class="headlinemoon">Moon</span>!</div>
+		<div class="findmoon"> Find the Moon...</div>
+        <div class="corner-box"></div>
+		
+	</div>
+  </div>
+
+<script type="text/javascript">var Boxes = document.querySelectorAll(".Grid__box");
+// generate cycles
+Boxes.forEach(function(Box) {
+Box.innerHTML += "<div class='cycle'></div>";
+
+// watch cycles
+Box.addEventListener('mousemove', function (e) {
+  var Cycle = Box.lastElementChild;
+  // set postion
+  var x = e.clientX;
+  var y = e.clientY;
+  var BoxOffset = Box.getBoundingClientRect();
+
+  var newposX = x - BoxOffset.left - 735;
+  var newposY = y - BoxOffset.top - 747;
+  Cycle.style.transform = "translate("+newposX+"px, "+newposY+"px)";
+});
+  
+  Box.addEventListener('mouseout', function (e) {
+    var Cycle = Box.lastElementChild;
+    Cycle.style.transform = "translate(0px, 0px)";
+  });
+});
+</script> 
+
+
+
+
+
+
+
+
+
+</body>
+</html>

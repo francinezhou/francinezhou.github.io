@@ -1,0 +1,120 @@
+
+body {
+  background-color: #D4E4FC;
+  font-family: poppins, medium;
+}
+
+.container {
+  position: absolute;
+  width: 100%;
+  height: 980px;
+  margin: -8.5px;
+
+}
+
+img {
+  max-width: inherit;
+  max-height: inherit;
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
+}
+
+.navigation {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    padding: 10px;
+    z-index: 10;
+}
+
+.place-time {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 3.5vh;
+  text-align: right;
+}
+
+.place:hover:after {
+  content: url(imgs/map.png);
+  position: absolute;
+  /*width: 10vw;*/
+  left: -60%;
+  top: 50%;
+  transform: translate(-120%, 8%)
+}
+
+
+.blanket { 
+  position: absolute;
+  left: 35%;
+  top: 0%;
+  width: 27vw;
+  overflow: hidden;
+  display: flex;
+}
+
+
+.tree { 
+  position: absolute;
+  left: 0%;
+  top: 18%;
+  width: 25vw;
+  overflow: hidden;
+  display: flex;
+}
+
+.coffee { 
+  position: absolute;
+  right: 46%;
+  bottom: 0%;
+  width: 24vw;
+  overflow: hidden;
+  display: flex;
+}
+
+.building { 
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+  width: 33vw;
+  overflow: hidden;
+  display: flex;
+}
+
+
+.quote {
+  margin: 0 auto;
+  position: absolute;
+  top: 27%;
+  left: 30%;
+  max-width: 600px;
+  max-height: 400px;
+}
+
+h1, h2 {
+  font-weight: normal;
+  text-align: left;
+  font-family: 'Yatra One', cursive;
+}
+
+h1 {
+  font-size: 85px; 
+  line-height: 1.1;
+  /*font-family: 'Poppins', medium;*/
+  margin-bottom: 0;
+  color: #023179;
+  /*text-transform: uppercase;*/
+}
+
+h2 {
+  font-size: 30px;
+  /*font-family: 'Source Han Sans CN Medium';*/
+  color: #16417F;
+  line-height: 0.9;
+ /* margin-top: -13px;*/
+}
+
+
+

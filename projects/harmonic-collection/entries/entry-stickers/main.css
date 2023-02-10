@@ -1,0 +1,71 @@
+/*
+body {
+  background: rgb(126,123,142);
+  background: linear-gradient(180deg, rgba(126,123,142,1) 24%, rgba(73,104,150,1) 100%);
+  color:  white;
+  font-family: arial;
+  overflow-x: hidden;
+}
+
+*/
+/*
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200vh;
+  z-index: 1;
+}
+
+.time-place {
+    position: fixed;
+   font-family:  'Heiti SC','黑体-简';
+    margin: 0;
+    padding: 5px;
+    font-size: 1.5vw;
+    text-align: right;
+    right: 0%;
+    top: 0%;
+    z-index: 0;
+}
+
+.tree {
+  display: block;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  fill: rgb(255,255,197);
+     
+  z-index: -1;
+  width: 200px;
+  filter:blur(1px);
+  width: 800px;
+}
+
+.quote {
+  display: block;
+  position: fixed;
+  left: 40%;
+  top: 50%;
+  color: white;
+  z-index: 1;
+  text-align: center;
+}
+.cloud{
+  position: relative;
+  width:200px;
+  left: 40%;
+}
+
+.rainbow {
+  position: relative;
+  width:200px;
+  left: 40%;
+}
+*/
+body { position: relative; }
+#img { position: relative; }
+
+
+
+

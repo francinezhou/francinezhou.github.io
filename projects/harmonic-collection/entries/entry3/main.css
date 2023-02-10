@@ -1,0 +1,214 @@
+@font-face {
+    font-family: 'berthold_akzidenz_groteskBdEx';
+    src: url('fonts/berthold_akzidenz_grotesk_bold_extended-webfont.eot');
+    src: url('fonts/berthold_akzidenz_grotesk_bold_extended-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/berthold_akzidenz_grotesk_bold_extended-webfont.woff2') format('woff2'),
+         url('fonts/berthold_akzidenz_grotesk_bold_extended-webfont.woff') format('woff'),
+         url('fonts/berthold_akzidenz_grotesk_bold_extended-webfont.ttf') format('truetype'),
+         url('fonts/berthold_akzidenz_grotesk_bold_extended-webfont.svg#berthold_akzidenz_groteskBdEx') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+	font-family:  'Heiti SC','黑体-简';
+	font-size: 13.2px;
+}
+
+h1 {
+	font-family: 'berthold_akzidenz_groteskBdEx';
+	font-size: 50px;
+ }
+
+.navigation {
+  position: fixed;
+  font-family:  'Heiti SC','黑体-简';
+    
+    left: 1%;
+    top: 1%;
+
+}
+
+
+.time-place {
+  position: fixed;
+  text-align: right;
+    right: 1%;
+    top: 1%;
+    z-index: 0;
+}
+
+.quote {
+  font-family:  'Heiti SC','黑体-简';
+  position: fixed;
+  width: 25px;
+    left: 20%;
+    top: 10%;
+    z-index: 0;
+}
+
+.menu-img{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-top: -285px;
+    margin-left: -178px;
+    z-index:  0;
+}
+
+.logo{
+  position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-top: 211px;
+    margin-left: -44px;
+}
+
+.main{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-top: -115px;
+    margin-left: -129px;
+    overflow: auto;
+    z-index:  2;
+}
+
+element.style {
+    overflow: auto;
+}
+
+./* nth-child(1) = the first td in each tr */
+td:nth-child(1) {
+  width: 25px;
+  height: 343px;
+  text-align: right;
+  }
+
+/* the second */
+td:nth-child(2) {
+  width: 100px;
+  height: 343px;
+  padding-top: 4px;
+}
+
+/* the third */
+td:nth-child(3) {
+  width: 23px;
+  height: 343px;
+  text-align: right;
+ }
+
+td:nth-child(4) {
+  width: 130px;
+  height: 343px;
+  padding-top: 4px;
+ }
+
+.openhours {
+    position: fixed;
+    right: 50%;
+    margin-top: -115px;
+    margin-left: -136px;
+    z-index:  0;
+}
+
+
+
+.hiddenimg {
+  display: none;
+}
+
+.hiddentxt {
+  z-index:99;
+}
+
+.hiddentxt:hover ~ .hiddenimg {
+  display: block;
+  position: fixed;
+  left: 0%;
+  top: 0%;
+    z-index: -1
+}
+
+.hiddenimg2 {
+  display: none;
+}
+
+.hiddentxt2 {
+  z-index:99;
+}
+
+.hiddentxt2:hover ~ .hiddenimg2 {
+  display: block;
+  position: fixed;
+  left: 0%;
+  top: 35%;
+    z-index: -1
+}
+
+.hiddenimg3 {
+  display: none;
+}
+
+.hiddentxt3 {
+  z-index:99;
+}
+
+.hiddentxt3:hover ~ .hiddenimg3 {
+  display: block;
+  position: fixed;
+  left: 0%;
+  bottom: 0%;
+    z-index: -1
+}
+
+.hiddenimg4 {
+  display: none;
+}
+
+.hiddentxt4 {
+  z-index:99;
+}
+
+.hiddentxt4:hover ~ .hiddenimg4 {
+  display: block;
+  position: fixed;
+  right: 0%;
+  top: 10%;
+    z-index: -1
+}
+
+.hiddenimg5 {
+  display: none;
+}
+
+.hiddentxt5 {
+  z-index:99;
+}
+
+.hiddentxt5:hover ~ .hiddenimg5 {
+  display: block;
+  position: fixed;
+  right: 0%;
+  top: 35%;
+    z-index: -1
+}
+
+.hiddenimg6 {
+  display: none;
+}
+
+.hiddentxt6 {
+  z-index:99;
+}
+
+.hiddentxt6:hover ~ .hiddenimg6 {
+  display: block;
+  position: fixed;
+  right: 0%;
+  bottom: 0%;
+    z-index: -1
+}
+
