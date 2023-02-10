@@ -61,7 +61,7 @@ h3 {
   -moz-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  background-color:green;
+  background: linear-gradient(90deg, rgba(42,74,42,1) 0%, rgba(76,135,63,1) 15%, rgba(243,246,108,1) 49%, rgba(91,145,67,1) 79%, rgba(53,94,49,1) 100%), url(https://grainy-gradients.vercel.app/noise.svg);
   width: 250px;
   height: 165px;
   z-index: 1;
