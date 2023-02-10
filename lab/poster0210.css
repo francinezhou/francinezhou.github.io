@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    font-family: 'Noto Sans', sans-serif;
+    color: white;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+}
+
+h1, h2, h3 {
+  font-family: 'Archivo', sans-serif;
+	color: white;
+  margin: 0;
+  padding: 0;
+}
+  
+h1 {
+  font-size: 6.5rem;
+    padding: ;
+    line-height: 0.8;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+h3 {
+  font-size: 1.2rem;
+    font-weight: normal;
+    text-align: center;
+    font-weight: 300;
+}
+
+.wrapper {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.flex1 {
+  height: 35%;
+}
+.flex2 {
+  height: 46%;
+  text-align: center;
+}
+.flex3 {
+  height: 30%;
+}
+
+.shape {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color:green;
+  width: 250px;
+  height: 165px;
+  z-index: 1;
+}
+
+
+footer {
+  position:fixed;
+  bottom:  0;
+  right: 0;
+  width: 100%;
+  color:  white;
+  display:  flex;
+  justify-content:space-between;
+  align-items:  center;
+}
+
+.bar {
+  padding: 16px;
+}
+
+/* Media Query for mobile styles*/
+@media only screen and (max-width:  600px) {
+.wrapper {
+    padding: 5px;
+  }
+ h1 {
+    font-size: 8rem;
+  }
+  h2, h3 {
+    font-size: 3vw;
+  }
+  .bar {
+    padding: 5px;
+  }
+
+.shape {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color:green;
+  width: 150px;
+  height: 105px;
+  z-index: 1;
+}
+}

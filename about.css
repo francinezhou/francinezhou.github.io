@@ -220,36 +220,9 @@ section {
 
 }
 
-
-.intro {
-  /*background-color: #E40893;*/
-  background: linear-gradient(90deg, #ffdb01, #fb01a3);
-  background-size: 400% 400%;
-  color:  white;
-  justify-content:  center;
-  align-items:  center;
-  height:  100vh;
-  -webkit-animation: laurieGrad 5s ease infinite;
-  -moz-animation: laurieGrad 5s ease infinite;
-  animation: laurieGrad 5s ease infinite;
-}
-
-@-webkit-keyframes laurieGrad {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-@-moz-keyframes laurieGrad {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-@keyframes laurieGrad {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-
+.photo {
+   width: 300px;
+]
 
 .hm-img {
   margin-left: auto;
