@@ -49,11 +49,11 @@ h3 {
 .flex3 {
   height: 25%;
 }
-.wrapper{
-  opacity: 0
-}
 
-.shape {
+.wrapper {
+  opacity: 0;
+}
+.green {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -68,9 +68,9 @@ h3 {
   cursor: pointer;
 }
 
-
-.shape:hover.wrapper{
+.green:hover + .wrapper {
   opacity: 1;
+  transition: opacity 1s ease-in;
 }
 
 footer {
