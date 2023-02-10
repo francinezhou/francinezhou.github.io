@@ -58,6 +58,20 @@ img {
   height:  auto;
 }
 
+header {
+  padding:  5px;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  position: fixed;
+  top:  0;
+  width:  100%;
+  color:  white;
+  background-color: rgb(244, 244, 244);
+  display:  flex;
+  justify-content:space-between;
+  align-items:  center;
+}
+
 .wrapper {
     margin-bottom: 20px;
 }
