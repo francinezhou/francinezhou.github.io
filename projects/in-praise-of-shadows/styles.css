@@ -134,11 +134,11 @@ display: block;
 /* flexbox for large screen */
 @media screen and (min-width: 480px) {
 .wrapper {
-  height: 650px;
+  height: 400px;
 }
 .box {
-  position: static;
-  width: 430px;
+ 
+  width: 350px;
   margin-top: 50px;
 }
 .row {
