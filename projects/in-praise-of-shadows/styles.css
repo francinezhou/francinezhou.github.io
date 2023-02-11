@@ -144,7 +144,11 @@ opacity: 0;
 
 /* flexbox for large screen */
 @media screen and (min-width: 480px) {
+  .wrapper {
+    height: 650px;
+  }
   .box {
+    position: static;
     width: 430px;
     margin-top: 50px;
   }
