@@ -1,5 +1,5 @@
 // Listening to the video element
-let fog = document.querySelector("#fog")
+// let fog = document.querySelector("#fog")
 let 阝 = document.querySelector ("#_阝")
 let 人 = document.querySelector ("#_人")
 let 云 = document.querySelector ("#_云")
@@ -18,9 +18,16 @@ let strokes = document.querySelector (".cls-1")
     document.querySelector("#fog").style.opacity = "1";
  })
 
+礻.addEventListener("mouseover", function hand (e) {
+    document.querySelector("#hand").style.opacity = "1";
+ })
 /* Applying the mouse out event to hide the video */
 
-strokes.addEventListener("mouseout", function fog (e) {
+阝.addEventListener("mouseout", function fog (e) {
     document.querySelector("#fog").style.opacity = "0";
+})
+
+礻.addEventListener("mouseout", function hand (e) {
+    document.querySelector("#hand").style.opacity = "0";
 })
 
