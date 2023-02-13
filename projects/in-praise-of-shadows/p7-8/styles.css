@@ -125,26 +125,31 @@ article {
     line-height: 1.5;
 }
 
-
-.text7 p:nth-child(2n){
+.text7 p:nth-child(2n) {
     text-align: left;
 }
 
 p {
     margin-top: 0em;
-    margin-bottom: 1em;
+    margin-bottom: 0;
 }
   
-  @media (max-width: 480px) {
+@media (max-width: 734px) {
+    p {
+        display: inline;
+    }
+}
+
+@media (max-width: 480px) {
     /* text overflow for mobile  */
     .wrapper {
         margin: 20px;
-        margin-bottom: 50px; 
+        margin-bottom: 70px; 
     }
     article {
         -webkit-columns: 2 200px;
-    -moz-columns: 2 200px;
-    columns: 2 200px;
+        -moz-columns: 2 200px;
+        columns: 2 200px;
         padding: 0;
     }
   }
