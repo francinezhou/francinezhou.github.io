@@ -18,6 +18,10 @@ let strokes = document.querySelector (".cls-1")
     document.querySelector("#fog").style.opacity = "1";
  })
 
+云 .addEventListener("mouseover", function sand (e) {
+    document.querySelector("#sand").style.opacity = "1";
+ })
+
 礻.addEventListener("mouseover", function hand (e) {
     document.querySelector("#hand").style.opacity = "1";
  })
@@ -26,6 +30,10 @@ let strokes = document.querySelector (".cls-1")
 阝.addEventListener("mouseout", function fog (e) {
     document.querySelector("#fog").style.opacity = "0";
 })
+
+云 .addEventListener("mouseout", function sand (e) {
+    document.querySelector("#sand").style.opacity = "0";
+ })
 
 礻.addEventListener("mouseout", function hand (e) {
     document.querySelector("#hand").style.opacity = "0";

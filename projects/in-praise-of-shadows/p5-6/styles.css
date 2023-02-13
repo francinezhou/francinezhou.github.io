@@ -1,0 +1,138 @@
+* {
+    cursor: url(imgs/cursor90.png),auto;
+}
+
+
+body {
+    background-color: #323232;
+	animation-name: backgroundColorPalette;
+	animation-duration: 5s;
+	animation-iteration-count: 1;
+	animation-direction: alternate;
+	animation-timing-function: linear; 
+	/* linear is enabled default, it’s not necessary to add it make it work but it can make your code more expressive */
+}
+
+@keyframes backgroundColorPalette {
+	0% {
+		background: black;
+	}
+	
+	50% {
+		background: #2e2e2e;
+	}
+
+	100% {
+		background: #1e1e1e;
+	}
+}
+
+h1, h2, h3, p {
+    color: white;
+    font-family: "dnp-shuei-nmincho-std", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+ 
+p {
+    line-height: 1.5;
+}
+
+h2 {
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+
+
+.btm-nav {
+    position:fixed;
+    bottom: 0;
+    padding-bottom: 5px;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 1rem;
+    background-color: #969486;
+	animation-name: backgroundColorPalette;
+	animation-duration: 5s;
+	animation-iteration-count: 1;
+	animation-direction: alternate;
+	animation-timing-function: linear; 
+}
+
+.menu {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease; 
+    cursor: pointer;
+    z-index: 99;
+}
+
+.menu:hover {
+    letter-spacing: 2rem; 
+    -webkit-animation: text_blur 1.5s; 
+}
+
+@-webkit-keyframes text_blur {
+    0% { -webkit-filter: blur(0px);}
+    50% { -webkit-filter: blur(2px);}
+    100% { -webkit-filter: blur(0px);}
+}
+
+
+a:link { text-decoration: none; color: white;}
+
+a:visited { text-decoration: none; color: white;}
+
+a:hover { text-decoration: none; color: white;}
+
+a:active { text-decoration: none; }
+
+
+
+.wrapper {
+    margin: 60px;
+    margin-top: 40px; 
+    padding: 0;
+}
+article {
+    -webkit-columns: 2 13vw;
+    -moz-columns: 2 13vw;
+    columns: 2 13vw;
+    column-gap: 50vw;
+    padding-left: 20px;
+    padding-right: 20px;
+} 
+
+.text5{
+    color: rgb(120, 120, 120);
+    font-family: "dnp-shuei-nmincho-std", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5;
+}
+
+p {
+    margin-top: 0em;
+    margin-bottom: 0;
+}
+  
+@media (max-width: 734px) {
+    p {
+        display: inline;
+    }
+}
+
+@media (max-width: 480px) {
+    /* text overflow for mobile  */
+    .wrapper {
+        margin: 20px;
+        margin-bottom: 70px; 
+    }
+    article {
+        -webkit-columns: 2 200px;
+        -moz-columns: 2 200px;
+        columns: 2 200px;
+        padding: 0;
+    }
+  }
