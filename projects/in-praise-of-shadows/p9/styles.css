@@ -4,31 +4,13 @@
 
 
 body {
-    background-color: #1e1e1e;
-	animation-name: backgroundColorPalette;
-	animation-duration: 5s;
-	animation-iteration-count: 1;
-	animation-direction: alternate;
-	animation-timing-function: linear; 
-	/* linear is enabled default, it’s not necessary to add it make it work but it can make your code more expressive */
-}
-
-@keyframes backgroundColorPalette {
-	0% {
-		background: black;
-	}
-	
-	50% {
-		background: #121212;
+    background-color: #000000;
 	}
 
-	100% {
-		background: #1e1e1e;
-	}
-}
+
 
 h1, h2, h3, p {
-
+    color: white;
     font-family: "dnp-shuei-nmincho-std", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -52,15 +34,12 @@ h2 {
     width: 100%;
     text-align: center;
     letter-spacing: 1rem;
-
-    /* change to same as bg animation */
-    /*
     background-color: #969486;
 	animation-name: backgroundColorPalette;
 	animation-duration: 5s;
 	animation-iteration-count: 1;
 	animation-direction: alternate;
-	animation-timing-function: linear;  */
+	animation-timing-function: linear; 
 }
 
 .menu {
@@ -75,13 +54,14 @@ h2 {
 .menu:hover {
     letter-spacing: 2rem; 
     -webkit-animation: text_blur 1.5s; 
-}
+  }
 
 @-webkit-keyframes text_blur {
     0% { -webkit-filter: blur(0px);}
     50% { -webkit-filter: blur(2px);}
     100% { -webkit-filter: blur(0px);}
 }
+
 
 a:link { text-decoration: none; color: white;}
 
@@ -92,7 +72,6 @@ a:hover { text-decoration: none; color: white;}
 a:active { text-decoration: none; }
 
 
-
 /* body text */
 
 .wrapper {
@@ -101,58 +80,18 @@ a:active { text-decoration: none; }
     padding: 0;
 }
 article {
-    -webkit-columns: 2 13vw;
-    -moz-columns: 2 13vw;
-    columns: 2 13vw;
-    column-gap: 50vw;
-    padding-left: 20px;
-    padding-right: 20px;
+   
 } 
 
-.text5{
-    color: rgb(91, 91, 91);
+.text9{
+    text-align: right;
+    color: white;
     font-family: "dnp-shuei-nmincho-std", sans-serif;
     font-weight: 400;
     font-style: normal;
     line-height: 1.5;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    filter: blur(1px);
-    animation-name: bodyColor;
-	animation-duration: 10s;
-	animation-iteration-count: 1;
-	animation-direction: alternate;
-	animation-timing-function: linear; 
-
 }
 
-@keyframes bodyColor {
-	0% {
-		color: black;
-	}
-	
-	50% {
-		color: rgb(43, 43, 43);;
-	}
-
-	100% {
-		color: rgb(91, 91, 91);
-	}
-}
-
-@keyframes textUnblur {
-    0% {
-		filter: blur(4px);
-	}
-	
-	50% {
-		filter: blur(2px);
-	}
-
-	100% {
-		filter: blur(1px);
-	}
-	}
-}
 
 p {
     margin-top: 0em;
@@ -160,7 +99,9 @@ p {
 }
   
 @media (max-width: 734px) {
- 
+    p {
+        display: inline;
+    }
 }
 
 @media (max-width: 480px) {
