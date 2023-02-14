@@ -77,19 +77,23 @@ a:active { text-decoration: none; }
 .wrapper {
     margin: 60px;
     margin-top: 40px; 
+    margin-bottom: 50px; 
     padding: 0;
+    height: calc(100vh - 100px);
 }
 article {
    
 } 
 
 .text9{
-    text-align: right;
     color: white;
     font-family: "dnp-shuei-nmincho-std", sans-serif;
     font-weight: 400;
     font-style: normal;
     line-height: 1.5;
+    position: absolute;
+    bottom: 0;
+    padding: 60px;
 }
 
 
