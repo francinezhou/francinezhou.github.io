@@ -100,16 +100,46 @@ a:active { text-decoration: none; }
     margin-top: 40px; 
     padding: 0;
 }
-article {
-    -webkit-columns: 2 13vw;
-    -moz-columns: 2 13vw;
-    columns: 2 13vw;
-    column-gap: 50vw;
-    padding-left: 20px;
-    padding-right: 20px;
-} 
+
+
+.container{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-top: -115px;
+    margin-left: -129px;
+    overflow: auto;
+    z-index:  2;
+}
+
+element.style {
+    overflow: auto;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: none;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: none;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: none;
+  }
 
 .text5{
+    height: 330px;
+    width: 281px;
+    overflow: auto;
     color: rgb(91, 91, 91);
     font-family: "dnp-shuei-nmincho-std", sans-serif;
     font-weight: 400;
