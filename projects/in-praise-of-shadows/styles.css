@@ -145,8 +145,9 @@ display: block;
 } */
 
 /* flexbox for large screen */
-/* @media screen and (min-width: 480px) { */
-@media screen and (orientation:landscape) {
+
+/* @media screen and (orientation:landscape) { */
+  @media screen and (min-width: 600px) {
 .wrapper {
   height: 500px;
 }
