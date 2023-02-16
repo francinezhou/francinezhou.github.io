@@ -158,13 +158,12 @@ a:active { text-decoration: none; }
     font-style: normal;
     line-height: 1.5;
     width: 200px;
-    cursor: pointer;
+    
     transition: 2s ease;
 }
 
 .text2:hover {
-  
-  width: 400px;
+  width: 450px;
 }
 
 p {
@@ -172,6 +171,23 @@ p {
     margin-bottom: 0;
 }
   
+
+.next a{
+  text-decoration: none;
+  color: #454545;
+  cursor: pointer;
+}
+
+.next:hover {
+  text-decoration: none; 
+  cursor: pointer;
+  background-color: #454545;
+ 
+}
+.next a:hover {
+  color:white; 
+}
+
 @media (max-width: 734px) {
     p {
         display: inline;
