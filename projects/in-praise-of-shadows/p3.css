@@ -10,12 +10,12 @@ body {
 
 @keyframes backgroundColorPalette {
 	0% {
-		background: black;
+		background: #E1E1E1;
 	}
-	
+/* 	
 	50% {
 		background: #56554C;
-	}
+	} */
 
 	100% {
 		background: #969486;
@@ -159,10 +159,37 @@ a:active { text-decoration: none; }
         }
         }
     
+._云 {
+    transition: 3s ease;
+}
+._云:hover {
 
-._云 
+    -webkit-animation: out 1s ease-in-out;
+    -webkit-animation-duration: 1000ms;
+    -webkit-animation-delay: 10ms; 
+    -webkit-animation-fill-mode: forwards;
+}
          
-
+span {
+    -webkit-animation: in 1s ease;
+  }
+  
+  span:hover {
+    -webkit-animation: out 1s ease-in-out;
+    -webkit-animation-duration: 1000ms;
+    -webkit-animation-delay: 10ms; 
+    -webkit-animation-fill-mode: forwards;
+  }
+  
+  @-webkit-keyframes in {
+    from   { text-shadow: 10px 80px 10px rgba(0, 0, 0, 1);  }
+    to { text-shadow: 10px 80px 10px rgba(0, 0, 0, 1); }
+  }
+  
+  @-webkit-keyframes out {
+    0%   { text-shadow: 10px 80px 10px rgba(0, 0, 0, 1); }
+    100% { text-shadow: 10px 80px 10px rgba(0, 0, 0, 1);}
+  }
 
 .trapezoid {
     width: 400px;
