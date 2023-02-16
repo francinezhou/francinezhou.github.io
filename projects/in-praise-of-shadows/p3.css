@@ -169,6 +169,15 @@ a:active { text-decoration: none; }
     -webkit-animation-delay: 10ms; 
     -webkit-animation-fill-mode: forwards;
 }
+.table {
+    position: sticky;
+    top: 60%;
+    margin-left: 200px;
+}
+
+#table {
+    width: 350px;
+}
          
 span {
     -webkit-animation: in 1s ease;
