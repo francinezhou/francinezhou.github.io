@@ -57,13 +57,14 @@ h2 {
 }
 
 
-a:link { text-decoration: none; color: white;}
+h2 a:link { text-decoration: none; color: #828282;}
 
-a:visited { text-decoration: none; color: white;}
+h2 a:visited { text-decoration: none; color: #828282;}
 
-a:hover { text-decoration: none; color: white;}
+h2 a:hover { text-decoration: none; color: #828282;}
 
-a:active { text-decoration: none; }
+h2 a:active { text-decoration: none; }
+
 
 /* main box */
 
@@ -148,6 +149,7 @@ a:active { text-decoration: none; }
     padding: 0;
 }
 
+/* body text */
 .text1{
   position: relative;
   top: 15%;
@@ -161,7 +163,7 @@ left: 50%;
   }
 
 span {
-    -webkit-animation: in 1s ease;
+    -webkit-animation: in 1s ease-in;
   }
   
   span:hover {
@@ -173,7 +175,7 @@ span {
   
   @-webkit-keyframes in {
     from   { text-shadow: 10px 80px 10px rgba(0, 0, 0, 1);  }
-    to { text-shadow: 10px 80px 10px rgba(0, 0, 0, 1); }
+    to { text-shadow: 10px 80px 10px rgba(0, 0, 0, 0); }
   }
   
   @-webkit-keyframes out {
@@ -186,7 +188,7 @@ p {
     margin-bottom: 0;
 }
 
-
+/* next page link button */
 .next a{
     text-decoration: none;
     color: #828282

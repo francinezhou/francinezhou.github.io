@@ -4,7 +4,6 @@ body {
 
 
 h1, h2, h3, p {
-    color: white;
     font-family: "dnp-shuei-nmincho-std", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -13,6 +12,7 @@ h1, h2, h3, p {
 p {
     color: #454545;
     line-height: 1.5;
+    
 }
 
 h2 {
@@ -20,6 +20,10 @@ h2 {
     line-height: 1.2;
    
 }
+
+::-moz-selection {  background-color: #454545;color: white;  }
+
+::selection {   background-color: #454545; color: white; }
 
 
 .btm-nav {
@@ -58,13 +62,13 @@ h2 {
 }
 
 
-a:link { text-decoration: none; color: white;}
+h2 a:link { text-decoration: none; color: white;}
 
-a:visited { text-decoration: none; color: white;}
+h2 a:visited { text-decoration: none; color: white;}
 
-a:hover { text-decoration: none; color: white;}
+h2 a:hover { text-decoration: none; color: white;}
 
-a:active { text-decoration: none; }
+h2 a:active { text-decoration: none; }
 
 /* main box */
 
@@ -93,7 +97,7 @@ a:active { text-decoration: none; }
     }
     
     .column {
-    display: flex;
+    display: flex; 
     flex-direction: column;
     flex-basis: 100%;
     align-items: center;
@@ -148,6 +152,7 @@ a:active { text-decoration: none; }
     padding: 0;
 }
 
+/* body text */
 .text2{
     position: relative;
     top: 36%;
@@ -158,7 +163,6 @@ a:active { text-decoration: none; }
     font-style: normal;
     line-height: 1.5;
     width: 200px;
-    
     transition: 2s ease;
 }
 
@@ -171,22 +175,28 @@ p {
     margin-bottom: 0;
 }
   
-
-.next a{
-  text-decoration: none;
-  color: #454545;
-  cursor: pointer;
+/* next page link button */
+.next {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-weight: bold;
 }
 
 .next:hover {
-  text-decoration: none; 
-  cursor: pointer;
   background-color: #454545;
- 
+  background-size: 150%;
+  cursor: pointer;
+  transition: 2s ease;
 }
-.next a:hover {
-  color:white; 
-}
+
+
+.next a:link { text-decoration: none; color: black;}
+
+.next a:visited { text-decoration: none; color: black;}
+
+.next a:hover { text-decoration: none; color: white;}
+
+.next a:active { text-decoration: none; }
 
 @media (max-width: 734px) {
     p {
