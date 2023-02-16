@@ -158,9 +158,14 @@ a:active { text-decoration: none; }
     font-style: normal;
     line-height: 1.5;
     width: 200px;
-
+    cursor: pointer;
+    transition: 2s ease;
 }
 
+.text2:hover {
+  
+  width: 400px;
+}
 
 p {
     margin-top: 0em;
