@@ -1,6 +1,6 @@
-* {
+/* * {
     cursor: url(imgs/cursor90.png),auto;
-}
+} */
 
 
 body {
@@ -114,6 +114,7 @@ article {
     column-gap: 50vw;
     padding-left: 20px;
     padding-right: 20px;
+    z-index: 0;
 } 
 
 .text7{
@@ -155,12 +156,16 @@ p {
   }
 
 .rec {
-position: absolute;
-width: 733px;
-height: 542px;
-left: 357px;
-top: 188px;
 
-background: #646161;
-box-shadow: inset 0px 8px 40px 30px rgba(0, 0, 0, 0.25);
+width: 100vw;
+display: flex;
+justify-content: center;
+z-index: 10;
+
+}
+
+#room {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
 }
