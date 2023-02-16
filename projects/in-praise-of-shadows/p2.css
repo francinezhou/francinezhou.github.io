@@ -1,26 +1,7 @@
 body {
-    background-color: #969486;
-	animation-name: backgroundColorPalette;
-	animation-duration: 5s;
-	animation-iteration-count: 1;
-	animation-direction: alternate;
-	animation-timing-function: linear; 
-	/* linear is enabled default, it’s not necessary to add it make it work but it can make your code more expressive */
-}
-
-@keyframes backgroundColorPalette {
-	0% {
-		background: black;
-	}
-	
-	50% {
-		background: #56554C;
+    background-color: #E1E1E1;
 	}
 
-	100% {
-		background: #969486;
-	}
-}
 
 h1, h2, h3, p {
     color: white;
@@ -30,6 +11,7 @@ h1, h2, h3, p {
 }
  
 p {
+    color: #454545;
     line-height: 1.5;
 }
 
@@ -165,26 +147,20 @@ a:active { text-decoration: none; }
     margin-top: 40px; 
     padding: 0;
 }
-article {
-    -webkit-columns: 2 13vw;
-    -moz-columns: 2 13vw;
-    columns: 2 13vw;
-    column-gap: 50vw;
-    padding-left: 20px;
-    padding-right: 20px;
-} 
 
 .text2{
+    position: relative;
+    top: 36%;
+    left: 35%;
     color: white;
     font-family: "dnp-shuei-nmincho-std", sans-serif;
     font-weight: 400;
     font-style: normal;
     line-height: 1.5;
+    width: 200px;
+
 }
 
-.text7 p:nth-child(2n) {
-    text-align: left;
-}
 
 p {
     margin-top: 0em;

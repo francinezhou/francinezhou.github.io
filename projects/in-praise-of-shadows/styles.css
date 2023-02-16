@@ -114,7 +114,7 @@ opacity: 0.5;
 } */
 
 /* target child with fa class on parent hover*/
-path:hover > .cls-1 
+path:hover 
 {
   fill-opacity: 0.5;
 }

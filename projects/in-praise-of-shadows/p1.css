@@ -1,9 +1,9 @@
 body {
-    background-color: #56554C;
+    background-color: #EFEFEF;
 }
 
 h1, h2, h3, p {
-    color: white;
+   
     font-family: "dnp-shuei-nmincho-std", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -11,6 +11,7 @@ h1, h2, h3, p {
  
 p {
     line-height: 1.5;
+    color: #828282;
 }
 
 h2 {
@@ -148,11 +149,15 @@ a:active { text-decoration: none; }
 }
 
 .text1{
+  position: relative;
+  top: 15%;
+left: 50%;
     color: white;
     font-family: "dnp-shuei-nmincho-std", sans-serif;
     font-weight: 400;
     font-style: normal;
     line-height: 1.5;
+    width: 400px;
   }
 
 span {
@@ -180,12 +185,20 @@ p {
     margin-top: 0em;
     margin-bottom: 0;
 }
-.next a:hover { text-decoration: none; color: rgb(54, 54, 54);}
+
+
+.next a{
+    text-decoration: none;
+    color: #828282
+}
+.next a:hover {
+
+     text-decoration: none; color: rgb(54, 54, 54);}
 
 .next:hover {
     color: #303030;
-    border: solid 2px #f0f0f0;
-    border-color: #f0f0f0 transparent transparent transparent;
+    border: solid 2px #828282;
+    border-color: #828282 transparent transparent transparent;
     border-radius: 50%;
 }
   
