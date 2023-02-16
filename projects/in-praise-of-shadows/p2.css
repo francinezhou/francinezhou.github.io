@@ -22,7 +22,6 @@ h2 {
 }
 
 ::-moz-selection {  background-color: #454545;color: white;  }
-
 ::selection {   background-color: #454545; color: white; }
 
 
