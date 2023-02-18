@@ -1,5 +1,5 @@
 body {
-    background-color: #ececec;
+    background-color: black;
 }
 
 h1, h2, h3, p {
@@ -11,7 +11,7 @@ h1, h2, h3, p {
  
 p {
     line-height: 1.5;
-    color: #828282;
+
 }
 
 h2 {
@@ -20,8 +20,8 @@ h2 {
   
 }
 
-::-moz-selection {  background-color: #828282;color: white;  }
-::selection {   background-color: #828282; color: white; }
+::-moz-selection {  background-color: goldenrod;color: white;  }
+::selection {   background-color: goldenrod; color: white; }
 
 .btm-nav {
     position:fixed;
@@ -30,7 +30,7 @@ h2 {
     width: 100%;
     text-align: center;
     letter-spacing: 1rem;
-    background-color: #ececec;
+    background-color: black;
     /* 
 	animation-name: backgroundColorPalette;
 	animation-duration: 5s;
@@ -61,11 +61,11 @@ h2 {
 }
 
 
-h2 a:link { text-decoration: none; color: white;}
+h2 a:link { text-decoration: none; color: rgb(122 121 113)}
 
-h2 a:visited { text-decoration: none; color: white;}
+h2 a:visited { text-decoration: none; color: rgb(122 121 113)}
 
-h2 a:hover { text-decoration: none; color: white;}
+h2 a:hover { text-decoration: none; color: rgb(122 121 113)}
 
 h2 a:active { text-decoration: none; }
 
@@ -105,10 +105,13 @@ h2 a:active { text-decoration: none; }
       }
     
 .cls-1 {
-    fill: #EFEFEF;
+    fill: grey;
     fill-opacity: 0;
-    stroke: white;
+    stroke: rgb(122, 122, 122);
+    /* filter: blur(0.5); */
     stroke-width: 1.5px;
+    filter: drop-shadow(0px 0px 4px rgb(235, 227, 186, 1));
+   
 }
 
 #_阝{
@@ -153,19 +156,18 @@ h2 a:active { text-decoration: none; }
 }
 
 /* body text */
-.text1 {
-  top: 15%;
-  left: 50%;
-    color: white;
+.text11 {
+  top: 10%;
+  left: 5%;
     font-family: "dnp-shuei-nmincho-std", sans-serif;
     font-weight: 400;
     font-style: normal;
     line-height: 1.5;
   }
 @media (min-width: 601px) {
-  .text1 {
+  .text11 {
     position: relative;
-    width: 30vw;
+    width: 20vw;
     height: fit-content;
     padding-bottom: 100px;
     }
@@ -179,7 +181,7 @@ h2 a:active { text-decoration: none; }
       margin: 20px;
       margin-bottom: 70px; 
   }
-  .text1 {
+  .text11 {
     position: inherit;
     width: auto;
     height: auto;
@@ -189,12 +191,15 @@ h2 a:active { text-decoration: none; }
 .cls-1 {
   fill: #EFEFEF;
   fill-opacity: 1;
-  stroke: white;
   stroke-width: 2px;
 }
 }
+p {
+  color: #151515;
+}
 
 span {
+
     -webkit-animation: in 1s ease-in;
   }
   
@@ -214,6 +219,15 @@ span {
     0%   { text-shadow: 12px 80px 10px rgba(0, 0, 0, 1); }
     100% { text-shadow: 12px 80px 10px rgba(0, 0, 0, 1);}
   }
+
+.gold {
+  color: goldenrod;
+}
+
+
+.glimmer {
+  color: rgb(205, 198, 159);
+}
 
 p {
     margin-top: 0em;

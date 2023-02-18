@@ -1,5 +1,5 @@
 body {
-    background-color: #E1E1E1;
+    background-color: #d1d1d1;
 	}
 
 
@@ -32,7 +32,8 @@ h2 {
     width: 100%;
     text-align: center;
     letter-spacing: 1rem;
-    /* background-color: #969486;
+    background-color: #d1d1d1;
+    /* 
 	animation-name: backgroundColorPalette;
 	animation-duration: 5s;
 	animation-iteration-count: 1;
@@ -108,7 +109,8 @@ h2 a:active { text-decoration: none; }
     }
     
 .cls-1 {
-    fill: none;
+    fill: #d1d1d1;
+    fill-opacity: 0;
     stroke: white;
     stroke-width: 1.5px;
 }
@@ -118,8 +120,7 @@ h2 a:active { text-decoration: none; }
         .wrapper {
           height: 500px;
         }
-        .box {
-         
+        .box {          
           width: 490px;
          
         }

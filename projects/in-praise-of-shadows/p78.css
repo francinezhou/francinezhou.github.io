@@ -165,11 +165,29 @@ z-index: 10;
 }
 
 #room {
-    width: 300px;
+    width: 40vw;
     /* margin-left: auto; */
     /* margin-right: auto; */
     z-index: 10;
+    
     position: fixed;
-    left: 40%;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
+    /* margin-top: 25px;
+    margin-bottom: 15px; */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    cursor: pointer;
+}
+
+.wrapper {
+    opacity: 0;
+    transition: 2s ease-in-out;
+}
+
+#room:hover ~ .wrapper{
+    opacity: 1;
 }
