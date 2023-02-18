@@ -58,11 +58,11 @@ h2 {
 }
 
 
-a:link { text-decoration: none; color: white;}
+a:link { text-decoration: none; color: #EECC76;}
 
-a:visited { text-decoration: none; color: white;}
+a:visited { text-decoration: none; color: #EECC76;}
 
-a:hover { text-decoration: none; color: white;}
+a:hover { text-decoration: none; color: #EECC76;}
 
 a:active { text-decoration: none; }
 
@@ -157,76 +157,67 @@ a:active { text-decoration: none; }
     margin-right: auto;
 }
 .text12 {
-    
+    position: absolute;
+    right: 45%;
+    bottom: 40%;
+    transform: translate(150px, 0);
     color: #EECC76;
     font-family: "dnp-shuei-nmincho-std", sans-serif;
     word-spacing: -30px;
     line-height: 0;
-    cursor: pointer;
+   
     text-align: center;
-    width: 50px;
-    height: 100px;
+    width: 40px;
     transition: 3s ease-in-out;
-    
-}
-
-
-
-.text12:hover {
-    top: 20%;
-  word-spacing: normal;
-  line-height: 1.5;
-  width: 500px;
-
+    display: table-cell;
+    vertical-align: bottom;
 }
 
 .buddha {
-  
-
-    float: right;
-    transform: translate(150px, 0);
-    width: 90%;
+    position: absolute;
+    transform: translate(91px, 20px);
     margin-left: auto;
     margin-right: auto;
-    width: 100px;
     display: inline-flex;
+    z-index: 98;
 }
 
 #buddha {
-    width: 100px;
+    width: 130px;
     fill-opacity: 1;
-    
+    z-index: 98;
 }
-.circle {
+
+.head {
+  position: absolute;
+  bottom: 36%;
+  right: 15.5%;
     background-color: gray;
-    width: 40px;
-    height: 40px;
+    width: 28px;
+    height: 34px;
     border-radius: 50%;
     display: inline-block;
   margin-left: auto;
     margin-right: auto;
-}
-span {
-    color: #EECC76;
-    font-family: "dnp-shuei-nmincho-std", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
-}
-
-.spantext12 {
-    position: relative;
-    /* overflow: hidden; */
-    text-align: center;
-    top: 30%;
-    word-spacing: -30px;
-    line-height: 0;
+    z-index: 99;
     cursor: pointer;
-    text-align: center;
-    width: 180px;
-    height: 40px;
-    transition: 3s ease-in-out;
-  }
+}
+
+.head:hover ~ .text12 {
+
+
+  position: absolute;
+  right: 0%;
+  bottom: 40%; 
+  transform: translate(150px, 0);
+  word-spacing: normal;
+  line-height: 1.5;
+  width: 500px;
+  display: table-cell;
+  vertical-align: bottom;
+
+}
+
   
   
   /* .spantext12 span {
@@ -236,13 +227,6 @@ span {
     opacity: 0;
     animation: expand 2s ease forwards;
   } */
-
-  .spantext12:hover {
-    top: 20%;
-  word-spacing: normal;
-  line-height: 1.5;
-  width: 500px;
-}
 
 
   
