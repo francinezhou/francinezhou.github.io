@@ -204,8 +204,6 @@ a:active { text-decoration: none; }
 }
 
 .head:hover ~ .text12 {
-
-
   position: absolute;
   right: 0%;
   bottom: 40%; 
