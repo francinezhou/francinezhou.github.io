@@ -11,7 +11,7 @@ h1, h2, h3, p {
  
 p {
     line-height: 1.5;
-    color: #ffffff;
+    color: rgb(45, 45, 45);
 }
 
 h2 {
@@ -61,11 +61,11 @@ h2 {
 }
 
 
-h2 a:link { text-decoration: none; color: white;}
+h2 a:link { text-decoration: none; color: black;}
 
-h2 a:visited { text-decoration: none; color: white;}
+h2 a:visited { text-decoration: none; color: black;}
 
-h2 a:hover { text-decoration: none; color: white;}
+h2 a:hover { text-decoration: none; color:black;}
 
 h2 a:active { text-decoration: none; }
 
@@ -105,10 +105,11 @@ h2 a:active { text-decoration: none; }
       }
     
 .cls-1 {
-    fill: #EFEFEF;
-    fill-opacity: 0;
-    stroke: white;
+  fill: #EFEFEF;
+  fill-opacity: 0;
+  stroke: rgb(0, 0, 0);
     stroke-width: 1.5px;
+    filter: blur(1px);
 }
 
 #_阝{
@@ -185,7 +186,7 @@ top: 30%;
   .text10 {
    position: absolute;
    top: 30%;
-    width: 1300px;
+    width: 700px;
     /* height: fit-content; */
     padding-bottom: 80px;
     }
@@ -208,9 +209,10 @@ top: 30%;
 
 .cls-1 {
   fill: #EFEFEF;
-  fill-opacity: 1;
-  stroke: white;
-  stroke-width: 2px;
+  fill-opacity: 0;
+  stroke: rgb(0, 0, 0);
+    stroke-width: 1.5px;
+    filter: blur(1px);
 }
 }
 
@@ -243,7 +245,7 @@ p {
 /* next page link button */
 .next a{
     text-decoration: none;
-    color: #828282
+    color: #828282;
 }
 .next a:hover {
      text-decoration: none; color: white;

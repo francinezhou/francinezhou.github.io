@@ -107,8 +107,9 @@ h2 a:active { text-decoration: none; }
 .cls-1 {
     fill: #EFEFEF;
     fill-opacity: 0;
-    stroke: white;
+    stroke: rgb(0, 0, 0);
     stroke-width: 1.5px;
+    filter: blur(1px);
 }
 
 #_阝{
@@ -240,7 +241,7 @@ p {
 /* next page link button */
 .next a{
     text-decoration: none;
-    color: #828282
+    color: #828282;
 }
 .next a:hover {
      text-decoration: none; color: white;

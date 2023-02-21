@@ -262,3 +262,19 @@ p {
 #room:hover ~ .wrapper > .text7 {
     opacity: 1;
 }
+
+/* next page link button */
+.next a{
+    text-decoration: none;
+    color: #828282;
+    opacity: 0;
+    cursor: pointer;
+}
+.next a:hover {
+     text-decoration: none; color: white;
+     opacity: 1;
+  }
+
+.next:hover {
+  
+}
