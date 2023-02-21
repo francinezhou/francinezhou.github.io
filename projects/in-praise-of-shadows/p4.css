@@ -97,19 +97,26 @@ h2 a:active { text-decoration: none; }
     flex-basis: 100%;
     align-items: center;
     padding: 5px;
+ 
     }
     
     #Layer_1 {
       width: 1100px;
       height: 110px;
+      pointer-events: none;
       }
     
 .cls-1 {
-    fill: #EFEFEF;
-    fill-opacity: 0;
+    fill: #5B5B57;
+    fill-opacity: 1;
     stroke: white;
     stroke-width: 1.5px; 
+    transition: 0.5s ease;
    
+}
+
+#_医 {
+  opacity: 1;
 }
 
 #Layer_1{
@@ -175,23 +182,34 @@ h2 a:active { text-decoration: none; }
 
 /* body text */
 .text4 {
-  top: 15%;
-  left: 50%;
+  top: 17%;
+  left: 58%;
     color: white;
     font-family: "dnp-shuei-nmincho-std", sans-serif;
     font-weight: 400;
     font-style: normal;
     line-height: 1.5;
-
   }
 @media (min-width: 601px) {
-  .text1 {
+  .text4 {
     position: relative;
-    width: 30vw;
+    width: 35vw;
     height: fit-content;
     padding-bottom: 100px;
     }
 }
+
+
+span:nth-of-type(1){ animation-delay: 0.0s; }
+span:nth-of-type(2){ animation-delay: 0.1s; transform: translate(-10px,0);}
+span:nth-of-type(3){ animation-delay: 0.2s; transform: translate(-10px,0);}
+span:nth-of-type(4){ animation-delay: 0.3s; transform: translate(-30px,0);}
+span:nth-of-type(5){ animation-delay: 0.4s; transform: translate(-40px,0);}
+span:nth-of-type(6){ animation-delay: 0.5s; transform: translate(-50px,0);}
+span:nth-of-type(7){ animation-delay: 0.6s; transform: translate(-85px,0);}
+span:nth-of-type(8){ animation-delay: 0.7s; transform: translate(-100px,0);}
+span:nth-of-type(9){ animation-delay: 0.8s; transform: translate(-100px,0);}
+span:nth-of-type(10){ animation-delay: 0.9s; transform: translate(-110px,0);}
 
 /* Responsive layout - makes a one column layout instead of a two-column layout */
 @media (max-width: 600px) {
@@ -212,7 +230,40 @@ h2 a:active { text-decoration: none; }
   fill-opacity: 1;
   stroke: white;
   stroke-width: 2px;
+
 }
+}
+
+/* flower vase svg */
+.flower {
+  position: absolute;
+  width: 300px;
+  transform: translate(-70px, 90px);
+  
+}
+
+#vasePath{
+  fill: none;
+  filter: blur(1px);
+  animation: cursorappear 3s ease-in-out;
+  animation-delay: 7000ms;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes cursorappear {
+    0% {
+      fill: none;
+      cursor: auto;
+     }
+
+     
+    100% {
+      fill:#191919;
+      cursor: pointer;}
+}
+
+#vasePath:hover {
+  filter: blur(0px);
 }
 
 .text4 span{
