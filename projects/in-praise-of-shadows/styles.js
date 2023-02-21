@@ -15,9 +15,14 @@ let 替 = document.querySelector ("#_替")
 
 /* Adding the event listeners on the video to play the video. */
 
-人 .addEventListener("mouseover", function leaf (e) {
+阝 .addEventListener("mouseover", function leaf (e) {
     document.querySelector("#leaf").style.opacity = "1";
  })
+
+ 人 .addEventListener("mouseover", function roof (e) {
+   document.querySelector("#roof").style.opacity = "1";
+})
+
 
 云 .addEventListener("mouseover", function sand (e) {
     document.querySelector("#sand").style.opacity = "1";
@@ -45,10 +50,12 @@ let 替 = document.querySelector ("#_替")
 
 /* Applying the mouse out event to hide the video */
 
+阝.addEventListener("mouseout", function leaf (e) {
+   document.querySelector("#leaf").style.opacity = "0";
+})
 
-
-人 .addEventListener("mouseout", function leaf (e) {
-    document.querySelector("#leaf").style.opacity = "0";
+人 .addEventListener("mouseout", function roof (e) {
+    document.querySelector("#roof").style.opacity = "0";
  })
 
 云 .addEventListener("mouseout", function sand (e) {
