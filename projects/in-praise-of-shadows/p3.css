@@ -8,29 +8,50 @@
     scrollbar-gutter: stable;
   }
 } */
-body {
+/* body {
     background-color: #969486;
 	animation-name: backgroundColorPalette;
 	animation-duration: 5s;
 	animation-iteration-count: 1;
 	animation-direction: alternate;
 	animation-timing-function: linear; 
-	/* linear is enabled default, it’s not necessary to add it make it work but it can make your code more expressive */
 }
 
 @keyframes backgroundColorPalette {
 	0% {
 		background: #E1E1E1;
 	}
-/* 	
-	50% {
-		background: #56554C;
-	} */
+
 
 	100% {
 		background: #969486;
 	}
+} */
+body {
+  background: linear-gradient(270deg, #d1d1d1, #969486, #86857d);
+  background-size: 260% 260%;
+
+  -webkit-animation: AnimationName 5s ease-in-out infinite;
+  -moz-animation: AnimationName 5s ease-in-out infinite;
+  animation: AnimationName 5s ease-in-out infinite;
 }
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:60% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:60% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:60% 50%}
+  100%{background-position:0% 50%}
+}
+
 
 h1, h2, h3, p {
     color: white;
@@ -200,7 +221,7 @@ h2 a:active { text-decoration: none; }
     transform: scale(0.9);
     opacity: 0;
    }
-   
+
    10% { opacity: 1;   }
 
    30% { transform: scale(0.9);  }
@@ -284,6 +305,10 @@ position: relative;
     /* -webkit-shape-outside: polygon(100% 0, 0 100%, 81% 100%); */
     shape-outside: polygon(100% 0, 0 100%, 100% 100%);
 }
+.text3a p {
+  color: #454545;
+}
+
 
 /* walls left & right */
 .text3bc{
@@ -301,6 +326,10 @@ position: relative;
   z-index: 0;
   transition: 0.5s ease-in-out;
 } 
+
+.text3bc p {
+  color: #454545;
+}
 
 
 /* shoji */
@@ -389,13 +418,7 @@ p {
   z-index: 99;
 }
 
-@keyframes darken {
-  0%, 100% {
-    text-shadow:  none;
-  }
-  50% {text-shadow: black 0.1px 0.1px 0.7px;}
-  
-}
+
 
 
 .next:hover {
@@ -405,9 +428,9 @@ p {
 }
 
 
-.next a:link { text-decoration: none; color: black;}
+.next a:link { text-decoration: none; color: white;}
 
-.next a:visited { text-decoration: none; color: black;}
+.next a:visited { text-decoration: none; color: white;}
 
 .next a:hover { text-decoration: none; color: white;}
 
