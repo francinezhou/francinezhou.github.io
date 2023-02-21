@@ -62,7 +62,6 @@ h2 {
       margin-right: auto;
       text-align: center;
       padding: 100px;
-      z-index:3;
     }
     
     .row {
@@ -88,10 +87,12 @@ h2 {
     }
     
 .cls-1 {
-    fill: none;
-    stroke: white;
+    fill: #696767;
+    fill-opacity: 1;
+    filter: blur(1px);
+    /* stroke: white;
     stroke-width: 1.5px;
-    
+     */
 }
           
     /* @media screen and (orientation:landscape) { */
@@ -159,13 +160,13 @@ h2 {
     100% { -webkit-filter: blur(0px);}
 }
 
-a:link { text-decoration: none; color: white;}
+h2 a:link { text-decoration: none; color: white;}
 
-a:visited { text-decoration: none; color: white;}
+h2 a:visited { text-decoration: none; color: white;}
 
-a:hover { text-decoration: none; color: white;}
+h2 a:hover { text-decoration: none; color: white;}
 
-a:active { text-decoration: none; }
+h2 a:active { text-decoration: none; }
 
 
 /* wrapper */
@@ -185,9 +186,9 @@ a:active { text-decoration: none; }
     width: 430px;
     height: 11px;
     background: #181818;
-    /* filter: blur(2px); */
+    filter: blur(1px);
     border-radius: 7px;
-    z-index: 0;
+    z-index:0;
 }
 
 .painting-silk {
@@ -195,9 +196,9 @@ a:active { text-decoration: none; }
     top: 0%;
     right: -40px;
     width: 400px;
-    height: 350px;
+    height: 410px;
     background: #3e4745;
-    /* filter: blur(2px); */
+    filter: blur(1px);
     z-index: 1;
     position: absolute;
   
@@ -255,7 +256,7 @@ element.style {
     position: absolute;
     top: 0%;
     right: 0%;
-    height: 330px;
+    height: 370px;
     width: 281px;
     overflow: auto;
     font-family: "dnp-shuei-nmincho-std", sans-serif;
@@ -325,3 +326,29 @@ p {
         padding: 0;
     }
   }
+
+
+
+/* next page link button */
+.next {
+   
+  }
+  
+  
+  
+  
+  .next:hover {
+    
+    cursor: pointer;
+    /* transition: 2s ease; */
+  }
+  
+  
+  .next a:link { text-decoration: none; color: #3e4745;}
+  
+  .next a:visited { text-decoration: none; color: #3e4745;}
+  
+  .next a:hover { text-decoration: none; color: #3e4745;}
+  
+  .next a:active { text-decoration: none; }
+  
