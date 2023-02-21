@@ -196,7 +196,7 @@ a:active { text-decoration: none; }
     right: -40px;
     width: 400px;
     height: 350px;
-    background: #5B6663;
+    background: #3e4745;
     /* filter: blur(2px); */
     z-index: 1;
     position: absolute;
@@ -258,7 +258,6 @@ element.style {
     height: 330px;
     width: 281px;
     overflow: auto;
-    color: rgb(91, 91, 91);
     font-family: "dnp-shuei-nmincho-std", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -267,17 +266,19 @@ element.style {
     filter: blur(1px);
     animation-name: bodyColor;
 	animation-duration: 10s;
+    animation-fill-mode: forwards;
 	animation-iteration-count: 1;
 	animation-direction: alternate;
 	animation-timing-function: linear; 
-    background: #909090;
+    background: #696767;
     padding: 20px;
     z-index: 10;
+    animation-name: textUnblur;
 }
 
 @keyframes bodyColor {
 	0% {
-		color: black;
+		color: rgb(54, 54, 54);
 	}
 	
 	50% {
@@ -285,21 +286,19 @@ element.style {
 	}
 
 	100% {
-		color: rgb(91, 91, 91);
+		color: black;
 	}
 }
 
 @keyframes textUnblur {
     0% {
-		filter: blur(4px);
-	}
-	
-	50% {
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 		filter: blur(2px);
 	}
-
+	
 	100% {
-		filter: blur(1px);
+        text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
+		filter: blur(1.2px);
 	}
 	}
 

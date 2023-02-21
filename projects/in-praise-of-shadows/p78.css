@@ -105,7 +105,9 @@ a:active { text-decoration: none; }
 .wrapper {
     margin: 60px;
     margin-top: 80px; 
+    margin-bottom: 90px; 
     padding: 0;
+
 }
 article {
     -webkit-columns: 2 13vw;
@@ -155,13 +157,8 @@ p {
     }
   }
 
-.rec {
-
-width: 100vw;
-display: flex;
-justify-content: center;
-z-index: 10;
-
+.text8 {
+    padding-top: 1000px;
 }
 
 #room {
@@ -183,11 +180,11 @@ z-index: 10;
     cursor: pointer;
 }
 
-.wrapper {
+.text7 {
     opacity: 0;
     transition: 2s ease-in-out;
 }
 
-#room:hover ~ .wrapper{
+#room:hover ~ .wrapper > .text7 {
     opacity: 1;
 }
