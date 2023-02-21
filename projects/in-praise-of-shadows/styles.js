@@ -19,14 +19,19 @@ let 替 = document.querySelector ("#_替")
     document.querySelector("#leaf").style.opacity = "1";
  })
 
- 人 .addEventListener("mouseover", function roof (e) {
+人 .addEventListener("mouseover", function roof (e) {
    document.querySelector("#roof").style.opacity = "1";
 })
-
 
 云 .addEventListener("mouseover", function sand (e) {
     document.querySelector("#sand").style.opacity = "1";
  })
+
+
+医 .addEventListener("mouseover", function branch (e) {
+   document.querySelector("#branch").style.opacity = "1";
+})
+
 
 殳.addEventListener("mouseover", function darkest (e) {
     document.querySelector("#darkest").style.opacity = "1";
@@ -44,9 +49,13 @@ let 替 = document.querySelector ("#_替")
     document.querySelector("#hand").style.opacity = "1";
  })
 
- 替.addEventListener("mouseover", function fog (e) {
+ 言.addEventListener("mouseover", function fog (e) {
     document.querySelector("#fog").style.opacity = "1";
  })
+
+ 替.addEventListener("mouseover", function statue (e) {
+   document.querySelector("#statue").style.opacity = "1";
+})
 
 /* Applying the mouse out event to hide the video */
 
@@ -61,6 +70,11 @@ let 替 = document.querySelector ("#_替")
 云 .addEventListener("mouseout", function sand (e) {
     document.querySelector("#sand").style.opacity = "0";
  })
+
+医 .addEventListener("mouseout", function branch (e) {
+   document.querySelector("#branch").style.opacity = "0";
+})
+
 
 殳.addEventListener("mouseout", function darkest (e) {
     document.querySelector("#darkest").style.opacity = "0";
@@ -78,10 +92,13 @@ let 替 = document.querySelector ("#_替")
     document.querySelector("#hand").style.opacity = "0";
 })
 
-替.addEventListener("mouseout", function fog (e) {
+言.addEventListener("mouseout", function fog (e) {
     document.querySelector("#fog").style.opacity = "0";
 })
 
+替.addEventListener("mouseout", function statue (e) {
+   document.querySelector("#statue").style.opacity = "0";
+})
 
 // BOTTOM BAR
 // hover stroke to hide EN title
