@@ -145,6 +145,8 @@ h2 a:active { text-decoration: none; }
     
 
 .wrapper {
+  position: absolute;
+  top: 0;
     margin: 60px;
     margin-top: 40px; 
     padding: 0;
@@ -169,9 +171,9 @@ opacity: 1;
 
 
 /* body text */
-.text9 {
+.text10 {
  
-top: 80%;
+top: 30%;
 
     color: white;
     font-family: "dnp-shuei-nmincho-std", sans-serif;
@@ -180,9 +182,10 @@ top: 80%;
     line-height: 1.5;
   }
 @media (min-width: 601px) {
-  .text9 {
-    position: absolute;
-    width: 1880px;
+  .text10 {
+   position: absolute;
+   top: 30%;
+    width: 1300px;
     /* height: fit-content; */
     padding-bottom: 80px;
     }
@@ -196,7 +199,7 @@ top: 80%;
       margin: 20px;
       margin-bottom: 70px; 
   }
-  .text9 {
+  .text10 {
     position: inherit;
     width: auto;
     height: auto;
