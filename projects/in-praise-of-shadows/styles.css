@@ -127,14 +127,14 @@ path {
 
 /* stroke opacity memory */
 
+
 a path:link { fill: white;}
 
-a path:visited {fill: blue;}
+a:visited { fill-opacity: 0; }
 
-a path:hover { fill: white; fill-opacity: 0.5;}
+a:hover { fill-opacity: 0.5;}
 
 a:active { }
-
 
 /* hover for stroke opacity change */
 
@@ -143,15 +143,11 @@ opacity: 0.5;
 } */
 
 /* target child with fa class on parent hover*/
-/* path:hover 
-{
-  fill-opacity: 0.5;
-} */
 
 /* control child fa's opacity on both parent and self hover*/
-/* a path:hover > .cls-1
+/* path:hover > .cls-1 :hover 
 {
-  fill-opacity: 0;
+  fill-opacity: 1;
 } */
 
 /* svg:hover > #_陰 {
