@@ -65,7 +65,7 @@ padding: 5px;
 
 #Layer_1 {
   width: 110px;
-  height: 110px;
+  height: 10px;
   }
 
 path {
@@ -101,10 +101,39 @@ path {
     }
     }
 
+/* stroke animation */
+path {
+  -webkit-animation: blinker 3s linear ;
+  -webkit-animation-play-state: inherit;
+  animation: blinker 3s linear ;
+  animation-play-state: running;
+}
 
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+#_阝{ animation-delay: 0s; }
+#_人 { animation-delay: 2s; }
+#_云 { animation-delay: 4s; }
+#_医 { animation-delay: 6s; }
+#_殳 { animation-delay: 8s; }
+#_羽 { animation-delay: 10s; }
+#_礻{ animation-delay: 12s; }
+#_乚 { animation-delay: 14s; }
+#_言 { animation-delay: 16s; }
+#_替 { animation-delay: 18s; }
 
+/* stroke opacity memory */
 
+a path:link { fill: white;}
 
+a path:visited {fill: blue;}
+
+a path:hover { fill: white; fill-opacity: 0.5;}
+
+a:active { }
 
 
 /* hover for stroke opacity change */
@@ -114,16 +143,16 @@ opacity: 0.5;
 } */
 
 /* target child with fa class on parent hover*/
-path:hover 
+/* path:hover 
 {
   fill-opacity: 0.5;
-}
+} */
 
 /* control child fa's opacity on both parent and self hover*/
-path:hover > .cls-1 :hover 
+/* a path:hover > .cls-1
 {
-  fill-opacity: 1;
-}
+  fill-opacity: 0;
+} */
 
 /* svg:hover > #_陰 {
 opacity: 0.5;
