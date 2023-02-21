@@ -83,6 +83,7 @@ a:active { text-decoration: none; }
       margin-left: auto;
       margin-right: auto;
       text-align: center;
+      z-index: -1;
     }
     
     .row {
@@ -140,7 +141,20 @@ a:active { text-decoration: none; }
         }
         }
     
+#Layer_1 {  
+  animation: out 2s ease-in-out ;
+  animation-delay: 800ms;
+  animation-fill-mode: forwards;
+}
 
+@keyframes out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+}
 
 .wrapper {
     margin: 60px;
@@ -165,12 +179,12 @@ a:active { text-decoration: none; }
     font-family: "dnp-shuei-nmincho-std", sans-serif;
     word-spacing: -30px;
     line-height: 0;
-   
     text-align: center;
     width: 40px;
-    transition: 3s ease-in-out;
+    transition: 3s cubic-bezier(0, 0, 0.2, 1);;
     display: table-cell;
     vertical-align: bottom;
+    opacity: 0;
 }
 
 .buddha {
@@ -180,6 +194,18 @@ a:active { text-decoration: none; }
     margin-right: auto;
     display: inline-flex;
     z-index: 98;
+    animation: appear 2s ease-in-out ;
+    /* animation-delay: 1500ms; */
+    animation-fill-mode: backwards;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
 }
 
 #buddha {
@@ -192,18 +218,19 @@ a:active { text-decoration: none; }
   position: absolute;
   bottom: 36%;
   right: 15.5%;
-    background-color: gray;
+    /* background-color: gray; */
     width: 28px;
     height: 34px;
     border-radius: 50%;
     display: inline-block;
-  margin-left: auto;
+    margin-left: auto;
     margin-right: auto;
     z-index: 99;
     cursor: pointer;
 }
 
 .head:hover ~ .text12 {
+  opacity: 1;
   position: absolute;
   right: 0%;
   bottom: 40%; 
@@ -213,20 +240,7 @@ a:active { text-decoration: none; }
   width: 500px;
   display: table-cell;
   vertical-align: bottom;
-
 }
-
-  
-  
-  /* .spantext12 span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    animation: expand 2s ease forwards;
-  } */
-
-
   
   @keyframes expand {
     0% {
@@ -238,8 +252,8 @@ a:active { text-decoration: none; }
     }
   }
   
-
   
+
 @media (max-width: 734px) {
     p {
         display: inline;

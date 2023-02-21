@@ -1,5 +1,5 @@
 body {
-    background-color: #ececec;
+    background-color: #5B5B57;
 }
 
 h1, h2, h3, p {
@@ -20,8 +20,8 @@ h2 {
   
 }
 
-::-moz-selection {  background-color: #828282;color: white;  }
-::selection {   background-color: #828282; color: white; }
+::-moz-selection {  background-color: #ececec;color: #5B5B57;  }
+::selection {   background-color: #ececec; color: #5B5B57; }
 
 .btm-nav {
     position:fixed;
@@ -30,7 +30,7 @@ h2 {
     width: 100%;
     text-align: center;
     letter-spacing: 1rem;
-    background-color: #ececec;
+    /* background-color: #ececec; */
     /* 
 	animation-name: backgroundColorPalette;
 	animation-duration: 5s;
@@ -100,7 +100,7 @@ h2 a:active { text-decoration: none; }
     }
     
     #Layer_1 {
-      width: 110px;
+      width: 1100px;
       height: 110px;
       }
     
@@ -108,11 +108,32 @@ h2 a:active { text-decoration: none; }
     fill: #EFEFEF;
     fill-opacity: 0;
     stroke: white;
-    stroke-width: 1.5px;
+    stroke-width: 1.5px; 
+   
 }
 
-#_阝{
-  cursor: pointer;
+#Layer_1{
+  animation: bigger 7s ease-in-out alternate;
+  animation-delay: 500ms;
+  -webkit-animation-fill-mode: forwards;
+}
+@keyframes bigger {
+    0% {
+        transform: translateX(0px) scale(1);
+     }
+    100% {
+        transform: translateX(-180px) translateY(370px) scale(4.3);
+ }
+}
+
+.cls-1 {
+  animation: strokewidth 7s ease-in-out alternate;
+  animation-delay: 500ms;
+  -webkit-animation-fill-mode: forwards;
+}
+@keyframes strokewidth {
+    from { stroke-width:  1.5px; }
+    to { stroke-width: 0.6; }
 }
 
   /* @media screen and (orientation:landscape) { */

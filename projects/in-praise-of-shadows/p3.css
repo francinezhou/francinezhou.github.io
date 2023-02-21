@@ -170,8 +170,9 @@ h2 a:active { text-decoration: none; }
         }
     
 #Layer_1 {  
-  animation: fade 2s ease-in-out ;
+  animation: fade 2.5s ease-in-out ;
   animation-fill-mode: forwards;
+  animation-delay: 800ms;
 }
 
 @keyframes fade {
@@ -191,15 +192,20 @@ h2 a:active { text-decoration: none; }
   z-index: 99;
   margin-top: -20px;
   animation: bigger 5s ease-in-out alternate;
+
 }
 
 @keyframes bigger {
-    0% {
-        transform: scale(0.9);
-    }
-    100% {
-        transform: scale(1);
-    }
+   0% {
+    transform: scale(0.9);
+    opacity: 0;
+   }
+   
+   10% { opacity: 1;   }
+
+   30% { transform: scale(0.9);  }
+
+  100% { transform: scale(1); }
 }
 
 #table {
@@ -228,7 +234,7 @@ span {
   } */
 
   .wrapper {
-    height: 200vh;
+    height: 300vh;
     position: relative;
     /* top: 43%; */
     /* left: 15%; */
@@ -330,21 +336,7 @@ position: relative;
     shape-outside: polygon(100% 100%, 0 75%, 0% 100%);
   }
 
-/* 
-  .text3d:not(.text3d > p > .next):hover {
-    opacity: 0;
-  } */
 
-  /* .text3d:not(.text3d > p > .next):hover {
-    opacity: 0;
-  }  */
-/* 
-  .text3d:hover p {
-    opacity: 0;
-  } 
-  .text3d:hover .next {
-    opacity: 1;
-  }  */
 
   .text3d p {
     display: inline;
