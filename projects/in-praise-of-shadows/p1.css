@@ -1,5 +1,5 @@
 body {
-    background-color: #ececec;
+    background-color: #dadada;
 }
 
 h1, h2, h3, p {
@@ -11,7 +11,7 @@ h1, h2, h3, p {
  
 p {
     line-height: 1.5;
-    color: #828282;
+    color: #606060;
 }
 
 h2 {
@@ -20,8 +20,8 @@ h2 {
   
 }
 
-::-moz-selection {  background-color: #828282;color: white;  }
-::selection {   background-color: #828282; color: white; }
+::-moz-selection {  background-color: #606060;color: white;  }  }
+::selection {   background-color: #606060; color: white; }
 
 .btm-nav {
     position:fixed;
@@ -30,7 +30,7 @@ h2 {
     width: 100%;
     text-align: center;
     letter-spacing: 1rem;
-    background-color: #ececec;
+    background-color: #dadada;
     /* 
 	animation-name: backgroundColorPalette;
 	animation-duration: 5s;
