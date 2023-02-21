@@ -189,6 +189,8 @@ h2 a:active { text-decoration: none; }
     font-weight: 400;
     font-style: normal;
     line-height: 1.5;
+    opacity: 0;
+    transition: 2s ease-in-out;
   }
 @media (min-width: 601px) {
   .text4 {
@@ -199,6 +201,13 @@ h2 a:active { text-decoration: none; }
     }
 }
 
+.text4 span{
+  display: inline-block;
+  /* animation: wave-text 1s ease-in-out infinite; */
+}
+/* .text4:hover span{
+    animation: none;
+} */
 
 span:nth-of-type(1){ animation-delay: 0.0s; }
 span:nth-of-type(2){ animation-delay: 0.1s; transform: translate(-10px,0);}
@@ -239,26 +248,26 @@ span:nth-of-type(10){ animation-delay: 0.9s; transform: translate(-110px,0);}
   position: absolute;
   width: 300px;
   transform: translate(-70px, 90px);
-  
 }
 
 #vasePath{
   fill: none;
   filter: blur(1px);
-  animation: cursorappear 3s ease-in-out;
+  animation: cursorappear 2s ease-in-out;
   animation-delay: 7000ms;
   -webkit-animation-fill-mode: forwards;
 }
 
 @keyframes cursorappear {
     0% {
-      fill: none;
+      fill:#191919;
+      fill-opacity: 0;
       cursor: auto;
      }
 
-     
     100% {
       fill:#191919;
+      fill-opacity: 1;
       cursor: pointer;}
 }
 
@@ -266,19 +275,6 @@ span:nth-of-type(10){ animation-delay: 0.9s; transform: translate(-110px,0);}
   filter: blur(0px);
 }
 
-.text4 span{
-  display: inline-block;
-  animation: wave-text 1s ease-in-out infinite;
-  cursor: pointer;
-}
-.text4:hover span{
-    animation: none;
-}
-  span:nth-of-type(1){ animation-delay: 0.0s; }
-  span:nth-of-type(2){ animation-delay: 0.1s; }
-  span:nth-of-type(3){ animation-delay: 0.2s; }
-  span:nth-of-type(4){ animation-delay: 0.3s; }
-  span:nth-of-type(5){ animation-delay: 0.4s; }
 
 
 
