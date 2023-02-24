@@ -31,40 +31,36 @@ h3 {
 }
 
 .wrapper {
-  padding: 16px;
+  padding: 0px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(100vh - 20px);
+  height: 95vh;
 }
 
-
+.flex {
+  padding: 16px;
+}
 .flex1 {
-  height: 35%;
+  height: 27%;
 }
 .flex2 {
-  height: 45%;
   text-align: center;
-}
-.flex3 {
-  height: 25%;
 }
 
 .wrapper {
   opacity: 0;
 }
+
 .green {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  -ms-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  background: linear-gradient(90deg, rgba(42,74,42,1) 0%, rgba(76,135,63,1) 15%, rgba(243,246,108,1) 49%, rgba(91,145,67,1) 79%, rgba(53,94,49,1) 100%), url(https://grainy-gradients.vercel.app/noise.svg);
+  height: 150px;
   width: 250px;
-  height: 165px;
-  z-index: 1;
+  transform: translate(-50%,-50%);
+  left: calc((100%-250px)/2);
+  top: calc((100%-150px)/2);
+  background: linear-gradient(90deg, rgba(42,74,42,1) 0%, rgba(76,135,63,1) 15%, rgba(243,246,108,1) 49%, rgba(91,145,67,1) 79%, rgba(53,94,49,1) 100%), url(https://grainy-gradients.vercel.app/noise.svg);
+  z-index: 2;
   cursor: pointer;
 }
 
@@ -77,6 +73,7 @@ footer {
   position:fixed;
   bottom:  0;
   right: 0;
+  height: 5vh;
   width: 100%;
   color:  white;
   display:  flex;
@@ -90,10 +87,7 @@ footer {
 
 /* Media Query for mobile styles*/
 @media only screen and (max-width:  480px) {
-.wrapper {
-    padding: 5px;
-    height: 100vh;
-  }
+
  h1 {
     font-size: 4rem;
   }
@@ -103,14 +97,16 @@ footer {
   .bar {
     padding: 5px;
   }
-
+.flex {
+  padding: 5px;
+}
 .flex1 {
   height: 45%;
 }
 .flex2 {
   height: 50%;
 }
-.shape {
+.green {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -119,8 +115,7 @@ footer {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   background-color:green;
-  width: 150px;
-  height: 105px;
-  z-index: 1;
+  width: 160px;
+  height: 100px;
 }
 }
