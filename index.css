@@ -103,11 +103,14 @@ header {
   align-items:  center;
   cursor: auto;
 }
-.name, .about {
+.name, .right {
  margin-left: 2px;
  margin-right: 2px;
 }
 
+.classmates {
+  margin-right: 15px;
+}
 .wrapper {
     margin-bottom: 20px;
 }
