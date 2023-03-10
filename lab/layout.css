@@ -25,17 +25,16 @@ body {
   font-family: 'ia_writer_quattro_sregular';
   margin: 0;
   background-color: #efede1;
+  font-size: 0.9rem;
+  color: rgb(40, 40, 40);
 }
 
 h1 {
   font-family: 'ia_writer_quattro_sbold';
-  opacity: 75%;
+  color:black;
+  opacity: 85%;
 }
 
-p {
-  color: rgb(40, 40, 40);
-  font-size: 0.9rem;
-}
 
 a {
   color: blue;
@@ -148,6 +147,17 @@ img {
 
 .right {
   padding-top: 70px;
+}
+
+ol {
+	list-style-type: none;
+	counter-reset: li;
+}
+
+li:before {
+  counter-increment: li;
+  content: counter(li, decimal-leading-zero);
+	margin-right: 0.25em;
 }
 
 /* third section */
