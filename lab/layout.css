@@ -26,13 +26,13 @@ body {
   margin: 0;
   background-color: #efede1;
   font-size: 0.9rem;
-  color: rgb(40, 40, 40);
+  color: rgb(80, 80, 80);
 }
 
 h1 {
   font-family: 'ia_writer_quattro_sbold';
   color:black;
-  opacity: 85%;
+  opacity: 80%;
 }
 
 
@@ -41,13 +41,9 @@ a {
 }
 
 ul {
-  list-style-type: none;
+  
   padding: 0;
   margin: 0;
-}
-
-li {
-  margin-right: 2rem;
 }
 
 img {
@@ -66,15 +62,18 @@ img {
   padding: 0 2rem;
   height: 80px;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   position: fixed;
   z-index: 9;
 }
+.year{
+  flex-basis: 25%;
+}
+
 
 .main-title {
-  text-align: center;
+  text-align: left;
+  font-size: 1.8em;
 }
 
 .navigation {
@@ -88,30 +87,7 @@ img {
   z-index: 2;
 }
 
-.mobile-navigation {
-  background: rgb(217, 255, 0);
-  min-height: 100vh;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  display: none;
-}
 
-.mobile-navigation li {
-  margin: 0;
-}
-
-.header.open .mobile-navigation {
-  display: flex;
-  position: absolute;
-  background: rgb(81, 63, 212);
-}
 
 .footer {
   width: 100%;
@@ -147,18 +123,14 @@ img {
 
 .right {
   padding-top: 70px;
+  margin-bottom: 60px;
+  line-height: 1.5;
 }
 
 ol {
-	list-style-type: none;
-	counter-reset: li;
+  list-style-type: decimal-leading-zero;
 }
 
-li:before {
-  counter-increment: li;
-  content: counter(li, decimal-leading-zero);
-	margin-right: 0.25em;
-}
 
 /* third section */
 .third-section {
@@ -172,18 +144,19 @@ li:before {
 .image-box {
   flex-basis: 25%;
   margin: 0.3rem;
+  box-shadow: ;
 }
 
 /* media query for desktop values */
 @media only screen and (min-width: 770px) {
   .header {
+    flex-direction: row;
     justify-content: space-between;
     position: fixed;
   }
 
   .main-title {
-    text-align: left;
-    font-size: 2rem;
+
   }
   .navigation {
     display: flex;
@@ -204,8 +177,21 @@ li:before {
   }
 
   .right {
-    flex-basis: 41%;
+    flex-basis: 40%;
+    margin-bottom: 80px;
   }  
+
+  article {
+    columns: 2 6vw;
+    column-gap: 2vw;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  ol {
+    margin-block-start: 0em;
+    margin-block-end: 1em; 
+}
 
   .image-box {
     flex-basis: 20%;
