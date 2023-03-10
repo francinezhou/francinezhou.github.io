@@ -78,7 +78,7 @@ img {
 .second-section {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 100px;
+  padding-top: 85px;
   margin: 0.8rem;
 }
 
@@ -113,9 +113,12 @@ ol {
 }
 
 .image-box {
-  flex-basis: 25%;
+  flex-basis: 25vw;
   margin: 0.3rem;
-  box-shadow: ;
+}
+
+.image-box img {
+  box-shadow: 3px 4px 5px rgba(68, 68, 68, 0.2);
 }
 
 /* media query for desktop values */
@@ -187,6 +190,7 @@ ol {
 
   .image-box {
     flex-basis: 18vw;
+    height: 18vw;
     margin: 1.3rem;
   }
  
