@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Demo</title>
+    <script>
+        let num = 2;
+        const myConst = true;
+
+        //console.log ('Hello, World!');
+        //console.log(myConst);
+
+        let x = 5;
+        let y = 2;
+        //console.log(x+y);
+        //console.log(x==y);
+
+        console.log(x > 3 && y < 3 );
+        console.log(x > 3 || y == 3);
+        console.log(!(x > 3));
+
+        console.log (x);
+
+        x += 2;
+        x ++;
+        console.log (x);
+        
+
+        // let absence = 2;
+
+        // absence++; //absence = absence + 1;
+
+        // if (absence > 2) {
+        //     console.log("you will fail");
+        // }
+        // else if (absence == 2) {
+        //     console.log("danger zone");
+        // }
+        // else {
+        //     console.log("you're fine");
+        // }
+
+        // for (let i = 0; i < 5; i ++) {
+        //     console.log(i);
+        // }
+
+        // let i = 0;
+
+        // while (i < 5) {
+        //     console.log (i++);
+        //     i++;
+        // }
+        let absence = 0;
+
+        window.onload = () => {
+            const paragraph = document.querySelector ("p");
+            const btn = document.querySelector ("button");
+            // paragraph.textContent = "something new";
+           
+            btn.addEventListener("click",() => {
+                absence++;
+                paragraph.innerHTML = absence;
+            });
+            // paragraph.innerHTML = Math.random();
+            const btn1 = document.getElementById("color");
+
+            function random (number) {
+            return Math.floor (Math. random () * (number + 1));
+            // $ { } means insert a variable to string
+            }
+            btn1.addEventListener("click", () => {
+            const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+            document.body.style.backgroundColor = rndCol;
+            });
+        }
+       
+        
+
+    </script>
+</head>
+<body>
+    <p id="first">0</p>
+    <button> Absence + 1 </button>
+    <button id="color">Change color</button>
+
+    
+</body>
+</html>
