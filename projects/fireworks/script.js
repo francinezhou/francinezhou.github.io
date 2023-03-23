@@ -12,19 +12,9 @@ toggleMain.addEventListener( "click", () => {
   },
   false
 );
-const button = document.getElementById('button');
-toggleMain.addEventListener( "click", () => {
-    if (headerStatus.classList.contains("open")) {
-      headerStatus.classList.remove("open");
-    } else {
-      headerStatus.classList.remove("open");
-    }
-  },
-  false
-);
 
 let body = document.body;
-
+const button = document.getElementById('button');
 const performance = document.getElementById('performance');
 const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#00bcd4', '#009688', '#4caf50', '#ff9800', '#ff5722'];
 let firework = document.querySelector(".firework");

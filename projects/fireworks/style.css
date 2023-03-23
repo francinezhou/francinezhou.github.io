@@ -79,6 +79,8 @@ body {
   color: white;
   margin: 0;
   background-color: rgb(30, 27, 44);
+  font-family: "Gridlite";
+  font-variation-settings: "BACK" 100, "ELSH" 3, "RECT" 1, "wght" 900;
 }
 
 ul {
@@ -96,6 +98,12 @@ img {
   padding: 2rem;
   text-align: center;
 }
+h2 {
+  font-family: "Gridlite";
+  font-variation-settings: "BACK" 100, "ELSH" 3, "RECT" 1, "wght" 900;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 
 /* header styles begin here */
 .header {
@@ -111,11 +119,16 @@ img {
 }
 
 .main-title {
-  font-family: "june-expt-variable",sans-serif;
-  font-variation-settings: 'STYL' 100;
-  font-size: 1.5rem;
+  font-family: "Gridlite";
+  font-variation-settings: "BACK" 100, "ELSH" 3, "RECT" 1, "wght" 900;
+  font-size: 1.3rem;
   text-align: center;
   z-index: 99;
+  transition: 0.5s;
+}
+
+.main-title:hover {
+  font-variation-settings: "BACK" 100, "ELSH" 1, "RECT" 1, "wght" 900;
 }
 
 a:link { text-decoration: none; color: white;}
@@ -130,22 +143,41 @@ a:active { text-decoration: none; }
   display: none;
 }
 
-.switch {
+.catalogue-switch {
   font-family: "Gridlite";
   font-variation-settings: "BACK" 200, "ELSH" 4, "RECT" 300, "wght" 810.1;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: 1s;
+  margin-left: 15px;
 }
 
-.switch:hover {
+.catalogue-switch:hover {
+  font-variation-settings: "BACK" 200, "ELSH" 4, "RECT" 900, "wght" 200;
+}
+
+.index-switch {
+  font-family: "Gridlite";
+  font-variation-settings: "BACK" 200, "ELSH" 4, "RECT" 300, "wght" 810.1;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 1s;
+  margin-left: 15px;
+}
+
+.index-switch:hover {
   font-variation-settings: "BACK" 200, "ELSH" 4, "RECT" 900, "wght" 200;
 }
 
 .mobile-menu {
   position: absolute;
+  width: 100%;
   top: 32px;
-  left: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
   z-index: 2;
 }
 
@@ -162,6 +194,10 @@ a:active { text-decoration: none; }
   align-items: center;
   font-size: 1.5rem;
   display: none;
+  padding: 20vw;
+  text-align: center;
+  font-family: "Gridlite";
+  font-variation-settings: "BACK" 50, "ELSH" 3, "RECT" 1, "wght" 900;
 }
 
 .about li {
@@ -187,14 +223,25 @@ a:active { text-decoration: none; }
 
 #button {
     position: fixed;
-    bottom: 5%;
+    bottom: 8%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 3vmin;
+    width: 10vmin;
     height: 50px;
+    padding:10px;
     cursor: pointer;
     z-index: 99;
 }
+
+#Spark path.st0{
+  fill-opacity: 0;
+}
+
+#button:hover #Spark path.st0{
+  fill-opacity: 1;
+}
+
+
 
 /* first section */
 #performance {
@@ -241,14 +288,42 @@ a:active { text-decoration: none; }
   }
 }
 
+
 .cardLarge {
-  width: 300px;
-  height: 250px;
+  width: 320px;
+  height: 310px;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding: 15px;
   border-radius: 10px;
   background-color: #FF93E1;
   padding: 10px;
   cursor: pointer;
 }
+
+.image{
+  width: 92%;
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  z-index: 99;
+  cursor: help !important; 
+}
+
+.image a{
+  cursor: unset;
+}
+
+.text{
+
+  width: 92%;
+  /* margin-top: 25px; */
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 /* draft preview */
 #preview {
@@ -265,7 +340,7 @@ a:active { text-decoration: none; }
 
 
 
-/* #thumbnail {
+#thumbnail {
   width: 500px; height: 290px; 
   padding: 0; 
  
@@ -284,7 +359,7 @@ iframe {
         -webkit-transform: scale(0.5);
         -webkit-transform-origin: 0 0;
   
-} */
+}
 
 /* media query for desktop values */
 @media only screen and (min-width: 800px) {
@@ -305,8 +380,9 @@ iframe {
     display: none;
   }
 
-  .switch {
+  .catalogue-switch, .index-switch {
     font-size: 2rem;
+    margin-left: 0px;
   }
 
   .first-section {
@@ -319,3 +395,22 @@ iframe {
     margin: 3rem;
   }
 }
+
+
+details summary, menu, ol, ul {
+  list-style: none;
+}
+
+ul {
+  display: grid;
+  gap: calc(4 * var(--spacing));
+  margin-top: calc(4 * var(--spacing));
+}
+
+ li {
+    background-color: blueviolet;
+    border-radius: 5px;
+    display: grid;
+    gap: var(--spacing);
+}
+
