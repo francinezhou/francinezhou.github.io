@@ -71,9 +71,12 @@
 }
 
 
+
 * {
   box-sizing: border-box;
 }
+
+
 
 body {
   color: white;
@@ -81,7 +84,7 @@ body {
   height: 250vh;
   background: rgb(65,27,9);
   background-size: 100% 1000%;
-background: linear-gradient(0deg, rgba(65,27,9,1) 0%, rgba(55,16,49,1) 18%, rgba(17,6,60,1) 52%, rgba(27,27,44,1) 100%);
+  background: linear-gradient(0deg, rgba(65,27,9,1) 0%, rgba(55,16,49,1) 13%, rgba(17,6,60,1) 47%, rgba(27,27,44,1) 100%);
   /* background-color: rgb(30, 27, 44); */
   font-family: "Gridlite";
   font-variation-settings: "BACK" 100, "ELSH" 3, "RECT" 1, "wght" 900;
@@ -181,8 +184,16 @@ a:active { text-decoration: none; }
   z-index: 2;
 }
 
+.font-replace {
+  font-family: lores-9-wide, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.04rem;
+  position:relative; 
+  top:-.015em;
+}
+
 .about {
-  background: rgb(217, 255, 0);
   min-height: 100vh;
   width: 100%;
   position: fixed;
@@ -192,13 +203,18 @@ a:active { text-decoration: none; }
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
-  display: none;
+  font-size: 1.3rem;
   padding: 20vw;
   text-align: center;
   font-family: "Gridlite";
   font-variation-settings: "BACK" 50, "ELSH" 3, "RECT" 1, "wght" 900;
 }
+
+.dot-text {
+  font-family: "Gridlite";
+  font-variation-settings: "BACK" 50, "ELSH" 4, "RECT" 100, "wght" 900;
+}
+
 
 .about li {
   margin: 0;
@@ -210,51 +226,109 @@ a:active { text-decoration: none; }
   background: rgb(81, 63, 212);
 }
 
-.footer {
-  width: 100%;
-  padding: 0 2rem;
-  height: 80px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+#button-space {
   position: fixed;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -0%);
+  width: 15vmin;
+  height: 150px;
+  cursor: url(img/match.png),auto;
+  z-index: 98;
 }
-
 #button {
     position: fixed;
-    bottom: 8%;
+    bottom: 40px;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 8vmin;
-    height: 50px;
-    cursor: pointer;
+    width: 30px;
+    height: 40px;
+    cursor: url(img/match.png),auto;
     z-index: 99;
 }
 
-#Spark path.st0{
+svg a:link{ cursor: url(img/match.png),auto;}
+svg a:visited { cursor: url(img/match.png),auto;}
+svg a:hover { cursor: url(img/match.png),auto;}
+svg a:active { cursor: url(img/match.png),auto;}
+
+
+#Spark path.st1{
   fill-opacity: 0;
 }
 
-#rocketBody:hover ~ #Spark path.st0{
+#rocketBody:hover ~ #Spark path.st1{
   fill-opacity: 1;
 }
 
-#Spark path.st0:hover{
+#Spark path.st1:hover{
   fill-opacity: 1;
 }
 
-
-#button-space {
-  position: fixed;
-  bottom: 8%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 15vmin;
-  height: 150px;
-  cursor: url(img/match.svg),auto;
-  z-index: 98;
+#s1, #s2, #s3, #s4, #s5, #s6, #s7 {
+  opacity: 0;
+  -webkit-animation: blinker 1.5s linear ;
+  -webkit-animation-play-state: inherit;
+  animation: blinker 1.5s linear ;
+  animation-play-state: running;
+  animation-iteration-count: infinite;
 }
+
+@keyframes blinker {
+  100% {
+    opacity: 1;
+  }
+}
+#s1 { animation-delay: 0s; }
+#s2 { animation-delay: 1s; }
+#s3 { animation-delay: 2s; }
+#s4 { animation-delay: 3s; }
+#s5 { animation-delay: 4s; }
+#s6 { animation-delay: 6s; }
+#s7 { animation-delay: 7s; }
+
+/* media query for desktop values */
+@media only screen and (min-width: 800px) {
+  .header {
+    justify-content: space-between;
+  }
+
+  .main-title {
+    text-align: left;
+    font-size: 2rem;
+  }
+  .pc-menu {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .catalogue-switch, .index-switch {
+    font-size: 2rem;
+    margin-left: 0px;
+  }
+
+  #button {
+    width: 3vw;
+    height: 5vw;
+    min-width: 30px;
+    min-height: 40px;
+    
+  }
+
+  .first-section {
+    min-height: 1vh;
+  }
+
+
+  .fireworks {
+    flex-basis: 38%;
+    margin: 3rem;
+  }
+}
+
 
 /* first section */
 #performance {
@@ -374,44 +448,6 @@ iframe {
   
 }
 
-/* media query for desktop values */
-@media only screen and (min-width: 800px) {
-  .header {
-    justify-content: space-between;
-    position: relative;
-  }
-
-  .main-title {
-    text-align: left;
-    font-size: 2rem;
-  }
-  .pc-menu {
-    display: block;
-  }
-
-  .mobile-menu {
-    display: none;
-  }
-
-  .catalogue-switch, .index-switch {
-    font-size: 2rem;
-    margin-left: 0px;
-  }
-
-  #button {
-    width: 5vmin;
-  }
-
-  .first-section {
-    min-height: 1vh;
-  }
-
-
-  .fireworks {
-    flex-basis: 38%;
-    margin: 3rem;
-  }
-}
 
 
 details summary, menu, ol, ul {
