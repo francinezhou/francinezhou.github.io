@@ -1,29 +1,90 @@
-/* Some default properties to begin with  */
+@font-face {
+	src: url('font/GridlitePEVFTRIAL/GridlitePEVFTRIAL-All.ttf') format('woff2-variations');
+	font-family:'Gridlite';
+	font-style: normal;
+}
+
+@font-face {
+  font-family: "GridlitePEHalfwayCircle-El";
+  src: url("font/GridlitePEHalfwayCircleTRIAL/GridlitePEHalfwayCircleTRIAL-El.ttf") format("woff2")
+}
+
+@font-face {
+  font-family: "GridlitePEHalfwayCircle-ElTitle";
+  src: url("font/GridlitePEHalfwayCircleTRIAL/GridlitePEHalfwayCircleTRIAL-El.ttf") format("woff2");
+  unicode-range: U+20,U+45,U+47,U+50,U+64,U+65,U+69,U+6c,U+72,U+74,U+393,U+395,U+3a0,U+3ac,U+3af,U+3b9,U+3ba,U+3bb,U+3bd,U+3c1,U+3c4,U+413,U+415,U+41f,U+430,U+434,U+438,U+439,U+43b,U+440,U+442
+}
+
+@font-face {
+  font-family: "GridlitePEHalfwayCircle-Lt";
+  src: url("font/GridlitePEHalfwayCircleTRIAL/GridlitePEHalfwayCircleTRIAL-Lt.ttf") format("woff2")
+}
+
+@font-face {
+  font-family: "GridlitePEHalfwayCircle-LtTitle";
+  src: url("font/GridlitePEHalfwayCircleTRIAL/GridlitePEHalfwayCircleTRIAL-Lt.ttf") format("woff2");
+  unicode-range: U+20,U+45,U+47,U+50,U+64,U+65,U+69,U+6c,U+72,U+74,U+393,U+395,U+3a0,U+3ac,U+3af,U+3b9,U+3ba,U+3bb,U+3bd,U+3c1,U+3c4,U+413,U+415,U+41f,U+430,U+434,U+438,U+439,U+43b,U+440,U+442
+}
+
+@font-face {
+  font-family: "GridlitePEHalfwayCircle-Rg";
+  src: url("font/GridlitePEHalfwayCircleTRIAL/GridlitePEHalfwayCircleTRIAL-Rg.ttf") format("woff2")
+}
+
+@font-face {
+  font-family: "GridlitePEHalfwayCircle-RgTitle";
+  src: url("font/GridlitePEHalfwayCircleTRIAL/GridlitePEHalfwayCircleTRIAL-Rg.ttf") format("woff2");
+  unicode-range: U+20,U+45,U+47,U+50,U+64,U+65,U+69,U+6c,U+72,U+74,U+393,U+395,U+3a0,U+3ac,U+3af,U+3b9,U+3ba,U+3bb,U+3bd,U+3c1,U+3c4,U+413,U+415,U+41f,U+430,U+434,U+438,U+439,U+43b,U+440,U+442
+}
+
+@font-face {
+  font-family: "GridlitePEHalfwayCircle-Sb";
+  src: url("font/GridlitePEHalfwayCircleTRIAL/GridlitePEHalfwayCircleTRIAL-Sb.ttf") format("woff2")
+}
+
+@font-face {
+  font-family: "GridlitePEHalfwayCircle-SbTitle";
+  src: url("font/GridlitePEHalfwayCircleTRIAL/GridlitePEHalfwayCircleTRIAL-Sb.ttf") format("woff2");
+  unicode-range: U+20,U+45,U+47,U+50,U+64,U+65,U+69,U+6c,U+72,U+74,U+393,U+395,U+3a0,U+3ac,U+3af,U+3b9,U+3ba,U+3bb,U+3bd,U+3c1,U+3c4,U+413,U+415,U+41f,U+430,U+434,U+438,U+439,U+43b,U+440,U+442
+}
+
+@font-face {
+  font-family: "GridlitePEHalfwayCircle-Bd";
+  src: url("font/GridlitePEHalfwayCircleTRIAL/GridlitePEHalfwayCircleTRIAL-Bd.ttf") format("woff2")
+}
+
+@font-face {
+  font-family: "GridlitePEHalfwayCircle-BdTitle";
+  src: url("font/GridlitePEHalfwayCircleTRIAL/GridlitePEHalfwayCircleTRIAL-Bd.ttf") format("woff2");
+  unicode-range: U+20,U+45,U+47,U+50,U+64,U+65,U+69,U+6c,U+72,U+74,U+393,U+395,U+3a0,U+3ac,U+3af,U+3b9,U+3ba,U+3bb,U+3bd,U+3c1,U+3c4,U+413,U+415,U+41f,U+430,U+434,U+438,U+439,U+43b,U+440,U+442
+}
+
+@font-face {
+  font-family: "GridlitePEHalfwayCircle-Bl";
+  src: url("font/GridlitePEHalfwayCircleTRIAL/GridlitePEHalfwayCircleTRIAL-Bl.ttf") format("woff2")
+}
+
+@font-face {
+  font-family: "GridlitePEHalfwayCircle-BlTitle";
+  src: url("font/GridlitePEHalfwayCircleTRIAL/GridlitePEHalfwayCircleTRIAL-Bl.ttf") format("woff2");
+  unicode-range: U+20,U+45,U+47,U+50,U+64,U+65,U+69,U+6c,U+72,U+74,U+393,U+395,U+3a0,U+3ac,U+3af,U+3b9,U+3ba,U+3bb,U+3bd,U+3c1,U+3c4,U+413,U+415,U+41f,U+430,U+434,U+438,U+439,U+43b,U+440,U+442
+}
+
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  /* font-family: helvetica, arial, sans-serif; */
-  font-family: 'Nova Square', cursive;
   color: white;
   margin: 0;
-  background-color: black;
-}
-
-a {
-  color: blue;
+  background-color: rgb(30, 27, 44);
 }
 
 ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
-}
-
-li {
-  margin-right: 2rem;
 }
 
 img {
@@ -46,19 +107,39 @@ img {
   justify-content: center;
   align-items: center;
   position: fixed;
-  background: rgb(0, 0, 0);
+ z-index: 90;
 }
 
 .main-title {
-  font-style: italic;
-  font-family: serif;
+  font-family: "june-expt-variable",sans-serif;
+  font-variation-settings: 'STYL' 100;
   font-size: 1.5rem;
   text-align: center;
+  z-index: 99;
 }
 
-.navigation {
+a:link { text-decoration: none; color: white;}
+
+a:visited { text-decoration: none; color: white;}
+
+a:hover { text-decoration: none; color: white;}
+
+a:active { text-decoration: none; }
+
+.pc-menu {
   display: none;
-  font-size: 2rem;
+}
+
+.switch {
+  font-family: "Gridlite";
+  font-variation-settings: "BACK" 200, "ELSH" 4, "RECT" 300, "wght" 810.1;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.switch:hover {
+  font-variation-settings: "BACK" 200, "ELSH" 4, "RECT" 900, "wght" 200;
 }
 
 .mobile-menu {
@@ -68,7 +149,7 @@ img {
   z-index: 2;
 }
 
-.mobile-navigation {
+.about {
   background: rgb(217, 255, 0);
   min-height: 100vh;
   width: 100%;
@@ -79,15 +160,15 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: none;
 }
 
-.mobile-navigation li {
+.about li {
   margin: 0;
 }
 
-.header.open .mobile-navigation {
+.header.open .about {
   display: flex;
   position: absolute;
   background: rgb(81, 63, 212);
@@ -104,7 +185,7 @@ img {
   position: fixed;
 }
 
-.fire-button {
+#button {
     position: fixed;
     bottom: 5%;
     left: 50%;
@@ -112,59 +193,82 @@ img {
     width: 3vmin;
     height: 50px;
     cursor: pointer;
+    z-index: 99;
 }
 
 /* first section */
-.first-section {
-  min-height: 5vh;
-  background-repeat: no-repeat;
-  background-size: cover;
+#performance {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+    display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* second section */
-.second-section {
-  display: flex;
-  padding: 2rem;
+.firework {
+  position: absolute;
+  margin:5vw;
+  width: 200px;
+  height: 200px;
 }
 
-.second-section p {
-  font-size: 1.5rem;
+
+.cardSmall {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  animation-name: fly; /* Updated animation name */
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  background-color: #FF93E1;
+  cursor: pointer;
 }
 
-/* third section */
-.third-section {
-  min-height: 100vh;
+@keyframes fly { /* Updated animation name */
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(var(--translate-x), var(--translate-y)) rotate(720deg);
+  }
+}
+
+.cardLarge {
+  width: 300px;
+  height: 250px;
+  border-radius: 10px;
+  background-color: #FF93E1;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* draft preview */
+#preview {
+  position: absolute;
+  top: 100%;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.fireworks {
-  margin: 3rem;
-}
-
-.square {
-  width: 30px;
-  height: 30px;
-  transition: 0.2s ease-in-out;
-}
-
-.pink {
-  background-color: #FF93E1;
-}
-
-.square:hover {
-  width: 300px;
-  height: 250px;
-  border-radius: 2%;
-}
 
 
 
-#thumbnail {
+
+
+/* #thumbnail {
   width: 500px; height: 290px; 
   padding: 0; 
-  /* overflow: hidden; */
+ 
   z-index: 2;
   border: none;
 }
@@ -180,7 +284,7 @@ iframe {
         -webkit-transform: scale(0.5);
         -webkit-transform-origin: 0 0;
   
-}
+} */
 
 /* media query for desktop values */
 @media only screen and (min-width: 800px) {
@@ -193,22 +297,22 @@ iframe {
     text-align: left;
     font-size: 2rem;
   }
-  .navigation {
-    display: flex;
-    flex-direction: row;
+  .pc-menu {
+    display: block;
   }
 
   .mobile-menu {
     display: none;
   }
 
+  .switch {
+    font-size: 2rem;
+  }
+
   .first-section {
     min-height: 1vh;
   }
 
-  .second-section p {
-    font-size: 3rem;
-  }
 
   .fireworks {
     flex-basis: 38%;
