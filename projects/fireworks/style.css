@@ -78,7 +78,11 @@
 body {
   color: white;
   margin: 0;
-  background-color: rgb(30, 27, 44);
+  height: 250vh;
+  background: rgb(65,27,9);
+  background-size: 100% 1000%;
+background: linear-gradient(0deg, rgba(65,27,9,1) 0%, rgba(55,16,49,1) 18%, rgba(17,6,60,1) 52%, rgba(27,27,44,1) 100%);
+  /* background-color: rgb(30, 27, 44); */
   font-family: "Gridlite";
   font-variation-settings: "BACK" 100, "ELSH" 3, "RECT" 1, "wght" 900;
 }
@@ -94,10 +98,6 @@ img {
   height: auto;
 }
 
-.footer {
-  padding: 2rem;
-  text-align: center;
-}
 h2 {
   font-family: "Gridlite";
   font-variation-settings: "BACK" 100, "ELSH" 3, "RECT" 1, "wght" 900;
@@ -226,9 +226,8 @@ a:active { text-decoration: none; }
     bottom: 8%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 10vmin;
+    width: 8vmin;
     height: 50px;
-    padding:10px;
     cursor: pointer;
     z-index: 99;
 }
@@ -237,11 +236,25 @@ a:active { text-decoration: none; }
   fill-opacity: 0;
 }
 
-#button:hover #Spark path.st0{
+#rocketBody:hover ~ #Spark path.st0{
+  fill-opacity: 1;
+}
+
+#Spark path.st0:hover{
   fill-opacity: 1;
 }
 
 
+#button-space {
+  position: fixed;
+  bottom: 8%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15vmin;
+  height: 150px;
+  cursor: url(img/match.svg),auto;
+  z-index: 98;
+}
 
 /* first section */
 #performance {
@@ -383,6 +396,10 @@ iframe {
   .catalogue-switch, .index-switch {
     font-size: 2rem;
     margin-left: 0px;
+  }
+
+  #button {
+    width: 5vmin;
   }
 
   .first-section {
