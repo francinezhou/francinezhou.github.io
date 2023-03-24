@@ -1,18 +1,3 @@
-// define our variables
-let toggleMain = document.querySelector(".main-title");
-let headerStatus = document.querySelector(".header");
-
-// when user clicks on "menu", open and close the mobile navigation
-toggleMain.addEventListener( "click", () => {
-    if (headerStatus.classList.contains("open")) {
-      headerStatus.classList.remove("open");
-    } else {
-      headerStatus.classList.add("open");
-    }
-  },
-  false
-);
-
 fetch('fireworks.json')
     .then(response => response.json())
     .then(data => {
