@@ -212,8 +212,43 @@ a:active { text-decoration: none; }
 
 .dot-text {
   font-family: "Gridlite";
-  font-variation-settings: "BACK" 50, "ELSH" 4, "RECT" 100, "wght" 900;
+  animation: dotVariable 10s ease-in-out ;
+  animation-play-state: running;
+  animation-iteration-count: infinite;
+  /* animation-direction: alternate; */
 }
+
+
+@keyframes dotVariable {
+0% {
+  font-variation-settings: "BACK" 200, "ELSH" 2, "RECT" 600, "wght" 200;
+}
+
+5% {
+  font-variation-settings: "BACK" 200, "ELSH" 1, "RECT" 600, "wght" 200;
+}
+
+30% {
+  font-variation-settings: "BACK" 200, "ELSH" 1, "RECT" 50, "wght" 700;
+}
+
+50% {
+  font-variation-settings: "BACK" 100, "ELSH" 2, "RECT" 40, "wght" 900;
+}
+
+54% {
+  font-variation-settings: "BACK" 200, "ELSH" 1, "RECT" 60, "wght" 200;
+}
+
+60% {
+  font-variation-settings: "BACK" 200, "ELSH" 2, "RECT" 60, "wght" 200;
+}
+
+100% {
+  font-variation-settings: "BACK" 10, "ELSH" 3, "RECT" 40, "wght" 900;
+}
+}
+
 
 
 .about li {
