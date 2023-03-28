@@ -4,7 +4,7 @@
       "artist": "M.C. Escher",
       "date": "1933-11-01T05:00:00.000Z",
       "location": "Rome, Italy",
-      "imageLink": "../img/escher.jpeg",
+      "imageLink": "img/escher.jpeg",
       "mediaHref": "https://www.ngv.vic.gov.au/custom/screens/escher-printmaking/lithography.html",
       "videoId": ""
     },
@@ -13,7 +13,7 @@
       "artist": "C. T. Brock and Company",
       "date": "ca. 1880s",
       "location": "Japan",
-      "imageLink": "../img/Firework-Japan-illustrations-blue78.jpeg",
+      "imageLink": "img/Firework-Japan-illustrations-blue78.jpeg",
       "mediaHref": "https://publicdomainreview.org/collection/japanese-fireworks-catalogues",
       "videoId": ""
     },
