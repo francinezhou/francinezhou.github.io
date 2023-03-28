@@ -10,11 +10,13 @@ fetch('fireworks.json')
 		const h3 = document.createElement('h3');
         const p = document.createElement('p');
         const img = document.createElement('img');
+		// const vid = document.createElement('');
 
         // Set the text content and href attributes for the link
         h3.textContent = item.title;
 		p.textContent = item.artist + ' ' + item.date + ' ' + item.location;
         img.src = item.imageLink;
+		// if imageLink 
 
         /* 
          * Onclick function

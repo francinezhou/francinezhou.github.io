@@ -41,6 +41,7 @@ button.addEventListener('click', () => {
     cardSmall.style.background = colors[Math.floor(Math.random() * colors.length)];
 	cardSmall.style.setProperty('--translate-x', Math.cos(i * Math.PI / 4) * 100 + 'px');
     cardSmall.style.setProperty('--translate-y', Math.sin(i * Math.PI / 4) * 100 + 'px');
+    
     firework.appendChild(cardSmall);
   }
 });
