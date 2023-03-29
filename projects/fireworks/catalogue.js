@@ -12,6 +12,7 @@ fetch('fireworks.json')
         const textdiv = document.createElement('div');
 		const h3 = document.createElement('h3');
         const p = document.createElement('p');
+        const a=document.createElement('a');
         
 		// const vid = document.createElement('');
 
@@ -19,6 +20,7 @@ fetch('fireworks.json')
         h3.textContent = item.title;
 		p.textContent = item.artist + '. ' + item.date + '. ' + item.location;
         img.src = "img/" + item.imageLink;
+        a.href = item.mediaHref;
 		// if imageLink 
 
         /* 
@@ -40,7 +42,8 @@ fetch('fireworks.json')
 
         div.classList.add("cardOutline");
         textdiv.classList.add("textdiv");
-        mediadiv.classList.add("videodiv");
+        mediadiv.classList.add("mediadiv");
+       
         });
     })
     .catch(error => console.error(error));
