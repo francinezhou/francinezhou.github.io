@@ -14,15 +14,15 @@ toggleMain.addEventListener( "click", () => {
 );
 
 let body = document.body;
-const button = document.getElementById('button');
+const rocket = document.getElementById('rocket');
 const performance = document.getElementById('performance');
 const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#00bcd4', '#009688', '#4caf50', '#ff9800', '#ff5722'];
 let firework = document.querySelector(".firework");
 
-/*  click fire button for fireworks card animation */
+/*  click rocket for fireworks card animation */
 let fireworks = document.querySelectorAll(".firework");
 
-button.addEventListener('click', () => {
+rocket.addEventListener('click', () => {
   // Create 1 firework per click
   for (let i = 0; i < 1; i++) {
     const firework = document.createElement('div');
