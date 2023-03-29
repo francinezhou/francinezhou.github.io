@@ -1,0 +1,71 @@
+#filters {
+    margin: 7px;
+    padding: 10px;
+    z-index: 99; 
+}
+
+
+.button {
+    display: inline-block;
+    padding: 0.5em 1.0em;
+    font-family: "Gridlite";
+    font-variation-settings: "BACK" 200, "ELSH" 4, "RECT" 100, "wght" 810.1;
+    font-size: 16px;
+    color: white;
+    /* text-shadow: 0 1px white; */
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    overflow: hidden; 
+    cursor:pointer;
+    transition: 0.5s;
+  }
+  
+  .button:hover {
+    font-variation-settings: "BACK" 10, "ELSH" 1, "RECT" 200, "wght" 800;
+    color: rgb(255, 255, 255);
+  }
+  
+  .button:active,
+  .button.is-checked {
+    /* font-variation-settings: "BACK" 100, "ELSH" 3, "RECT" 1, "wght" 300;
+    */
+  }
+  
+  .button.is-checked {
+    font-family: "Gridlite";
+    font-variation-settings: "BACK" 100, "ELSH" 3, "RECT" 1, "wght" 900;
+  }
+  
+  .button:active {
+  }
+  
+  /* ---- button-group ---- */
+  
+  .button-group {
+    margin-bottom: 20px;
+  }
+  
+  .button-group:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  
+  .button-group .button {
+    float: left;
+    border-radius: 0;
+    margin-left: 0;
+    margin-right: 1px;
+  }
+  
+  .button-group .button:first-child { border-radius: 0.5em 0 0 0.5em; }
+  .button-group .button:last-child { border-radius: 0 0.5em 0.5em 0; }
+  
+
+/* media query for desktop values */
+@media only screen and (min-width: 800px) {
+  #filters {
+    margin: 7px;
+  }
+}

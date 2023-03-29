@@ -7,15 +7,18 @@ fetch('fireworks.json')
         // Loop through the data and add each item to the div
         data.forEach(item => {
         const div = document.createElement('div');
+        const mediadiv = document.createElement('div');
+        const img = document.createElement('img');
+        const textdiv = document.createElement('div');
 		const h3 = document.createElement('h3');
         const p = document.createElement('p');
-        const img = document.createElement('img');
+        
 		// const vid = document.createElement('');
 
         // Set the text content and href attributes for the link
         h3.textContent = item.title;
-		p.textContent = item.artist + ' ' + item.date + ' ' + item.location;
-        img.src = item.imageLink;
+		p.textContent = item.artist + '. ' + item.date + '. ' + item.location;
+        img.src = "img/" + item.imageLink;
 		// if imageLink 
 
         /* 
@@ -28,10 +31,20 @@ fetch('fireworks.json')
         }
         
         // Add the HTML tags to webpage
-        div.appendChild(img);
-		div.appendChild(h3);
-        div.appendChild(p);
+        mediadiv.appendChild(img);
+	    textdiv.appendChild(h3);
+        textdiv.appendChild(p);
+        div.appendChild(mediadiv);
+        div.appendChild(textdiv);
         list.appendChild(div);
+
+        div.classList.add("cardOutline");
+        textdiv.classList.add("textdiv");
+        mediadiv.classList.add("videodiv");
         });
     })
     .catch(error => console.error(error));
+
+
+
+   
