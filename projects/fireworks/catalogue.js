@@ -32,13 +32,17 @@ fetch('fireworks.json')
            
         }
         
+        a.setAttribute("target", "_blank");
+
         // Add the HTML tags to webpage
-        mediadiv.appendChild(img);
+        mediadiv.appendChild(a);
+        a.appendChild(img);
 	    textdiv.appendChild(h3);
         textdiv.appendChild(p);
         div.appendChild(mediadiv);
         div.appendChild(textdiv);
         list.appendChild(div);
+       
 
         div.classList.add("cardOutline");
         textdiv.classList.add("textdiv");
