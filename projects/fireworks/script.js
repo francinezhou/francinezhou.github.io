@@ -57,6 +57,30 @@ let cardLarge = document.querySelector(".cardLarge");
 cardSmall.addEventListener("click", cardSize);
 
 
+// Get all the elements on the page
+const elements = document.getElementsByTagName('*');
+
+// Loop through each element
+for (let i = 0; i < elements.length; i++) {
+  const element = elements[i];
+
+  // Only modify elements that contain text
+  if (element.childNodes.length && element.tagName !== 'SCRIPT' && element.tagName !== 'STYLE') {
+    // Loop through each child node of the element
+    for (let j = 0; j < element.childNodes.length; j++) {
+      const node = element.childNodes[j];
+
+      // Replace the letter "Q" with the specified <span> element
+      if (node.nodeType === 3 && node.nodeValue.includes('Q')) {
+        const text = node.nodeValue;
+        const replacedText = text.replace(/Q/g, '<span class="font-replace">Q</span>');
+        const newNode = document.createElement('span');
+        newNode.innerHTML = replacedText;
+        element.replaceChild(newNode, node);
+      }
+    }
+  }
+}
 
 
 // fetch("fireworks.json")

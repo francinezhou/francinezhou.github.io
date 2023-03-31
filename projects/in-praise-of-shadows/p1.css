@@ -20,7 +20,7 @@ h2 {
   
 }
 
-::-moz-selection {  background-color: #606060;color: white;  }  }
+::-moz-selection {  background-color: #606060;color: white;  }  
 ::selection {   background-color: #606060; color: white; }
 
 .btm-nav {

@@ -1,353 +1,353 @@
 [
-    {
-      "title": "Fireworks",
-      "artist": "M.C. Escher",
-      "date": "1933-11-01T05:00:00.000Z",
-      "location": "Rome, Italy",
-      "imageLink": "img/escher.jpeg",
-      "mediaHref": "https://www.ngv.vic.gov.au/custom/screens/escher-printmaking/lithography.html",
-      "videoId": ""
-    },
-    {
-      "title": "Flowers of Fire: Illustrations from Japanese Fireworks Catalogues for Hirayama Fireworks and Yokoi Fireworks",
-      "artist": "C. T. Brock and Company",
-      "date": "ca. 1880s",
-      "location": "Japan",
-      "imageLink": "img/Firework-Japan-illustrations-blue78.jpeg",
-      "mediaHref": "https://publicdomainreview.org/collection/japanese-fireworks-catalogues",
-      "videoId": ""
-    },
-    {
-      "title": "Flowers of Fire: Illustrations from Japanese Fireworks Catalogues for Hirayama Fireworks and Yokoi Fireworks",
-      "artist": "C. T. Brock and Company",
-      "date": "ca. 1880s",
-      "location": "Japan",
-      "imageLink": "../img/Firework-Japan-illustrations-black76.jpeg",
-      "mediaHref": "https://publicdomainreview.org/collection/japanese-fireworks-catalogues",
-      "videoId": ""
-    },
-    {
-      "title": "Flowers of Fire: Illustrations from Japanese Fireworks Catalogues for Hirayama Fireworks and Yokoi Fireworks",
-      "artist": "C. T. Brock and Company",
-      "date": "ca. 1880s",
-      "location": "Japan",
-      "imageLink": "../img/Firework-Japan-illustrations-black38.jpeg",
-      "mediaHref": "https://publicdomainreview.org/collection/japanese-fireworks-catalogues",
-      "videoId": ""
-    },
-    {
-      "title": "Diwali Hindu Festival of Lights",
-      "artist": "Jacek Kadaj",
-      "date": "2013-10-12T04:00:00.000Z",
-      "location": "Old Delhi, India",
-      "imageLink": "../img/diwali2013.jpeg",
-      "mediaHref": "https://www.cntraveler.com/galleries/2012-11-14/diwali-hindu-festival-of-light-photos",
-      "videoId": ""
-    },
-    {
-      "title": "Fourth of July. From a boat docked at the Lighthouse Point Marina & Yacht Club in South Toms River",
-      "artist": "Thomas P. Costello",
-      "date": "2021-07-04T04:00:00.000Z",
-      "location": "New Jersey, United States",
-      "imageLink": "../img/jersey.jpeg",
-      "mediaHref": "https://www.app.com/story/life/2022/06/21/nj-fireworks-near-me-jersey-shore-fourth-of-july-2022/7650345001/",
-      "videoId": ""
-    },
-    {
-      "title": "The Joyous Festival",
-      "artist": "Gaston La Touche",
-      "date": "ca. 1906",
-      "location": "Paris, France",
-      "imageLink": "../img/joyous.jpeg",
-      "mediaHref": "https://artsandculture.google.com/asset/the-joyous-festival-gaston-la-touche/vQGLRU3bkNUsgg",
-      "videoId": ""
-    },
-    {
-      "title": "Fireworks on the Sumida at Present",
-      "artist": "Kawase Hasui",
-      "date": "n.d.",
-      "location": "Japan",
-      "imageLink": "../img/Kawase-Hasui.jpeg",
-      "mediaHref": "https://www.miniaturejapanesewoodblocks.net/gallery-2-1",
-      "videoId": ""
-    },
-    {
-      "title": "Fireworks at Ryogoku Bridge, Tokyo",
-      "artist": "Takahashi Shotei",
-      "date": 1936,
-      "location": "Tokyo, Japan",
-      "imageLink": "../img/Kobayashi-Kiyochika-1881-Ikenohata.jpeg",
-      "mediaHref": "https://woodblock-print.eu/takahashi-shotei-fireworks-at-ryogoku-bridge%2C-tokyo-detail.html?utm_source=barnebys&utm_medium=referral&utm_campaign=barnebys&utm_content=2021-08-08",
-      "videoId": ""
-    },
-    {
-      "title": "Fireworks at Ikenohata 「池の端花火」",
-      "artist": "Kobayashi Kiyochika",
-      "date": 1881,
-      "location": "Japan",
-      "imageLink": "../img/.jpeg",
-      "mediaHref": "https://www.metmuseum.org/art/collection/search/712976",
-      "videoId": ""
-    },
-    {
-      "title": "Celebration of Light, Team Brazil",
-      "artist": "Vick Sahota",
-      "date": 2015,
-      "location": "Vancouver, Canada",
-      "imageLink": "../img/Brazil-Celebration-of-Light.gif",
-      "mediaHref": "http://www.vicksahota.com/blog/2015/8/11/2015-celebration-of-light",
-      "videoId": ""
-    },
-    {
-      "title": "Celebration of Light, Team Canada",
-      "artist": "Vick Sahota",
-      "date": 2015,
-      "location": "Vancouver, Canada",
-      "imageLink": "../img/Canada-Celebration-of-Light.gif",
-      "mediaHref": "http://www.vicksahota.com/blog/2015/8/11/2015-celebration-of-light",
-      "videoId": ""
-    },
-    {
-      "title": "Your Daytime Fireworks",
-      "artist": "Cai Guo-Qiang",
-      "date": 2022,
-      "location": "",
-      "imageLink": "../img/daytime.gif",
-      "mediaHref": "https://yourdaytimefireworks.trlab.com/",
-      "videoId": ""
-    },
-    {
-      "title": "Aspergillus Fumigatus Fungal Fireworks ",
-      "artist": "The Scientist Magazine",
-      "date": 2017,
-      "location": "",
-      "imageLink": "../img/fungus.gif",
-      "mediaHref": "https://www.the-scientist.com/image-of-the-day/image-of-the-day-fungal-fireworks-31321",
-      "videoId": ""
-    },
-    {
-      "title": "How to Use After Effects: Animate Simple Fireworks",
-      "artist": "Lara Lee",
-      "date": "2017-07-01T04:00:00.000Z",
-      "location": "",
-      "imageLink": "../img/lara-lee.gif",
-      "mediaHref": "https://www.laralee.design/animate-simple-fireworks/",
-      "videoId": ""
-    },
-    {
-      "title": "ASCII Art Fireworks",
-      "artist": "@r_vizzz",
-      "date": "2020-12-08T05:00:00.000Z",
-      "location": "",
-      "imageLink": "../img/ascii.gif",
-      "mediaHref": "https://preview.redd.it/xhzh22tjr2461.gif?format=mp4&v=enabled&s=8aee323d20c40b643a86ea3e13b0ef6dbdae399e",
-      "videoId": ""
-    },
-    {
-      "title": "Fireworks, Vernon Bridge",
-      "artist": "Theodore Earl Butler",
-      "date": 1908,
-      "location": "Giverny, France",
-      "imageLink": "../img/VernonBridge-Theodore.jpeg",
-      "mediaHref": "",
-      "videoId": ""
-    },
-    {
-      "title": "Summer Night 「夏の夜」",
-      "artist": "Shiro Kasamatsu",
-      "date": 1957,
-      "location": "Tokyo, Japan",
-      "imageLink": "../img/Shiro-KASAMATSU.jpeg",
-      "mediaHref": "",
-      "videoId": ""
-    },
-    {
-      "title": "FIRE-WORKES and ILLUMINATIONS on the River Thames",
-      "artist": "Anonymous",
-      "date": "1749-05-15T04:56:02.000Z",
-      "location": "United Kingdom",
-      "imageLink": "../img/RoyalFireworks.jpeg",
-      "mediaHref": "",
-      "videoId": ""
-    },
-    {
-      "title": "Diwali Fireworks",
-      "artist": "Sajjad Hussain",
-      "date": "2011-10-26T04:00:00.000Z",
-      "location": "New Delhi, India",
-      "imageLink": "../img/diwali2011.jpeg",
-      "mediaHref": "",
-      "videoId": ""
-    },
-    {
-      "title": "Fireworks in Venice",
-      "artist": "Konstantin Gorbatov",
-      "date": 1935,
-      "location": "Venice, Italy",
-      "imageLink": "../img/venice-Konstantin.jpeg",
-      "mediaHref": "",
-      "videoId": ""
-    },
-    {
-      "title": "Fireworks over Castel Sant’Angelo in Rome",
-      "artist": "Jacob Philipp Hackert",
-      "date": 1775,
-      "location": "Rome, Italy",
-      "imageLink": "../img/castel-jacob.jpeg",
-      "mediaHref": "",
-      "videoId": ""
-    },
-    {
-      "title": "La Girandola a Castel Sant’Angelo",
-      "artist": "Ippolito Caffi",
-      "date": "Mid 19th century",
-      "location": "Rome, Italy",
-      "imageLink": "../img/castel1.jpeg",
-      "mediaHref": "",
-      "videoId": ""
-    },
-    {
-      "title": "La Girandola a Castel Sant’Angelo",
-      "artist": "Ippolito Caffi",
-      "date": "1840-48",
-      "location": "Rome, Italy",
-      "imageLink": "../img/castel2.jpeg",
-      "mediaHref": "",
-      "videoId": ""
-    },
-    {
-      "title": "Test fireworks by Johann Khonn",
-      "artist": "Joseph Furttenbach",
-      "date": 1645,
-      "location": "Germany",
-      "imageLink": "../img/Joseph-germany.jpeg",
-      "mediaHref": "",
-      "videoId": ""
-    },
-    {
-      "title": "Fuochi d'artificio a Venezia",
-      "artist": "Georges Barbier",
-      "date": 1924,
-      "location": "Venice, Italy",
-      "imageLink": "../img/Georges-Barbier-Venice-1924.jpeg",
-      "mediaHref": "",
-      "videoId": ""
-    },
-    {
-      "title": "River Fireworks 「鴨川花火」",
-      "artist": "Kotozuka Eiichi",
-      "date": "ca. 1950s",
-      "location": "Japan",
-      "imageLink": "../img/.jpeg",
-      "mediaHref": "",
-      "videoId": ""
-    },
-    {
-      "title": "Fuochi d’artificio",
-      "artist": "Firmin Baes",
-      "date": "1937-10-01T05:00:00.000Z",
-      "location": "Paris, France",
-      "imageLink": "../img/Firmin-Baes-1937-Fuochi.jpeg",
-      "mediaHref": "",
-      "videoId": ""
-    },
-    {
-        "title": "Fireworks I",
-        "artist": "Joan Miro",
-        "date": 1974,
-        "location": "Barcelona, Spain",
-        "imageLink": "../img/joan-1974.jpeg",
-        "mediaHref": "",
-        "videoId": ""
-      },
-      {
-        "title": "Fuochi d’artificio, Venezia",
-        "artist": "Jessie Drew-Bear",
-        "date": 1950,
-        "location": "Venice, Italy",
-        "imageLink": "../img/Jessie-Drew-Bear.jpeg",
-        "mediaHref": "",
-        "videoId": ""
-      },
-      {
-        "title": "New Year Fireworks Show",
-        "artist": "Andrew Boening",
-        "date": "December 31, 2022",
-        "location": "Auckland, New Zealand",
-        "imageLink": "../img/auckland-tower.gif",
-        "mediaHref": "",
-        "videoId": ""
-      },
-      {
-        "title": "Handheld Fireworks",
-        "artist": "Jessie Chen",
-        "date": 2022,
-        "location": "Shantou, China",
-        "imageLink": "../img/jessie2022.gif",
-        "mediaHref": "",
-        "videoId": ""
-      },
-      {
-        "title": "Sky Ladder",
-        "artist": "Cai Guo-Qiang",
-        "date": "June 15, 2015 at 4:49 am",
-        "location": "Quanzhou, China",
-        "imageLink": "",
-        "mediaHref": "",
-        "videoId": "https://www.youtube.com/embed/eixezZuerc0"
-      },
-      {
-        "title": "Kuwait National Day (اليوم الوطني للكويت) Kuwait Tower Fireworks Celebration",
-        "artist": "",
-        "date": "February 25th, 2019",
-        "location": "Kuwait",
-        "imageLink": "",
-        "mediaHref": "",
-        "videoId": "https://www.youtube.com/embed/ZOwu33l_YJ4ZOwu33l_YJ4"
-      },
-      {
-        "title": "Space Needle New Year 2013 Fireworks Seattle",
-        "artist": "Alberto Navarro",
-        "date": "2012-12-31T05:00:00.000Z",
-        "location": "Seattle, United States",
-        "imageLink": "",
-        "mediaHref": "",
-        "videoId": "https://www.youtube.com/embed/PcoxfxlNqX8"
-      },
-      {
-        "title": "Finale 3D software for fireworks design",
-        "artist": "Michael Lee",
-        "date": 2017,
-        "location": "",
-        "imageLink": "",
-        "mediaHref": "",
-        "videoId": "https://www.youtube.com/embed/LdEaBmL33LE"
-      },
-      {
-        "title": "The Complete Computer Fireworks Celebration Kit",
-        "artist": "Nena",
-        "date": 1985,
-        "location": "",
-        "imageLink": "",
-        "mediaHref": "",
-        "videoId": "https://www.youtube.com/embed/YS3pcwrw7ow"
-      },
-      {
-        "title": "Stochastic Processes Fireworks",
-        "artist": "Don Cowan",
-        "date": "n.d.",
-        "location": "",
-        "imageLink": "",
-        "mediaHref": "",
-        "videoId": "https://marketimpacts.squarespace.com/storage/9781118385357%20ls1201%20Fireworks%20Display.htm"
-      },
-      {
-        "title": "Procedural fireworks made in c++ using gradient fill and DIBs",
-        "artist": "DarkYearGamer",
-        "date": "2021-07-05T04:00:00.000Z",
-        "location": "",
-        "imageLink": "",
-        "mediaHref": "",
-        "videoId": "https://www.reddit.com/r/computergraphics/comments/oe7b72/procedural_fireworks_made_in_c_using_gradient/"
-      }
+  {
+    "title": "Fireworks",
+    "artist": "M.C. Escher",
+    "date": "November, 1933",
+    "location": "Rome, Italy",
+    "imageLink": "escher.jpeg",
+    "mediaHref": "https://www.ngv.vic.gov.au/custom/screens/escher-printmaking/lithography.html",
+    "videoId": ""
+  },
+  {
+    "title": "Flowers of Fire: Illustrations from Japanese Fireworks Catalogues for Hirayama Fireworks and Yokoi Fireworks",
+    "artist": "C. T. Brock and Company",
+    "date": "ca. 1880s",
+    "location": "Japan",
+    "imageLink": "Firework-Japan-illustrations-blue78.jpeg",
+    "mediaHref": "https://publicdomainreview.org/collection/japanese-fireworks-catalogues",
+    "videoId": ""
+  },
+  {
+    "title": "Flowers of Fire: Illustrations from Japanese Fireworks Catalogues for Hirayama Fireworks and Yokoi Fireworks",
+    "artist": "C. T. Brock and Company",
+    "date": "ca. 1880s",
+    "location": "Japan",
+    "imageLink": "Firework-Japan-illustrations-black76.jpeg",
+    "mediaHref": "https://publicdomainreview.org/collection/japanese-fireworks-catalogues",
+    "videoId": ""
+  },
+  {
+    "title": "Flowers of Fire: Illustrations from Japanese Fireworks Catalogues for Hirayama Fireworks and Yokoi Fireworks",
+    "artist": "C. T. Brock and Company",
+    "date": "ca. 1880s",
+    "location": "Japan",
+    "imageLink": "Firework-Japan-illustrations-black38.jpeg",
+    "mediaHref": "https://publicdomainreview.org/collection/japanese-fireworks-catalogues",
+    "videoId": ""
+  },
+  {
+    "title": "Diwali Hindu Festival of Lights",
+    "artist": "Jacek Kadaj",
+    "date": "October 1, <span class="font-replace">2</span>013",
+    "location": "Old Delhi, India",
+    "imageLink": "diwali2013.jpeg",
+    "mediaHref": "https://www.cntraveler.com/galleries/2012-11-14/diwali-hindu-festival-of-light-photos",
+    "videoId": ""
+  },
+  {
+    "title": "Fourth of July. From a boat docked at the Lighthouse Point Marina & Yacht Club in South Toms River",
+    "artist": "Thomas P. Costello",
+    "date": "July 4, 2021",
+    "location": "New Jersey, United States",
+    "imageLink": "jersey.jpeg",
+    "mediaHref": "https://www.app.com/story/life/2022/06/21/nj-fireworks-near-me-jersey-shore-fourth-of-july-2022/7650345001/",
+    "videoId": ""
+  },
+  {
+    "title": "The Joyous Festival",
+    "artist": "Gaston La Touche",
+    "date": "ca. 1906",
+    "location": "Paris, France",
+    "imageLink": "joyous.jpeg",
+    "mediaHref": "https://artsandculture.google.com/asset/the-joyous-festival-gaston-la-touche/vQGLRU3bkNUsgg",
+    "videoId": ""
+  },
+  {
+    "title": "Fireworks on the Sumida at Present",
+    "artist": "Kawase Hasui",
+    "date": "n.d.",
+    "location": "Japan",
+    "imageLink": "Kawase-Hasui.jpeg",
+    "mediaHref": "https://www.miniaturejapanesewoodblocks.net/gallery-2-1",
+    "videoId": ""
+  },
+  {
+    "title": "Fireworks at Ryogoku Bridge, Tokyo",
+    "artist": "Takahashi Shotei",
+    "date": 1936,
+    "location": "Tokyo, Japan",
+    "imageLink": "Takahashi-shotei-1936.jpeg",
+    "mediaHref": "https://woodblock-print.eu/takahashi-shotei-fireworks-at-ryogoku-bridge%2C-tokyo-detail.html?utm_source=barnebys&utm_medium=referral&utm_campaign=barnebys&utm_content=2021-08-08",
+    "videoId": ""
+  },
+  {
+    "title": "Fireworks at Ikenohata 「池の端花火」",
+    "artist": "Kobayashi Kiyochika",
+    "date": 1881,
+    "location": "Japan",
+    "imageLink": "Kobayashi-Kiyochika-1881-Ikenohata.jpeg",
+    "mediaHref": "https://www.metmuseum.org/art/collection/search/712976",
+    "videoId": ""
+  },
+  {
+    "title": "Celebration of Light, Team Brazil",
+    "artist": "Vick Sahota",
+    "date": 2015,
+    "location": "Vancouver, Canada",
+    "imageLink": "Brazil-Celebration-of-Light.gif",
+    "mediaHref": "http://www.vicksahota.com/blog/2015/8/11/2015-celebration-of-light",
+    "videoId": ""
+  },
+  {
+    "title": "Celebration of Light, Team Canada",
+    "artist": "Vick Sahota",
+    "date": 2015,
+    "location": "Vancouver, Canada",
+    "imageLink": "Canada-Celebration-of-Light.gif",
+    "mediaHref": "http://www.vicksahota.com/blog/2015/8/11/2015-celebration-of-light",
+    "videoId": ""
+  },
+  {
+    "title": "Fireworks, Vernon Bridge",
+    "artist": "Theodore Earl Butler",
+    "date": 1908,
+    "location": "Giverny, France",
+    "imageLink": "VernonBridge-Theodore.jpeg",
+    "mediaHref": "https://useum.org/artwork/Fireworks-Vernon-Bridge-Theodore-Earl-Butler-1908",
+    "videoId": ""
+  },
+  {
+    "title": "Summer Night 「夏の夜」",
+    "artist": "Shiro Kasamatsu",
+    "date": 1957,
+    "location": "Tokyo, Japan",
+    "imageLink": "Shiro-KASAMATSU.jpeg",
+    "mediaHref": "https://ukiyo-e.org/image/artelino/28982g1",
+    "videoId": ""
+  },
+  {
+    "title": "FIRE-WORKES and ILLUMINATIONS on the River Thames",
+    "artist": "Anonymous",
+    "date": "May 15, 1749",
+    "location": "United Kingdom",
+    "imageLink": "RoyalFireworks.jpeg",
+    "mediaHref": "https://commons.wikimedia.org/wiki/File:RoyalFireworks.jpg",
+    "videoId": ""
+  },
+  {
+    "title": "Diwali Fireworks",
+    "artist": "Sajjad Hussain",
+    "date": "October 26, 2011",
+    "location": "New Delhi, India",
+    "imageLink": "diwali2011.jpeg",
+    "mediaHref": "https://www.npr.org/sections/thetwo-way/2011/10/26/141733893/cool-photo-lighting-fireworks-for-diwali",
+    "videoId": ""
+  },
+  {
+    "title": "Fireworks in Venice",
+    "artist": "Konstantin Gorbatov",
+    "date": 1935,
+    "location": "Venice, Italy",
+    "imageLink": "venice-Konstantin.jpeg",
+    "mediaHref": "https://www.wikiart.org/en/konstantin-ivanovich-gorbatov/fireworks-in-venice-1935",
+    "videoId": ""
+  },
+  {
+    "title": "Fireworks over Castel Sant’Angelo in Rome",
+    "artist": "Jacob Philipp Hackert",
+    "date": 1775,
+    "location": "Rome, Italy",
+    "imageLink": "castel-jacob.jpeg",
+    "mediaHref": "https://useum.org/artwork/Fireworks-over-Castel-Sant-Angelo-in-Rome-Jacob-Philipp-Hackert-1775",
+    "videoId": ""
+  },
+  {
+    "title": "La Girandola a Castel Sant’Angelo",
+    "artist": "Ippolito Caffi",
+    "date": "Mid 19th century",
+    "location": "Rome, Italy",
+    "imageLink": "castel1.jpeg",
+    "mediaHref": "https://www.antichitaischia.it/en/product/-la-girandola-di-castel-sant--angelo-",
+    "videoId": ""
+  },
+  {
+    "title": "La Girandola a Castel Sant’Angelo",
+    "artist": "Ippolito Caffi",
+    "date": "1840-48",
+    "location": "Rome, Italy",
+    "imageLink": "castel2.jpeg",
+    "mediaHref": "https://www.romasparita.eu/foto-roma-sparita/113987/castel-santangelo-185",
+    "videoId": ""
+  },
+  {
+    "title": "Test fireworks by Johann Khonn",
+    "artist": "Joseph Furttenbach",
+    "date": 1645,
+    "location": "Germany",
+    "imageLink": "Joseph-germany.jpeg",
+    "mediaHref": "https://commons.wikimedia.org/wiki/File:Test_fireworks_by_Johann_Khonn,_painted_by_Joseph_Furttenbach_I,_Ulm,_1645,_oil_on_canvas_-_Germanisches_Nationalmuseum_-_Nuremberg,_Germany_-_DSC02776.jpg",
+    "videoId": ""
+  },
+  {
+    "title": "Fuochi d'artificio a Venezia",
+    "artist": "Georges Barbier",
+    "date": 1924,
+    "location": "Venice, Italy",
+    "imageLink": "Georges-Barbier-Venice-1924.jpeg",
+    "mediaHref": "https://www.meisterdrucke.it/stampe-d-arte/Georges-Barbier/1174041/%27Fuochi-d%27artificio-a-Venezia%27,-1924.html",
+    "videoId": ""
+  },
+  {
+    "title": "River Fireworks 「鴨川花火」",
+    "artist": "Kotozuka Eiichi",
+    "date": "ca. 1950s",
+    "location": "Japan",
+    "imageLink": "Kotozuka-river.jpeg",
+    "mediaHref": "https://ukiyo-e.org/image/jaodb/Kotozuka_Eiichi-No_Series-River_Fireworks-00043162-110927-F06",
+    "videoId": ""
+  },
+  {
+    "title": "Fuochi d’artificio",
+    "artist": "Firmin Baes",
+    "date": "October, 1937",
+    "location": "Paris, France",
+    "imageLink": "Firmin-Baes-1937-Fuochi.jpeg",
+    "mediaHref": "http://www.berkofinepaintings.com/catalogue/the-fire-works/",
+    "videoId": ""
+  },
+  {
+    "title": "Fireworks I",
+    "artist": "Joan Miro",
+    "date": 1974,
+    "location": "Barcelona, Spain",
+    "imageLink": "joan-1974.jpeg",
+    "mediaHref": "https://www.fmirobcn.org/en/colection/catalog-works/5494/p-fireworks-i-p",
+    "videoId": ""
+  },
+  {
+    "title": "Fuochi d’artificio, Venezia",
+    "artist": "Jessie Drew-Bear",
+    "date": 1950,
+    "location": "Venice, Italy",
+    "imageLink": "Jessie-Drew-Bear.jpeg",
+    "mediaHref": "https://woodmereartmuseum.org/explore-online/collection/fireworks-venice",
+    "videoId": ""
+  },
+  {
+    "title": "New Year Fireworks Show",
+    "artist": "Andrew Boening",
+    "date": "December 31, 2022",
+    "location": "Auckland, New Zealand",
+    "imageLink": "auckland-tower.gif",
+    "mediaHref": "https://sg.news.yahoo.com/zealand-rings-auckland-fireworks-show-130155233.html",
+    "videoId": ""
+  },
+  {
+    "title": "Handheld Fireworks",
+    "artist": "Jessie Chen",
+    "date": 2022,
+    "location": "Shantou, China",
+    "imageLink": "jessie2022.gif",
+    "mediaHref": "",
+    "videoId": ""
+  },
+  {
+    "title": "Your Daytime Fireworks",
+    "artist": "Cai Guo-Qiang",
+    "date": 2022,
+    "location": "",
+    "imageLink": "daytime.gif",
+    "mediaHref": "https://yourdaytimefireworks.trlab.com/",
+    "videoId": ""
+  },
+  {
+    "title": "Aspergillus Fumigatus Fungal Fireworks",
+    "artist": "The Scientist Magazine",
+    "date": 2017,
+    "location": "",
+    "imageLink": "fungus.gif",
+    "mediaHref": "https://www.the-scientist.com/image-of-the-day/image-of-the-day-fungal-fireworks-31321",
+    "videoId": ""
+  },
+  {
+    "title": "How to Use After Effects: Animate Simple Fireworks",
+    "artist": "Lara Lee",
+    "date": "July 1, 2017",
+    "location": "",
+    "imageLink": "lara-lee.gif",
+    "mediaHref": "https://www.laralee.design/animate-simple-fireworks/",
+    "videoId": ""
+  },
+  {
+    "title": "ASCII Art Fireworks",
+    "artist": "@r_vizzz",
+    "date": "December 8, 2020",
+    "location": "",
+    "imageLink": "ascii.gif",
+    "mediaHref": "https://preview.redd.it/xhzh22tjr2461.gif?format=mp4&v=enabled&s=8aee323d20c40b643a86ea3e13b0ef6dbdae399e",
+    "videoId": ""
+  },
+  {
+    "title": "Sky Ladder",
+    "artist": "Cai Guo-Qiang",
+    "date": "June 15, 2015",
+    "location": "Quanzhou, China",
+    "imageLink": "",
+    "mediaHref": "",
+    "videoId": "https://www.youtube.com/embed/eixezZuerc0"
+  },
+  {
+    "title": "Kuwait National Day (اليوم الوطني للكويت) Kuwait Tower Fireworks Celebration",
+    "artist": "",
+    "date": "February 25th, 2019",
+    "location": "Kuwait",
+    "imageLink": "",
+    "mediaHref": "",
+    "videoId": "https://www.youtube.com/embed/ZOwu33l_YJ4ZOwu33l_YJ4"
+  },
+  {
+    "title": "Space Needle New Year 2013 Fireworks Seattle",
+    "artist": "Alberto Navarro",
+    "date": "December 31, 2012",
+    "location": "Seattle, United States",
+    "imageLink": "",
+    "mediaHref": "",
+    "videoId": "https://www.youtube.com/embed/PcoxfxlNqX8"
+  },
+  {
+    "title": "Finale 3D software for fireworks design",
+    "artist": "Michael Lee",
+    "date": 2017,
+    "location": "",
+    "imageLink": "",
+    "mediaHref": "",
+    "videoId": "https://www.youtube.com/embed/LdEaBmL33LE"
+  },
+  {
+    "title": "The Complete Computer Fireworks Celebration Kit",
+    "artist": "Nena",
+    "date": 1985,
+    "location": "",
+    "imageLink": "",
+    "mediaHref": "",
+    "videoId": "https://www.youtube.com/embed/YS3pcwrw7ow"
+  },
+  {
+    "title": "Stochastic Processes Fireworks",
+    "artist": "Don Cowan",
+    "date": "n.d.",
+    "location": "",
+    "imageLink": "",
+    "mediaHref": "",
+    "videoId": "https://marketimpacts.squarespace.com/storage/9781118385357%20ls1201%20Fireworks%20Display.htm"
+  },
+  {
+    "title": "Procedural fireworks made in c++ using gradient fill and DIBs",
+    "artist": "DarkYearGamer",
+    "date": "July 5, 2021",
+    "location": "",
+    "imageLink": "",
+    "mediaHref": "",
+    "videoId": "https://www.reddit.com/r/computergraphics/comments/oe7b72/procedural_fireworks_made_in_c_using_gradient/"
+  }
 ]
