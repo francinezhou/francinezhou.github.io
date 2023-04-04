@@ -82,6 +82,27 @@ for (let i = 0; i < elements.length; i++) {
   }
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+
+  var element = document.querySelector("#html-content-holder");
+  var getCanvas;
+  
+  html2canvas(element, {
+    onrendered: function(canvas) {
+      document.querySelector("body").appendChild(canvas);
+      getCanvas = canvas;
+    }
+  });
+
+  document.querySelector("#btn-Convert-Html2Image").addEventListener("click", function() {
+    var imageData = getCanvas.toDataURL("image/png");
+    var newData = imageData.replace(/^data:image\/png/, "data:application/octet-stream");
+    this.setAttribute("download", "your_pic_name.png");
+    this.setAttribute("href", newData);
+  });
+
+});
+
 
 // fetch("fireworks.json")
 // .then(function(response){
