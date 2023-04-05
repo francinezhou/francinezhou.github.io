@@ -92,13 +92,13 @@ fws.forEach((fw,index) => {
         let trailAge = fw.age + i;
         let x = fw.x + spark.vx * trailAge;
         let y = fw.y + spark.vy * trailAge + spark.weight * trailAge * spark.weight * trailAge;
-        let fade = i * 20 - fw.age * 2;
+        let fade = i * 50 - fw.age * 1;
         let r = Math.floor(spark.red * fade);
         let g = Math.floor(spark.green * fade);
         let b = Math.floor(spark.blue * fade);
         context.beginPath();
-        context.fillStyle = 'rgba(' + r + ',' + g + ',' + b + ',1)';
-        context.rect(x, y, 4, 4);
+        context.fillStyle = 'rgba(' + r + ',' + g + ',' + b + '3)';
+        context.rect(x, y, 7, 7);
         context.fill();
       }
     });
@@ -111,7 +111,7 @@ fws.forEach((fw,index) => {
     for (let spark = 0; spark < 15; spark++) {
       context.beginPath();
       context.fillStyle = 'rgba(' + index * 50 + ',' + spark * 17 + ',0,1)';
-      context.rect(fw.x + Math.random() * spark - spark / 2, fw.y + spark * 4, 4, 4);
+      context.rect(fw.x + Math.random() * spark - spark / 2, fw.y + spark * 4, 5, 5);
       context.fill();
     }
     if (Math.random() < .001 || fw.y < 200) fw.phase = 'explode';

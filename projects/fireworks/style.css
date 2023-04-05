@@ -342,6 +342,10 @@ main {
   padding-top: 65px;
   min-height: 140vh;
 }
+#btn-Convert-Html2Image {
+  position: absolute;
+  padding: 0 2rem;
+}
 
 #performance {
   position: absolute;
