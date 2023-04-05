@@ -6,7 +6,8 @@
     "location": "Rome, Italy",
     "imageLink": "escher.jpeg",
     "mediaHref": "https://www.ngv.vic.gov.au/custom/screens/escher-printmaking/lithography.html",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Lithograph"
   },
   {
     "title": "Flowers of Fire: Illustrations from Japanese Fireworks Catalogues for Hirayama Fireworks and Yokoi Fireworks",
@@ -15,7 +16,8 @@
     "location": "Japan",
     "imageLink": "Firework-Japan-illustrations-blue78.jpeg",
     "mediaHref": "https://publicdomainreview.org/collection/japanese-fireworks-catalogues",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Illustration"
   },
   {
     "title": "Flowers of Fire: Illustrations from Japanese Fireworks Catalogues for Hirayama Fireworks and Yokoi Fireworks",
@@ -24,7 +26,8 @@
     "location": "Japan",
     "imageLink": "Firework-Japan-illustrations-black76.jpeg",
     "mediaHref": "https://publicdomainreview.org/collection/japanese-fireworks-catalogues",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Illustration"
   },
   {
     "title": "Flowers of Fire: Illustrations from Japanese Fireworks Catalogues for Hirayama Fireworks and Yokoi Fireworks",
@@ -33,16 +36,18 @@
     "location": "Japan",
     "imageLink": "Firework-Japan-illustrations-black38.jpeg",
     "mediaHref": "https://publicdomainreview.org/collection/japanese-fireworks-catalogues",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Illustration"
   },
   {
     "title": "Diwali Hindu Festival of Lights",
     "artist": "Jacek Kadaj",
-    "date": "October 1, <span class="font-replace">2</span>013",
+    "date": "October 12, 2013",
     "location": "Old Delhi, India",
     "imageLink": "diwali2013.jpeg",
     "mediaHref": "https://www.cntraveler.com/galleries/2012-11-14/diwali-hindu-festival-of-light-photos",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Photograph"
   },
   {
     "title": "Fourth of July. From a boat docked at the Lighthouse Point Marina & Yacht Club in South Toms River",
@@ -51,7 +56,8 @@
     "location": "New Jersey, United States",
     "imageLink": "jersey.jpeg",
     "mediaHref": "https://www.app.com/story/life/2022/06/21/nj-fireworks-near-me-jersey-shore-fourth-of-july-2022/7650345001/",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Photograph"
   },
   {
     "title": "The Joyous Festival",
@@ -60,16 +66,18 @@
     "location": "Paris, France",
     "imageLink": "joyous.jpeg",
     "mediaHref": "https://artsandculture.google.com/asset/the-joyous-festival-gaston-la-touche/vQGLRU3bkNUsgg",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Oil Painting"
   },
   {
     "title": "Fireworks on the Sumida at Present",
     "artist": "Kawase Hasui",
-    "date": "n.d.",
+    "date": "n.d",
     "location": "Japan",
     "imageLink": "Kawase-Hasui.jpeg",
     "mediaHref": "https://www.miniaturejapanesewoodblocks.net/gallery-2-1",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Woodblock Print"
   },
   {
     "title": "Fireworks at Ryogoku Bridge, Tokyo",
@@ -78,7 +86,8 @@
     "location": "Tokyo, Japan",
     "imageLink": "Takahashi-shotei-1936.jpeg",
     "mediaHref": "https://woodblock-print.eu/takahashi-shotei-fireworks-at-ryogoku-bridge%2C-tokyo-detail.html?utm_source=barnebys&utm_medium=referral&utm_campaign=barnebys&utm_content=2021-08-08",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Woodblock Print"
   },
   {
     "title": "Fireworks at Ikenohata 「池の端花火」",
@@ -87,7 +96,8 @@
     "location": "Japan",
     "imageLink": "Kobayashi-Kiyochika-1881-Ikenohata.jpeg",
     "mediaHref": "https://www.metmuseum.org/art/collection/search/712976",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Woodblock Print"
   },
   {
     "title": "Celebration of Light, Team Brazil",
@@ -96,7 +106,8 @@
     "location": "Vancouver, Canada",
     "imageLink": "Brazil-Celebration-of-Light.gif",
     "mediaHref": "http://www.vicksahota.com/blog/2015/8/11/2015-celebration-of-light",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Photograph"
   },
   {
     "title": "Celebration of Light, Team Canada",
@@ -105,7 +116,8 @@
     "location": "Vancouver, Canada",
     "imageLink": "Canada-Celebration-of-Light.gif",
     "mediaHref": "http://www.vicksahota.com/blog/2015/8/11/2015-celebration-of-light",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Photograph"
   },
   {
     "title": "Fireworks, Vernon Bridge",
@@ -114,7 +126,8 @@
     "location": "Giverny, France",
     "imageLink": "VernonBridge-Theodore.jpeg",
     "mediaHref": "https://useum.org/artwork/Fireworks-Vernon-Bridge-Theodore-Earl-Butler-1908",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Oil Painting"
   },
   {
     "title": "Summer Night 「夏の夜」",
@@ -123,7 +136,8 @@
     "location": "Tokyo, Japan",
     "imageLink": "Shiro-KASAMATSU.jpeg",
     "mediaHref": "https://ukiyo-e.org/image/artelino/28982g1",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Woodblock Print"
   },
   {
     "title": "FIRE-WORKES and ILLUMINATIONS on the River Thames",
@@ -132,7 +146,8 @@
     "location": "United Kingdom",
     "imageLink": "RoyalFireworks.jpeg",
     "mediaHref": "https://commons.wikimedia.org/wiki/File:RoyalFireworks.jpg",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Etching"
   },
   {
     "title": "Diwali Fireworks",
@@ -141,7 +156,8 @@
     "location": "New Delhi, India",
     "imageLink": "diwali2011.jpeg",
     "mediaHref": "https://www.npr.org/sections/thetwo-way/2011/10/26/141733893/cool-photo-lighting-fireworks-for-diwali",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Photograph"
   },
   {
     "title": "Fireworks in Venice",
@@ -150,7 +166,8 @@
     "location": "Venice, Italy",
     "imageLink": "venice-Konstantin.jpeg",
     "mediaHref": "https://www.wikiart.org/en/konstantin-ivanovich-gorbatov/fireworks-in-venice-1935",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Oil Painting"
   },
   {
     "title": "Fireworks over Castel Sant’Angelo in Rome",
@@ -159,7 +176,8 @@
     "location": "Rome, Italy",
     "imageLink": "castel-jacob.jpeg",
     "mediaHref": "https://useum.org/artwork/Fireworks-over-Castel-Sant-Angelo-in-Rome-Jacob-Philipp-Hackert-1775",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Oil Painting"
   },
   {
     "title": "La Girandola a Castel Sant’Angelo",
@@ -168,7 +186,8 @@
     "location": "Rome, Italy",
     "imageLink": "castel1.jpeg",
     "mediaHref": "https://www.antichitaischia.it/en/product/-la-girandola-di-castel-sant--angelo-",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Oil Painting"
   },
   {
     "title": "La Girandola a Castel Sant’Angelo",
@@ -177,7 +196,8 @@
     "location": "Rome, Italy",
     "imageLink": "castel2.jpeg",
     "mediaHref": "https://www.romasparita.eu/foto-roma-sparita/113987/castel-santangelo-185",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Oil Painting"
   },
   {
     "title": "Test fireworks by Johann Khonn",
@@ -186,7 +206,8 @@
     "location": "Germany",
     "imageLink": "Joseph-germany.jpeg",
     "mediaHref": "https://commons.wikimedia.org/wiki/File:Test_fireworks_by_Johann_Khonn,_painted_by_Joseph_Furttenbach_I,_Ulm,_1645,_oil_on_canvas_-_Germanisches_Nationalmuseum_-_Nuremberg,_Germany_-_DSC02776.jpg",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Oil Painting"
   },
   {
     "title": "Fuochi d'artificio a Venezia",
@@ -195,7 +216,8 @@
     "location": "Venice, Italy",
     "imageLink": "Georges-Barbier-Venice-1924.jpeg",
     "mediaHref": "https://www.meisterdrucke.it/stampe-d-arte/Georges-Barbier/1174041/%27Fuochi-d%27artificio-a-Venezia%27,-1924.html",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Illustration"
   },
   {
     "title": "River Fireworks 「鴨川花火」",
@@ -204,25 +226,8 @@
     "location": "Japan",
     "imageLink": "Kotozuka-river.jpeg",
     "mediaHref": "https://ukiyo-e.org/image/jaodb/Kotozuka_Eiichi-No_Series-River_Fireworks-00043162-110927-F06",
-    "videoId": ""
-  },
-  {
-    "title": "Fuochi d’artificio",
-    "artist": "Firmin Baes",
-    "date": "October, 1937",
-    "location": "Paris, France",
-    "imageLink": "Firmin-Baes-1937-Fuochi.jpeg",
-    "mediaHref": "http://www.berkofinepaintings.com/catalogue/the-fire-works/",
-    "videoId": ""
-  },
-  {
-    "title": "Fireworks I",
-    "artist": "Joan Miro",
-    "date": 1974,
-    "location": "Barcelona, Spain",
-    "imageLink": "joan-1974.jpeg",
-    "mediaHref": "https://www.fmirobcn.org/en/colection/catalog-works/5494/p-fireworks-i-p",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Woodblock Print"
   },
   {
     "title": "Fuochi d’artificio, Venezia",
@@ -231,7 +236,28 @@
     "location": "Venice, Italy",
     "imageLink": "Jessie-Drew-Bear.jpeg",
     "mediaHref": "https://woodmereartmuseum.org/explore-online/collection/fireworks-venice",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Oil Painting"
+  },
+  {
+    "title": "Fuochi d’artificio",
+    "artist": "Firmin Baes",
+    "date": "October, 1937",
+    "location": "Paris, France",
+    "imageLink": "Firmin-Baes-1937-Fuochi.jpeg",
+    "mediaHref": "http://www.berkofineOil Paintings.com/catalogue/the-fire-works/",
+    "videoId": "",
+    "medium": "Pastel"
+  },
+  {
+    "title": "Fireworks I",
+    "artist": "Joan Miro",
+    "date": 1974,
+    "location": "Barcelona, Spain",
+    "imageLink": "joan-1974.jpeg",
+    "mediaHref": "https://www.fmirobcn.org/en/colection/catalog-works/5494/p-fireworks-i-p",
+    "videoId": "",
+    "medium": "Acrylic"
   },
   {
     "title": "New Year Fireworks Show",
@@ -240,7 +266,18 @@
     "location": "Auckland, New Zealand",
     "imageLink": "auckland-tower.gif",
     "mediaHref": "https://sg.news.yahoo.com/zealand-rings-auckland-fireworks-show-130155233.html",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Physical"
+  },
+  {
+    "title": "The grand display of fireworks and illuminations: at the opening of the great suspension bridge between New York and Brooklyn on the evening of May 24th, 1883",
+    "artist": "Currier & Ives.",
+    "date": 1883,
+    "location": "New York, United States",
+    "imageLink": "brooklyn.jpeg",
+    "mediaHref": "https://www.loc.gov/resource/pga.04849/",
+    "videoId": "",
+    "medium": "Lithograph"
   },
   {
     "title": "Handheld Fireworks",
@@ -249,7 +286,18 @@
     "location": "Shantou, China",
     "imageLink": "jessie2022.gif",
     "mediaHref": "",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Sparklers"
+  },
+  {
+    "title": "Hinone Hanabi",
+    "artist": "Hinone",
+    "date": 2020,
+    "location": "Japan",
+    "imageLink": "hinone.jpeg",
+    "mediaHref": "https://www.hinone-hanabi.com",
+    "videoId": "",
+    "medium": "Sparklers"
   },
   {
     "title": "Your Daytime Fireworks",
@@ -258,7 +306,8 @@
     "location": "",
     "imageLink": "daytime.gif",
     "mediaHref": "https://yourdaytimefireworks.trlab.com/",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Digital"
   },
   {
     "title": "Aspergillus Fumigatus Fungal Fireworks",
@@ -267,7 +316,8 @@
     "location": "",
     "imageLink": "fungus.gif",
     "mediaHref": "https://www.the-scientist.com/image-of-the-day/image-of-the-day-fungal-fireworks-31321",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Digital"
   },
   {
     "title": "How to Use After Effects: Animate Simple Fireworks",
@@ -276,7 +326,8 @@
     "location": "",
     "imageLink": "lara-lee.gif",
     "mediaHref": "https://www.laralee.design/animate-simple-fireworks/",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Digital"
   },
   {
     "title": "ASCII Art Fireworks",
@@ -285,7 +336,8 @@
     "location": "",
     "imageLink": "ascii.gif",
     "mediaHref": "https://preview.redd.it/xhzh22tjr2461.gif?format=mp4&v=enabled&s=8aee323d20c40b643a86ea3e13b0ef6dbdae399e",
-    "videoId": ""
+    "videoId": "",
+    "medium": "Digital"
   },
   {
     "title": "Sky Ladder",
@@ -294,7 +346,8 @@
     "location": "Quanzhou, China",
     "imageLink": "",
     "mediaHref": "",
-    "videoId": "https://www.youtube.com/embed/eixezZuerc0"
+    "videoId": "https://www.youtube.com/embed/eixezZuerc0",
+    "medium": "Physical"
   },
   {
     "title": "Kuwait National Day (اليوم الوطني للكويت) Kuwait Tower Fireworks Celebration",
@@ -303,7 +356,8 @@
     "location": "Kuwait",
     "imageLink": "",
     "mediaHref": "",
-    "videoId": "https://www.youtube.com/embed/ZOwu33l_YJ4ZOwu33l_YJ4"
+    "videoId": "https://www.youtube.com/embed/ZOwu33l_YJ4ZOwu33l_YJ4",
+    "medium": "Physical"
   },
   {
     "title": "Space Needle New Year 2013 Fireworks Seattle",
@@ -312,7 +366,8 @@
     "location": "Seattle, United States",
     "imageLink": "",
     "mediaHref": "",
-    "videoId": "https://www.youtube.com/embed/PcoxfxlNqX8"
+    "videoId": "https://www.youtube.com/embed/PcoxfxlNqX8",
+    "medium": "Digital"
   },
   {
     "title": "Finale 3D software for fireworks design",
@@ -321,7 +376,8 @@
     "location": "",
     "imageLink": "",
     "mediaHref": "",
-    "videoId": "https://www.youtube.com/embed/LdEaBmL33LE"
+    "videoId": "https://www.youtube.com/embed/LdEaBmL33LE",
+    "medium": "Digital"
   },
   {
     "title": "The Complete Computer Fireworks Celebration Kit",
@@ -330,16 +386,18 @@
     "location": "",
     "imageLink": "",
     "mediaHref": "",
-    "videoId": "https://www.youtube.com/embed/YS3pcwrw7ow"
+    "videoId": "https://www.youtube.com/embed/YS3pcwrw7ow",
+    "medium": "Digital"
   },
   {
     "title": "Stochastic Processes Fireworks",
     "artist": "Don Cowan",
-    "date": "n.d.",
+    "date": "n.d",
     "location": "",
     "imageLink": "",
     "mediaHref": "",
-    "videoId": "https://marketimpacts.squarespace.com/storage/9781118385357%20ls1201%20Fireworks%20Display.htm"
+    "videoId": "https://marketimpacts.squarespace.com/storage/9781118385357%20ls1201%20Fireworks%20Display.htm",
+    "medium": "Digital"
   },
   {
     "title": "Procedural fireworks made in c++ using gradient fill and DIBs",
@@ -348,6 +406,7 @@
     "location": "",
     "imageLink": "",
     "mediaHref": "",
-    "videoId": "https://www.reddit.com/r/computergraphics/comments/oe7b72/procedural_fireworks_made_in_c_using_gradient/"
+    "videoId": "https://www.reddit.com/r/computergraphics/comments/oe7b72/procedural_fireworks_made_in_c_using_gradient/",
+    "medium": "Digital"
   }
 ]

@@ -24,7 +24,7 @@ button {
     transition: 0.5s;
   }
   
-  button:hover {
+button:hover {
      font-family: "Gridlite";
      font-variation-settings: "BACK" 200, "ELSH" 3, "RECT" 900, "wght" 200;
   }
@@ -80,6 +80,7 @@ button.is-checked {
   #filters {
     margin: 2rem;
     margin-top: 0rem;
-    
   }
-}
+  button {
+    font-size: 1.1em;
+}}
