@@ -145,6 +145,15 @@ function getMousePos(canvas, evt) {
         y: (evt.clientY - rect.top) / (rect.bottom - rect.top) * canvas.height
     };
 }
+ 
+document.querySelector('button').addEventListener('click', function() {
+  html2canvas(document.querySelector('.specific'), {
+      onrendered: function(canvas) {
+          // document.body.appendChild(canvas);
+        return Canvas2Image.saveAsPNG(canvas);
+      }
+  });
+});
 
 /*  card expand on click */
 let cardSmalls = document.querySelectorAll(".cardSmall");

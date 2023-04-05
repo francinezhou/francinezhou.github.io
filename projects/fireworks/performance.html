@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/gii3lvf.css">
     <title>Fireworks Performance</title>
-
+    <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <script src="capture.js" defer></script>
@@ -79,12 +79,10 @@
      
 
       </div>
-      <a id="btn-Convert-Html2Image" href="#">Capture</a>
 
       <div id="performance"> 
         <div class="firework">
             <div class="cardSmall">
-
             </div>
         </div>
  
@@ -93,7 +91,7 @@
         <div id="images"></div>
         <canvas id='myCanvas' width='1500' height='800'></canvas>
       </div>
-      
+     
       
           <!-- <div id="thumbnail">
           <iframe src="https://marketimpacts.squarespace.com/storage/9781118385357%20ls1201%20Fireworks%20Display.htm" ></iframe>
@@ -111,5 +109,33 @@
         
     
     </main>
+
+    <div class="phppot-container">
+          <button id="capture-screenshot">Capture</button>
+  </div>
+
+  <script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript"
+src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script type="text/javascript">  
+    $('#capture-screenshot').click(function() {
+        const screenshotTarget = document.body;
+        html2canvas(screenshotTarget).then(canvas => {      	
+        	// download the image file using below line
+            const link = document.createElement('a');
+            link.download = 'screenshot.png';
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                link.href = url;
+                link.click();
+                URL.revokeObjectURL(url);
+            });
+        });  
+    });
+
+
+</script>
+
   </body>
 </html>
