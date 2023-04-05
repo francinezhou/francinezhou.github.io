@@ -48,7 +48,7 @@ rocket.addEventListener('click', () => {
 
 
 
-const max_fireworks = 5,
+const max_fireworks = 4,
 max_sparks = 10;
 let canvas = document.getElementById('myCanvas');
 let context = canvas.getContext('2d');
@@ -92,18 +92,18 @@ fws.forEach((fw,index) => {
         let trailAge = fw.age + i;
         let x = fw.x + spark.vx * trailAge;
         let y = fw.y + spark.vy * trailAge + spark.weight * trailAge * spark.weight * trailAge;
-        let fade = i * 50 - fw.age * 1;
+        let fade = i * 80 - fw.age * 1;
         let r = Math.floor(spark.red * fade);
         let g = Math.floor(spark.green * fade);
         let b = Math.floor(spark.blue * fade);
         context.beginPath();
-        context.fillStyle = 'rgba(' + r + ',' + g + ',' + b + '3)';
+        context.fillStyle = 'rgba(' + r + ',' + g + ',' + b + '10)';
         context.rect(x, y, 7, 7);
         context.fill();
       }
     });
     fw.age++;
-    if (fw.age > 100 && Math.random() < .05) {
+    if (fw.age > 200 && Math.random() < .05) {
       resetFirework(fw);
     }
   } else {

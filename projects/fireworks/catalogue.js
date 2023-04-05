@@ -64,7 +64,7 @@ fetch('fireworks.json')
         });
 
         buttonOil.addEventListener('click', function(){
-            if(item.medium == "Oil") {
+            if(item.medium == "Oil Painting") {
             div.style.display = "block";
             } else {
             div.style.display = "none";
