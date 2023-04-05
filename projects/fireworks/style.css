@@ -16,10 +16,10 @@ body {
   margin: 0;
   height: fit-content;
   min-width:350px;
-  min-height: 140vh;
+  min-height: 1000px;
   background: rgb(65,27,9);
   background-size: 100% 1000%;
-  background: linear-gradient(0deg, rgba(65,27,9,1) 0%, rgba(55,16,49,1) 25%, rgba(17,6,60,1) 70%, rgba(27,27,44,1) 100%);
+  background: linear-gradient(0deg, rgba(65,27,9,1) 0%, rgba(55,16,49,1) 30%, rgba(17,6,60,1) 90%, rgba(27,27,44,1) 100%);
   /* background-color: rgb(30, 27, 44); */
   font-family: "Gridlite";
   font-variation-settings: "BACK" 100, "ELSH" 3, "RECT" 1, "wght" 900;
@@ -343,8 +343,11 @@ main {
   min-height: 140vh;
 }
 #btn-Convert-Html2Image {
-  position: absolute;
-  padding: 0 2rem;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 2rem;
+  z-index: 99;
 }
 
 #performance {
@@ -357,7 +360,7 @@ main {
   margin-right: auto;
   margin-left: auto;
  
-  min-height: 120vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -409,6 +412,7 @@ main {
 }
 
 
+
 .image{
   width: 92%;
   margin-bottom: 5px;
@@ -431,6 +435,10 @@ main {
   margin-right: auto;
 }
 
+.canvasContainer {
+  width: 100%;
+  overflow-y: hidden;
+}
 
 
 /* CATALOGUE card list */
