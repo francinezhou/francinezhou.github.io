@@ -16,7 +16,7 @@ body {
   margin: 0;
   height: fit-content;
   min-width:350px;
-  min-height: 600px;
+  min-height: 100vh;
   background: rgb(65,27,9);
   background-size: 100% 1000%;
   background: linear-gradient(0deg, rgba(65,27,9,1) 0%, rgba(55,16,49,1) 30%, rgba(17,6,60,1) 90%, rgba(27,27,44,1) 100%);

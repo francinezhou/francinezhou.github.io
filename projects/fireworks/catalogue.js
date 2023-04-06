@@ -23,16 +23,25 @@ fetch('fireworks.json')
         const textdiv = document.createElement('div');
 		const h3 = document.createElement('h3');
         const p = document.createElement('p');
-        const a=document.createElement('a');
+        const a =document.createElement('a');
+        const iframe = document.createElement("iframe");
        
 		// const vid = document.createElement('');
+
+
+        iframe.src = item.videoId;
+        iframe.frameborder = 0;
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        iframe.allowFullscreen = true;
+       
 
         // Set the text content and href attributes for the link
         h3.textContent = item.title;
 		p.textContent = item.artist + '. ' + item.date + '. ' + item.location;
         img.src = "img/" + item.imageLink;
+
         a.href = item.mediaHref;
-		// if imageLink 
+	
 
         /* 
          * Onclick function
@@ -131,6 +140,7 @@ fetch('fireworks.json')
 
         // Add the HTML tags to webpage
         mediadiv.appendChild(a);
+        mediadiv.appendChild(iframe);
         a.appendChild(img);
 	    textdiv.appendChild(h3);
         textdiv.appendChild(p);
@@ -138,6 +148,12 @@ fetch('fireworks.json')
         div.appendChild(textdiv);
         list.appendChild(div);
        
+        if(item.imageLink == "") {
+            iframe.style.display = "display";
+            a.style.display = "none";
+            } else {
+            iframe.style.display = "none";
+            }
 
         div.classList.add("cardOutline");
         textdiv.classList.add("textdiv");
