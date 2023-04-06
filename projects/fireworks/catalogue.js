@@ -163,6 +163,7 @@ fetch('fireworks.json')
       
 
         cardOutline.classList.add("cardOutline");
+        // cardOutline.classList.add("outlineColor");
         textdiv.classList.add("textdiv");
         mediadiv.classList.add("mediadiv");
 

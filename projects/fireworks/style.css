@@ -242,7 +242,7 @@ a:active { text-decoration: none; }
   align-items: center;
   font-size: 1.3rem;
   padding: 20vw;
-  padding-top: 10vw;
+  padding-top: 15vw;
   text-align: center;
   font-family: "Gridlite";
   font-variation-settings: "BACK" 50, "ELSH" 3, "RECT" 1, "wght" 900;
@@ -553,6 +553,11 @@ button, input[type="submit"], input[type="reset"] {
    
     padding: 10px;
 }
+
+.cardOutline:hover {
+  border-color: #00e4e6;
+}
+
 
 .mediadiv
 .mediadiv a{
