@@ -42,12 +42,7 @@ fetch('fireworks.json')
         a.href = item.mediaHref;
 	
 
-        function processcolors( data ){
-            data.forEach( function(item, index){
-              cardOutline.style.borderColor = item.color
-            //   container.appendChild(cardOutline);   
-            });
-            }
+      
         /* 
          * Onclick function
          * whenever a image is clicked
@@ -58,86 +53,86 @@ fetch('fireworks.json')
 
         // Button to control filtering
         buttonAll.addEventListener('click', function(){
-            div.style.display = "block";
+            cardOutline.style.display = "block";
         });
 
         buttonLitho.addEventListener('click', function(){
             if(item.medium == "Lithograph") {
-            div.style.display = "block";
+                cardOutline.style.display = "block";
             } else {
-            div.style.display = "none";
+                cardOutline.style.display = "none";
             }
         });
 
         buttonIllust.addEventListener('click', function(){
             if(item.medium == "Illustration") {
-            div.style.display = "block";
+                cardOutline.style.display = "block";
             } else {
-            div.style.display = "none";
+                cardOutline.style.display = "none";
             }
         });
 
         buttonOil.addEventListener('click', function(){
             if(item.medium == "Oil Painting") {
-            div.style.display = "block";
+                cardOutline.style.display = "block";
             } else {
-            div.style.display = "none";
+                cardOutline.style.display = "none";
             }
         });
 
         buttonWood.addEventListener('click', function(){
             if(item.medium == "Woodblock Print") {
-            div.style.display = "block";
+                cardOutline.style.display = "block";
             } else {
-            div.style.display = "none";
+                cardOutline.style.display = "none";
             }
         });
 
         buttonPhoto.addEventListener('click', function(){
             if(item.medium == "Photograph") {
-            div.style.display = "block";
+                cardOutline.style.display = "block";
             } else {
-            div.style.display = "none";
+                cardOutline.style.display = "none";
             }
         });
 
         buttonEtching.addEventListener('click', function(){
             if(item.medium == "Etching") {
-            div.style.display = "block";
+                cardOutline.style.display = "block";
             } else {
-            div.style.display = "none";
+                cardOutline.style.display = "none";
             }
         });
 
         buttonPastel.addEventListener('click', function(){
             if(item.medium == "Pastel") {
-            div.style.display = "block";
+                cardOutline.style.display = "block";
             } else {
-            div.style.display = "none";
+                cardOutline.style.display = "none";
             }
         });
 
         buttonAcrylic.addEventListener('click', function(){
             if(item.medium == "Acrylic") {
-            div.style.display = "block";
+                cardOutline.style.display = "block";
             } else {
-            div.style.display = "none";
+                cardOutline.style.display = "none";
             }
         });
 
         buttonPhysical.addEventListener('click', function(){
             if(item.medium == "Physical") {
-            div.style.display = "block";
+                cardOutline.style.display = "block";
             } else {
-            div.style.display = "none";
+                cardOutline.style.display = "none";
             }
         });
 
         buttonDigital.addEventListener('click', function(){
             if(item.medium == "Digital") {
-            div.style.display = "block";
+                cardOutline.style.display = "block";
             } else {
-            div.style.display = "none";
+                cardOutline.style.display = "none";
             }
         });
 
@@ -152,7 +147,13 @@ fetch('fireworks.json')
         cardOutline.appendChild(mediadiv);
         cardOutline.appendChild(textdiv);
         list.appendChild(cardOutline);
-       
+
+        // function processcolors( data ){
+        //     data.forEach( function(item, index){
+        //       cardOutline.style.borderColor = item.color
+        //     });
+        //     }
+
         if(item.imageLink == "") {
             iframe.style.display = "display";
             a.style.display = "none";
@@ -164,9 +165,6 @@ fetch('fireworks.json')
         textdiv.classList.add("textdiv");
         mediadiv.classList.add("mediadiv");
 
-
-        
-       
         });
     })
     .catch(error => console.error(error));
