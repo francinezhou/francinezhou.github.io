@@ -17,7 +17,7 @@ fetch('fireworks.json')
                 
         // Loop through the data and add each item to the div
         data.forEach(item => {
-        const div = document.createElement('div');
+        const cardOutline = document.createElement('div');
         const mediadiv = document.createElement('div');
         const img = document.createElement('img');
         const textdiv = document.createElement('div');
@@ -39,10 +39,15 @@ fetch('fireworks.json')
         h3.textContent = item.title;
 		p.textContent = item.artist + '. ' + item.date + '. ' + item.location;
         img.src = "img/" + item.imageLink;
-
         a.href = item.mediaHref;
 	
 
+        function processcolors( data ){
+            data.forEach( function(item, index){
+              cardOutline.style.borderColor = item.color
+            //   container.appendChild(cardOutline);   
+            });
+            }
         /* 
          * Onclick function
          * whenever a image is clicked
@@ -144,9 +149,9 @@ fetch('fireworks.json')
         a.appendChild(img);
 	    textdiv.appendChild(h3);
         textdiv.appendChild(p);
-        div.appendChild(mediadiv);
-        div.appendChild(textdiv);
-        list.appendChild(div);
+        cardOutline.appendChild(mediadiv);
+        cardOutline.appendChild(textdiv);
+        list.appendChild(cardOutline);
        
         if(item.imageLink == "") {
             iframe.style.display = "display";
@@ -155,7 +160,7 @@ fetch('fireworks.json')
             iframe.style.display = "none";
             }
 
-        div.classList.add("cardOutline");
+        cardOutline.classList.add("cardOutline");
         textdiv.classList.add("textdiv");
         mediadiv.classList.add("mediadiv");
 
