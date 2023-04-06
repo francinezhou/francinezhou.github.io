@@ -160,6 +160,7 @@ fetch('fireworks.json')
             } else {
             iframe.style.display = "none";
             }
+      
 
         cardOutline.classList.add("cardOutline");
         textdiv.classList.add("textdiv");

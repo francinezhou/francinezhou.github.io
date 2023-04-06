@@ -474,21 +474,9 @@
     "location": "",
     "imageLink": "",
     "mediaHref": "",
-    "videoId": "",
-    "webpageId": "https://marketimpacts.squarespace.com/storage/9781118385357%20ls1201%20Fireworks%20Display.htm",
-    "color": "ff869d",
-    "medium": "Digital"
-  },
-  {
-    "title": "Procedural fireworks made in c++ using gradient fill and DIBs",
-    "artist": "DarkYearGamer",
-    "date": "July 5, 2021",
-    "location": "",
-    "imageLink": "",
-    "mediaHref": "",
-    "videoId": "https://www.reddit.com/r/computergraphics/comments/oe7b72/procedural_fireworks_made_in_c_using_gradient/",
+    "videoId": "https://marketimpacts.squarespace.com/storage/9781118385357%20ls1201%20Fireworks%20Display.htm",
     "webpageId": "",
-    "color": 6262000,
+    "color": "ff869d",
     "medium": "Digital"
   }
 ]
