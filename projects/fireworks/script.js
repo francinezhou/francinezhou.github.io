@@ -149,13 +149,13 @@ function getMousePos(canvas, evt) {
 
 
 /*  card expand on click */
-let cardSmalls = document.querySelectorAll(".cardSmall");
-function cardSize() {
-	cardSmall.classList.toggle("cardLarge");
-  }
-let cardSmall = document.querySelector(".cardSmall");
-let cardLarge = document.querySelector(".cardLarge");
-cardSmall.addEventListener("click", cardSize);
+// let cardSmalls = document.querySelectorAll(".cardSmall");
+// function cardSize() {
+// 	cardSmall.classList.toggle("cardLarge");
+//   }
+// let cardSmall = document.querySelector(".cardSmall");
+// let cardLarge = document.querySelector(".cardLarge");
+// cardSmall.addEventListener("click", cardSize);
 
 
 // // Get all the elements on the page
