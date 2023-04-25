@@ -20,7 +20,7 @@ body {
     background: none;
 }
 
-.div_to_scroll{
+.scroll{
     width: 48%;
     height: 100vh;
    overflow-x: scroll;
