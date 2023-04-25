@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: white;
+    -webkit-box-shadow: none;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: none;
+}
+
+.div_to_scroll{
+    width: 48%;
+    height: 100vh;
+   overflow-x: scroll;
+   background: #EFF0F1;
+   margin:0 10px;
+   padding: 10px;
+   font-size: 30px;
+    
+}
+
+.wrapper{
+    display: flex;
+}
