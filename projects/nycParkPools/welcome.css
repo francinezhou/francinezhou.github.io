@@ -1,57 +1,83 @@
+
+@font-face {
+	src: url('font/Boris.woff') format('woff2-variations');
+	font-family:'Boris';
+	font-style: normal;
+}
+
+
 body {
-    margin: 0;
-    background-color: black;
-  }
+    margin: 0; 
+}
   
-  h1, h2, h3 {
-    font-family: 'Poppins', sans-serif;
-      color: white;
+ 
+
+h1 {
+    
     margin: 0;
     padding: 0;
-  }
-    
-  h1 {
-    font-size: 11.5vh;
-      padding: ;
-      line-height: 0.8;
-      font-weight: normal;
-  }
+    font-size: 19vw;
+    line-height: 0.8;
+    font-weight: normal;
+}
+  
   
   h2 {
+    font-family: 'Poppins', sans-serif;
       font-size: 1.2rem;
       font-weight: bold;
       text-align: center;
   }
-  
+
   h3 {
+   
     font-size: 1.2rem;
       font-weight: normal;
       text-align: center;
       font-weight: 300;
   }
   
+
+
+  
+header {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+header a:link { text-decoration: none; color: black}
+
+header a:visited { text-decoration: none; color: black;}
+  
+header a:active { text-decoration: none; }
+
+.title:hover {
+  
+}
+
+.title:hover { 
+    text-decoration: skyblue wavy underline;
+    color: black;
+}
+
+span {
+    font-family: 'Boris', sans-serif;
+}
+
+.arrow:hover {
+    
+}
+
+.arrow a:hover { text-decoration: none;
+color: blue;}
+
+
+  
+
   .wrapper {
     padding: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 95vh;
   }
-  
-  .flex {
-    padding: 16px;
-  }
-  .flex1 {
-    height: 27%;
-  }
-  .flex2 {
-    text-align: center;
-  }
-  
-  .wrapper {
-    opacity: 0;
-  }
-  
+
   .green {
     position: fixed;
     height: 150px;
@@ -75,7 +101,6 @@ body {
     right: 0;
     height: 5vh;
     width: 100%;
-    color:  white;
     display:  flex;
     justify-content:space-between;
     align-items:  center;
@@ -86,26 +111,16 @@ body {
   }
   
   /* Media Query for mobile styles*/
-  @media only screen and (max-width:  480px) {
+  @media only screen and (min-width:  481px) {
   
    h1 {
-      font-size: 4rem;
+      font-size: 7.9rem;
     }
-    h2, h3 {
-      font-size: 3vw;
-    }
+  
     .bar {
       padding: 5px;
     }
-  .flex {
-    padding: 5px;
-  }
-  .flex1 {
-    height: 45%;
-  }
-  .flex2 {
-    height: 50%;
-  }
+
   .green {
     position: fixed;
     left: 50%;

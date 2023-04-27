@@ -1,3 +1,10 @@
+@font-face {
+	src: url('font/Boris.woff') format('woff2-variations');
+	font-family:'Boris';
+	font-style: normal;
+}
+
+
 body {
     margin: 0;
     padding: 0;
@@ -34,3 +41,28 @@ body {
 .wrapper{
     display: flex;
 }
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    
+}
+
+.sign {
+    width: 150px;
+    height: 100px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+
