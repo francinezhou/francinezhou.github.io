@@ -1,6 +1,14 @@
 let jsonData;
 let polygons = [];
 
+const boroughs = {
+  M: 'Manhattan',
+  Q: 'Queens',
+  X: 'Bronx',
+  B: 'Brooklyn',
+  R: 'Staten Island'
+};
+
 function preload() {
   const url = "https://data.cityofnewyork.us/resource/y5rm-wagw.json";
   jsonData = loadJSON(url);
@@ -28,7 +36,19 @@ function setup() {
   endShape(CLOSE);
   
   // Display name of pool
-  textSize(16);
-  textAlign(LEFT, BOTTOM);
-  text(jsonData[0].name, 0, height);
+  textSize(20);
+    textStyle(BOLD);
+    textAlign(CENTER, CENTER);
+    const name = jsonData[0].name;
+    text(name, width/2, height/2);
+
+   
+    const borough = boroughs[jsonData[0].borough];
+    const location = jsonData[0].location;
+    const pooltype = jsonData[0].pooltype;
+    textSize(14);
+    textStyle(NORMAL);
+    textAlign(CENTER);
+    const description = `${borough} / ${location} / ${pooltype}`;
+    text(description, width/2, height/2 + 25);
 }

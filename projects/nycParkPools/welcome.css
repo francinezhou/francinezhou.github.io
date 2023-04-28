@@ -14,7 +14,6 @@ canvas {
 body {
     margin: 0; 
 }
-  
  
 
 h1 {
@@ -102,7 +101,7 @@ span {
 }
 
 .arrow a:hover { text-decoration: none;
-color: blue;}
+color: orange;}
 
 
   
@@ -112,18 +111,7 @@ color: blue;}
     height: 100vh;
   }
 
-  .green {
-    position: fixed;
-    height: 400px;
-    width: 400px;
-    transform: translate(-50%,-50%);
-    left: calc((100%-250px)/2);
-    top: calc((100%-150px)/2);
-    background: linear-gradient(90deg, rgba(42,74,42,1) 0%, rgba(76,135,63,1) 15%, rgba(243,246,108,1) 49%, rgba(91,145,67,1) 79%, rgba(53,94,49,1) 100%), url(https://grainy-gradients.vercel.app/noise.svg);
-    z-index: -1;
-    cursor: pointer;
-    
-  }
+ 
   
   .green:hover + .wrapper {
     opacity: 1;
@@ -156,19 +144,4 @@ color: blue;}
         font-size: 2rem;
     }
 
-   
-
-  .green {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    -ms-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    background-color:green;
-    width: 400px;
-    height: 400px;
-    z-index: -1;
-  }
   }
