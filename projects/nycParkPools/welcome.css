@@ -5,6 +5,11 @@
 	font-style: normal;
 }
 
+canvas {
+    display: block;
+    position: absolute;
+    z-index: -1;
+  }
 
 body {
     margin: 0; 
@@ -24,23 +29,30 @@ h1 {
   
   h2 {
     font-family: 'Poppins', sans-serif;
-      font-size: 1.2rem;
-      font-weight: bold;
-      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 0;
   }
 
   h3 {
-   
+    font-family: 'Poppins', sans-serif;
     font-size: 1.2rem;
       font-weight: normal;
-      text-align: center;
       font-weight: 300;
   }
   
-
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    /* line-height: 1; */
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+}
 
   
 header {
+    padding: 5px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -51,21 +63,42 @@ header a:visited { text-decoration: none; color: black;}
   
 header a:active { text-decoration: none; }
 
-.title:hover {
-  
+.title {
+    display: inline-block;
 }
 
+
 .title:hover { 
-    text-decoration: skyblue wavy underline;
+   
     color: black;
+}
+
+.clearwavy {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration-skip-ink: none;
+    outline: 0;
+    color: transparent; 
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    z-index: -1;
+}
+
+.title:hover ~ .clearwavy{
+    text-decoration: skyblue wavy underline;
 }
 
 span {
     font-family: 'Boris', sans-serif;
 }
 
-.arrow:hover {
-    
+.arrow {
+    z-index: 99;
 }
 
 .arrow a:hover { text-decoration: none;
@@ -76,18 +109,20 @@ color: blue;}
 
   .wrapper {
     padding: 0px;
+    height: 100vh;
   }
 
   .green {
     position: fixed;
-    height: 150px;
-    width: 250px;
+    height: 400px;
+    width: 400px;
     transform: translate(-50%,-50%);
     left: calc((100%-250px)/2);
     top: calc((100%-150px)/2);
     background: linear-gradient(90deg, rgba(42,74,42,1) 0%, rgba(76,135,63,1) 15%, rgba(243,246,108,1) 49%, rgba(91,145,67,1) 79%, rgba(53,94,49,1) 100%), url(https://grainy-gradients.vercel.app/noise.svg);
-    z-index: 2;
+    z-index: -1;
     cursor: pointer;
+    
   }
   
   .green:hover + .wrapper {
@@ -95,21 +130,21 @@ color: blue;}
     transition: opacity 1s ease-in;
   }
   
-  footer {
-    position:fixed;
+.randomizer {
+
+   position: absolute;
+   padding: 5px;
     bottom:  0;
     right: 0;
-    height: 5vh;
-    width: 100%;
-    display:  flex;
-    justify-content:space-between;
-    align-items:  center;
+    height: fit-content;
+    width: 400px;
   }
-  
-  .bar {
-    padding: 16px;
-  }
-  
+
+
+.randomizerTitle{
+    text-decoration: underline;
+}
+
   /* Media Query for mobile styles*/
   @media only screen and (min-width:  481px) {
   
@@ -117,9 +152,11 @@ color: blue;}
       font-size: 7.9rem;
     }
   
-    .bar {
-      padding: 5px;
+    h2 {
+        font-size: 2rem;
     }
+
+   
 
   .green {
     position: fixed;
@@ -130,7 +167,8 @@ color: blue;}
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     background-color:green;
-    width: 160px;
-    height: 100px;
+    width: 400px;
+    height: 400px;
+    z-index: -1;
   }
   }
