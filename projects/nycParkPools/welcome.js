@@ -36,19 +36,23 @@ function setup() {
   endShape(CLOSE);
   
   // Display name of pool
-  textSize(20);
-    textStyle(BOLD);
-    textAlign(CENTER, CENTER);
-    const name = jsonData[0].name;
-    text(name, width/2, height/2);
 
-   
+    // textSize(20);
+    // textStyle(BOLD);
+    // textAlign(CENTER, CENTER);
+    const name = jsonData[0].name;
+    // text(name, width/2, height/2);
+
     const borough = boroughs[jsonData[0].borough];
     const location = jsonData[0].location;
     const pooltype = jsonData[0].pooltype;
-    textSize(14);
-    textStyle(NORMAL);
-    textAlign(CENTER);
-    const description = `${borough} / ${location} / ${pooltype}`;
-    text(description, width/2, height/2 + 25);
+    // textSize(14);
+    // textStyle(NORMAL);
+    // textAlign(CENTER);
+    // const description = `${borough} / ${location} / ${pooltype}`;
+    // text(description, width/2, height/2 + 25);
+
+    document.querySelector('.randomizerResult h2').textContent = name;
+    document.querySelector('.randomizerResult p').textContent = `${borough} / ${location} / ${pooltype}`;
+
 }
