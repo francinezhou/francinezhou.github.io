@@ -139,6 +139,7 @@ color: orange;}
 
 .randomizerTitle{
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .randomizerResult {

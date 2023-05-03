@@ -8,6 +8,7 @@
 body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -27,14 +28,34 @@ body {
     background: none;
 }
 
-.scroll{
+#left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: auto;
+    background-color: #f2f2f2;
+}
+#right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    overflow: auto;
+    background-color: #fff;
+}
+
+
+/* .scroll{
     width: 50%;
     height: 100vh;
    overflow-x: scroll;
    background: #EFF0F1;
    margin:0 1px;
    padding: 10px;
-}
+} */
 
 .wrapper{
     display: flex;
@@ -52,6 +73,7 @@ header {
     display: flex;
     justify-content: space-around;
     width: 100vw;
+    z-index: 99;
     
 }
 
@@ -84,10 +106,8 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 100%;
     margin-left: auto;
     margin-right: auto;
-    width: 128px;
     margin-left: auto;
     margin-right: auto;
 }
