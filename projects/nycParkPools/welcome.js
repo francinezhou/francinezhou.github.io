@@ -17,6 +17,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   
+
   // Extract coordinates of first polygon from JSON data
   const polygonCoords = jsonData[0].polygon.coordinates[0];
   
