@@ -24,15 +24,15 @@ function dataLoaded(data) {
 }
 
 function setup() {
-  createCanvas(windowWidth/2, 3000);
+  createCanvas(windowWidth, 5000);
 }
 
 function draw() {
-  background(220);
+
   let numPools = jsonData.length;
-  let floatSpacing = 230;
+  let floatSpacing = 180;
   let floatWidth = 13;
-  let floatHeight = 190;
+  let floatHeight = 160;
   let cornerRadius = 4;
 
   let rectWidth = 11;
@@ -74,7 +74,7 @@ function draw() {
    
     let div = createDiv("");
     div.class("poolInfo");
-    div.position(x + floatWidth/2 + 10, y - floatHeight/2);
+    div.position(x + floatWidth/2 + 10, (y - floatHeight/3)*2);
 
     let poolNameDiv = createElement('h3', jsonData[i].name);
 poolNameDiv.parent(div);

@@ -1,11 +1,30 @@
 html, body {
   margin: 0;
   padding: 0;
+  background: rgb(109,195,244);
+  background: linear-gradient(0deg, rgba(109,195,244,1) 50%, rgba(140,236,255,1) 80%, rgba(214,243,255,1) 99%);
 }
 canvas {
   display: block;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: white;
+  -webkit-box-shadow: none;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: none;
+}
 
 h1 {
     margin: 0;

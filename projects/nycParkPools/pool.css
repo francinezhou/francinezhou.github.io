@@ -13,6 +13,7 @@ body {
 
 ::-webkit-scrollbar {
     width: 0px;
+    height: 0px;
 }
 
 ::-webkit-scrollbar-track {
@@ -26,6 +27,11 @@ body {
 
 ::-webkit-scrollbar-thumb:window-inactive {
     background: none;
+}
+
+iframe {
+    border: 0;
+    overflow:hidden; 
 }
 
 #left {
