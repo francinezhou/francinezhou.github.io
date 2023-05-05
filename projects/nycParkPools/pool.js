@@ -10,10 +10,7 @@ function setup() {
     }
 }
 
-function draw() {
-    background(220);
-    noStroke();
-}
+
 
 function mouseWheel(event) {
     if (event.x < width/2) {

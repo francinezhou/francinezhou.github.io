@@ -1,0 +1,159 @@
+/* Some default properties to begin with  */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 0;
+}
+
+a {
+  color: blue;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-right: 2rem;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.footer {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* header styles begin here */
+.header {
+  width: 100%;
+  padding: 0 2rem;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background: white;
+}
+
+.main-title {
+  font-style: italic;
+  font-family: serif;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.navigation {
+  display: none;
+  font-size: 2rem;
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 32px;
+  left: 15px;
+  z-index: 2;
+}
+
+.mobile-navigation {
+  background: rgb(217, 255, 0);
+  min-height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  display: none;
+}
+
+.mobile-navigation li {
+  margin: 0;
+}
+
+.header.open .mobile-navigation {
+  display: flex;
+  position: absolute;
+  background: rgb(217, 255, 0);
+}
+
+/* first section */
+.first-section {
+  min-height: 5vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* second section */
+.second-section {
+  background: rgb(0, 157, 255);
+  display: flex;
+  padding: 2rem;
+}
+
+.second-section p {
+  font-size: 1.5rem;
+}
+
+/* third section */
+.third-section {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.image-box {
+  margin: 3rem;
+  filter: drop-shadow(7px 7px 7px #727272);
+}
+
+/* media query for desktop values */
+@media only screen and (min-width: 800px) {
+  .header {
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .main-title {
+    text-align: left;
+    font-size: 2rem;
+  }
+  .navigation {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .first-section {
+    min-height: 1vh;
+  }
+  .second-section {
+    background: yellow;
+  }
+
+  .second-section p {
+    font-size: 3rem;
+  }
+
+  .image-box {
+    flex-basis: 38%;
+    margin: 3rem;
+  }
+}

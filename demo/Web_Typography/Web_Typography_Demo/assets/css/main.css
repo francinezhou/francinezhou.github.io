@@ -1,0 +1,229 @@
+/* reset */
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+/* type */
+
+body {
+    font-family: Courier, serif;
+    text-align: center;
+    font-size: 38px;
+    line-height: 1.2;
+    background-color: #F6F6F2;
+}
+
+/* structure */
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.section {
+  margin-bottom: 3em;
+  max-width: 100%;
+  width: 100%;
+}
+
+/* typography */
+
+h1 {
+  font-size: 11vw;
+  font-weight: normal;
+  margin-top: 100px;
+}
+
+h2 {
+  font-family: Courier;
+  font-size: 1em;
+  letter-spacing: 1px;
+  margin-bottom: .5em;
+}
+
+h3 {
+  font-family: Courier;
+  font-size: .75em;
+  letter-spacing: .7px;
+  margin-bottom: .5em;
+  text-align: left;
+}
+
+ol {
+  list-style-position: outside;
+  text-align: left;
+  line-height: 2;
+  font-family: Courier;
+  font-size: 22px;
+}
+
+.content a {
+  text-decoration: none;
+  transition: all .03s ease;
+  color: black;
+  border-bottom: 1px solid  rgb(255, 0, 200);
+}
+
+.content a:hover {
+  color:  rgb(255, 0, 200);
+  border-bottom: 1px dotted  rgb(255, 0, 200);
+}
+
+.examples {
+  font-size: 100px;
+  padding: 50px 0;
+  background-color: rgb(179, 255, 0);
+  margin-top: 50px;
+}
+
+.instructions {
+  padding: 100px;
+}
+
+.times {
+  font-family: "times";
+}
+
+.arial {
+  font-family: "arial";
+}
+
+.courier {
+  font-family: "courier";
+}
+
+.georiga {
+  font-family: "georgia";
+}
+
+.verdana {
+  font-family: "verdana";
+  margin-bottom: 0;
+}
+
+.serif {
+  font-family: serif;
+}
+
+.sans-serif {
+  font-family: sans-serif;
+}
+
+.ultra {
+  font-family: 'Ultra', serif;;
+}
+
+.red {
+  background-color: rgb(255, 0, 200);
+}
+
+/* Custom pruchased font */
+
+@font-face {
+    font-family: 'IBMPlexSans-Regular';
+    src: url('../IBMPlexSans-Regular.eot');
+    src: url('../fonts/IBMPlexSans-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/IBMPlexSans-Regular.woff') format('woff'),
+         url('../fonts/IBMPlexSans-Regular.woff2') format('woff2'),
+         url('../fonts/IBMPlexSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.ibmplex {
+  font-family: "IBMPlexSans-Regular", serif;
+}
+
+@font-face {
+    font-family: 'RubikGemstones-Regular';
+    src: url('../fonts/RubikGemstones-Regular.woff2') format('woff2'),
+        url('../fonts/RubikGemstones-Regular.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+.rubikgemstones {
+  font-family: 'RubikGemstones-Regular';
+}
+
+
+
+.tooltip {
+  position: relative;
+  transition: all .03s ease;
+  display: inline-block;
+  border-bottom: 1px dashed blue;
+}
+
+.tooltip:hover {
+  cursor: pointer;
+  color: blue;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: blue;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-family: Courier;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-align: left;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/*code {
+  background-color: antiquewhite;
+  color:black;
+}*/
+
+pre > code {
+    white-space: pre;
+    margin-top: -1.00em;
+    display: block;
+    text-align: left;
+}
+.highlight {
+  border-radius: 4px;
+}
+
+pre {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  padding: 1rem 0 0 1rem;
+  font-size: .9rem;
+  line-height: 1.2;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #EFEFEF;
+}
+/* Layouts */
+
+
+
+.black {
+  background-color: black;
+  color: white;
+}
+
+
+.description {
+    padding: 0 50px;
+}

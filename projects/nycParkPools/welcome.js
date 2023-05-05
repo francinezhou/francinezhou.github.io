@@ -13,7 +13,6 @@ const boroughs = {
 function preload() {
   const url = "https://data.cityofnewyork.us/resource/y5rm-wagw.json";
   loadJSON(url, dataLoaded);
-  
 }
  
 function dataLoaded(data) {
@@ -51,7 +50,7 @@ function setup() {
   });
 }
 
-let count = Math.floor(Math.random() * 92);
+let count = Math.floor(Math.random() * 91);
 let isPlaying = 0;
 
 function draw() {
@@ -89,8 +88,8 @@ function draw() {
     polygons[count].forEach(coord => vertex(coord[0], coord[1]));
     endShape(CLOSE);
 
-    document.querySelector('.randomizerResult h2').textContent = name;
-    document.querySelector('.randomizerResult p').textContent = `${borough} / ${location} / ${pooltype}`;
+    document.querySelector('.poolInfo h2').textContent = name;
+    document.querySelector('.poolInfo h4').textContent = `${borough} / ${location} / ${pooltype}`;
   
     document.querySelector('.randomizerTitle').addEventListener('click', () => {
     if (isPlaying === 1) {
@@ -109,7 +108,6 @@ function playAnimation() {
   count = Math.floor(Math.random() * jsonDataLength);
 }
 
-
 function windowResized(){
-    resizeCanvas(windowWidth, windowHeight);
-  }
+  resizeCanvas(windowWidth, windowHeight);
+}
