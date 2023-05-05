@@ -81,12 +81,14 @@ function draw() {
 
     // Add polygon to list of polygons
     polygons.push(pixelCoords);
-
-    // Draw polygon
-    beginShape();
-    pixelCoords.forEach(coord => vertex(coord[0], coord[1]));
-    endShape(CLOSE);
   }
+    // Draw polygon
+    background(255);
+    fill(173, 216, 230); // light blue fill color
+    beginShape();
+    polygons[count].forEach(coord => vertex(coord[0], coord[1]));
+    endShape(CLOSE);
+
     document.querySelector('.randomizerResult h2').textContent = name;
     document.querySelector('.randomizerResult p').textContent = `${borough} / ${location} / ${pooltype}`;
   
@@ -106,3 +108,8 @@ function draw() {
 function playAnimation() {
   count = Math.floor(Math.random() * jsonDataLength);
 }
+
+
+function windowResized(){
+    resizeCanvas(windowWidth, windowHeight);
+  }
