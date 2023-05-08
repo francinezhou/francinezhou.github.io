@@ -2,7 +2,7 @@ html, body {
   margin: 0;
   padding: 0;
   background: rgb(109,195,244);
-  background: linear-gradient(0deg, rgba(109,195,244,1) 50%, rgba(140,236,255,1) 80%, rgba(214,243,255,1) 99%);
+  background: linear-gradient(0deg, rgba(109,195,244,1) 20%, rgba(140,236,255,1) 80%, rgba(214,243,255,1) 120%);
 }
 canvas {
   display: block;

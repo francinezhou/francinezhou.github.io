@@ -42,9 +42,7 @@ iframe {
     height: 100%;
     overflow-y: auto;
     overflow-x:initial;
-    background: rgb(109,195,244);
-    background: linear-gradient(0deg, rgba(109,195,244,1) 30%, rgba(140,236,255,1) 60%, rgba(214,243,255,1) 99%);
-
+    
 }
 #right {
     position: absolute;
