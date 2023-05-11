@@ -13,6 +13,7 @@ let titleText = document.querySelector(".titleText");
 let jsonData;
 let jsonDataLength;
 let polygons = [];
+var gif_loadImg, gif_createImg;
 
 const boroughs = {
   M: 'Manhattan',
@@ -25,6 +26,8 @@ const boroughs = {
 function preload() {
   const url = "https://data.cityofnewyork.us/resource/y5rm-wagw.json";
   loadJSON(url, dataLoaded);
+  gif_loadImg = loadImage('img/ripple.gif');
+  gif_createImg = createImg('img/ripple.gif');
 }
  
 function dataLoaded(data) {
@@ -93,9 +96,13 @@ function draw() {
     // Add polygon to list of polygons
     polygons.push(pixelCoords);
   }
+  
+
     // Draw polygon
     background(255);
-    fill(173, 216, 230); // light blue fill color
+    // gif_createImg.position(50, 350);
+    noFill();
+   fill(173, 216, 230); // light blue fill color
     beginShape();
     polygons[count].forEach(coord => vertex(coord[0], coord[1]));
     endShape(CLOSE);
