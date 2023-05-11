@@ -2,7 +2,7 @@ html, body {
   margin: 0;
   padding: 0;
   background: rgb(109,195,244);
-  background: linear-gradient(0deg, rgba(109,195,244,1) 20%, rgba(140,236,255,1) 70%, rgba(214,243,255,1) 80%), rgba(255,255,218,1) 100%;
+  background: linear-gradient(0deg, rgba(109,195,244,1) 20%, rgba(140,236,255,1) 80%, rgba(214,243,255,1) 120%);
 }
 canvas {
   display: block;
@@ -73,7 +73,7 @@ p {
 }
 
 .poolInfo {
-  width: 220px;
+  width: 190px;
   height: 60px;
   background-color: rgba(23, 216, 216, 0.4);
   font-size: 12px;
