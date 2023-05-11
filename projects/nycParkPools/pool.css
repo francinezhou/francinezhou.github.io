@@ -76,8 +76,8 @@ a:active { text-decoration: none; }
 
 h2 {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 400;
+    color:#0061e7;
 }
 
 span {
@@ -112,8 +112,8 @@ header {
 }
 
 .sign {
-    width: 140px;
-    height: 80px;
+    width: 162px;
+    height: 71px;
     background-color: white;
     border-radius: 5px;
    
@@ -121,6 +121,7 @@ header {
 
 .signText {
     position: relative;
+    font-size: 1.2rem;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -132,8 +133,8 @@ header {
 .signDeco {
     position: absolute;
     top: 0;
-    width: 140px;
-    height: 80px;
+    width: 162px;
+    height: 71px;
 }
 .Layer_1 {
     position: relative;

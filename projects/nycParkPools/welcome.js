@@ -1,3 +1,15 @@
+let titleText = document.querySelector(".titleText");
+
+    titleText.addEventListener("click", function show(e) {
+        if (document.querySelector(".signBig").style.opacity === "0") {
+            document.querySelector(".signBig").style.opacity = "1";
+        } else {
+          document.querySelector(".signBig").style.opacity = "0";
+        }
+    });
+
+
+
 let jsonData;
 let jsonDataLength;
 let polygons = [];
