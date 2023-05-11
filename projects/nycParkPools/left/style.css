@@ -48,7 +48,7 @@ h1 {
     font-family: 'Poppins', sans-serif;
     font-size: 1.2rem;
     font-weight: normal;
-    font-weight: 400;
+    font-weight: 500;
     padding-bottom: 5px;
     margin: 0;
     line-height: 0.95;
@@ -75,10 +75,12 @@ p {
 .poolInfo {
   width: 200px;
   height: 60px;
-  background-color: lightgray;
+  background-color: rgba(23, 216, 216);
+  opacity: 0.1;
   font-size: 12px;
   text-align: left;
   padding: 5px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
@@ -86,5 +88,5 @@ p {
   position: absolute;
   width: 100%;
   height: fit-content;
-
 }
+

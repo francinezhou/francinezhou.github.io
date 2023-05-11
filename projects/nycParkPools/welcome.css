@@ -15,13 +15,13 @@ canvas {
     z-index: -1;
   }
 
-
 h1 {
     margin: 0;
     padding: 0;
     font-size: 19vw;
     line-height: 0.8;
     font-weight: normal;
+  
 }
   
   
@@ -57,6 +57,7 @@ p {
   margin: 0;
 }
 
+
   
 header {
     padding: 5px;
@@ -70,18 +71,22 @@ header a:visited { text-decoration: none; color: black;}
   
 header a:active { text-decoration: none; }
 
+
 .title {
     display: inline-block;
 }
 
 
 .title:hover { 
-   
     color: black;
 }
 
+.titleText {
+  display: inline;
+}
+
 .clearwavy {
-    -webkit-touch-callout: none;
+    -webkit-touch-malout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
@@ -94,22 +99,48 @@ header a:active { text-decoration: none; }
     top: 5px;
     left: 15px;
     z-index: -1;
+   display: inline-block;
 }
 
-.title:hover ~ .clearwavy{
+.titleText:hover ~ .clearwavy{
     text-decoration: skyblue wavy underline;
 }
+
 
 span {
     font-family: 'Boris', sans-serif;
 }
 
 .arrow {
-    z-index: 99;
+   display: inline-block;
+  cursor: pointer;
+  z-index: 99;
 }
 
-.arrow a:hover { text-decoration: none;
-color: orange;}
+.yellow { 
+  color: #FFD348;
+}
+
+.blinker {
+  animation: blinker 1.5s infinite;
+}
+
+@keyframes blinker {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
 
 
   

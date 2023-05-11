@@ -91,21 +91,35 @@ function draw() {
     document.querySelector('.poolInfo h2').textContent = name;
     document.querySelector('.poolInfo h4').textContent = `${borough} / ${location} / ${pooltype}`;
   
-    document.querySelector('.randomizerTitle').addEventListener('click', () => {
-    if (isPlaying === 1) {
-
-      isPlaying = 0;
+   document.querySelector('.arrow').addEventListener('mousedown', () => {
+  arrow.classList.add('yellow');
+  if (isPlaying === 1) {
+    isPlaying = 0;
+    clearInterval(animate);
+  } else {
+    isPlaying = 1;
+    animate = setInterval(playAnimation, 150);
+    setTimeout(() => {
       clearInterval(animate);
-    } else {
+      isPlaying = 0;
+      arrow.classList.remove('yellow');
+    }, 2200); // wait for 4 seconds and then stop the randomizer
+  }
+});
 
-      isPlaying = 1;
-      animate = setInterval(playAnimation, 100);
-    }
-  })
 }
+
+const arrow = document.querySelector('.arrow');
+arrow.classList.add('blinker');
 
 function playAnimation() {
   count = Math.floor(Math.random() * jsonDataLength);
+  arrow.classList.remove('blinker');
+  arrow.classList.add('yellow');
+  setTimeout(() => {
+    arrow.classList.remove('yellow');
+    arrow.classList.add('blinker');
+  }, 2200);
 }
 
 function windowResized(){
