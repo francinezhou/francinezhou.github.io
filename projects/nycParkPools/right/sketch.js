@@ -18,7 +18,7 @@ function preload() {
 function dataLoaded(data) {
   jsonData = Object.values(data);
   jsonDataLength = jsonData.length;
-  jsonData = jsonData.filter(pool => pool.location === "Indoor");
+  jsonData = jsonData.filter(pool => pool.location === "Outdoor");
   let numPools = jsonData.length;
   let numFloats = numPools;
   jsonData.sort((a, b) => poolTypes.indexOf(a.pooltype) - poolTypes.indexOf(b.pooltype));
@@ -38,14 +38,14 @@ function dataLoaded(data) {
 }
 
 function setup() {
-  createCanvas(windowWidth, 5200);
+  createCanvas(windowWidth, 12000);
 }
 
 function draw() {
   let numPools = jsonData.length;
-  let floatSpacing = 420;
+  let floatSpacing = 150;
   let floatWidth = 13;
-  let floatHeight = 195;
+  let floatHeight = 55;
   let cornerRadius = 4;
 
   let rectWidth = 11;
@@ -63,8 +63,8 @@ function draw() {
     let y = i * floatSpacing + floatSpacing / 2;
 
     
-   //Blue float line
-    fill(0, 0, 255);
+   //Yellow float line
+    fill(255,211,72);
     strokeWeight(0);
     rectMode(CENTER);
     rect(x, y - rectHeight / 2, floatWidth, floatHeight - rectHeight, cornerRadius);
@@ -98,7 +98,7 @@ function draw() {
     
 
     // position the pool info divs based on the floats
-    poolInfoDivs[i].position(x + floatWidth / 2 + 10, y - floatHeight / 4);
+    poolInfoDivs[i].position(x + floatWidth / 2 + 10, y - floatHeight /1.5);
   }
 }
 
