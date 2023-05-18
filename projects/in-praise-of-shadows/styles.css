@@ -210,6 +210,11 @@ video {
   opacity: 0;
   }
 
+  #branch, #statue  {
+  filter: blur(6px);
+  -webkit-filter: blur(6px);
+  }
+
 /* bottom text ENGLISH */
 .en-title {
   position:fixed;
