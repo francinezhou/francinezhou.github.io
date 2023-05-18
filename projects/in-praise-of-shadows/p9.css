@@ -239,16 +239,23 @@ p {
 }
 
 /* next page link button */
+.next {
+  display: inline;
+  letter-spacing: auto;
+}
 .next a{
     text-decoration: none;
     color: #828282;
+    
 }
 .next a:hover {
-     text-decoration: none; color: white;
+     text-decoration: none; 
+     color: white;
   }
 
 .next:hover {
-  
+  letter-spacing: 5px;
+  transition: 3s cubic-bezier(0, 0, 0.2, 1);;
 }
 
 

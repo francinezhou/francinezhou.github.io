@@ -6,15 +6,19 @@
 }
 * {
     font-family: 'Noto Sans', sans-serif;
-    cursor: url(imgs/cloud.png),auto;
-   
+    
+    box-sizing: border-box;
 }
-img {
- 
+
+body {
+  cursor: url(imgs/cloud.png),auto;
 }
+
 a:link {
   cursor: pointer;
 }
+
+
 ::-webkit-scrollbar {
   width: 20px;
 }
@@ -27,22 +31,28 @@ a:link {
   background: #F4F4ED;
   border-radius: 10px;
 }  
-::-webkit-scrollbar-thumb: hover {
-  background: #5465FF;
+::-webkit-scrollbar-thumb:hover {
+  background: #e7f7ff;
 }
 
 
 h1 {
-    font-family: 'Archivo', sans-serif;
-    font-weight:  normal;
-    text-transform:  uppercase;
-    padding: 0;
+  font-weight: normal;
+  padding: 0;
 	margin: 0;
-	font-size: 1.2rem;
-    font-weight: 400;
-	color: rgba(0, 0, 0, 1);
+	font-size: 1.5rem;
+  font-weight: 400;
+  color: rgb(80, 190, 255);
 }
+
+a:link { text-decoration: none; }
+
+a:visited { text-decoration: none; }
   
+a:active { text-decoration: none; }
+
+a:hover {text-decoration: none; cursor: pointer;}
+
 /* h1 a {
     text-decoration: none;
     border: 0.35rem solid #000;
@@ -52,10 +62,23 @@ h1 {
     margin-bottom: 1rem;
 } */
 
+
 h2 {
-    font-size: 1.2rem;
-    font-weight: 400;
+  font-weight: normal;
+  padding: 0;
+	margin: 0;
+	font-size: 1.1rem;
+  font-weight: 400;
+	color: rgba(0, 0, 0, 1);
 }
+
+h2 a:link { text-decoration: none; color: black;}
+
+h2 a:visited { text-decoration: none; color: black;}
+  
+h2 a:active { text-decoration: none; }
+
+h2 a:hover {text-decoration: none; }
 
 h3 {
     font-weight: normal;
@@ -71,6 +94,7 @@ h4 {
 p {
     font-family: 'Noto Sans', sans-serif;
     font-size: 0.9em;
+    margin: 0;
 }
 
 body {
@@ -89,30 +113,27 @@ img {
 }
 
 header {
+  position: fixed;
+  top:  0;
+  height: 40px;
+  width: calc(100vw - 20px);
   padding:  10px;
   padding-top: 8px;
   padding-bottom: 10px;
-  position: sticky;
-  top:  0;
-  right: 0;
-  width: calc(100% - 20px);
   color:  white;
   background-color: rgb(244, 244, 244);
-  display:  flex;
-  justify-content:space-between;
-  align-items:  center;
-  cursor: auto;
-}
-.name, .right {
- margin-left: 2px;
- margin-right: 2px;
+  display:  flex; 
+  justify-content: space-between;
+  align-items: center;
 }
 
-.classmates {
-  margin-right: 15px;
+.about, .work {
+  text-transform:  uppercase;
 }
+
 .wrapper {
-    margin-bottom: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 .hashtags {
@@ -189,13 +210,12 @@ footer {
 iconify-icon { 
     font-size: 25px;
     color: grey;
-
     transform: translate(0,3px); 
 }
 
 .email:hover iconify-icon{ 
-color: rgb(88, 88, 88);
-  
+  color: rgb(88, 88, 88);
+  cursor: pointer;
 }
 
 .email, .hashtags::before {
@@ -222,6 +242,43 @@ section {
     margin-bottom: 0;
     display:  flex;
 
+}
+
+/* about page biography section */
+#bio {
+  height: fit-content;
+  min-height: 100vh;
+}
+
+.contentBio {
+  position: absolute;
+  bottom: 10%;
+}
+.profile {
+  position: fixed;
+  width: 230px;
+  top: 10%; 
+  right: 25%;
+  z-index: -1;
+}
+
+#name {
+  
+  cursor: pointer;
+} 
+
+
+.column-a {
+  width:  30%;
+}
+
+
+.column-a {
+  padding-right:  100px;
+}
+
+.column-b {
+  width:  70%;
 }
 
 
@@ -255,10 +312,11 @@ section {
 }
 
 
-.hm-img {
+.proj-img {
+  margin:15px;
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
+  width: 80%;
 }
 
 .proj1-img {
@@ -266,7 +324,6 @@ section {
   margin-right: auto;
   width: 70%;
 }
-
 
 #lab {
   background-color:  rgb(227, 239, 245);
@@ -281,6 +338,11 @@ section {
 
 .column-1 {
   padding-right:  100px;
+  height: fit-content;
+}
+
+.column-2 {
+  padding-bottom: 130px;
 }
 
 #discog {
@@ -303,13 +365,31 @@ li {
   font-weight:  700;
 }
 
+.labContent {
+  display: flex;
+}
+
+.labItem {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-top: 20px;
+  width:700px;
+  height:150px;
+
+}
+
 /* Media Query for mobile styles*/
 @media only screen and (max-width:  600px) {
+  .profile {
+   
+    width: 200px;
+    top: 15%; 
+    right: 20%;
+  }
+
 section {
     padding: 25px;
-  }
- h1 {
-    font-size: 1.1rem;
   }
 
 .content{
@@ -320,11 +400,38 @@ section {
   width:  100%;
 }
 
+
 .column-1 {
+  padding-right:  0;
+  padding-bottom: 25px;
+}
+
+.column-2 {
+  padding-bottom: 30px;
+}
+
+.column-a, .column-b {
+  width:  100%;
+}
+
+.column-a {
   padding-right:  0;
   padding-bottom:  50px;
 }
+
+
+.proj-img {
+  margin:15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
 ul {
   padding: 0;
+}
+
+.labContent {
+  flex-direction: column;
 }
 }
