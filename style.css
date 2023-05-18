@@ -379,8 +379,12 @@ li {
 
 /* Media Query for mobile styles*/
 @media only screen and (max-width:  600px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
   .profile {
-   
     width: 200px;
     top: 15%; 
     right: 20%;
