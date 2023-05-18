@@ -1,6 +1,8 @@
 body {
-    background-color: black;
+    background-color: white;
+    overflow-y:hidden;
 }
+
 
 h1, h2, h3, p {
    
@@ -82,6 +84,7 @@ h2 a:active { text-decoration: none; }
       margin-left: auto;
       margin-right: auto;
       text-align: center;
+      z-index: -1;
     }
     
     .row {
@@ -156,16 +159,16 @@ h2 a:active { text-decoration: none; }
 
   
 #shoji {
-
-height: 100vh;
-object-fit: cover;
-position: absolute;
-margin-left: auto;
-margin-right: auto;
-top: 0;
-bottom: 0;
-z-index: -1; 
-opacity: 1;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0;
+  left: 0;
+  z-index: 0; 
+  overflow-y: hidden;
+  /* filter: brightness(1.75); */
 }
 
 
