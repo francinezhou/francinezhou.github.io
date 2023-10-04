@@ -12,7 +12,7 @@
 
 body {
   cursor: url(imgs/cloud.png),auto;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 a:link {
@@ -117,7 +117,7 @@ header {
   position: fixed;
   top:  0;
   height: 40px;
-  width: calc(100vw - 20px);
+  width: 100%;
   padding:  10px;
   padding-top: 8px;
   padding-bottom: 10px;
@@ -126,6 +126,12 @@ header {
   display:  flex; 
   justify-content: space-between;
   align-items: center;
+}
+
+@media only screen and (min-width:  601px) {
+  header {
+    width: calc(100vw - 20px);
+  }
 }
 
 .about, .work {
@@ -165,7 +171,7 @@ footer {
     padding-bottom: 10px;
     position: fixed;
     bottom:  0;
-    width:  100vw;
+    width:  100%;
     color:  white;
     background-color: rgb(244, 244, 244);
     display:  flex;
@@ -220,8 +226,8 @@ iconify-icon {
 }
 
 .email, .hashtags::before {
-    content: '';                /*  for the pseudo to render  */
-    flex: 1;                    /*  take all space left, equally  */
+    content: '';              
+    flex: 1;                   
     text-align: right;
   }
 
