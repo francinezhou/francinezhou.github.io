@@ -1,0 +1,403 @@
+@font-face {
+    font-family: 'redaction';
+    src: url('font/redaction-regular-webfont.woff2') format('woff2'),
+         url('font/redaction-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'redaction';
+    src: url('font/redaction-italic-webfont.woff2') format('woff2'),
+         url('font/redaction-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+
+}
+@font-face {
+    font-family: 'redaction';
+    src: url('font/redaction-bold-webfont.woff2') format('woff2'),
+         url('font/redaction-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: bold;
+
+}
+/* 10 */
+@font-face {
+    font-family: 'redaction';
+    src: url('font/redaction10-regular-webfont.woff2') format('woff2'),
+         url('font/redaction10-regular-webfont.woff') format('woff');
+    font-weight: 10;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'redaction';
+    src: url('font/redaction10-italic-webfont.woff2') format('woff2'),
+         url('font/redaction10-italic-webfont.woff') format('woff');
+    font-weight: 10;
+    font-style: italic;
+
+}
+@font-face {
+    font-family: 'redaction';
+    src: url('font/redaction10-bold-webfont.woff2') format('woff2'),
+         url('font/redaction10-bold-webfont.woff') format('woff');
+    font-weight: 10;
+    font-style: bold;
+
+}
+/* 20 */
+@font-face {
+    font-family: 'redaction';
+    src: url('font/redaction20-regular-webfont.woff2') format('woff2'),
+         url('font/redaction20-regular-webfont.woff') format('woff');
+    font-weight: 20;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'redaction';
+    src: url('font/redaction20-italic-webfont.woff2') format('woff2'),
+         url('font/redaction20-italic-webfont.woff') format('woff');
+    font-weight: 20;
+    font-style: italic;
+
+}
+@font-face {
+    font-family: 'redaction';
+    src: url('font/redaction20-bold-webfont.woff2') format('woff2'),
+         url('font/redaction20-bold-webfont.woff') format('woff');
+    font-weight: 20;
+    font-style: bold;
+}
+/* 35 */
+@font-face {
+    font-family: 'redaction';
+    src: url('font/redaction35-regular-webfont.woff2') format('woff2'),
+         url('font/redaction35-regular-webfont.woff') format('woff');
+    font-weight: 35;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'redaction';
+    src: url('font/redaction35-italic-webfont.woff2') format('woff2'),
+         url('font/redaction35-italic-webfont.woff') format('woff');
+    font-weight: 35;
+    font-style: italic;
+
+}
+@font-face {
+    font-family: 'redaction';
+    src: url('font/redaction35-bold-webfont.woff2') format('woff2'),
+         url('font/redaction35-bold-webfont.woff') format('woff');
+    font-weight: 35;
+    font-style: bold;
+
+}
+/* 50 */
+@font-face {
+    font-family: 'redaction';
+    src: url('font/redaction50-regular-webfont.woff2') format('woff2'),
+         url('font/redaction50-regular-webfont.woff') format('woff');
+    font-weight: 50;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'redaction';
+    src: url('font/redaction50-italic-webfont.woff2') format('woff2'),
+         url('font/redaction50-italic-webfont.woff') format('woff');
+    font-weight: 50;
+    font-style: italic;
+
+}
+@font-face {
+    font-family: 'redaction';
+    src: url('font/redaction50-bold-webfont.woff2') format('woff2'),
+         url('font/redaction50-bold-webfont.woff') format('woff');
+    font-weight: 50;
+    font-style: bold;
+
+}
+/* 70 */
+@font-face {
+    font-family: 'redaction';
+    src: url('font/redaction70-regular-webfont.woff2') format('woff2'),
+         url('font/redaction70-regular-webfont.woff') format('woff');
+    font-weight: 70;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'redaction';
+    src: url('font/redaction70-italic-webfont.woff2') format('woff2'),
+         url('font/redaction70-italic-webfont.woff') format('woff');
+    font-weight: 70;
+    font-style: italic;
+
+}
+@font-face {
+    font-family: 'redaction';
+    src: url('font/redaction70-bold-webfont.woff2') format('woff2'),
+         url('font/redaction70-bold-webfont.woff') format('woff');
+    font-weight: 70;
+    font-style: bold;
+
+}
+/* 100 */
+@font-face {
+    font-family: 'redaction';
+    src: url('font/redaction100-regular-webfont.woff2') format('woff2'),
+         url('font/redaction100-regular-webfont.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'redaction';
+    src: url('font/redaction100-italic-webfont.woff2') format('woff2'),
+         url('font/redaction100-italic-webfont.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+
+}
+@font-face {
+    font-family: 'redaction';
+    src: url('font/redaction100-bold-webfont.woff2') format('woff2'),
+         url('font/redaction100-bold-webfont.woff') format('woff');
+    font-weight: 100;
+    font-style: bold;
+
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+    width:  100%;
+    height:  auto;
+  }
+  
+
+body {
+    margin: 0;
+    font-family: "redaction";
+    font-weight: 10;
+    /* font-style: normal; */
+    height: 100%;
+    background: #F3F3F3;
+    /* background-size: 100% 1000%; */
+  }
+
+  /* The grid container */
+  .grid-container {
+  grid-template-columns: repeat(8, 1fr); /* Define the number of columns in the grid */
+  height: 100vh;
+  /* overflow: hidden; */
+  overflow-y: hidden;
+    display: grid;
+    grid-template-areas: 
+    'a1 a1 a1 a1 a2 a2 a2 a3'
+    'b1 b1 b1 b1 b2 b2 b2 b2'
+    'c1 c1 c1 c1 c1 c1 c1 c1' 
+    'd1 d1 d1 d1 d2 d2 d2 d2';
+    grid-template-rows: 8% 22% 54% 16%;
+    /* grid-column-gap: 10px; - if you want gap between the columns */
+  } 
+  
+  :root {
+    --border: 1.2px dashed #000;
+  }
+  .item {
+    flex: 1; /* Allow the items to expand within their columns */
+    min-width: 0; /* Ensure items can shrink smaller than their content */
+    border-bottom: var(--border);
+    border-left: var(--border);
+}
+.d1, .d2 {
+    border-bottom: none;
+}
+
+.a1 {
+    grid-area: a1;
+    color: #BABABA;
+    text-align: right;
+    font-weight: 20;
+    font-style: italic;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.a1 input {
+    /* Apply the same styles as .a1 to the input element */
+    color: #BABABA;
+    text-align: right;
+    font-family: 'redaction';
+    font-weight: 20;
+    font-style: italic;
+    background-color: white;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    width: 100%; /* Change from width: 100%; to width: auto; */
+}
+
+#inputBox {
+    grid-area: a1;
+    text-align: right;
+    font-weight: 20;
+    font-style: italic;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: white;
+    padding: 5px;
+    border: none;
+    font-size: inherit;
+}
+
+#inputBox::placeholder {
+    color: #BABABA;
+    font-weight: inherit;
+    font-style: italic;
+    text-align: right;
+}
+
+
+  .a2 {
+    grid-area: a2;
+    text-align: center;
+  }
+
+  .a1, .a2, .a3 {
+    background-color: white;
+    padding: 5px;
+  }
+
+.b1, .b2, .c1, .d1 {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.b1, .b2, .c1, .d1, .d2 {
+    background-color: #f3f3f3;
+    padding: 10px;
+  }
+
+
+.a1 p, .b1 h3, .b2 h3, .c1 h2, .d1 h3 {
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+  .b1 {
+    grid-area: b1;
+  }
+  
+  .b2 {
+    grid-area: b2;
+    background-color: #f1f1f1;
+  }
+
+  h3 {
+    font-size: 12vw;
+    line-height: 0.5em;
+    font-weight: 10;
+    font-style: normal;
+    display: inline-block;
+    }
+
+  .b1:hover h3, .b2:hover h3, .d1:hover h3 {
+    font-size: 14vw;
+    line-height: 1.3rem;
+    text-transform: lowercase;
+    font-weight: 20;
+    font-style: italic;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* what's new */
+  h2 {
+    font-size: 31vw;
+    line-height: 45%;
+    font-weight: 20;
+    font-style: italic;
+    white-space: nowrap; 
+    display: inline-block;
+    }
+
+  .c1 {
+    grid-area: c1;
+    color: #C9C9C9;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    text-align: right;
+    padding: 5px 10px; 
+  }
+  
+  .c1 h2 {
+    margin: 0;
+    padding: 0;
+  }
+/* footer */
+  .d1 {
+    grid-area: d1;
+  }
+
+  .d2 {
+    grid-area: d2;
+    background-color: white;
+    text-align: center;
+  }
+
+  @media (min-width: 440px) {
+    .b1, .b2, .c1, .d1, .d2 {
+        padding: 15px;
+      }
+
+    h2 {
+        font-size: 27vh;
+    }
+
+    h3 {
+        font-size: 8vh;
+        line-height: 0.5em;
+    }
+    .b1:hover h3, .b2:hover h3, .d1:hover h3 {
+        font-size: 9vh;
+        line-height: 2rem;
+  }
+    .c1 {
+        padding: 10px 15px;
+    }
+}
+
+/* gradient change when hover */
+.b1:hover ~ .b2,
+.b1:hover ~ .d1{
+    background: #C6C6C6;
+}
+.b1:hover ~ .c1 {
+    color: white;
+    background: linear-gradient(180deg, #C6C6C6 0%, #FFF 100%);
+}
+
+.b2:hover ~ .d1{
+    background: #C6C6C6;
+}
+.b2:hover ~ .c1 {
+    background: linear-gradient(180deg, #C6C6C6 0%, #FFF 100%);
+}
+
+
+
+
