@@ -39,14 +39,14 @@
     font-style: italic;
 
 }
-@font-face {
+/* @font-face {
     font-family: 'redaction';
     src: url('font/redaction10-bold-webfont.woff2') format('woff2'),
          url('font/redaction10-bold-webfont.woff') format('woff');
     font-weight: 10;
     font-style: bold;
 
-}
+} */
 /* 20 */
 @font-face {
     font-family: 'redaction';
@@ -419,7 +419,6 @@ h4 {
     font-size: 12vw;
     line-height: 0.5em;
     font-weight: 10;
-    
     display: inline-block;
     }
 
