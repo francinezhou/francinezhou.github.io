@@ -177,6 +177,10 @@
   box-sizing: border-box;
 }
 
+a {
+  all: unset;
+}
+
 img {
     width:  100%;
     height:  auto;
@@ -192,6 +196,7 @@ body {
     background: #F3F3F3;
     /* background-size: 100% 1000%; */
   }
+
 
   /* The grid container */
   .grid-container {
@@ -212,15 +217,73 @@ body {
   :root {
     --border: 1.2px dashed #000;
   }
-  .item {
+  .menu {
     flex: 1; /* Allow the items to expand within their columns */
     min-width: 0; /* Ensure items can shrink smaller than their content */
     border-bottom: var(--border);
     border-left: var(--border);
 }
+      
+  .grid-containerShop {
+    position: fixed;
+    width: 100%;
+    min-width: 320px;
+    right: 0;
+    grid-template-columns: repeat(8, 1fr); /* Define the number of columns in the grid */
+    height: 8vh;
+      display: grid;
+      grid-template-areas: 
+      'a1 a1 a1 a1 a2 a2 a2 a3';
+      /* 'z1 z1 z1 z1 z2 z2 z2 z2'; */
+      /* grid-template-rows: 8%; */
+      z-index: 1;
+    } 
+
+    .grid-containerProducts {
+        position: fixed;
+        right: 0;
+        display: grid;
+        grid-template-areas: 
+          'z1 z2';
+          /* grid-template-rows: 8%; */
+        } 
+/* 
+.z1 {
+    grid-area: z1;
+    background: grey;
+} */
+
+@media (min-width: 800px) {
+    .grid-container {
+        position: absolute;
+        width: 40%;
+        min-width: 320px;
+        right: 0;
+    }
+
+    .grid-containerShop {
+        position: fixed;
+        width: 40%;
+        min-width: 320px;
+        right: 0;
+    }
+}
+
+
+
 .d1, .d2 {
     border-bottom: none;
 }
+
+h4 {
+    display: inline-block; 
+    margin: 0; 
+    font-size: 6vh;
+    line-height: 0.6em;
+    font-weight: 10;
+    font-style: normal;
+}
+
 
 .a1 {
     grid-area: a1;
@@ -273,9 +336,63 @@ body {
   .a2 {
     grid-area: a2;
     text-align: center;
+    display: flex;
+    align-items: center;
   }
 
-  .a1, .a2, .a3 {
+  /* Style for the dropdown button */
+#zipCodeDropdown {
+    background-color: transparent; /* Remove background color */
+    border: none; /* Remove border */
+    color: #BABABA; /* Text color */
+    font-size: 5vh;
+    font-family: 'redaction';
+    line-height: 0.6em;
+    font-weight: 10;
+    font-style: normal;
+    appearance: none; /* Remove default appearance */
+    -webkit-appearance: none; /* Remove default appearance for WebKit (Safari, Chrome) */
+    -moz-appearance: none; /* Remove default appearance for Firefox */
+    flex: 1; 
+    /* Allow the dropdown button to expand vertically within the cell */
+    height: 120%;
+    cursor: pointer;
+    /* display: flex;
+    align-items: center; */
+}
+
+
+/* Style for the dropdown arrow icon (you can replace this with your custom icon) */
+#zipCodeDropdown::after {
+    content: "▼"; /* Unicode character for a down arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Adjust the spacing as needed */
+    transform: translateY(-50%);
+    font-size: 1.2em; /* Adjust the size of the arrow */
+}
+
+/* Style for dropdown options */
+#zipCodeDropdown option {
+    background-color: #f3f3f3; /* Background color for options */
+    color: #000; /* Text color for options */
+    /* min-height: 2em;
+    padding: 0;
+    margin: 0; */
+}
+
+.a3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cartIcon {
+    width: 4vh;
+}
+
+
+.a1, .a2, .a3 {
     background-color: white;
     padding: 5px;
   }
@@ -293,7 +410,7 @@ body {
   }
 
 
-.a1 p, .b1 h3, .b2 h3, .c1 h2, .d1 h3 {
+.a1 h4, .b1 h3, .b2 h3, .c1 h2, .d1 h3 {
     text-align: right;
     margin: 0;
     padding: 0;
@@ -301,6 +418,7 @@ body {
 }
   .b1 {
     grid-area: b1;
+    cursor: pointer;
   }
   
   .b2 {
@@ -357,9 +475,12 @@ body {
     grid-area: d2;
     background-color: white;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
   }
 
-  @media (min-width: 440px) {
+@media (min-width: 440px) {
     .b1, .b2, .c1, .d1, .d2 {
         padding: 15px;
       }
@@ -381,6 +502,7 @@ body {
     }
 }
 
+
 /* gradient change when hover */
 .b1:hover ~ .b2,
 .b1:hover ~ .d1{
@@ -398,6 +520,117 @@ body {
     background: linear-gradient(180deg, #C6C6C6 0%, #FFF 100%);
 }
 
+.button-group {
+  position: absolute;
+    width: 100%;
+    min-width: 320px;
+    right: 0;
+}
+
+#list-container {
+    width: fit-content;
+    height: 15vh;
+    min-width: 320px;
+}
+
+#list {
+  display: flex;
+  flex-direction: row;
+}
+
+.cardOutline {
+      position: relative;
+      display: inline-block;
+      width: 200px;
+      height: 35vh;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      border-left: var(--border);
+      border-bottom: var(--border);
+  }
+
+/* SHOP PAGE ITEM DISPLAY */
+@media (min-width: 800px) {
+  .button-group {
+    position: absolute;
+    width: 40%;
+    min-width: 320px;
+    right: 0;
+}
+
+  #list-container {
+      position: absolute;
+      width: 40%;
+      height: 30%;
+      min-width: 320px;
+      right: 0; 
+  }
+  
+  #list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .cardOutline {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    height: 50vh;
+  }
+}
 
 
+  .cardOutline img {
+    position: relative; /* Add this to make sure images are in the foreground */
+    z-index: 2; /* Higher z-index for images */
+    cursor: move;
+  }
+  
+  .cardOutline .mediadiv:hover {
+    width: 100%;
+    border-color: #00e4e6;
+  }
+  
 
+  .cardOutline > *:not(img) {
+    z-index: 0;
+    /* Apply styles to all elements within .cardOutline except images */
+    /* You can customize the styles here */
+}
+
+  .textdiv {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 15px;
+  }
+
+  .textdiv p {
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+
+  .productName:hover {
+    cursor: pointer;
+    /* color: rgb(80, 80, 80); */
+    font-size: 19px;
+    font-weight: 35;
+    font-style: italic; 
+  }
+
+  .zeroDollar {
+   
+  }
+  
+
+#logo {
+  position: fixed;
+  width: 100px;
+  cursor: pointer;
+  z-index: 99;
+}

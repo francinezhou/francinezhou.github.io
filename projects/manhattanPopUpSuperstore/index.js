@@ -56,7 +56,7 @@ function updateTime() {
         timeStr = '00' + timeStr.slice(2);
     }
 
-    d2Element.querySelector('p').innerHTML = `${dateStr}<br>${timeStr}`;
+    d2Element.querySelector('h4').innerHTML = `${dateStr}<br>${timeStr}`;
 }
 
 // Update the time initially
