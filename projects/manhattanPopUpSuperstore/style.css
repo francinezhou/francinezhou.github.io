@@ -181,17 +181,17 @@ a {
   all: unset;
 }
 
-img {
+/* img {
     width:  100%;
     height:  auto;
   }
-  
+   */
 
 body {
     margin: 0;
     font-family: "redaction";
     font-weight: 10;
-    /* font-style: normal; */
+    font-style: normal;
     height: 100%;
     background: #F3F3F3;
     /* background-size: 100% 1000%; */
@@ -224,20 +224,7 @@ body {
     border-left: var(--border);
 }
       
-  .grid-containerShop {
-    position: fixed;
-    width: 100%;
-    min-width: 320px;
-    right: 0;
-    grid-template-columns: repeat(8, 1fr); /* Define the number of columns in the grid */
-    height: 8vh;
-      display: grid;
-      grid-template-areas: 
-      'a1 a1 a1 a1 a2 a2 a2 a3';
-      /* 'z1 z1 z1 z1 z2 z2 z2 z2'; */
-      /* grid-template-rows: 8%; */
-      z-index: 1;
-    } 
+
 
     .grid-containerProducts {
         position: fixed;
@@ -427,10 +414,12 @@ h4 {
   }
 
   h3 {
+    font-family: "redaction";
+    font-style: normal;
     font-size: 12vw;
     line-height: 0.5em;
     font-weight: 10;
-    font-style: normal;
+    
     display: inline-block;
     }
 
@@ -520,6 +509,26 @@ h4 {
     background: linear-gradient(180deg, #C6C6C6 0%, #FFF 100%);
 }
 
+/* SHOP.HTML */
+.grid-containerShop {
+    position: fixed;
+    width: 100vw;
+    min-width: 320px;
+   
+    grid-template-columns: repeat(8, 1fr); /* Define the number of columns in the grid */
+    height: 8vh;
+    display: grid;
+    grid-template-areas: 
+    'a1 a1 a1 a1 a2 a2 a2 a3';
+    z-index: 1;
+  } 
+
+.main-content {
+
+  overflow-y: hidden;
+  height: 100vh;
+}
+
 .button-group {
   position: absolute;
     width: 100%;
@@ -551,6 +560,24 @@ h4 {
 
 /* SHOP PAGE ITEM DISPLAY */
 @media (min-width: 800px) {
+  .grid-containerShop {
+    position: fixed;
+    width: 40%;
+    min-width: 320px;
+    right: 0;
+    grid-template-columns: repeat(8, 1fr); /* Define the number of columns in the grid */
+    height: 8vh;
+    display: grid;
+    grid-template-areas: 
+    'a1 a1 a1 a1 a2 a2 a2 a3';
+    z-index: 1;
+  } 
+
+  /* .main-content {
+    overflow-y: auto;
+    height: auto;
+  } */
+
   .button-group {
     position: absolute;
     width: 40%;
@@ -576,21 +603,25 @@ h4 {
     position: relative;
     display: inline-block;
     width: 50%;
-    height: 50vh;
+    height: 45vh;
   }
 }
 
+  .mediadiv {
+    display: flex;
+    height: 25vh;
+    margin: 10px 20px;
+    justify-content: center;
+  }
 
   .cardOutline img {
     position: relative; /* Add this to make sure images are in the foreground */
+    height: 100%;
     z-index: 2; /* Higher z-index for images */
     cursor: move;
   }
   
-  .cardOutline .mediadiv:hover {
-    width: 100%;
-    border-color: #00e4e6;
-  }
+
   
 
   .cardOutline > *:not(img) {
