@@ -1,3 +1,17 @@
+function limitImageDimensions(img, maxWidth, maxHeight) {
+    const aspectRatio = img.width / img.height;
+    if (img.width > maxWidth || img.height > maxHeight) {
+        if (aspectRatio > 1) {
+            img.width = maxWidth;
+            img.height = maxWidth / aspectRatio;
+        } else {
+            img.height = maxHeight;
+            img.width = maxHeight * aspectRatio;
+        }
+    }
+}
+
+
 fetch('products.json')
     .then(response => response.json())
     .then(data => {
@@ -18,7 +32,6 @@ fetch('products.json')
         const buttonTravel = document.getElementById('buttonTravel');
                 
         // Loop through the data and add each item to the div
-        // Loop through the data and add each item to the div
         data.forEach(item => {
             // Create the main cardOutline div
             const cardOutline = document.createElement('div');
@@ -31,6 +44,14 @@ fetch('products.json')
             // Create the image element
             const img = document.createElement('img');
             img.src = "img/png/" + item.imageLink;
+
+            // Make each img element draggable
+            img.setAttribute('draggable', 'true');
+
+            // Add a dragstart event listener to each img element
+            img.addEventListener('dragstart', function (event) {
+                drag_start(event, img);
+            });
 
             // Create the textdiv div
             const textdiv = document.createElement('div');
@@ -55,7 +76,6 @@ fetch('products.json')
 
             // Add the cardOutline to the list
             list.appendChild(cardOutline);
-
             
             /* 
              * Onclick function
@@ -172,3 +192,45 @@ fetch('products.json')
         });
     })
     .catch(error => console.error(error));
+
+    function drag_start(event, imgElement) {
+        event.dataTransfer.setData("text/plain", imgElement.src);
+    }
+    
+    document.addEventListener('dragover', function (event) {
+        event.preventDefault();
+        return false;
+    });
+    
+    document.addEventListener('drop', function (event) {
+        var imgSrc = event.dataTransfer.getData("text/plain");
+    
+        if (imgSrc) {
+            const droppedImg = document.createElement('img');
+            droppedImg.src = imgSrc;
+    
+            // Limit image dimensions to be under 200px x 200px
+            limitImageDimensions(droppedImg, 200, 200);
+    
+            // Make the dropped image draggable
+            droppedImg.setAttribute('draggable', 'true');
+    
+            // Attach a dragstart event listener to the dropped image
+            droppedImg.addEventListener('dragstart', function (event) {
+                drag_start(event, droppedImg);
+            });
+    
+            // Check if the drop occurred within the #droppedImg-container
+            const droppedImgContainer = document.getElementById('droppedImg-container');
+            if (droppedImgContainer && event.target === droppedImgContainer) {
+                droppedImg.style.position = 'absolute';
+                droppedImg.style.left = (event.clientX - droppedImg.width / 2) + 'px';
+                droppedImg.style.top = (event.clientY - droppedImg.height / 2) + 'px';
+    
+                droppedImgContainer.appendChild(droppedImg);
+            }
+        }
+    
+        event.preventDefault();
+        return false;
+    });

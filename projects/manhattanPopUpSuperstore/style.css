@@ -223,8 +223,6 @@ body {
     border-bottom: var(--border);
     border-left: var(--border);
 }
-      
-
 
     .grid-containerProducts {
         position: fixed;
@@ -522,10 +520,24 @@ h4 {
     z-index: 1;
   } 
 
-.main-content {
 
-  overflow-y: hidden;
-  height: 100vh;
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow-y: hidden;
+    height: 100vh;
+}
+
+#droppedImg-container {
+  position: absolute;
+  width: 60%;
+  height: 100%;
+}
+
+#droppedImg-container img {
+  position: fixed;
 }
 
 .button-group {
@@ -536,9 +548,9 @@ h4 {
 }
 
 #list-container {
-    width: fit-content;
-    height: 15vh;
-    min-width: 320px;
+  width: fit-content;
+  height: fit-content;
+  min-width: 320px;
 }
 
 #list {
@@ -572,10 +584,9 @@ h4 {
     z-index: 1;
   } 
 
-  /* .main-content {
-    overflow-y: auto;
-    height: auto;
-  } */
+  .main-content {
+    display: block;
+  }
 
   .button-group {
     position: absolute;
@@ -609,7 +620,7 @@ h4 {
   .mediadiv {
     display: flex;
     height: 25vh;
-    margin: 10px 20px;
+    margin: 20px 15px 10px 15px;
     justify-content: center;
   }
 
