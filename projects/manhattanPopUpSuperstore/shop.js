@@ -77,11 +77,7 @@ fetch('products.json')
             // Add the cardOutline to the list
             list.appendChild(cardOutline);
             
-            /* 
-             * Onclick function
-             * whenever an image is clicked
-             * associated audio will be played
-             */
+         
             img.onclick = function() {
             }
 
@@ -205,32 +201,45 @@ fetch('products.json')
     document.addEventListener('drop', function (event) {
         var imgSrc = event.dataTransfer.getData("text/plain");
     
-        if (imgSrc) {
-            const droppedImg = document.createElement('img');
-            droppedImg.src = imgSrc;
-    
-            // Limit image dimensions to be under 200px x 200px
-            limitImageDimensions(droppedImg, 200, 200);
-    
-            // Make the dropped image draggable
-            droppedImg.setAttribute('draggable', 'true');
-    
-            // Attach a dragstart event listener to the dropped image
-            droppedImg.addEventListener('dragstart', function (event) {
-                drag_start(event, droppedImg);
-            });
-    
-            // Check if the drop occurred within the #droppedImg-container
-            const droppedImgContainer = document.getElementById('droppedImg-container');
-            if (droppedImgContainer && event.target === droppedImgContainer) {
-                droppedImg.style.position = 'absolute';
-                droppedImg.style.left = (event.clientX - droppedImg.width / 2) + 'px';
-                droppedImg.style.top = (event.clientY - droppedImg.height / 2) + 'px';
-    
-                droppedImgContainer.appendChild(droppedImg);
+ document.addEventListener('drop', function (event) {
+            var imgSrc = event.dataTransfer.getData("text/plain");
+
+            if (imgSrc) {
+                const droppedImg = document.createElement('img');
+                droppedImg.src = imgSrc;
+
+                // Limit image dimensions to be under 200px x 200px
+                limitImageDimensions(droppedImg, 200, 200);
+
+                droppedImg.setAttribute('draggable', 'true');
+
+                droppedImg.addEventListener('dragstart', function (event) {
+                    drag_start(event, droppedImg);
+                });
+
+                const droppedImgContainer = document.getElementById('droppedImg-container');
+
+                if (droppedImgContainer && event.target === droppedImgContainer) {
+                    droppedImg.style.position = 'fixed';
+                    droppedImg.style.zIndex = 98;
+                    droppedImg.style.left = (event.clientX - droppedImg.width / 2) + 'px';
+                    droppedImg.style.top = (event.clientY - droppedImg.height / 2) + 'px';
+
+                    droppedImgContainer.appendChild(droppedImg);
+
+                    droppedImg.onclick = function () {
+                        if (droppedImg.parentNode) {
+                            droppedImg.parentNode.removeChild(droppedImg);
+                        }
+                    };
+                }
             }
-        }
+
+            event.preventDefault();
+            return false;
+        });
     
         event.preventDefault();
         return false;
     });
+
