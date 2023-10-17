@@ -30,9 +30,17 @@ fetch('products.json')
         const buttonRecreation = document.getElementById('buttonRecreation');
         const buttonOutdoorLiving = document.getElementById('buttonOutdoorLiving');
         const buttonTravel = document.getElementById('buttonTravel');
-                
+        let inputBox = document.querySelector('#inputBox');
+        let buttonClose = document.querySelector('#buttonClose');
+
+        // Initialize a counter for product numbering
+        let productCount = 0;
+
         // Loop through the data and add each item to the div
         data.forEach(item => {
+             // Increment the product count
+             productCount++;
+
             // Create the main cardOutline div
             const cardOutline = document.createElement('div');
             cardOutline.classList.add('cardOutline');
@@ -67,10 +75,17 @@ fetch('products.json')
             zeroDollar.classList.add('zeroDollar');
             zeroDollar.textContent = "$0";
 
+            // Create the productNumber div
+            const productNumber = document.createElement('div');
+            productNumber.classList.add('productNumber');
+            productNumber.textContent = `(${productCount})`; // Add the product number
+
+
             // Append the elements to their respective parents
             mediadiv.appendChild(img);
             textdiv.appendChild(productName);
             textdiv.appendChild(zeroDollar);
+            cardOutline.appendChild(productNumber);
             cardOutline.appendChild(mediadiv);
             cardOutline.appendChild(textdiv);
 
@@ -182,7 +197,13 @@ fetch('products.json')
                 }
             });
 
+            inputBox .addEventListener("click", function show () {
+                document.querySelector(".button-group").style.display = "flex";
+             })
            
+            buttonClose .addEventListener("click", function show () {
+                document.querySelector(".button-group").style.display = "none";
+             })
 
             
         });
@@ -221,7 +242,7 @@ fetch('products.json')
 
                 if (droppedImgContainer && event.target === droppedImgContainer) {
                     droppedImg.style.position = 'fixed';
-                    droppedImg.style.zIndex = 98;
+                    
                     droppedImg.style.left = (event.clientX - droppedImg.width / 2) + 'px';
                     droppedImg.style.top = (event.clientY - droppedImg.height / 2) + 'px';
 
