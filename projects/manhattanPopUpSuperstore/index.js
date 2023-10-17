@@ -1,32 +1,4 @@
-let b1 = document.querySelector('.b1');
-let b2 = document.querySelector('.b2');
-let c1 = document.querySelector('.c1');
-let d1 = document.querySelector('.d1');
 
-
-b2.addEventListener('mouseover', () => {
-    b1.style.backgroundColor = '#C6C6C6';
-    c1.style.color = 'white';
-});
-
-b2.addEventListener('mouseout', () => {
-    b1.style.backgroundColor = '';
-    c1.style.color = '';
-});
-
-d1.addEventListener('mouseover', () => {
-    b1.style.backgroundColor = '#C6C6C6';
-    b2.style.backgroundColor = '#C6C6C6';
-    c1.style.background = 'linear-gradient(180deg, #C6C6C6 0%, #FFF 100%)';
-    c1.style.color = 'white';
-});
-
-d1.addEventListener('mouseout', () => {
-    b1.style.backgroundColor = '';
-    b2.style.backgroundColor = '';
-    c1.style.background = '';
-    c1.style.color = '';
-});
 
 function updateTime() {
     const d2Element = document.getElementById('d2');
