@@ -322,7 +322,9 @@ h4 {
     grid-area: a2;
     text-align: center;
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
   }
 
   #locationPin {
@@ -331,24 +333,29 @@ h4 {
   /* Style for the dropdown button */
 #zipCodeDropdown {
     background-color: transparent; /* Remove background color */
-    border: none; /* Remove border */
-    color: #BABABA; /* Text color */
+    border: none; 
+    /* color: #BABABA;  */
+    color: #2f2f2f; 
     font-size: 1.5em;
     font-family: 'redaction';
     line-height: 1em;
     text-align: center;
     font-weight: 10;
-    width: 70%;
+    width: fit-content;
     font-style: normal;
     appearance: none; /* Remove default appearance */
     -webkit-appearance: none; /* Remove default appearance for WebKit (Safari, Chrome) */
     -moz-appearance: none; /* Remove default appearance for Firefox */
-    flex: 0.5; 
+    /* flex: 0.5;  */
     /* Allow the dropdown button to expand vertically within the cell */
-    height: 120%;
+    height: 100%;
+    padding-top: 2px;
     cursor: pointer;
-    /* display: flex;
-    align-items: center; */
+}
+
+#zipCodeDropdown:hover {
+  font-style: italic;
+  font-weight: 35;
 }
 
 
@@ -381,6 +388,9 @@ h4 {
     width: 1.5em;
 }
 
+/* #cartIcon path {
+  fill: #BABABA;
+} */
 
 .a1, .a2, .a3 {
   position: sticky;
@@ -716,12 +726,22 @@ h4 {
    
   }
   
-
-#logo {
+#logoButton {
   position: fixed;
+  background: white;
+  height: 8vh;
   width: 100px;
+  border-bottom: var(--border);
+  border-right: var(--border);
+  z-index: 98;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  
+#logo {
+  height: fit-content;
   cursor: pointer;
-  z-index: 99;
 }
 
 .quickShop {
