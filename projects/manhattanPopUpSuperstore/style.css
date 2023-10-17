@@ -1060,8 +1060,8 @@ h4 {
 
 .faqQ, .faqA {
   position: relative;
- 
   max-width: 300px;
+
 }
 
 @media (min-width: 800px) {
@@ -1071,12 +1071,56 @@ h4 {
     height: 100%;
     min-width: 320px;
     padding: 10%; 
+    padding-right: 15%;
     bottom:0;
   }
   .faqQ {
-    font-size: 25px;
+    font-size: 26px;
   }
   .faqA {
-    font-size: 22px;
+    font-size: 23px;
+    margin-bottom: 80px;
   }
 }
+
+.faqLetter {
+  
+  position: fixed;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  transform: scale(0.9);
+  line-height: 1;
+  
+  font-size: 31vw;
+    line-height: 45%;
+    font-weight: 20;
+    font-style: italic;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.faqLetter {
+  margin: 0;
+}
+#Q {
+  align-self: flex-start;
+}
+
+#A {
+  /* right: 0; */
+  bottom: 100px;
+  align-self: flex-end;
+}
+
+@media (min-width: 800px) {
+  .faqLetter {
+    font-size: 24vh;
+  }
+  #Q {
+    transform: translate(-100px, 0);
+  }
+  #A {
+    transform: translate(100px, 0);
+    bottom: 50px;
+}}
