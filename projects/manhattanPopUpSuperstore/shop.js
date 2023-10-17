@@ -228,19 +228,16 @@ fetch('products.json')
                 addCart.style.display = 'block';
             });
             
-           
-                // Handle the mouseout event to hide the addCart div
-                cardOutline.addEventListener('mouseout', function () {
-                    addCart.style.display = 'none';
-                });
-                
-                addCart.addEventListener('click', function () {
-                    document.querySelector(".cartDot").style.opacity = '1';
-                });
-                
+            // Handle the mouseout event to hide the addCart div
+            cardOutline.addEventListener('mouseout', function () {
+                addCart.style.display = 'none';
+            });
+            
+            addCart.addEventListener('click', function () {
+                document.querySelector(".cartDot").style.opacity = '1';
+            });
             
 
-            
         });
     })
     .catch(error => console.error(error));
