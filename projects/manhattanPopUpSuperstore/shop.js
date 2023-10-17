@@ -80,6 +80,13 @@ fetch('products.json')
             productNumber.classList.add('productNumber');
             productNumber.textContent = `(${productCount})`; // Add the product number
 
+            const addCart = document.createElement('div');
+                addCart.classList.add('addCart');
+                addCart.textContent = "add to cart";
+                addCart.style.color = 'grey';
+                addCart.style.cursor = 'pointer';
+                // Add the addCart div to the textdiv
+                cardOutline.appendChild(addCart);
 
             // Append the elements to their respective parents
             mediadiv.appendChild(img);
@@ -211,11 +218,29 @@ fetch('products.json')
 
                 availableMarketTimeDivs.forEach(div => {
                     // Construct the time string in the desired format
-                    const timeString = `available on the market on: ${item.time}`;
-                    div.textContent = timeString;
+                    const timeString = `${item.time}`;
+                    div.innerHTML = timeString; // Use innerHTML to interpret HTML tags
                     div.style.display = 'block';
                 });
             });
+
+            cardOutline.addEventListener('mouseover', function () {
+                addCart.style.display = 'block';
+            });
+            
+           
+                // Handle the mouseout event to hide the addCart div
+                cardOutline.addEventListener('mouseout', function () {
+                    addCart.style.display = 'none';
+                });
+                
+                addCart.addEventListener('click', function () {
+                    document.querySelector(".cartDot").style.opacity = '1';
+                });
+                
+            
+
+            
         });
     })
     .catch(error => console.error(error));
