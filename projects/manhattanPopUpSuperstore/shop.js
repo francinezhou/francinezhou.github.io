@@ -205,7 +205,17 @@ fetch('products.json')
                 document.querySelector(".button-group").style.display = "none";
              })
 
-            
+            // Add a click event to the productName to display availableMarketTime
+            productName.addEventListener('click', function () {
+                const availableMarketTimeDivs = document.querySelectorAll('.availableMarketTime');
+
+                availableMarketTimeDivs.forEach(div => {
+                    // Construct the time string in the desired format
+                    const timeString = `available on the market on: ${item.time}`;
+                    div.textContent = timeString;
+                    div.style.display = 'block';
+                });
+            });
         });
     })
     .catch(error => console.error(error));

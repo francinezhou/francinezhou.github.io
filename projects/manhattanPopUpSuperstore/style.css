@@ -586,7 +586,7 @@ h4 {
 
 .int-grid img{
   width: 100%;
-  opacity: 0.4;
+  opacity: 0.2;
   /* min-width: 690px;  */
 }
 
@@ -608,6 +608,30 @@ h4 {
   justify-content: flex-end;
   display: none;
 }
+
+.available {
+  position: fixed;
+  height: 40px;
+  width: fit-content;
+  left: 10%;
+  bottom: 37%;
+  font-family: 'redaction';
+  font-size: 17px;
+  font-weight: 10;
+  font-style: normal;
+ }
+ .availableMarketTime {
+  background-color: white;
+  width: fit-content;
+  font-family: 'redaction';
+  font-size: 20px;
+  font-weight: 10;
+  font-style: normal;
+  border-top: var(--border);
+  border-bottom: var(--border);
+  border-left: var(--border);
+  /* transform: rotate(-15deg); */
+ }
 
 @media (min-width: 800px) {
   .button-group {
@@ -709,6 +733,7 @@ h4 {
       min-width: 320px;
       right: 0; 
       bottom: unset;
+      top: 8vh;
   }
   
   
@@ -837,3 +862,4 @@ h4 {
   border-color: #000;
   z-index: 97;
 }
+
