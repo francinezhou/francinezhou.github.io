@@ -456,7 +456,6 @@ h4 {
 }
   .b1 {
     grid-area: b1;
-    cursor: pointer;
   }
   
   .b2 {
@@ -464,7 +463,7 @@ h4 {
     background-color: #f1f1f1;
   }
 
-  .b2:hover {
+  .b1:hover, .b2:hover, .d1:hover {
     cursor: pointer;
   }
 
@@ -561,13 +560,14 @@ h4 {
     background-size: contain;
     /* transform: translate(100%,0); */
 }
-/* #slide-1 {
+#slide-1 {
   position: absolute;
   width: 100%;
     height: 100%;
-    background-image: url(img/WX20230919-223335@2x.png);
+    background-image: url(img/IMG_1718.jpg);
     background-size: contain;
-} */
+    transform: translate(100%,0);
+}
 
 #slide-2 {
   position: absolute;
@@ -575,7 +575,7 @@ h4 {
     height: 100%;
     background-image: url(img/IMG_4894.jpeg);
     background-size: contain;
-    transform: translate(100%,0);
+    transform: translate(200%,0);
 }
 
 
