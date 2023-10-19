@@ -235,6 +235,7 @@ fetch('products.json')
             
             addCart.addEventListener('click', function () {
                 document.querySelector(".cartDot").style.opacity = '1';
+                
             });
             
 

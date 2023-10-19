@@ -255,12 +255,18 @@ body {
 h4 {
     display: inline-block; 
     margin: 0; 
-    font-size: 6vh;
+    font-size: 8vw;
     line-height: 0.6em;
     font-weight: 10;
     font-style: normal;
 }
 
+
+@media (min-width: 440px) {
+  h4 {
+  font-size: 5vh;
+  }
+}
 
 .a1 {
   height: 8vh;
@@ -316,6 +322,7 @@ h4 {
 #inputBox::placeholder {
 }
 
+
   .a2 {
     grid-area: a2;
     text-align: center;
@@ -349,6 +356,11 @@ h4 {
     height: 100%;
     padding-top: 2px;
     cursor: pointer;
+}
+@media (max-width: 400px) {
+  #zipCodeDropdown {
+    font-size: 5vw;
+}
 }
 
 #zipCodeDropdown:hover {
@@ -1104,11 +1116,13 @@ h4 {
   margin: 0;
 }
 #Q {
+  margin-top: 70px;
+  margin-left: 0px;
   align-self: flex-start;
 }
 
 #A {
-  /* right: 0; */
+  margin-bottom: 40px;
   bottom: 100px;
   align-self: flex-end;
 }
@@ -1118,6 +1132,8 @@ h4 {
     font-size: 24vh;
   }
   #Q {
+    margin-top: 90px;
+    margin-left: 30px;
     transform: translate(-100px, 0);
   }
   #A {

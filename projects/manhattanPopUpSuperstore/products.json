@@ -239,54 +239,7 @@
     "category": "Furniture",
     "imageLink": "IMG_1970.png"
   },
-  {
-    "item": "Keurig Pod Style K-Mini Single Serve Coffee Maker",
-    "time": "Tuesday, May 24, 2022 at 17:40",
-    "location": "77 E 12th St",
-    "coordinates": "40.73316° N, 73.99042° W",
-    "category": "Kitchen",
-    "imageLink": ""
-  },
-  {
-    "item": "Black Spinning Office Chair",
-    "time": "Tuesday, May 31, 2022 at 19:32",
-    "location": "18 Saint Marks Pl",
-    "coordinates": "40.72905° N, 73.98897° W",
-    "category": "Furniture",
-    "imageLink": ""
-  },
-  {
-    "item": "Silver 4-Tier Slim Rolling Cart",
-    "time": "",
-    "location": "40 Stuyvesant St",
-    "coordinates": "40.73001° N, 73.98783° W",
-    "category": "Storage & organization",
-    "imageLink": ""
-  },
-  {
-    "item": "White Metal Shelf Unit",
-    "time": "Tuesday, May 31, 2022 at 19:57",
-    "location": "237 E 12th St",
-    "coordinates": "40.73126° N, 73.98630° W",
-    "category": "Storage & organization",
-    "imageLink": ""
-  },
-  {
-    "item": "Vacuum Cleaner / Light Teal & Chrome Nouvelle Modern Design Leather Donut Lounge Chair",
-    "time": "Tuesday, May 31, 2022 at 18:53",
-    "location": "340 E 13th St",
-    "coordinates": "40.73093° N, 73.98396° W",
-    "category": "Cleaning",
-    "imageLink": ""
-  },
-  {
-    "item": "Clear Acrylic Bedside Table / 2 Drawer Black Metal File Cabinet / Vertical Back Wood Restaurant Chair",
-    "time": "Monday, June 20, 2022 at 15:25",
-    "location": "229 E 13th St",
-    "coordinates": "40.73214° N, 73.98653° W",
-    "category": "Furniture",
-    "imageLink": ""
-  },
+
   {
     "item": "Black Chalkboard with Sophisticated Mind Map",
     "time": "Tuesday, June 21, 2022 at 12:50",
@@ -303,14 +256,7 @@
     "category": "Furniture",
     "imageLink": "IMG_4211.png"
   },
-  {
-    "item": "Saute Pan / Wide Drawer Dresser Storage Organizer / Vacuum Cleaner / Metal Wire Food Organizer Basket / Coral Red Comb",
-    "time": "Saturday, June 25, 2022 at 19:04",
-    "location": "416 E 13th St",
-    "coordinates": "40.73029° N, 73.98240° W",
-    "category": "Kitchen",
-    "imageLink": ""
-  },
+
   {
     "item": "Pink Twin Size Bedframe",
     "time": "Thursday, June 30, 2022 at 19:31",
@@ -327,14 +273,7 @@
     "category": "Recreation & sport",
     "imageLink": "IMG_4497.png"
   },
-  {
-    "item": "Hanging Ferocious Fire Dragon",
-    "time": "Thursday, July 7, 2022 at 01:17",
-    "location": "195 Eighth Ave",
-    "coordinates": "40.74344° N, 74.00018° W",
-    "category": "Outdoor living & garden",
-    "imageLink": "IMG_4894.png"
-  },
+
   {
     "item": "Rainbow Pool Umbrella",
     "time": "Monday, July 18, 2022 at 22:24",
@@ -375,14 +314,7 @@
     "category": "Recreation & sport",
     "imageLink": "IMG_7266.png"
   },
-  {
-    "item": "Vintage Vinyl Record Discs in a Box",
-    "time": "Saturday, October 29, 2022 at 17:28",
-    "location": "113 E 13th St",
-    "coordinates": "40.73336° N, 73.98927° W",
-    "category": "Recreation & sport",
-    "imageLink": ""
-  },
+
   {
     "item": "Fabric Storage Tower Dresser with 4 Drawers",
     "time": "Tuesday, April 25, 2023 at 07:59",
@@ -391,14 +323,7 @@
     "category": "Storage & organization",
     "imageLink": "IMG_2201.png"
   },
-  {
-    "item": "Clear Acrylic Ghost Chair",
-    "time": "Saturday, April 29, 2023 at 20:59",
-    "location": "410 E 13th St",
-    "coordinates": "40.73019° N, 73.98258° W",
-    "category": "Furniture",
-    "imageLink": "IMG_2297.png"
-  },
+
   {
     "item": "Chrome Finish Metal Bar Stool",
     "time": "Wednesday, September 13, 2023 at 18:39",
@@ -430,13 +355,5 @@
     "coordinates": "40.73395° N, 73.99911° W",
     "category": "Storage & organization",
     "imageLink": "IMG_2314.png"
-  },
-  {
-    "item": "White Spinning Office Chair",
-    "time": "Tuesday, May 3, 2022 at 16:57",
-    "location": "5 E 13th St",
-    "coordinates": "40.73507° N, 73.99354° W",
-    "category": "Furniture",
-    "imageLink": ""
   }
 ]
