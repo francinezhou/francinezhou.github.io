@@ -436,8 +436,9 @@ fetch('products.json')
 
         // Append the thumbnail, product name, and price elements to cartItem
         cartItem.appendChild(cartThumbnail);
-        cartItem.appendChild(cartProductName);
         cartItem.appendChild(cartZeroDollar);
+        cartItem.appendChild(cartProductName);
+        
 
         // Append cartItem to cartDrop
         cartDrop.appendChild(cartItem);
@@ -641,7 +642,38 @@ fetch('products.json')
                     };
                 }
             }
+            const body = document.body;
 
+            // Function to enable scrolling
+            function enableScrolling() {
+              body.classList.remove('disable-scrolling');
+            }
+            
+            // Function to disable scrolling
+            function disableScrolling() {
+              body.classList.add('disable-scrolling');
+            }
+            
+            // Open the cartDrop
+            cartIcon.addEventListener('click', function () {
+              if (cartDrop.style.display === 'none' || cartDrop.style.display === '') {
+                cartDrop.style.display = 'block';
+                // Disable scrolling when cartDrop is open
+                disableScrolling();
+              } else {
+                cartDrop.style.display = 'none';
+                // Enable scrolling when cartDrop is closed
+                enableScrolling();
+              }
+            });
+            
+            // Close the cartDrop (assuming you have a close button)
+            buttonClose.addEventListener('click', function () {
+              cartDrop.style.display = 'none';
+              // Enable scrolling when cartDrop is closed
+              enableScrolling();
+            });
+            
             event.preventDefault();
             return false;
         });
