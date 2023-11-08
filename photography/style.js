@@ -1,12 +1,12 @@
-// var elem = document.querySelector('.grid');
-// var pckry = new Packery( elem, {
-//   // options
-//   itemSelector: '.grid-item',
-//   gutter: 10
-// });
+// external js: packery.pkgd.js, draggabilly.pkgd.js
 
-// // element argument can be a selector string
-// //   for an individual element
-// var pckry = new Packery( '.grid', {
-//   // options
-// });
+var pckry = new Packery(".grid", {
+    itemSelector: ".grid-item",
+    columnWidth: 100
+  });
+  
+  pckry.getItemElements().forEach(function (itemElem) {
+    var draggie = new Draggabilly(itemElem);
+    pckry.bindDraggabillyEvents(draggie);
+  });
+  
