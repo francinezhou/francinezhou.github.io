@@ -1,7 +1,21 @@
+
+@font-face {
+	src: url('font/RobotoSerif[grad\,opsz\,wdth\,wgth].woff2') format('woff2-variations');
+	font-family:'Roboto Serif';
+	font-style: normal;
+}
+
 * { box-sizing: border-box; } 
 
-body { font-family: sans-serif; }
+body { 
+    font-family: "Roboto Serif",var(--specimen-fallback-font,monospace),monospace;
+    font-variation-settings: "wdth" var(--wdth),"opsz" var(--opsz),"wght" var(--wght),"GRAD" var(--GRAD);
+    font-variation-settings: "opsz" 8,"wght" 400,"wdth" 125,"GRAD" 0;
+}
 
+.italic {
+    
+}
 
 /* ---- grid ---- */
 
@@ -9,8 +23,9 @@ body { font-family: sans-serif; }
   position: absolute;
     margin-left: auto;
     margin-right: auto;
-  background: #DDD;
+  /* background: #DDD; */
   max-width: 1200px;
+
 }
 
 /* clear fix */
@@ -24,24 +39,36 @@ body { font-family: sans-serif; }
 
 .grid-item {
   float: left;
-  width: 200px;
-  height: 200px;
-  background: rgb(204, 204, 204);
-  border: 1px solid hsla(0, 0%, 0%, 0.5);
+  width: 100px;
+  height: 100px;
+  margin: 15px;
+
+  /* border: 1px solid hsla(0, 0%, 0%, 0.5); */
 }
 
-.grid-item--width2 { width: 300px; }
 
-.grid-item--width4 { width: 600px; }
+.grid-item--width15 { width: 150px; height: fit-content;}
 
-.grid-item--height2 { height: 300px; }
+.grid-item--width30 { width: 300px; height: fit-content;}
 
-.grid-item--width2 img{
-    height: 100%;
-}
+.grid-item--width45 { width: 450px; height: fit-content;}
 
-.grid-item--width4 img {
+.grid-item--width15 img,
+.grid-item--width30 img,
+.grid-item--width45 img{
     width: 100%;
+}
+
+.grid-item--height15 { height: 150px; width: fit-content;}
+.grid-item--height30 { height: 300px; width: fit-content;}
+.grid-item--height45 { height: 450px; width: fit-content;}
+.grid-item--height60 { height: 600px; width: fit-content;}
+
+.grid-item--height15 img,
+.grid-item--height30 img,
+.grid-item--height45 img,
+.grid-item--height60 img {
+    height: 100%;
 }
 
 .grid-item:hover {
@@ -56,7 +83,7 @@ body { font-family: sans-serif; }
 }
 
 .packery-drop-placeholder {
-  outline: 3px dashed hsla(0, 0%, 0%, 0.5);
+  outline: 2px dashed hsla(0, 0%, 0%, 0.5);
   outline-offset: -6px;
   -webkit-transition: -webkit-transform 0.2s;
           transition: transform 0.2s;
