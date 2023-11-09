@@ -1,20 +1,29 @@
 
 @font-face {
 	src: url('font/RobotoSerif[grad\,opsz\,wdth\,wgth].woff2') format('woff2-variations');
-	font-family:'Roboto Serif';
+    src: url('font/RobotoSerif[grad\,opsz\,wdth\,wgth].woff') format('woff-variations');
+    font-family:'Roboto Serif';
 	font-style: normal;
 }
+
+@font-face {
+	src: url('font/RobotoSerif-Italic[grad\,opsz\,wdth\,wgth].woff2') format('woff2-variations');
+    src: url('font/RobotoSerif-Italic[grad\,opsz\,wdth\,wgth].woff') format('woff-variations');
+    font-family:'Roboto Serif';
+	font-style: italic;
+}
+
 
 * { box-sizing: border-box; } 
 
 body { 
     font-family: "Roboto Serif",var(--specimen-fallback-font,monospace),monospace;
     font-variation-settings: "wdth" var(--wdth),"opsz" var(--opsz),"wght" var(--wght),"GRAD" var(--GRAD);
-    font-variation-settings: "opsz" 8,"wght" 400,"wdth" 125,"GRAD" 0;
+    font-variation-settings: "opsz" 16,"wght" 200,"wdth" 150,"GRAD" -25;
 }
 
 .italic {
-    
+
 }
 
 /* ---- grid ---- */
