@@ -2,7 +2,8 @@
 
 var pckry = new Packery(".grid", {
     itemSelector: ".grid-item",
-    columnWidth: 100
+    columnWidth: 20,
+    gutter:5
   });
   
   pckry.getItemElements().forEach(function (itemElem) {
