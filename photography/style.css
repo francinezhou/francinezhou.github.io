@@ -17,15 +17,48 @@
 * { box-sizing: border-box; } 
 
 body { 
+    margin: 0;
+    padding: 0;
+    background-color: rgb(245, 245, 245);
     font-family: "Roboto Serif",var(--specimen-fallback-font,monospace),monospace;
+    font-style: normal;
     font-variation-settings: "wdth" var(--wdth),"opsz" var(--opsz),"wght" var(--wght),"GRAD" var(--GRAD);
-    font-variation-settings: "opsz" 16,"wght" 200,"wdth" 150,"GRAD" -25;
+    font-variation-settings: "opsz" 16,"wght" 200,"wdth" 125,"GRAD" -25;
+    letter-spacing: .05rem;
 }
 
-.italic {
+img {
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+  }
 
+/* book view img  */
+img {
+    opacity: 0.5;
+    mix-blend-mode: color-burn;
 }
 
+img:hover {
+    transition: 0.5s;
+    opacity: 0.2;
+   
+}
+
+
+
+
+
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,0) 10%, rgba(255,255,255,1) 100%);
+    z-index: 99;
+}
 /* ---- grid ---- */
 
 .grid {
@@ -68,6 +101,17 @@ body {
     width: 100%;
 }
 
+/* .grid-item--width15 img:hover,
+.grid-item--width30 img:hover,
+.grid-item--width45 img:hover {
+    width: 700px;
+    z-index: 98;
+    position: fixed;
+
+    top: 0;
+    left: 5
+} */
+
 .grid-item--height15 { height: 150px; width: fit-content;}
 .grid-item--height30 { height: 300px; width: fit-content;}
 .grid-item--height45 { height: 450px; width: fit-content;}
@@ -80,6 +124,7 @@ body {
     height: 100%;
 }
 
+
 .grid-item:hover {
   border-color: hsla(0, 0%, 100%, 0.5);
   cursor: move;
@@ -87,8 +132,14 @@ body {
 
 .grid-item.is-dragging,
 .grid-item.is-positioning-post-drag {
-  background: #C90;
+  /* background: rgb(201, 255, 255); */
   z-index: 2;
+}
+
+.grid-item.is-dragging img,
+.grid-item.is-positioning-post-drag img{
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.07), 0 4px 8px rgba(0,0,0,0.07), 0 8px 16px rgba(0,0,0,0.07), 0 16px 32px rgba(0,0,0,0.07), 0 32px 64px rgba(0,0,0,0.07);
+
 }
 
 .packery-drop-placeholder {
@@ -97,3 +148,29 @@ body {
   -webkit-transition: -webkit-transform 0.2s;
           transition: transform 0.2s;
 }
+
+
+
+
+.border-2 {
+    @include corner-borders(2.5px, 20px);
+  }
+h1 {
+    color: #fff;
+    mix-blend-mode: difference;
+}
+.text { 
+    position: absolute;
+    top: 20%;
+    right: 30%;
+    width: 400px;
+    height: unset;
+    margin: 30px;
+    pointer-events: none;
+}
+
+
+.italic {
+    font-style: italic;
+}
+
