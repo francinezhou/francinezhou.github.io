@@ -1,0 +1,102 @@
+@font-face {
+    font-family: 'irregardless_demobold_italic';
+    src: url('fonts/irregardlessdemo-bolditalic-webfont.woff2') format('woff2'),
+         url('fonts/irregardlessdemo-bolditalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'irregardless_demoitalic';
+    src: url('irregardlessdemo-italic-webfont.woff2') format('woff2'),
+         url('irregardlessdemo-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'irregardless_demolight';
+    src: url('irregardlessdemo-light-webfont.woff2') format('woff2'),
+         url('irregardlessdemo-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'irregardless_demolight_italic';
+    src: url('irregardlessdemo-lightitalic-webfont.woff2') format('woff2'),
+         url('irregardlessdemo-lightitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'irregardless_demoregular';
+    src: url('fonts/irregardlessdemo-regular-webfont.woff2') format('woff2'),
+         url('fonts/irregardlessdemo-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: "Irregardless-Containers";
+         src:   
+         url('fonts/Irregardless-Containers.woff') format('woff');  
+
+         /* font-weight: normal;
+    font-style: normal; */
+}
+
+
+body {
+    font-family: "irregardless-variable", sans-serif;
+    font-variation-settings: "wght" 300, "ital" 1;
+    font-size: 15vw;
+    font-feature-settings: "ss01", "ss02", "ss03", "pnum", "tnum" 0, "lnum", "onum" 0;
+}
+div {
+    vertical-align: baseline;
+}
+.name {
+    font-family: "irregardless-variable", sans-serif;
+    font-variation-settings: "wght" 300, "ital" 0.5;  /* 300-800, 0-1 */
+    font-size: 10vw;
+}
+.bubble {
+    font-family: "Irregardless-Containers";
+    font-size: 162.752%;
+   
+}
+
+.project {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    align-self: center;
+}
+
+.project-title {
+    position: absolute;
+    align-self: center;
+    transition: 0.5s ease-in-out;
+}
+
+
+
+.project-bubble {
+    position: absolute;
+    font-family: "Irregardless-Containers";
+    align-self: center;
+    opacity: 0.1;
+    transition: 0.5s ease-in-out;
+}
+
+.project:hover .project-title{
+    cursor: pointer;
+    font-variation-settings: "wght" 350, "ital" 0.2;
+}
+.project:hover .project-bubble {
+    opacity: 1;
+}

@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.spectrum {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.spectrum1, .spectrum2, .spectrum3, .spectrum4, .spectrum5, .spectrum6, .spectrum7, .spectrum8,.spectrum9,.spectrum10,.spectrum11,.spectrum12 {
+    flex-grow: 1;
+    height: 100%;
+}
+
+
+.spectrum1 {
+    background: #e9df11;
+}
+
+.spectrum2 {
+    background: #9ade31;
+}
+
+.spectrum3 {
+    background: #7ad270;
+}
+
+.spectrum4 {
+    background: #4eb1bb;
+}
+
+.spectrum5 {
+    background: #468bda;
+}
+
+.spectrum6 {
+    background: #6472c7;
+}
+
+.spectrum7 {
+    background: #715ea5;
+}
+
+.spectrum8 {
+    background: #846497;
+}
+
+.spectrum9 {
+    background: #c26375;
+}
+
+.spectrum10 {
+    background: #e45f5d;
+}
+
+.spectrum11 {
+    background: #f08600;
+}
+
+.spectrum12 {
+    background: #f4c129;
+}
+
+.spectrum12:hover {
+    flex-grow: 2;
+    cursor: pointer;
+    transition: 1s; 
+}
+
+
