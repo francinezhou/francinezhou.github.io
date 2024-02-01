@@ -59,7 +59,7 @@
     mix-blend-mode: soft-light;
     pointer-events: none;
     overflow-x: hidden;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 }
 
 
@@ -195,7 +195,7 @@ footer {
 
 .project-text {
     position: relative;
-    display: none;
+    /* display: none; */
 }
 
 
@@ -210,7 +210,7 @@ footer {
     .wrapper {
         width: 80vw;
     }
-    
+
     .project-head {
         margin-top: 15vh;
         /* padding-top: 20px; */
