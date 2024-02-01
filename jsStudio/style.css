@@ -48,55 +48,196 @@
     font-style: normal; */
 }
 
+.grain {
+    top:0;
+    left: 0; 
+    margin: 0;
+    position: absolute;
+    z-index: 30;
+    height: 100vh;
+    width: 100vw;
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
 
 body {
+    background-color: rgba(255,250,205,1);
+    /* background-color: rgba(0, 0, 0, 0.85); */
+    /* margin: 0;
+    padding: 0; */
     font-family: "irregardless-variable", sans-serif;
     font-variation-settings: "wght" 300, "ital" 1;
-    font-size: 15vw;
     font-feature-settings: "ss01", "ss02", "ss03", "pnum", "tnum" 0, "lnum", "onum" 0;
 }
-div {
-    vertical-align: baseline;
+
+h3 {
+    font-family: "cofo-sans-variable", sans-serif;
+    font-variation-settings: "slnt" 0, "wght" 246;
 }
+
+P {
+    font-family: "cofo-sans-variable", sans-serif;
+    font-variation-settings: "slnt" 0, "wght" 246;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 16px; 
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-top: 5vh;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 95vh;
+    width: 100vw;
+    overflow-y: hidden;
+}
+
+.project1 {
+    height: 27vh;
+}
+
+.project2 {
+    height: 30vh;
+}
+
+.project3 {
+    height: 30vh;
+}
+
+
 .name {
     font-family: "irregardless-variable", sans-serif;
     font-variation-settings: "wght" 300, "ital" 0.5;  /* 300-800, 0-1 */
     font-size: 10vw;
 }
-.bubble {
-    font-family: "Irregardless-Containers";
-    font-size: 162.752%;
-   
-}
 
-.project {
+
+.project-head {
+    font-size: 8vw;
+    position: relative;
     text-align: center;
     display: flex;
     flex-direction: row;
-    justify-self: center;
+    justify-content: center;
     align-self: center;
+    width: 50vw;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+.head1 {
+    right:0%;
+}
+
+.head2 {
+    right:-30%;
+}
+
+.head3 {
+    right:15%;
+}
 .project-title {
+    font-family: "irregardless-variable", sans-serif;
     position: absolute;
     align-self: center;
+    /* padding-top: 1.5vh; */
     transition: 0.5s ease-in-out;
+    z-index: 2;
+
 }
 
+.title1, .title3 {
+    color: white;
+}
 
 
 .project-bubble {
     position: absolute;
+   
     font-family: "Irregardless-Containers";
     align-self: center;
-    opacity: 0.1;
-    transition: 0.5s ease-in-out;
+    
+    transition: 0.2s ease-in-out;
+    display: inline-block;
 }
 
-.project:hover .project-title{
+
+.project-bubble span {
+    font-size: 120%;
+}
+.project-head:hover .project-title{
     cursor: pointer;
     font-variation-settings: "wght" 350, "ital" 0.2;
 }
-.project:hover .project-bubble {
-    opacity: 1;
+.project-head:hover .project-bubble {
+    color:darkslateblue;
+}
+
+.project-text {
+    position: relative;
+    display: none;
+}
+
+
+
+@media only screen and (max-width:  767px) {
+    .project-head {
+        font-size: 10vw;
+    }
+}
+
+@media only screen and (min-width:  768px) and (max-width:  1023px) {
+    .wrapper {
+        width: 80vw;
+    }
+    
+    .project-head {
+        margin-top: 15vh;
+        /* padding-top: 20px; */
+    }
+
+    .head1 {
+       
+    }
+
+
+}
+
+@media only screen and (min-width:  1024px) {
+    .wrapper {
+        width: 80vw;
+    }
+    .project-head {
+        margin-top: 15vh;
+        /* padding-top: 20px; */
+    }
+
+    .head1 {
+        
+    }
+
+    .project-text {
+        position: relative;
+        width: 55vw;
+    }
 }
