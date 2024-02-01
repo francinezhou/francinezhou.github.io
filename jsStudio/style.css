@@ -80,8 +80,14 @@ h3 {
 }
 
 P {
+    
     font-family: "cofo-sans-variable", sans-serif;
     font-variation-settings: "slnt" 0, "wght" 246;
+    padding: 10px;
+}
+
+.name {
+    padding: 10px;
 }
 
 footer {
@@ -107,11 +113,11 @@ footer {
     justify-content: space-between;
     height: 95vh;
     width: 100vw;
-    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .project1 {
-    height: 27vh;
+    height: 30vh;
 }
 
 .project2 {
@@ -131,7 +137,7 @@ footer {
 
 
 .project-head {
-    font-size: 8vw;
+    font-size: 7vw;
     position: relative;
     text-align: center;
     display: flex;
@@ -150,11 +156,11 @@ footer {
 }
 
 .head2 {
-    right:-30%;
+    right:-20%;
 }
 
 .head3 {
-    right:15%;
+    right:20%;
 }
 .project-title {
     font-family: "irregardless-variable", sans-serif;
@@ -220,13 +226,20 @@ footer {
        
     }
 
+    .project-text {
+        position: relative;
+        width: 30vw;
+    }
+
 
 }
 
 @media only screen and (min-width:  1024px) {
     .wrapper {
-        width: 80vw;
+        width: 66vw;
+        /* overflow-x: hidden; */
     }
+
     .project-head {
         margin-top: 15vh;
         /* padding-top: 20px; */
@@ -238,6 +251,6 @@ footer {
 
     .project-text {
         position: relative;
-        width: 55vw;
+        width: 33vw;
     }
 }
