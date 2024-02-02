@@ -187,6 +187,7 @@ footer {
     transition: 0.2s ease-in-out;
     display: inline-block;
    outline: black;
+   cursor: pointer;
   }
   
 
@@ -222,7 +223,9 @@ footer {
     /* display: none; */
 }
 
-
+.text1, .text2, .text3 {
+    display: none;
+}
 
 @media only screen and (max-width:  767px) {
     .project-head {
