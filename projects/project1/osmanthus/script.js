@@ -1,14 +1,17 @@
-function scrollBottom() {window.scrollTo(0, 99999);}
-if (document.addEventListener) document.addEventListener("DOMContentLoaded", scrollBottom, false)
-else if (window.attachEvent) window.attachEvent("onload", scrollBottom);
-
-// $(document).ready(function () {
-//   // Toggle between display: block and display: none on .jar-cap click
-//   $(".jar-cap").click(function () {
-//       $(this).siblings("#particles-js").toggle();
-//   });
-// });
-
+// Function to scroll to the bottom
+function scrollBottom() {
+  window.scrollTo(0, 99999);
+}
+// Add an event listener for DOMContentLoaded to trigger the scroll
+if (document.addEventListener) {
+  document.addEventListener("DOMContentLoaded", function () {
+      scrollBottom();
+  }, false);
+} else if (window.attachEvent) {
+  window.attachEvent("onload", function () {
+      scrollBottom();
+  });
+}
 
 particlesJS("particles-js", {
   "particles": {
@@ -133,3 +136,16 @@ particlesJS("particles-js", {
   "retina_detect": true
 });
 
+
+$(document).ready(function () {
+
+  // Toggle display manually on .jar-cap click
+  $(".jar-cap").click(function() {
+    $("#particles-js").toggleClass('show');
+      console.log('clicked')
+      $(this).toggleClass('cap-open');
+  });
+
+ 
+  
+});
