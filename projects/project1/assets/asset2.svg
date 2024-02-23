@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.81 38.81">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffbc00;
+      }
+    </style>
+  </defs>
+  <g id="osmanthus_layer" data-name="osmanthus layer">
+    <path class="cls-1" d="M30,19.4c18.06,15.83,5.23,28.65-10.6,10.6-15.83,18.06-28.65,5.23-10.6-10.6C-9.25,3.58,3.58-9.25,19.4,8.81c15.83-18.06,28.65-5.23,10.6,10.6Z"/>
+  </g>
+</svg>
