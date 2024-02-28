@@ -34,7 +34,7 @@
 /* var: "disp" 1000, "wdth" 1000, "wght" 200-700; */
 
 body {
-  height: 200vh;
+  height: 250vh;
   margin: 0;
   font-family: 'gt_alpina_var_trialregular';
   background-size: 100vw, 300vh;
@@ -43,22 +43,22 @@ body {
 
 }
 
+
 .wrapper {
-  height: 200vh;
+  height: 250vh;
 }
 
 .grain {
-  top:0;
-  left: 0; 
+  top: 0;
+  left: 0;
   margin: 0;
-  /* position: fixed; */
+  position: absolute;
   z-index: 100;
-  height: 100vh;
+  /* height: 100vh; */
   width: 100vw;
-
   mix-blend-mode: soft-light;
   pointer-events: none;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 
@@ -210,9 +210,22 @@ footer {
   z-index: 20;
 }
 
+#drag-1{
+  width: 25%;
+  min-height: 6.5em;
+  margin: 1rem 0 0 1rem;
+  background-color: #29e;
+  color: white;
+  border-radius: 0.75em;
+  padding: 4%;
+  touch-action: none;
+  user-select: none;
+  transform: translate(0px, 0px);
+}
+
 .jar {
   position: absolute;
-  bottom: 2%;
+  bottom: 5%;
   left: 50%;
   transform: translate(-50%, 0%);
   width:45vw;
@@ -246,6 +259,9 @@ footer {
   z-index: 19;
 }
 
+.jar-cap:hover {
+  box-shadow: 0px 2px 2.3vw rgba(167, 118, 12, 0.75);
+}
 
 .jar-cap.cap-open {
   transform: translateY(15%) translateX(-45%) rotate(-25deg) ;
