@@ -1,3 +1,4 @@
+// interactScript.js
 
 var values = {
     friction: 0.8,
