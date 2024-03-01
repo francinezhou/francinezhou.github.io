@@ -318,12 +318,13 @@ footer {
   transform: translate(-50%, 0%);
   width:50vw;
   height: fit-content;
+  z-index: 25;
 
 }
 
 #plantGroup {
-  z-index: 19;
   cursor: pointer;
+
 }
 
 .jar {
@@ -343,6 +344,7 @@ footer {
 }
 
 #Layer_2 {
+  z-index: 15;
 }
 
 .jar-cap {
@@ -363,7 +365,7 @@ footer {
   -o-transition: all 1s ease;
   transition: all 1s ease; 
   cursor: pointer;
-  z-index: 120;
+  z-index: 120 !important;
 }
 
 .jar-cap:hover {
