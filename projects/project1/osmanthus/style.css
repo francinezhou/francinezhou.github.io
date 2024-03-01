@@ -60,6 +60,16 @@ body {
   background: linear-gradient(0deg, rgba(208,237,121,1) 0%, rgba(255,247,156,1) 43%, rgba(255,218,120,1) 67%, rgba(255,144,26,1) 100%);
 }
 
+a:link { text-decoration: none; color: unset;}
+
+a:visited { text-decoration: none; color: unset;}
+
+a:hover { text-decoration: none; color: unset;
+  font-variation-settings: "disp" 1, "wdth" 400, "wght" 300;    
+  transition: 0.5s;
+}
+
+a:active { text-decoration: none; }
 
 /* canvas[resize] {
   width: 100vw;
@@ -232,6 +242,8 @@ footer {
 .article::-webkit-scrollbar-thumb:hover {
   background: none;
 }
+
+
 
 .articleHead {
   text-align: justify;
