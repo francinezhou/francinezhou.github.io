@@ -318,13 +318,13 @@ footer {
   transform: translate(-50%, 0%);
   width:50vw;
   height: fit-content;
-  z-index: 25;
+  
 
 }
 
 #plantGroup {
   cursor: pointer;
-
+  z-index: 25;
 }
 
 .jar {
