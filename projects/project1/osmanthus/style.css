@@ -173,17 +173,21 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5px;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 .figNo {
-  /* position: relative; */
+  
 }
 
 .info {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 80%;
+  width: 25%;
+
   padding: 5px;
   padding-top: 2em;
   padding-bottom: 2em;
@@ -306,6 +310,22 @@ footer {
   width: 3vw;
   z-index: -1;
 }
+
+.plant {
+  position: absolute;
+  top: 23%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width:50vw;
+  height: fit-content;
+
+}
+
+#plantGroup {
+  z-index: 19;
+  cursor: pointer;
+}
+
 .jar {
   position: absolute;
   top: 23%;
@@ -315,7 +335,11 @@ footer {
   margin-top: 25px;
   margin-bottom: 15px;
   height: fit-content;
-  z-index: 19;
+}
+
+#glassGroup {
+  z-index: 10;
+  pointer-events: none;
 }
 
 #Layer_2 {
@@ -339,7 +363,7 @@ footer {
   -o-transition: all 1s ease;
   transition: all 1s ease; 
   cursor: pointer;
-  z-index: 19;
+  z-index: 120;
 }
 
 .jar-cap:hover {
@@ -349,6 +373,7 @@ footer {
 .jar-cap.cap-open {
   transform: translateY(15%) translateX(-45%) rotate(-25deg) ;
   transform-origin: bottom left;
+  z-index: 120;
 }
 
 @media (max-width: 800px) {
@@ -387,6 +412,7 @@ footer {
   border-radius: 45vw 45vw 0 0;
   /* box-shadow: 25px 25px 50px 0 white inset, -25px -25px 50px 0 white inset;  */
   filter: blur(0.5px);
+  z-index: 98;
 }
 
 /* ---- particles.js container ---- */
@@ -414,4 +440,5 @@ footer {
   opacity: 1;
   display: block;
   pointer-events: auto;
+
 }
