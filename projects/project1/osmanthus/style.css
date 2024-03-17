@@ -54,6 +54,7 @@
   font-weight: 400;
   transform: scale(1,1.15); 
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   /* font-style: italic; */
 }
@@ -285,6 +286,10 @@ footer {
   display: flex;
 }
 
+.taxo h3 div {
+  display: inline-block;
+
+}
 .italic {
   font-family: 'gt_alpina_italic_var_trialRg';
 }
@@ -389,7 +394,8 @@ right: 0;
     flex: 100%;
     min-width: 0;
     position: relative;
-    margin-top: -45vh;
+    margin-top: min(-60px, -50vh);
+    /* fix & leave min margin to show header */
   }
 
   .header, .info {
@@ -404,12 +410,15 @@ right: 0;
     flex-direction: column;
   }
 
+  .taxo h3 div{
+    display: block;
+  }
+
   .taxo .italic {
-    position: unset;
+    /* position: unset; */
   }
 
   .jar {
-
     top: 0;
     transform: translate(-38vw, 0%) !important;
   }
@@ -423,9 +432,14 @@ right: 0;
     width: 100%;
     overflow: unset;
     height: auto;
-    
-  
   }
+}
+@media (max-width: 360px) {
+
+  .nototc {
+    /* flex-direction: column; */
+  }
+
 }
 
 
