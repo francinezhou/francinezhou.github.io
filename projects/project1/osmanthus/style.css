@@ -130,7 +130,7 @@ body, .wrapper, .grain {
 
 @media (max-width: 800px) {
   body, .wrapper, .grain {
-    height: 450vh;
+    height: 350vh;
   }
 }
 
@@ -174,54 +174,10 @@ p {
   margin-block-end: 0.3em;
 }
 
-.header {
-  position: fixed;
-  /* color: transparent;
-  -webkit-text-stroke: 1px black;
-  text-shadow: none; */
-  
-  padding: 15px;
-  
-    text-decoration-line: underline;
-    text-decoration-style: double;
-    text-decoration-thickness: 0.1em;
-    text-underline-offset: 0.3em;
-}
-
-.wrapper {
-  position: absolute;
-  /* pointer-events: none; */
-  top: 0;
-  width: 100%;
-
-  /* z-index: 1; */
-}
-
-.wrapper::before {
-  backdrop-filter: saturate(0.5);
-}
-.textWrapper {
-  position: fixed;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  /* color: rgba(31, 16, 1, 0.75); */
-  mix-blend-mode: hard-light;
-}
-
-.flex1, .flex3 {
-  flex-basis: 30%;
-}
-
-.flex2{
-  flex-basis: 40%;
-}
-
-
 
 footer {
-  position: absolute;
-  bottom: 0;
+  /* position: absolute;
+  bottom: 0; */
   right: 0;
   /* height: 5vh; */
   width: 100%;
@@ -255,14 +211,55 @@ footer {
   align-items: center;
 }
 
-
-
 .figNo {
   
 }
 
+.wrapper {
+  position: absolute;
+  /* pointer-events: none; */
+  top: 0;
+  width: 100%;
+
+  /* z-index: 1; */
+}
+
+.wrapper::before {
+  backdrop-filter: saturate(0.5);
+}
+.textWrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* color: rgba(31, 16, 1, 0.75); */
+  /* mix-blend-mode: hard-light; */
+}
+
+.flex1, .flex3 {
+  flex: 29%;
+}
+
+.flex2{
+  flex: 40%;
+}
+
+
+
+.header {
+  /* color: transparent;
+  -webkit-text-stroke: 1px black;
+  text-shadow: none; */
+  padding: 15px;
+    text-decoration-line: underline;
+    text-decoration-style: double;
+    text-decoration-thickness: 0.1em;
+    text-underline-offset: 0.3em;
+}
+
+
 .info {
-  position: fixed;
+ 
   bottom: 0;
   left: 0;
   width: 25%;
@@ -271,10 +268,16 @@ footer {
   padding-bottom: 2em;
 }
 
+
+.header, .info  {
+  position: fixed;
+}
+
 .taxo {
   position: relative;
   width: 100%;
   margin-bottom: 0.5em;
+  display: flex;
 }
 
 .italic {
@@ -292,11 +295,12 @@ right: 0;
 
 
 .articleContainer {
-  /* position: fixed; */
-  height: 96vh;
+  position: fixed;
+  height: 97vh;
+  width: 29vw;
   right: 0;
   overflow: auto;
-  padding: 5px;
+  padding: 10px;
   padding-top: 2em;
   padding-bottom: 2em;
   mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
@@ -359,18 +363,51 @@ right: 0;
 }
 
 @media (max-width: 800px) {
-
+  h1 {
+    font-size: min(5em, 13vw);
+  }
   .textWrapper {
     flex-direction: column;
+    height: auto;
   }
-  .article {
-    
-    position: relative;
-    width: 100%;
-    height: fit-content;
-    margin-top: 70vh;
 
-    overflow: none;
+  .flex1, .flex3 {
+    flex: 100%;
+    min-width: 0;
+  }
+  
+  .flex2{
+    flex: 100%;
+    min-width: 0;
+  }
+
+  .header, .info {
+    position:unset;
+  }
+
+  .info {
+    width: 100%;
+  }
+
+  .taxo {
+    flex-direction: column;
+  }
+
+  .jar {
+    top: 0;
+  }
+
+  footer {
+    position: unset;
+    bottom: auto;
+  }
+  .articleContainer {
+    position: unset;
+    width: 100%;
+    overflow: unset;
+    height: auto;
+    
+  
   }
 }
 
@@ -395,18 +432,11 @@ right: 0;
 
 
 
-.moon {
-  position: absolute;
-  top: -5%;
-  left:0%;
-  width: 3vw;
-  z-index: -1;
-}
 
 
 .jar {
   position: absolute;
-  top: 25%;
+  bottom: 5%;
   left: 50%;
   transform: translate(-55%, 0%); 
    /* completely center for mobile
@@ -427,7 +457,7 @@ right: 0;
   top: 0%;
   left: 50%;
   transform: translate(-50%, 0%);
-  width: 43vw;
+  width: 100%;
   /* height: 8vw;
   border-radius: 2em;
   background: rgb(235,196,37);
@@ -448,16 +478,12 @@ right: 0;
 }
 
 .jarCap.cap-open {
-  transform: translateY(-10%) translateX(5%) rotate(-30deg) ;
+  transform: translateY(-10%) translateX(-50%) rotate(-30deg) ;
   transform-origin: bottom left;
   z-index: 120;
 }
 
-@media (max-width: 800px) {
-  .jar {
-    top: 20vh;
-  }
-}
+
 /* .cap-open {
   transform: rotate(-35deg);
   transform-origin: left 0px 0px;
