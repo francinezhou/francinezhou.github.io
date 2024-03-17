@@ -99,8 +99,11 @@ a:active { text-decoration: none; }
 
 .noImgSelect 
 {user-select: none;
--drag: none;
 -moz-user-select: none;
+}
+
+.noImgDrag
+{-drag: none;
 -webkit-user-drag: none;
 -webkit-user-select: none;}
 
@@ -242,6 +245,8 @@ footer {
 
 .flex2{
   flex: 40%;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 
@@ -289,6 +294,7 @@ position: absolute;
 right: 0;
 }
 
+
 .smallCaps {
   font-variant: small-caps;
 }
@@ -297,7 +303,7 @@ right: 0;
 .articleContainer {
   position: fixed;
   height: 97vh;
-  width: 29vw;
+  width: 28vw;
   right: 0;
   overflow: auto;
   padding: 10px;
@@ -371,14 +377,19 @@ right: 0;
     height: auto;
   }
 
-  .flex1, .flex3 {
+  .flex1, .flex2, .flex3 {
     flex: 100%;
     min-width: 0;
   }
-  
-  .flex2{
+
+  .flex1 {
+    display: flex; 
+  }
+  .flex2 {
     flex: 100%;
     min-width: 0;
+    position: relative;
+    margin-top: -45vh;
   }
 
   .header, .info {
@@ -386,15 +397,21 @@ right: 0;
   }
 
   .info {
-    width: 100%;
+    width: unset;
   }
 
   .taxo {
     flex-direction: column;
   }
 
+  .taxo .italic {
+    position: unset;
+  }
+
   .jar {
+
     top: 0;
+    transform: translate(-38vw, 0%) !important;
   }
 
   footer {
@@ -412,12 +429,12 @@ right: 0;
 }
 
 
-
-
+/* 
 .jarCap {
   margin-left: auto;
   margin-right: auto;
-}
+} */
+
 /* 
 #Layer_1 {
   position: absolute;
@@ -435,10 +452,10 @@ right: 0;
 
 
 .jar {
-  position: absolute;
+  position: relative;
   bottom: 5%;
   left: 50%;
-  transform: translate(-55%, 0%); 
+  transform: translate(-53%, 0%); 
    /* completely center for mobile
    center & move left for PC */
   width:43vw;
@@ -447,7 +464,6 @@ right: 0;
   height: fit-content;
   z-index: 98;
 }
-
 
 
 

@@ -1,26 +1,28 @@
 // Function to scroll to the bottom
 function scrollBottom() {
-	window.scrollTo(0, 99999);
-  }
-  
-  // Function to check viewport width
-  function checkViewportWidth() {
-	return window.innerWidth > 800; // Checks if viewport width is above 800px
-  }
-  
-  // Add an event listener for DOMContentLoaded to trigger the scroll only if viewport width is above 800px
-  function handleDOMContentLoaded() {
-	if (checkViewportWidth()) {
-	  scrollBottom();
-	}
-  }
-  
-  // Add event listener for DOMContentLoaded
-  if (document.addEventListener) {
-	document.addEventListener("DOMContentLoaded", handleDOMContentLoaded, false);
-  } else if (window.attachEvent) {
-	window.attachEvent("onload", handleDOMContentLoaded);
-  }
+    window.scrollTo(0, document.body.scrollHeight);
+}
+
+// Function to check viewport width
+function checkViewportWidth() {
+    return window.innerWidth > 800; // Checks if viewport width is above 800px
+}
+
+// Add an event listener for DOMContentLoaded to trigger the scroll only if viewport width is above 800px
+function handleDOMContentLoaded(event) {
+    event.preventDefault(); // Prevent default browser behavior
+    if (checkViewportWidth()) {
+        setTimeout(scrollBottom, 100); // Debounce the scroll action
+    }
+}
+
+// Add event listener for DOMContentLoaded
+if (document.addEventListener) {
+    document.addEventListener("DOMContentLoaded", handleDOMContentLoaded, false);
+} else if (window.attachEvent) {
+    window.attachEvent("onload", handleDOMContentLoaded);
+}
+
   
 
 
