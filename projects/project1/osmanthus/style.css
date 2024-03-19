@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'gt_alpina_var_trialregular';
-  src: url('../font/gt-alpina-var-trial-webfont.woff2') format('woff2-variations'),
+  src: url('../font/GT-Alpina-VAR-Trial.ttf') format("truetype-variations"),
+       url('../font/gt-alpina-var-trial-webfont.woff2') format('woff2-variations'),
        url('../font/gt-alpina-var-trial-webfont.woff') format('woff-variations');
   font-style: normal;
 
@@ -17,18 +18,19 @@
 
 @font-face {
   font-family: 'gt_alpina_typewriter_var_trRg';
-  src: url('../font/gt-alpina-typewriter-var-trial-webfont.woff2') format('woff2-variations'),
+  src: url('../font/GT-Alpina-Typewriter-VAR-Trial.ttf') format("truetype-variations"),
+       url('../font/gt-alpina-typewriter-var-trial-webfont.woff2') format('woff2-variations'),
        url('../font/gt-alpina-typewriter-var-trial-webfont.woff') format('woff-variations');
-  font-style: normal;
+  /* font-style: normal; */
 
 }
 
 @font-face {
   font-family: 'gt_alpina_typewriter_italicRg';
-  src: url('../font/gt-alpina-typewriter-italic-var-trial-webfont.woff2') format('woff2-variations'),
+  src: url('../font/GT-Alpina-Typewriter-Italic-VAR-Trial.ttf') format("truetype-variations"),
+       url('../font/gt-alpina-typewriter-italic-var-trial-webfont.woff2') format('woff2-variations'),
        url('../font/gt-alpina-typewriter-italic-var-trial-webfont.woff') format('woff-variations');
-  font-style: normal;
-
+  /* font-style: normal; */
 }
 
 /* ttf working, woff2 & woff seem not working */
@@ -52,6 +54,7 @@
 .nototc {
   font-family: "Noto Serif TC", serif;
   font-weight: 400;
+  font-size: 1.1em;
   transform: scale(1,1.15); 
   display: flex;
   flex-wrap: wrap;
@@ -63,14 +66,14 @@
 
 
 body {
-  /* height: 270vh; */
   overflow-x: hidden;
   overflow-y: auto;
   margin: 0;
   color: rgba(31, 16, 1, 0.75);
   font-family: 'gt_alpina_var_trialregular';
+  font-variation-settings: "disp" 1, "wdth" 50, "wght" 200;    
+
   background-size: 100vw, 270vh;
-  
   background: rgb(208,237,121);
   background: linear-gradient(0deg, rgba(208,237,121,1) 0%, rgba(255,247,156,1) 43%, rgba(255,218,120,1) 67%, rgba(255,144,26,1) 100%);
 
@@ -85,10 +88,13 @@ a:link { text-decoration: none; color: unset;}
 
 a:visited { text-decoration: none; color: unset;}
 
-a:hover { text-decoration: none; color: unset;
-  font-variation-settings: "disp" 1, "wdth" 400, "wght" 300;    
+a:hover{ 
+  font-family: inherit;
+  text-decoration: none; color: unset;
+  font-variation-settings: "disp" 1000, "wdth" 700, "wght" 320;    
   transition: 0.5s;
 }
+
 
 a:active { text-decoration: none; }
 
@@ -108,10 +114,6 @@ a:active { text-decoration: none; }
 -webkit-user-drag: none;
 -webkit-user-select: none;}
 
-/* canvas[resize] {
-  width: 100vw;
-  height: 100%;
-} */
 
 .grain {
   top: 0;
@@ -128,15 +130,18 @@ a:active { text-decoration: none; }
 }
 
 body, .wrapper, .grain {
-  height: 250vh;
+  height: 270vh;
 }
 
 
 @media (max-width: 800px) {
   body, .wrapper, .grain {
-    height: 350vh;
+    /* height: 350vh; */
+    /* height: min(280vh, 1000vw, max(350vh, 900vw)); */
+    max-height: 300vw;
   }
 }
+
 
 h1 {
   font-family: 'gt_alpina_italic_var_trialRg';
@@ -152,14 +157,25 @@ h2 {
   font-weight: normal;
   font-size: 2em;
   /* font-variation-settings: "disp" 1, "wdth" 500, "wght" 400;     */
-  font-variation-settings: "disp" 1, "wdth" 300, "wght" 200;    
+  font-variation-settings: "disp" 1, "wdth" 130, "wght" 200;    
   margin: 0;
+  line-height: 1;
 }
 
 h3 {
   font-family: 'gt_alpina_var_trialregular';
-  font-weight: normal;
+  font-weight: unset;
   font-size: 1.5em;
+  font-variation-settings: "disp" 1, "wdth" 200, "wght" 200;    
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+
+h4 {
+  font-family: 'gt_alpina_typewriter_italicRg';
+  font-weight: unset;
+  font-size: 1.4em;
   font-variation-settings: "disp" 1, "wdth" 200, "wght" 200;    
   margin: 5px;
 }
@@ -176,6 +192,7 @@ p {
   font-size: 1.5em;
   margin-block-start: 0em;
   margin-block-end: 0.3em;
+  line-height: 1;
 }
 
 
@@ -189,7 +206,6 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 5px;
-  padding-top: 2em;
   padding-bottom: 1em;
 }
 
@@ -197,16 +213,16 @@ footer {
   margin: 10px;
 }
 
-
 .footerItem a {
   display: flex;
   flex-direction: column;
   align-content: center;
+  transition: 0.5s;
 }
 
 .arrow {
   width: 3.5em;
- 
+  transition: 0.5s;
 }
 
 .prev a, .next a{
@@ -214,6 +230,43 @@ footer {
   flex-direction: column;
   align-items: center;
 }
+.prev a {
+  align-items: flex-end;
+}
+.next a {
+  align-items: flex-start;
+}
+
+
+.footerButton{
+  font-family: 'gt_alpina_var_trialregular';
+  font-variation-settings: "disp" 1, "wdth" 200, "wght" 200;    
+  transition: 0.5s;
+}
+
+
+.arrowLeft{
+  transform-origin: right;
+}
+
+.arrowRight{
+  transform-origin: left;
+}
+
+.footerItem:hover .arrow{
+  transform: scaleX(1.5);
+}
+
+.footerItem:hover a .footerButton {
+  font-variation-settings: "disp" 1000, "wdth" 700, "wght" 320;    
+}
+
+
+/* .next a:hover .next a {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end !important;
+} */
 
 .figNo {
   
@@ -265,11 +318,10 @@ footer {
 
 
 .info {
- 
   bottom: 0;
   left: 0;
   width: 25%;
-  padding: 5px;
+  padding: 7px;
   padding-top: 2em;
   padding-bottom: 2em;
 }
@@ -308,7 +360,7 @@ right: 0;
 .articleContainer {
   position: fixed;
   height: 97vh;
-  width: 28vw;
+  width: 29vw;
   right: 0;
   overflow: auto;
   padding: 10px;
@@ -390,12 +442,12 @@ right: 0;
   .flex1 {
     display: flex; 
   }
+
   .flex2 {
     flex: 100%;
     min-width: 0;
     position: relative;
-    margin-top: min(-60px, -50vh);
-    /* fix & leave min margin to show header */
+    margin-top: min(-200px, -15vw, max(-210px, -100vw));
   }
 
   .header, .info {
@@ -421,6 +473,11 @@ right: 0;
   .jar {
     top: 0;
     transform: translate(-38vw, 0%) !important;
+  }
+
+  .drag-drop {
+    top: 0;
+    transform: translate(-16vw, 0%) !important;
   }
 
   footer {
@@ -575,21 +632,20 @@ right: 0;
   pointer-events: auto;
 
 }
-
+   /* draggable object  */
 .drag-drop {
+  position: absolute;
   display: inline-block;
   min-width: 40px;
-  /* padding: 2em 0.5em;
-  margin: 1rem 0 0 1rem; */
+  width:35vw;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-53%, 0%); 
+   /* completely center for mobile
+   center & move left for PC */
   color: #fff;
   touch-action: none;
-  transform: translate(0px, 0px);
   transition: background-color 0.3s;
-  position: absolute;
-  top: 23%;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  height: fit-content;
   z-index: 999;
 }
 
@@ -601,4 +657,25 @@ right: 0;
 
 .drag-drop img {
   width: 100%;
+}
+
+
+/* fluid effect  */
+
+.fluid-canvas-container canvas[resize] {
+  width: 100%;
+  height: 100%;
+}
+
+.fluid-canvas-container {
+  position: relative;
+  background: red;
+  width: 39vw;
+  height: 150px; 
+ 
+}
+
+.fluid-canvas-container, .fluid-canvas-container canvas[resize] {
+  border-radius: 0 0 27vw 27vw / 7vw 7vw;
+
 }

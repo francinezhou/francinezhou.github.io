@@ -1,5 +1,3 @@
-// interactScript.js
-
 var values = {
     friction: 0.8,
     timeStep: 0.01,
@@ -33,9 +31,13 @@ Spring.prototype.update = function () {
 };
 
 function createPath(strength) {
-    var path = new Path({
-        fillColor: 'black'
-    });
+    var path = new Path();
+    path.fillColor = new Color(1, 0.8549, 0.4706, 0.6); // Adjust alpha to 60% opacity    
+    // Add a white inner glow
+    path.shadowColor = 'black';
+    path.shadowBlur = 10;
+    path.shadowOffset = new Point(0, -15);
+
     springs = [];
     for (var i = 0; i <= values.amount; i++) {
         var segment = path.add(new Point(i / values.amount, 0.5) * size);
@@ -55,28 +57,34 @@ function createPath(strength) {
     return path;
 }
 
+
 function onResize() {
     if (path)
         path.remove();
     size = view.bounds.size * [2, 1];
     path = createPath(0.1);
 }
-
 function onMouseMove(event) {
-    var location = path.getNearestLocation(event.point);
-    var segment = location.segment;
-    var point = segment.point;
+    var point = event.point;
+    var pathBounds = path.bounds;
 
-    if (!point.fixed && location.distance < size.height / 4) {
-        var y = event.point.y;
-        point.y += (y - point.y) / 6;
-        if (segment.previous && !segment.previous.fixed) {
-            var previous = segment.previous.point;
-            previous.y += (y - previous.y) / 24;
-        }
-        if (segment.next && !segment.next.fixed) {
-            var next = segment.next.point;
-            next.y += (y - next.y) / 24;
+    // Ensure the mouse position is within the canvas bounds
+    if (point.x >= pathBounds.left && point.x <= pathBounds.right && point.y >= pathBounds.top && point.y <= pathBounds.bottom) {
+        var location = path.getNearestLocation(point);
+        var segment = location.segment;
+        var targetPoint = segment.point;
+
+        if (!targetPoint.fixed && location.distance < size.height / 4) {
+            var y = point.y;
+            targetPoint.y += (y - targetPoint.y) / 6;
+            if (segment.previous && !segment.previous.fixed) {
+                var previous = segment.previous.point;
+                previous.y += (y - previous.y) / 24;
+            }
+            if (segment.next && !segment.next.fixed) {
+                var next = segment.next.point;
+                next.y += (y - next.y) / 24;
+            }
         }
     }
 }

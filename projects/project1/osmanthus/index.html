@@ -13,187 +13,189 @@
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
-  <script type="text/javascript" src="js/paper.js"></script>
-  <!-- Load external PaperScript and associate it with myCanvas -->
-  <script type="text/paperscript" src="js/myScript.js" canvas="myCanvas">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.17/paper-full.min.js" integrity="sha512-NApOOz1j2Dz1PKsIvg1hrXLzDFd62+J0qOPIhm8wueAnk4fQdSclq6XvfzvejDs6zibSoDC+ipl1dC66m+EoSQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script src="js/particlesScript.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <script type="text/paperscript" src="js/paperScript.js" canvas="fluid-canvas">
   </script>
-  <script src="particlesScript.js" defer></script>
-  <script src="interactScript.js" defer></script>
+  
   <title>Project 1</title>
 </head>
 
 <body>
 
-<div class="wrapper">
+  <div class="wrapper">
 
-  <div class="textWrapper">
-    <div class="flex flex1">
-      <div class="header">
-        <h1>osmanthus fragrans</h1>
-      </div>
-      <!-- <div class="header">
-        <h1>mentha spicata</h1>
-      </div> -->
-      <div class="info">
-        <h3>
-          <span class="italic">Osmanthus fragrans</span> (<span class="smallCaps">Thunb.</span>) <span class="smallCaps">Lour.</span>, Fl. Cochinch.: 29 (1790).
-        </h3>
-        <br>
-        <br>
-        Taxonavigation
-      
-        <div class="taxo">
+    <div class="textWrapper">
+      <div class="flex flex1">
+        <div class="header">
+          <h1>osmanthus fragrans</h1>
+        </div>
+        <!-- <div class="header">
+          <h1>mentha spicata</h1>
+        </div> -->
+        <div class="info">
           <h3>
-            <div>Familia</div><span class="italic">Oleaceae</span>
-            <br>
-            <div>Genus</div>
-            <span class="italic">Osmanthus</span>
-            <br>
-            <div>Species</div>
-            <span class="italic">O. fragrans</span>
+            <span class="italic">Osmanthus fragrans</span> (<span class="smallCaps">Thunb.</span>) <span class="smallCaps">Lour.</span>, Fl. Cochinch.: 29 (1790).
           </h3>
+          <br>
+          <br>
+          Taxonavigation
+        
+          <div class="taxo">
+            <h3>
+              <div>Familia</div><span class="italic">Oleaceae</span>
+              <br>
+              <div>Genus</div>
+              <span class="italic">Osmanthus</span>
+              <br>
+              <div>Species</div>
+              <span class="italic">O. fragrans</span>
+            </h3>
+          </div>
+          <br>
+          Also known as
+          <div class="nototc">
+            <span>木犀</span><span>桂花</span> <span>モクセイ</span>
+          </div>
+        
         </div>
-      
-        Also known as
-        <div class="nototc">
-          <span>木犀</span><span>桂花</span> <span>モクセイ</span>
-        </div>
-      
-      </div>
-      <!-- <div class="info">
-        <h3>
-          <span class="italic">Mentha spicata </span><span class="smallCaps">L.</span>, Pl.: 576 (1753).
-        </h3>
-        <br>
-        <br>
-        Taxonavigation
-        <div class="taxo">
+        <!-- <div class="info">
           <h3>
-            Familia <span class="italic">Lamiaceae</span>
-            <br>
-            Genus <span class="italic">Mentha</span>
-            <br>
-            Species <span class="italic">M. spicata</span>
+            <span class="italic">Mentha spicata </span><span class="smallCaps">L.</span>, Pl.: 576 (1753).
           </h3>
-        </div>
-        Also known as
-        <div class="nototc">
-          <h3>Spearmint</h3>
-          <span>نعناع مدبب</span>
-          <span>綠薄荷</span>
-        </div>
-      
-      </div> -->
-    </div>
+          <br>
+          <br>
+          Taxonavigation
+          <div class="taxo">
+            <h3>
+              Familia <span class="italic">Lamiaceae</span>
+              <br>
+              Genus <span class="italic">Mentha</span>
+              <br>
+              Species <span class="italic">M. spicata</span>
+            </h3>
+          </div>
+          Also known as
+          <div class="nototc">
+            <h3>Spearmint</h3>
+            <span>نعناع مدبب</span>
+            <span>綠薄荷</span>
+          </div>
+        
+        </div> -->
+      </div>
 
-    <div class="flex flex2">
-      <footer>
-        <div class="footerItem prev">
-          <a href="https://francinezhou.github.io/index.html">
-            <span> prev.</span>
-            <!-- <img src="../asset/leftArrow.svg" class="arrow"> -->
-            <svg version="1.1" id="Layer_1" class="arrow" Fxmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      <div class="flex flex2">
+        <footer>
+          <div class="footerItem prev">
+            <a href="https://francinezhou.github.io/index.html">
+              <span class="footerButton"> prev.</span>
+              <!-- <img src="../asset/leftArrow.svg" class="arrow"> -->
+              <svg version="1.1" id="Layer_1" class="arrow arrowLeft" Fxmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                  viewBox="0 0 1267.6 128.7" style="enable-background:new 0 0 1267.6 128.7;" xml:space="preserve">
+                  <style type="text/css">
+                    .st0{fill:rgba(31, 16, 1, 0.75) ;}
+                  </style>
+                  <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
+                    <path class="st0" d="M7525,12262.8H2373l6,45c19,134,105,305,216,426c39,44,57,69,46,66s-610-149-1332-323
+                      c-722-175-1311-320-1309-321c4-5,2636-643,2649-643c6,0-17,28-49,63c-74,76-117,139-155,222c-30,67-69,196-69,230v20l5150-3l5150-2
+                      v110v110H7525z"/>
+                  </g>
+              </svg>
+            </a>
+          </div>
+    
+          <div class="footerItem figNo">
+            <h4 class="">fig.01</h4>
+          </div>
+    
+          <div class="footerItem next">
+            <a href="https://francinezhou.github.io/index.html">
+              <span class="footerButton"> next</span> 
+                          
+                <svg version="1.1" id="Layer_1" class="arrow arrowRight" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 1267.6 128.7" style="enable-background:new 0 0 1267.6 128.7;" xml:space="preserve">
                 <style type="text/css">
                   .st0{fill:rgba(31, 16, 1, 0.75) ;}
                 </style>
                 <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                  <path class="st0" d="M7525,12262.8H2373l6,45c19,134,105,305,216,426c39,44,57,69,46,66s-610-149-1332-323
-                    c-722-175-1311-320-1309-321c4-5,2636-643,2649-643c6,0-17,28-49,63c-74,76-117,139-155,222c-30,67-69,196-69,230v20l5150-3l5150-2
-                    v110v110H7525z"/>
+                <path class="st0" d="M5151,12050h5152l-6-45c-19-134-105-305-216-426c-39-44-57-69-46-66s610,149,1332,323
+                c722,175,1311,320,1309,321c-4,5-2636,643-2649,643c-6,0,17-28,49-63c74-76,117-139,155-222c30-67,69-196,69-230v-20l-5150,3
+                l-5150,2v-110v-110H5151z"/>
                 </g>
-            </svg>
-          </a>
-        </div>
-  
-        <div class="footerItem figNo">
-          <h3 class="italic">fig.01</h3>
-        </div>
-  
-        <div class="footerItem next">
-          <a href="https://francinezhou.github.io/index.html">
-            next
-                        
-              <svg version="1.1" id="Layer_1" class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-              viewBox="0 0 1267.6 128.7" style="enable-background:new 0 0 1267.6 128.7;" xml:space="preserve">
-              <style type="text/css">
-                .st0{fill:rgba(31, 16, 1, 0.75) ;}
-              </style>
-              <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-              <path class="st0" d="M5151,12050h5152l-6-45c-19-134-105-305-216-426c-39-44-57-69-46-66s610,149,1332,323
-              c722,175,1311,320,1309,321c-4,5-2636,643-2649,643c-6,0,17-28,49-63c74-76,117-139,155-222c30-67,69-196,69-230v-20l-5150,3
-              l-5150,2v-110v-110H5151z"/>
-              </g>
-              </svg>
-          </a>
-        </div>
-  
-      </footer>
+                </svg>
+            </a>
+          </div>
+    
+        </footer>
 
-      <div class="jar noImgSelect"> 
-        <div class="jarGlass dropzone">
-          <img src="asset/glass.svg">
-        </div>
-        <div class="jarCap"> 
-            <img src="asset/cap.svg">
-        </div>
-     
-      </div>
+        <div class="jar noImgSelect"> 
+          <div class="jarGlass dropzone">
+            <img src="asset/glass.svg">
+          </div>
+          <div class="jarCap"> 
+              <img src="asset/cap.svg">
+          </div>
 
-    </div>
-    <div class="flex flex3">
-      <div class="articleContainer">
-        <div class="article articleSource">
-          <h6><a href="https://www.researchgate.net/publication/272326513_Review_of_OSmanthus_fragransi_planting_and_utilization_in_China" target="_blank">
-            Journal Of Agriculture and Social Research (JASR) Vol. 6, No.2, 2006
-          </a>
-          </h6>
-        </div>
-        <div class="article articleHead">
-          <h2>
-            REVIEW OF OSMANTHUS FRAGRANS PLANTING AND UTILIZATION IN CHINA
-          </h2>
-         
-        </div>
-        <div class="article articleAuthor smallCaps">
-          <p>
-            by XIAOQING YAN and TAO ZHANG
-            <br>
-          </p>
-        </div>
-        
-        <div class="article articleBody">
-          <p>
-            In September, when the Osmanthus flowers are blooming and aromatic, they must be collected; otherwise, they would perish and lose their aroma if exposed to the air for too long. Over time, the ancients discovered interesting methods for collecting and preserving these flowers. The Xiang Sheng, a special literature recording spice history of the Ming dynasty, provides a complete and accurate account of these methods (Chen, 2004). According to the book, farmers would first put a clean cloth around the root and then collect the half-blooming flowers in the morning. Subsequently, workers would pick off the pedicel and gather the flowers in a stone basin to pestle lightly. Following this process, the pounded flowers were placed into a new jar, covered with dried lotus leaves, and pressed and fixed with battens or pieces of dried bamboo (fresh bamboo would make the flowers odorous). The final step involved placing the jar into well water, which needed to be replaced every five days in winter, three days in spring and autumn, and one day in summer. Well water, with its consistently low temperature, was historically used to preserve food in ancient China.
-          </p>
-          <p>
-            Through these preserving methods, Osmanthus flowers could remain fresh for about a year, with the color remaining intact. This method was not exclusive to Osmanthus flowers; it could also be applied to picking and preserving other fresh flowers, such as plum blossoms, jasmine, roses, and other aromatic herbs. In an era without preservatives or antiseptics, the ancients relied on natural methods to collect and preserve fresh flowers and foods, utilizing advanced technologies of their time. The ancient preservation methods of Osmanthus flowers provide valuable insights into preserving food.
-          </p>
+          <div id="yes-drop" class="drag-drop noImgSelect">
+            <img src="asset/plant.svg">
+          </div>
           
         </div>
-      </div>
-    </div>  
-    </div>
-   
 
-  <div class="grain">
-    <!-- <img src="../img/noiseoverlay.png"> -->
+      </div>
+      <div class="flex flex3">
+        <div class="articleContainer">
+          <div class="article articleSource">
+            <h6><a href="https://www.researchgate.net/publication/272326513_Review_of_OSmanthus_fragransi_planting_and_utilization_in_China" target="_blank">
+              Journal Of Agriculture and Social Research (JASR) Vol. 6, No.2, 2006
+            </a>
+            </h6>
+          </div>
+          <div class="article articleHead">
+            <h2>
+              REVIEW OF OSMANTHUS FRAGRANS PLANTING AND UTILIZATION IN CHINA
+            </h2>
+          
+          </div>
+          <div class="article articleAuthor smallCaps">
+            <p>
+              by XIAOQING YAN and TAO ZHANG
+              <br>
+            </p>
+          </div>
+          
+          <div class="article articleBody">
+            <p>
+              In September, when the Osmanthus flowers are blooming and aromatic, they must be collected; otherwise, they would perish and lose their aroma if exposed to the air for too long. Over time, the ancients discovered interesting methods for collecting and preserving these flowers. The Xiang Sheng, a special literature recording spice history of the Ming dynasty, provides a complete and accurate account of these methods (Chen, 2004). According to the book, farmers would first put a clean cloth around the root and then collect the half-blooming flowers in the morning. Subsequently, workers would pick off the pedicel and gather the flowers in a stone basin to pestle lightly. Following this process, the pounded flowers were placed into a new jar, covered with dried lotus leaves, and pressed and fixed with battens or pieces of dried bamboo (fresh bamboo would make the flowers odorous). The final step involved placing the jar into well water, which needed to be replaced every five days in winter, three days in spring and autumn, and one day in summer. Well water, with its consistently low temperature, was historically used to preserve food in ancient China.
+            </p>
+            <p>
+              Through these preserving methods, Osmanthus flowers could remain fresh for about a year, with the color remaining intact. This method was not exclusive to Osmanthus flowers; it could also be applied to picking and preserving other fresh flowers, such as plum blossoms, jasmine, roses, and other aromatic herbs. In an era without preservatives or antiseptics, the ancients relied on natural methods to collect and preserve fresh flowers and foods, utilizing advanced technologies of their time. The ancient preservation methods of Osmanthus flowers provide valuable insights into preserving food.
+            </p>
+            
+          </div>
+        </div>
+      </div>  
+      </div>
+    
+
+    <div class="grain">
+      <!-- <img src="../img/noiseoverlay.png"> -->
+    </div>
+
+
   </div>
 
-
-</div>
-
-<div id="yes-drop" class="drag-drop noImgSelect">
-  <img src="asset/plant.svg">
-</div>
-
-
-  <!-- particles.js container -->
+    <!-- particles.js container -->
   <div class="particles-canvas-container">
     <div id="particles-js"></div>
   </div>
-  <div class="interact-canvas-container">
-    <canvas resize="true" hidpi="off" id="interact-canvas"></canvas>
+  
+  <!-- paper.js container  -->
+  <div class="fluid-canvas-container">
+    <canvas resize="true" hidpi="off" id="fluid-canvas"></canvas>
   </div>
 
 </body>
