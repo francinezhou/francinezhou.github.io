@@ -1,10 +1,11 @@
 var values = {
     friction: 0.8,
-    timeStep: 0.01,
-    amount: 15,
+    timeStep: 1,
+    amount: 8, 
     mass: 2,
     count: 0
 };
+
 values.invMass = 1 / values.mass;
 
 var path, springs;
@@ -13,8 +14,8 @@ var size = view.size * [1.2, 1];
 var Spring = function(a, b, strength, restLength) {
     this.a = a;
     this.b = b;
-    this.restLength = restLength || 80;
-    this.strength = strength ? strength : 0.55;
+    this.restLength = restLength || 90;
+    this.strength = strength ? strength : 0.9;
     this.mamb = values.invMass * values.invMass;
 };
 
@@ -32,11 +33,15 @@ Spring.prototype.update = function () {
 
 function createPath(strength) {
     var path = new Path();
-    path.fillColor = new Color(1, 0.8549, 0.4706, 0.6); // Adjust alpha to 60% opacity    
-    // Add a white inner glow
-    path.shadowColor = 'black';
+    path.fillColor = new Color(1, 0.8509803921568627, 0.23137254901960785, 0.8);
+    
+    // Add first layer of shadow (inner)
+    path.shadowColor = '#9e9069';
     path.shadowBlur = 10;
-    path.shadowOffset = new Point(0, -15);
+    path.shadowOffset = new Point(0, 0);
+    
+    // Add second layer of shadow (outer) using CSS
+    path.style.boxShadow = '0 0 20px white'; // Adjust blur and spread as needed
 
     springs = [];
     for (var i = 0; i <= values.amount; i++) {
@@ -64,6 +69,7 @@ function onResize() {
     size = view.bounds.size * [2, 1];
     path = createPath(0.1);
 }
+
 function onMouseMove(event) {
     var point = event.point;
     var pathBounds = path.bounds;
@@ -88,6 +94,7 @@ function onMouseMove(event) {
         }
     }
 }
+
 
 function onFrame(event) {
     updateWave(path);

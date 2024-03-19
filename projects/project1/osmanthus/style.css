@@ -662,20 +662,29 @@ right: 0;
 
 /* fluid effect  */
 
+
+.fluid-canvas-container {
+  position: absolute;
+  /* background: red; */
+  width: 39vw;
+  height: 150px;
+    bottom: 2.5vw;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+
 .fluid-canvas-container canvas[resize] {
   width: 100%;
   height: 100%;
 }
 
-.fluid-canvas-container {
-  position: relative;
-  /* background: red; */
-  width: 39vw;
-  height: 150px; 
- 
-}
-
 .fluid-canvas-container, .fluid-canvas-container canvas[resize] {
   border-radius: 0 0 27vw 27vw / 7vw 7vw;
 
+}
+
+.fluid-canvas-container canvas[resize] {
+  cursor: -webkit-grab;
+  cursor: grab;
 }
