@@ -669,7 +669,7 @@ right: 0;
 
 .fluid-canvas-container {
   position: relative;
-  background: red;
+  /* background: red; */
   width: 39vw;
   height: 150px; 
  
