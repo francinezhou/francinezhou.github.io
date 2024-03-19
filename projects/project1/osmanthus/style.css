@@ -666,11 +666,12 @@ right: 0;
 .fluid-canvas-container {
   position: absolute;
   /* background: red; */
-  width: 39vw;
-  height: 150px;
-    bottom: 2.5vw;
+  width: 39.5vw;
+  height: 50vw;
+    bottom: 2vw;
     left: 50%;
     transform: translate(-50%, 0%);
+    z-index: -1;
 }
 
 
@@ -680,7 +681,7 @@ right: 0;
 }
 
 .fluid-canvas-container, .fluid-canvas-container canvas[resize] {
-  border-radius: 0 0 27vw 27vw / 7vw 7vw;
+  border-radius: 0 0 29vw 29vw / 8vw 8vw;
 
 }
 
