@@ -72,10 +72,9 @@ body {
   color: rgba(31, 16, 1, 0.75);
   font-family: 'gt_alpina_var_trialregular';
   font-variation-settings: "disp" 1, "wdth" 50, "wght" 200;    
-
   background-size: 100vw, 270vh;
-  background: rgb(208,237,121);
-  background: linear-gradient(0deg, rgba(208,237,121,1) 0%, rgba(255,247,156,1) 43%, rgba(255,218,120,1) 67%, rgba(255,144,26,1) 100%);
+  background: rgb(200,213,162);
+  background: linear-gradient(0deg, rgba(200,213,162,1) 0%, rgba(238,234,177,1) 43%, rgba(233,214,162,1) 67%, rgba(231,165,96,1) 91%);
 
 }
 
@@ -129,19 +128,23 @@ a:active { text-decoration: none; }
   z-index: 999;
 }
 
-body, .wrapper, .grain {
-  height: 270vh;
+html, body, .wrapper, .grain {
+  height: 240vh;
 }
 
 
 @media (max-width: 800px) {
-  body, .wrapper, .grain {
-    /* height: 350vh; */
-    /* height: min(280vh, 1000vw, max(350vh, 900vw)); */
-    max-height: 300vw;
+  html, body, .wrapper, .grain {
+    height: 217vh;
+    min-height: fit-content;
+    max-height: 250vh;
   }
 }
 
+@media (max-aspect-ratio: 3/2) {
+  html, body, .wrapper, .grain {
+  }
+}
 
 h1 {
   font-family: 'gt_alpina_italic_var_trialRg';
@@ -477,9 +480,8 @@ right: 0;
 
   .drag-drop {
     bottom: unset !important;
-    top: 25%;
-    width:35vw;
-
+    top: 20vh;
+    width:30vw !important;
     /* transform: translate(-16vw, 0%) !important; */
   }
 
@@ -532,7 +534,7 @@ right: 0;
   transform: translate(-53%, 0%); 
    /* completely center for mobile
    center & move left for PC */
-  width:43vw;
+  width:40vw;
   margin-top: 25px;
   margin-bottom: 15px;
   height: fit-content;
@@ -642,10 +644,10 @@ right: 0;
   position: absolute;
   display: inline-block;
   min-width: 40px;
-  width:30vw;
-  bottom: 13%;
-  left: 50%;
-  transform: translate(-53%, 0%); 
+  width:18vw;
+  bottom: 42vh;
+  left: 10%;
+  transform: translate(-10%, 0%); 
    /* completely center for mobile
    center & move left for PC */
   color: #fff;
@@ -655,17 +657,12 @@ right: 0;
   transition: 0.3s;
 }
 
-.drag-drop.can-drop {
-  color: #000;
-  background-color: #4e4;
-}
-
 .drag-drop img {
   width: 100%;
 }
 
-.dropshadow {
-
+.drag-drop.can-drop {
+  filter: drop-shadow(0px 2px 4px rgba(106, 75, 9, 0.4));
 }
 
 .drag-drop:hover{
@@ -676,7 +673,7 @@ right: 0;
 .fluid-canvas-container {
   position: absolute;
   /* background: red; */
-  width: 39.5vw;
+  width: 91%;
   height: 50vw;
     bottom: 2vw;
     left: 50%;
