@@ -266,7 +266,7 @@ html, body, .wrapper, .grain {
   padding: 15px;
     text-decoration-line: underline;
     text-decoration-style: double;
-    text-decoration-thickness: 0.1em;
+    text-decoration-thickness: 0.08em;
     text-underline-offset: 0.3em;
 }
 
