@@ -1129,7 +1129,7 @@ h4 {
   height: 63%;
   margin: 0px;
   padding: 20px;
-  overflow-x: scroll;
+  overflow-x: hidden;
   font-size: 2em;
 } 
 .aboutScroll span {
@@ -1166,7 +1166,7 @@ h4 {
   height: 63%;
   margin: 0px;
   padding: 20px;
-  overflow-x: scroll;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
 } 
@@ -1205,6 +1205,7 @@ h4 {
     padding: 10%; 
     padding-right: 15%;
     bottom:0;
+    /* overflow-x: hidden; */
   }
   .faqQ {
     font-size: 26px;
@@ -1234,6 +1235,7 @@ h4 {
 
 .faqLetter {
   margin: 0;
+  pointer-events: none;
 }
 #Q {
   margin-top: 70px;
