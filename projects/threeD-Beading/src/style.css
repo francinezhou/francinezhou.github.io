@@ -1,0 +1,155 @@
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+@font-face {
+    font-family: 'digibop';
+    src: url('font/digibop-regular-webfont.woff2') format('woff2'),
+         url('font/digibop-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'digibop';
+    src: url('font/digibop-italic-webfont.woff2') format('woff2'),
+         url('font/digibop-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    src: url('font/GridlitePEVF-All.woff2') format('woff2-variations');
+    font-family:'Gridlite';
+    font-style: normal;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'digibop';
+}
+
+h1, h2 {
+    font-style: italic;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+   
+}
+
+h2 {
+    margin: 0.5em;
+    font-size: 2em;
+}
+
+p {
+    font-size: 1.3em;
+    font-family: "Gridlite";
+    font-variation-settings: "BACK" 50, "ELSH" 3, "RECT" 1, "wght" 900;
+}
+
+body {
+    font-family: "Gridlite";
+    font-variation-settings: "BACK" 50, "ELSH" 3, "RECT" 1, "wght" 900;
+}
+
+header  {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    display: inline;
+    
+}
+header h1 {
+    font-size: 3.5em;
+    display: inline;
+}
+
+#controlsWrapper {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.controlGroup {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.controlGroup label {
+    margin-right: 10px;
+    font-size: 14px;
+    width: 100%; /* Set label width to 100% */
+    display: flex;
+    justify-content: space-between; /* Space between the two values */
+}
+
+.controlGroup input[type="range"] {
+    flex: 1;
+}
+
+#undoRedoContainer {
+  
+}
+
+#undoButton, #redoButton {
+    font-family: "Gridlite";
+    font-variation-settings: "BACK" 50, "ELSH" 3, "RECT" 1, "wght" 900;
+
+    margin-right: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.signBig {
+    width: 565px;
+    height: 396px;
+    background-color: white;
+    border-radius: 5px;
+    position: fixed;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
+    display: block; /* Initially hide the sign */
+    z-index: 99; /* Ensure the sign is on top of other content */
+}
+
+.signText {
+    position: relative;
+    height: 85%;
+    width: 78%;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: #0061e7;
+}
+
+.signDecoBig {
+    position: absolute;
+    top: 0;
+    width: 565px;
+    height: 396px;
+}
+
+/* Close button styles */
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+   
+}

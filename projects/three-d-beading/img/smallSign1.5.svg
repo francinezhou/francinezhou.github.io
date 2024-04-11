@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 80">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #0061e7;
+      }
+
+      .cls-2 {
+        fill: #e5e5e5;
+      }
+    </style>
+  </defs>
+  <g id="smallSign">
+    <g id="smallConcave">
+      <path class="cls-1" d="M115.56,11.5c.66,7.02,5.92,12.27,12.94,12.93v31.13c-7.02,.66-12.28,5.92-12.94,12.94H24.42c-.66-7.02-5.91-12.28-12.93-12.93V24.43c7.02-.66,12.27-5.91,12.93-12.93H115.56m1.43-1.5H23c0,7.51-5.5,13-13,13V57c7.51,0,12.99,5.5,12.99,13H116.99c0-7.52,5.51-13.01,13.01-13.01V23c-7.51,0-13.01-5.51-13.01-13h0Z"/>
+    </g>
+    <circle class="cls-2" cx="8.99" cy="9" r="2"/>
+    <circle class="cls-2" cx="131.01" cy="9" r="2"/>
+    <circle class="cls-2" cx="8.99" cy="71" r="2"/>
+    <circle class="cls-2" cx="131.01" cy="71" r="2"/>
+  </g>
+</svg>

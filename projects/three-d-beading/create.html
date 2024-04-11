@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Beading</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Importing Three.js and its dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/loaders/MTLLoader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/loaders/OBJLoader.min.js"></script>
+    <!-- Importing Stats library for performance monitoring -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>3D Beading</h1>
+            <button class="infoButton">i</button>
+            <div class="title">
+                <div class="titleText">
+                    N<span class="Y">Y</span><span class="C">C </span> 
+                    P<span class="a">a</span>rk
+                    <br>
+                    <span class="P">P</span><span class="o">o</span>ols
+                </div>
+                <span class="arrow">→</span>
+                <span class="clearwavy">NYC Park<br>Pools</span>
+            </div>
+        </header>
+    </div>
+    <div class="signBig">
+        <div class="signText">
+            Instructions   <br>
+            <h4>
+                <br>
+                * Use the slider to choose your bead style
+            </h4> 
+            <h4>
+                * Click on the screen to add bead 
+            </h4>
+            <h4>
+                * Click and hold the left mouse button to rotate and view your project
+            </h4>
+            <h4>
+                * Contact <a href="https://francinezhou.github.io/index.html" target="_blank">Francine Zhou</a> for maintenance.
+            </h4>
+        </div>
+        <div class="signDecoBig"></div>
+    </div>
+    <!-- Your custom JavaScript file -->
+    <script type="module" src="main.js">
+        import { OrbitControls } from './three.js-master/examples/jsm/controls/OrbitControls';
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+	src: url('font/Boris.woff') format('woff2-variations');
+	font-family:'Boris';
+	font-style: normal;
+}
+
+@font-face {
+  font-family: 'digibop';
+  src: url('font/digibop-regular-webfont.woff2') format('woff2'),
+       url('font/digibop-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'digibop';
+  src: url('font/digibop-italic-webfont.woff2') format('woff2'),
+       url('font/digibop-italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+
+}
+
+  canvas {
+    display: block;
+   
+  }
+  /* #myCanvas {
+    display: block;
+    width: 100vw;
+    height:70vh;
+  } */
+  
+  ::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: white;
+    -webkit-box-shadow: none;
+  }
+  
+  ::-webkit-scrollbar-thumb:window-inactive {
+    background: none;
+  }
+
+h1 {
+  font-family: 'digibop';
+  font-style: italic;
+    margin: 0;
+    padding: 0;
+    /* font-size: 19vw; */
+}
+  
+  
+  h2 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 1.2;
+  }
+
+  h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+      font-weight: normal;
+      font-weight: 300;
+  }
+  
+
+ h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.2;
+    padding: 0;
+    margin: 0;
+    color: black;
+}
+
+
+h4 a:link { text-decoration: none; color: #0061e7;}
+
+h4 a:visited { text-decoration: none; color: #0061e7;}
+  
+h4 a:active { text-decoration: none; }
+
+h4 a:hover { text-decoration: #0061e7 wavy underline;}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+}
+
+  button {
+cursor: pointer;
+  }
+header {
+    padding: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+header a:link { text-decoration: none; color: black}
+
+header a:visited { text-decoration: none; color: black;}
+  
+header a:active { text-decoration: none; }
+
+.title {
+    display: inline-block;
+}
+
+
+.title:hover { 
+    color: black;
+}
+
+.titleText {
+  display: inline;
+  cursor: pointer;
+}
+
+.clearwavy {
+    -webkit-touch-malout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration-skip-ink: none;
+    outline: 0;
+    color: transparent; 
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    z-index: -1;
+   display: inline-block;
+}
+
+.titleText:hover ~ .clearwavy{
+    text-decoration: skyblue wavy underline;
+}
+
+
+span {
+    font-family: 'Boris', sans-serif;
+}
+
+.arrow {
+   display: inline-block;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.yellow { 
+  color: #FFD348;
+}
+
+.blinker {
+  animation: blinker 1.5s infinite;
+}
+
+@keyframes blinker {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+  
+
+  .wrapper {
+    padding: 0px;
+    /* height: 100vh; */
+  }
+
+ 
+  
+  .green:hover + .wrapper {
+    opacity: 1;
+    transition: opacity 1s ease-in;
+  }
+  
+.randomizer {
+   position: absolute;
+   padding: 10px;
+   right: 0;
+    bottom:  0;
+    height: 170px;
+    width: 370px;
+    text-align: right;
+  }
+
+
+
+.randomizerTitle{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-weight: 300;
+    cursor: pointer; 
+    text-decoration: underline;
+}
+
+.poolInfo {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+
+/* ENTER SIGN */
+.signBig {
+  width: 565px;
+  height: 396px;
+  background-color: white;
+  border-radius: 5px;
+  position: fixed;
+  top: 48%;
+  left: 10%;
+  transform: translate(-50%, -50%);;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-color: gray;
+  border-width: 1px;
+  /* z-index: 98; */
+  opacity: 0;
+}
+
+.signText {
+  position: relative;
+  font-size: 1.2rem;
+  height: 85%;
+  width: 78%;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.3rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #0061e7;
+  z-index: 98;
+}
+
+
+.signDecoBig {
+  position: absolute;
+  top: 0;
+  width: 565px;
+  height: 396px;
+}
+
+.enter {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.5rem;
+  font-weight: normal;
+  color: #FF6060;
+  cursor: e-resize;
+  z-index: 98;
+}
+
+.enter a:link { text-decoration: none; color: #FF6060; cursor: e-resize;}
+
+.enter a:visited { text-decoration: none; color: #FF6060;}
+  
+.enter a:active { text-decoration: none; }
+
+.visible {
+  position: absolute;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+  text-decoration: #0061e7 wavy underline;
+  top: 15px;
+}
+
+ /* Media Query for mobile styles*/
+@media only screen and (max-width:  481px) {
+    
+}
+
+  /* Media Query for tablet & PC styles*/
+  @media only screen and (min-width:  481px) {
+  
+   h1 {
+      font-size: 7.9rem;
+    }
+  
+    h2 {
+        font-size: 2rem;
+    }
+  }

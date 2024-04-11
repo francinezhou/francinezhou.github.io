@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>3D Beading</title>
+
+</head>
+<body>
+    <header>
+        <h1>3D Beading </h1><span>ⓘ</span>
+    </header>
+
+    <div class="signBig">
+        <div class="signText">
+            <button class="closeButton" id="closeButton">X</button>
+            <h2>
+                Instructions
+            </h2>
+            
+            <p>
+                * Use the slider to choose your bead style
+                <br>
+        
+                * Click on the screen to add bead 
+        <br>
+                * Click and hold the left mouse button to rotate and view your project
+            </p>
+            <p>
+                Contact <a href="https://francinezhou.github.io/index.html" target="_blank">Francine Zhou</a> for maintenance.
+            </p>
+        </div>
+        <div class="signDecoBig"></div>
+    </div>
+
+    <div id="controlsWrapper">
+        <div class="controlGroup">
+            <label for="colorSlider"><span>0</span><span>360</span></label>
+            <input type="range" id="colorSlider" min="0" max="360" value="60" step="1">
+            <span id="colorValue"><h4>Hue: 60</h4></span>
+        </div>
+        <div class="controlGroup">
+            <label for="opacitySlider"><span>0</span><span>1</span></label>
+            <input type="range" id="opacitySlider" min="0" max="1" value="1" step="0.01">
+            <span id="opacityValue"><h4>Opacity: 1</h4></span>
+        </div>
+
+        <div id="undoRedoContainer">
+            <button id="undoButton">Undo</button>
+            <button id="redoButton">Redo</button>
+        </div>
+        <!-- <button id="screenshotButton">Take Screenshot</button> -->
+    </div>
+
+    <script src="./js/scripts.js" type="module"></script>
+</body>
+</html>
