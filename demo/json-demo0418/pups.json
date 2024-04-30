@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Cowboy",
+        "image": "images/pup1.jpg",
+        "caption": "This one's cute"
+    },
+    {
+        "name": "Pony",
+        "image": "images/pup2.jpeg",
+        "caption": "Oh god this one's cute too"
+    },
+    {
+        "name": "Gus",
+        "image": "images/pup3.jpg",
+        "caption": "Named after the best boy"
+    },
+    {
+        "name": "Mina",
+        "image": "images/pup4.jpg",
+        "caption": "This one looks like my cousin's dog"
+    },
+    {
+        "name": "Maisie",
+        "image": "images/pup5.jpg",
+        "caption": "Really want a dog"
+    },
+    {
+        "name": "Dick Wolf",
+        "image": "images/pup6.jpg",
+        "caption": "Reserving this name, FYI"
+    }
+]

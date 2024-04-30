@@ -1,35 +1,74 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.117.1/build/three.module.js';
-import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.117.1/examples/jsm/controls/OrbitControls.js';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.130.1/build/three.module.js';
+import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/controls/OrbitControls.js';
+import { GLTFLoader } from "https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/loaders/GLTFLoader.js";
+import { RGBELoader } from "https://cdn.jsdelivr.net/npm/three@0.121.0/examples/jsm/loaders/RGBELoader.js";
+import { DRACOLoader } from "https://cdn.jsdelivr.net/npm/three@0.114.0/examples/jsm/loaders/DRACOLoader.js";
 
+// const loader = new GLTFLoader();
+let renderer, 
+    scene, 
+    camera, 
+    orbit, 
+    ambientLight, 
+    directionalLight, 
+    helper,
+    bkgTextureLoader
 
-const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 renderer.setClearColor(0xFEFEFE);
 
-const scene = new THREE.Scene();
+scene = new THREE.Scene();
+// scene.background = new THREE.Color(0xa0a0a0);
+scene.fog = new THREE.Fog( 0xa0a0a0, 10, 500 );
 
-const camera = new THREE.PerspectiveCamera(
+camera = new THREE.PerspectiveCamera(
     45,
     window.innerWidth / window.innerHeight,
     0.1,
     1000
 );
 
-const orbit = new OrbitControls(camera, renderer.domElement);
+orbit = new OrbitControls(camera, renderer.domElement);
 camera.position.set(0, 6, 6);
 orbit.update();
 
-const ambientLight = new THREE.AmbientLight(0x333333);
+bkgTextureLoader = new RGBELoader()
+    .setPath('textures/')
+    .load('venice_sunset_1k.hdr', function (texture) {
+        texture.mapping = THREE.EquirectangularReflectionMapping;
+
+        scene.background = texture;
+        // scene.backgroundBlur = 0.5;
+        scene.background.blur = 3.5;
+
+        scene.environment = texture;
+    })
+
+
+
+ambientLight = new THREE.AmbientLight(0x333333);
 scene.add(ambientLight);
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
 scene.add(directionalLight);
 directionalLight.position.set(0, 50, 0);
 
-const helper = new THREE.AxesHelper(20);
+helper = new THREE.AxesHelper(20);
 scene.add(helper);
+
+// Change the color attributes of the AxesHelper object to grey
+const colors = helper.geometry.attributes.color;
+colors.setXYZ(0, 0.9, 0.9, 0.9); // x-axis red to grey
+colors.setXYZ(1, 0.9, 0.9, 0.9); 
+colors.setXYZ(2, 0.9, 0.9, 0.9); // y-axis green to grey
+colors.setXYZ(3, 0.9, 0.9, 0.9); 
+colors.setXYZ(4, 0.9, 0.9, 0.9); // z-axis blue to grey
+
+// Update the buffer attributes to reflect the changes
+colors.needsUpdate = true;
 
 const mouse = new THREE.Vector2();
 const intersectionPoint = new THREE.Vector3();
@@ -38,6 +77,7 @@ const plane = new THREE.Plane();
 const raycaster = new THREE.Raycaster();
 
 const shapesHistory = []; // Array to store the history of shapes
+let undoneShapes = []; // Array to store the undone shapes
 
 window.addEventListener('mousemove', function(e) {
     mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
@@ -49,7 +89,7 @@ window.addEventListener('mousemove', function(e) {
 });
 
 let sphereColor = 0xFFEA00;
-let sphereOpacity = 1;
+let sphereTransmission = 1;
 
 const colorSlider = document.getElementById('colorSlider');
 const colorValue = document.getElementById('colorValue');
@@ -57,6 +97,7 @@ const opacitySlider = document.getElementById('opacitySlider');
 const opacityValue = document.getElementById('opacityValue');
 const undoButton = document.getElementById('undoButton');
 const redoButton = document.getElementById('redoButton');
+const exportButton = document.getElementById('exportButton');
 
 colorSlider.addEventListener('input', function() {
     const hue = parseInt(colorSlider.value);
@@ -66,39 +107,56 @@ colorSlider.addEventListener('input', function() {
 
 opacitySlider.addEventListener('input', function() {
     const opacity = parseFloat(opacitySlider.value);
-    sphereOpacity = opacity;
+    sphereTransmission = opacity;
     opacityValue.textContent = `Opacity: ${opacity}`;
 });
 
 undoButton.addEventListener('click', function() {
-    if (shapesHistory.length > 0) {
-        const lastShape = shapesHistory.pop();
-        scene.remove(lastShape);
+    const numUndoSteps = 1; // Adjust the number of steps to undo as needed
+    for (let i = 0; i < numUndoSteps; i++) {
+        if (shapesHistory.length > 0) {
+            const lastShape = shapesHistory.pop();
+            scene.remove(lastShape);
+            undoneShapes.push(lastShape);
+        }
     }
 });
 
 redoButton.addEventListener('click', function() {
-    // Your redo functionality here, if needed
-    // This will depend on how you implement your undo functionality
+    if (undoneShapes.length > 0) {
+        const lastShape = undoneShapes.pop();
+        scene.add(lastShape);
+        shapesHistory.push(lastShape);
+    }
+});
+
+exportButton.addEventListener('click', function () {
+    // Wait for the next frame to ensure rendering is complete
+    requestAnimationFrame(captureAndDownload);
 });
 
 window.addEventListener('click', function(e) {
     const sphereGeo = new THREE.SphereGeometry(0.125, 30, 30);
-    const sphereMat = new THREE.MeshStandardMaterial({
+    console.log(sphereTransmission)
+    const sphereMat = new THREE.MeshPhysicalMaterial({
         color: sphereColor,
-        opacity: sphereOpacity,
-        transparent: true,
         metalness: 0,
-        roughness: 0
+        roughness: 0,
+        transmission: 0.5,
     });
     const sphereMesh = new THREE.Mesh(sphereGeo, sphereMat);
     scene.add(sphereMesh);
     sphereMesh.position.copy(intersectionPoint);
 
-    // Add the created shape to the history
     shapesHistory.push(sphereMesh);
+
+    undoneShapes = []; // Clear undoneShapes array when a new shape is added
 });
 
+const light = new THREE.DirectionalLight(0xfff0dd, 1);
+  light.position.set(0, 5, 10);
+  scene.add(light);
+  
 function animate() {
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
@@ -106,42 +164,53 @@ function animate() {
 
 animate();
 
+function captureAndDownload() {
+    try {
+        const strMime = "image/jpeg";
+        const imgData = renderer.domElement.toDataURL(strMime);
 
+        saveFile(imgData.replace(strMime, "image/octet-stream"), "beading_project.jpg");
 
+    } catch (e) {
+        console.log(e);
+        return;
+    }
+}
 
+function saveFile(strData, filename) {
+    const link = document.createElement('a');
+    if (typeof link.download === 'string') {
+        document.body.appendChild(link);
+        link.download = filename;
+        link.href = strData;
+        link.click();
+        document.body.removeChild(link);
+    } else {
+        location.replace(uri);
+    }
+}
 
-// open/close sign
 document.addEventListener('DOMContentLoaded', function () {
     const signBig = document.querySelector('.signBig');
     const closeButton = document.querySelector('.closeButton');
-    const informationSymbol = document.querySelector('header span');
+    const infoButton = document.querySelector('header span');
 
-    // Function to toggle sign visibility and 3D scene interaction
+    function closeSign() {
+        signBig.style.display = 'none';
+    }
+
     function toggleSign() {
         if (signBig.style.display === 'none' || signBig.style.display === '') {
             signBig.style.display = 'block';
-            // Enable event listener for 3D scene interaction
-            document.body.addEventListener('click', prevent3DInteraction);
         } else {
             signBig.style.display = 'none';
-            // Disable event listener for 3D scene interaction
-            document.body.removeEventListener('click', prevent3DInteraction);
         }
     }
 
-    // Close or open sign when close button or information symbol is clicked
-    closeButton.addEventListener('click', toggleSign);
-    informationSymbol.addEventListener('click', toggleSign);
+    closeButton.addEventListener('click', closeSign);
 
-    // Function to prevent interaction with 3D scene when signBig is open
-    function prevent3DInteraction(event) {
-        if (signBig.contains(event.target)) {
-            // Click occurred inside signBig, prevent interaction with 3D scene
-            event.stopPropagation();
-        }
-    }
+    infoButton.addEventListener('click', toggleSign);
 
-    // Update the slider values with h4 font style
     const colorValue = document.getElementById('colorValue');
     const opacityValue = document.getElementById('opacityValue');
     const sizeValue = document.getElementById('sizeValue');
@@ -159,5 +228,11 @@ document.addEventListener('DOMContentLoaded', function () {
         opacityValue.innerHTML = `<h4>Opacity: ${opacity}</h4>`;
     });
 
+    function prevent3DInteraction(event) {
+        if (!renderer.domElement.contains(event.target)) {
+            event.stopPropagation();
+        }
+    }
 
+    document.body.addEventListener('click', prevent3DInteraction);
 });

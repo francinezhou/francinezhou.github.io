@@ -54,7 +54,9 @@ p {
 body {
     font-family: "Gridlite";
     font-variation-settings: "BACK" 50, "ELSH" 3, "RECT" 1, "wght" 900;
+    overflow: hidden;
 }
+
 
 header  {
     position: fixed;
@@ -63,17 +65,24 @@ header  {
     display: inline;
     
 }
+
+.infoButton {
+    cursor: pointer;
+}
+
 header h1 {
     font-size: 3.5em;
     display: inline;
 }
 
-#controlsWrapper {
+.controlsWrapper {
     position: absolute;
     top: 20px;
     left: 20px;
     display: flex;
     flex-direction: column;
+    backdrop-filter: blur(5px); /* Adjust the blur radius as needed */
+    background-color: rgba(255, 255, 255, 0.1); /* Adjust the background color and opacity */
 }
 
 .controlGroup {
@@ -109,19 +118,22 @@ header h1 {
 }
 
 .signBig {
+    position: fixed;
     width: 565px;
     height: 396px;
     background-color: white;
     border-radius: 5px;
-    position: fixed;
     top: 48%;
     left: 50%;
     transform: translate(-50%, -50%);
+    /* margin-left: auto;
+    margin-right: auto; */
     border-style: solid;
     border-color: gray;
     border-width: 1px;
-    display: block; /* Initially hide the sign */
-    z-index: 99; /* Ensure the sign is on top of other content */
+    /* display: block;  */
+    z-index: 999;
+
 }
 
 .signText {
@@ -135,6 +147,7 @@ header h1 {
     display: flex;
     flex-direction: column;
     color: #0061e7;
+    z-index: 999;
 }
 
 .signDecoBig {
@@ -149,7 +162,7 @@ header h1 {
     position: absolute;
     top: 10px;
     right: 10px;
-    cursor: pointer;
+
     font-size: 20px;
-   
+    cursor: pointer;
 }

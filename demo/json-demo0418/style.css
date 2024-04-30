@@ -1,0 +1,33 @@
+.demo {
+  color: #000;
+}
+
+.pup-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container {
+  flex: 33.3% 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+.image-container {
+  width: 100%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+h2, p {
+  margin: 0;
+  padding: 0;
+}
+

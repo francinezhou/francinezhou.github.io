@@ -6,17 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
 
+    <!-- <script type="importmap">
+        {
+            "imports": {
+
+                "three": "../build/three.module.js",
+                "three/addons/": "./jsm/",
+                "three-mesh-bvh": "https://cdn.jsdelivr.net/npm/three-mesh-bvh@0.7.3/build/index.module.js",
+                "three-bvh-csg": "https://cdn.jsdelivr.net/npm/three-bvh-csg@0.0.16/build/index.module.js"            }
+        }
+    </script> -->
+
     <title>3D Beading</title>
 
 </head>
 <body>
     <header>
-        <h1>3D Beading </h1><span>ⓘ</span>
+        <h1>3D Beading </h1><span class="infoButton">ⓘ</span>
     </header>
 
-    <div class="signBig">
+    <!-- <div class="signBig">
         <div class="signText">
-            <button class="closeButton" id="closeButton">X</button>
+            <button class="closeButton">X</button>
             <h2>
                 Instructions
             </h2>
@@ -34,9 +45,9 @@
             </p>
         </div>
         <div class="signDecoBig"></div>
-    </div>
+    </div> -->
 
-    <div id="controlsWrapper">
+    <div class="controlsWrapper">
         <div class="controlGroup">
             <label for="colorSlider"><span>0</span><span>360</span></label>
             <input type="range" id="colorSlider" min="0" max="360" value="60" step="1">
@@ -52,9 +63,19 @@
             <button id="undoButton">Undo</button>
             <button id="redoButton">Redo</button>
         </div>
+        <button id="exportButton">Export</button>
+
         <!-- <button id="screenshotButton">Take Screenshot</button> -->
     </div>
+    <!-- <script src="./js/scripts.js" type="module">
+        // import * as THREE from 'three';
+        // import Stats from 'three/addons/libs/stats.module.js';
+        // import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+        // import { SUBTRACTION, INTERSECTION, ADDITION, Brush, Evaluator } from 'three-bvh-csg';
 
-    <script src="./js/scripts.js" type="module"></script>
+    </script> -->
+
+    <script src="./js/scripts.js" type="module">
+    </script>
 </body>
 </html>
