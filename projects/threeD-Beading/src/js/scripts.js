@@ -1,18 +1,12 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.130.1/build/three.module.js';
 import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/controls/OrbitControls.js';
-import { GLTFLoader } from "https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/loaders/GLTFLoader.js";
 import { RGBELoader } from "https://cdn.jsdelivr.net/npm/three@0.121.0/examples/jsm/loaders/RGBELoader.js";
-import { DRACOLoader } from "https://cdn.jsdelivr.net/npm/three@0.114.0/examples/jsm/loaders/DRACOLoader.js";
 
-// const loader = new GLTFLoader();
 let renderer, 
     scene, 
     camera, 
     orbit, 
-    ambientLight, 
-    directionalLight, 
-    helper,
-    bkgTextureLoader
+    bkgTextureLoader;
 
 renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -21,7 +15,6 @@ document.body.appendChild(renderer.domElement);
 renderer.setClearColor(0xFEFEFE);
 
 scene = new THREE.Scene();
-// scene.background = new THREE.Color(0xa0a0a0);
 scene.fog = new THREE.Fog( 0xa0a0a0, 10, 500 );
 
 camera = new THREE.PerspectiveCamera(
@@ -32,31 +25,23 @@ camera = new THREE.PerspectiveCamera(
 );
 
 orbit = new OrbitControls(camera, renderer.domElement);
-camera.position.set(0, 6, 6);
+camera.position.set(2, 1, 10);
 orbit.update();
 
 bkgTextureLoader = new RGBELoader()
     .setPath('textures/')
-    .load('spruit_sunrise_1k.hdr', function (texture) {
+    .load('142_hdrmaps_com_free_4K.hdr', function (texture) {
         texture.mapping = THREE.EquirectangularReflectionMapping;
 
         scene.background = texture;
         scene.backgroundBlurriness = 1;
 
         scene.environment = texture;
-    })
+    });
 
+    const helper = new THREE.AxesHelper(20);
+    scene.add(helper);
 
-
-ambientLight = new THREE.AmbientLight(0x333333);
-scene.add(ambientLight);
-
-directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-scene.add(directionalLight);
-directionalLight.position.set(0, 50, 0);
-
-helper = new THREE.AxesHelper(20);
-scene.add(helper);
 
 // Change the color attributes of the AxesHelper object to grey
 const colors = helper.geometry.attributes.color;
@@ -66,8 +51,10 @@ colors.setXYZ(2, 0.9, 0.9, 0.9); // y-axis green to grey
 colors.setXYZ(3, 0.9, 0.9, 0.9); 
 colors.setXYZ(4, 0.9, 0.9, 0.9); // z-axis blue to grey
 
-// Update the buffer attributes to reflect the changes
-colors.needsUpdate = true;
+const axesCheckbox = document.getElementById('axesCheckbox');
+axesCheckbox.addEventListener('change', function() {
+    helper.visible = axesCheckbox.checked;
+});
 
 const mouse = new THREE.Vector2();
 const intersectionPoint = new THREE.Vector3();
@@ -75,8 +62,8 @@ const planeNormal = new THREE.Vector3();
 const plane = new THREE.Plane();
 const raycaster = new THREE.Raycaster();
 
-const shapesHistory = []; // Array to store the history of shapes
-let undoneShapes = []; // Array to store the undone shapes
+const shapesHistory = [];
+let undoneShapes = [];
 
 window.addEventListener('mousemove', function(e) {
     mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
@@ -87,13 +74,20 @@ window.addEventListener('mousemove', function(e) {
     raycaster.ray.intersectPlane(plane, intersectionPoint);
 });
 
-let sphereColor = 0xFFEA00;
-let sphereTransmission = 0.8;
+let sphereHue = 0xFFEA00;
+let sphereTransmission = 1;
 let sphereThickness = 3;
 let sphereRoughness = 0.2;
+let sphereSaturation = 100;
+let sphereLightness = 75;
 
-const colorSlider = document.getElementById('colorSlider');
-const colorValue = document.getElementById('colorValue');
+const hueSlider = document.getElementById('hueSlider');
+const hueValue = document.getElementById('hueValue');
+const saturationSlider = document.getElementById('saturationSlider');
+const saturationValue = document.getElementById('saturationValue');
+const lightnessSlider = document.getElementById('lightnessSlider');
+const lightnessValue = document.getElementById('lightnessValue');
+
 const transmissionSlider = document.getElementById('transmissionSlider');
 const transmissionValue = document.getElementById('transmissionValue');
 const thicknessSlider = document.getElementById('thicknessSlider');
@@ -101,15 +95,25 @@ const thicknessValue = document.getElementById('thicknessValue');
 const roughnessSlider = document.getElementById('roughnessSlider');
 const roughnessValue = document.getElementById('roughnessValue');
 
-const undoButton = document.getElementById('undoButton');
-const redoButton = document.getElementById('redoButton');
-const exportButton = document.getElementById('exportButton');
 
-colorSlider.addEventListener('input', function() {
-    const hue = parseInt(colorSlider.value);
-    sphereColor = new THREE.Color(`hsl(${hue}, 100%, 50%)`);
-    colorValue.textContent = `Hue: ${hue}`;
+hueSlider.addEventListener('input', function() {
+    const hue = parseInt(hueSlider.value);
+    sphereHue = hue / 360; // Convert hue to the range [0, 1]
+    hueValue.textContent = `${hue}`;
 });
+
+saturationSlider.addEventListener('input', function() {
+    const saturation = parseInt(saturationSlider.value);
+    sphereSaturation = saturation;
+    saturationValue.textContent = `${saturation}`;
+});
+
+lightnessSlider.addEventListener('input', function() {
+    const lightness = parseInt(lightnessSlider.value);
+    sphereLightness = lightness;
+    lightnessValue.textContent = `${lightness}`;
+});
+
 
 transmissionSlider.addEventListener('input', function() {
     const transmission = parseFloat(transmissionSlider.value);
@@ -129,8 +133,9 @@ roughnessSlider.addEventListener('input', function() {
     roughnessValue.textContent = `${roughness}`;
 });
 
+
 undoButton.addEventListener('click', function() {
-    const numUndoSteps = 1; // Adjust the number of steps to undo as needed
+    const numUndoSteps = 1;
     for (let i = 0; i < numUndoSteps; i++) {
         if (shapesHistory.length > 0) {
             const lastShape = shapesHistory.pop();
@@ -149,15 +154,13 @@ redoButton.addEventListener('click', function() {
 });
 
 exportButton.addEventListener('click', function () {
-    // Wait for the next frame to ensure rendering is complete
     requestAnimationFrame(captureAndDownload);
 });
 
 window.addEventListener('click', function(e) {
     const sphereGeo = new THREE.SphereGeometry(0.125, 30, 30);
-    console.log(sphereTransmission)
     const sphereMat = new THREE.MeshPhysicalMaterial({
-        color: sphereColor,
+        color: new THREE.Color().setHSL(sphereHue, sphereSaturation / 100, sphereLightness / 100),
         metalness: 0,
         roughness: sphereRoughness,
         transmission: sphereTransmission,
@@ -169,13 +172,15 @@ window.addEventListener('click', function(e) {
 
     shapesHistory.push(sphereMesh);
 
-    undoneShapes = []; // Clear undoneShapes array when a new shape is added
+    undoneShapes = [];
 });
 
 const light = new THREE.DirectionalLight(0xfff0dd, 1);
-  light.position.set(0, 5, 10);
-  scene.add(light);
-  
+light.position.set(0, 5, 10);
+scene.add(light);
+
+
+
 function animate() {
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
@@ -209,6 +214,25 @@ function saveFile(strData, filename) {
     }
 }
 
+const signBig = document.querySelector('.signBig');
+const closeButton = document.querySelector('.closeButton');
+const infoButton = document.querySelector('header span');
+
+function closeSign() {
+    signBig.style.display = 'none';
+}
+
+function toggleSign() {
+    if (signBig.style.display === 'none' || signBig.style.display === '') {
+        signBig.style.display = 'block';
+    } else {
+        signBig.style.display = 'none';
+    }
+}
+
+closeButton.addEventListener('click', closeSign);
+
+infoButton.addEventListener('click', toggleSign);
 document.addEventListener('DOMContentLoaded', function () {
     function prevent3DInteraction(event) {
         if (!renderer.domElement.contains(event.target)) {
@@ -218,53 +242,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     document.body.addEventListener('click', prevent3DInteraction);
 
-
-    const signBig = document.querySelector('.signBig');
-    const closeButton = document.querySelector('.closeButton');
-    const infoButton = document.querySelector('header span');
-
-    function closeSign() {
-        signBig.style.display = 'none';
-    }
-
-    function toggleSign() {
-        if (signBig.style.display === 'none' || signBig.style.display === '') {
-            signBig.style.display = 'block';
-        } else {
-            signBig.style.display = 'none';
-        }
-    }
-
-    closeButton.addEventListener('click', closeSign);
-
-    infoButton.addEventListener('click', toggleSign);
-
-    const colorSlider = document.getElementById('colorSlider');
-    const colorValue = document.getElementById('colorValue');
-    const transmissionSlider = document.getElementById('transmissionSlider');
-    const transmissionValue = document.getElementById('transmissionValue');
-    const thicknessSlider = document.getElementById('thicknessSlider');
-    const thicknessValue = document.getElementById('thicknessValue');
-    const roughnessSlider = document.getElementById('roughnessSlider');
-    const roughnessValue = document.getElementById('roughnessValue');
-
-    colorSlider.addEventListener('input', function () {
-        const hue = parseInt(colorSlider.value);
-        colorValue.innerHTML = `<h4>Hue: ${hue}</h4>`;
-    });
-
-    transmissionSlider.addEventListener('input', function () {
-        const transmission = parseFloat(transmissionSlider.value);
-        transmissionValue.innerHTML = `${transmission}`;
-    });
-   
-    thicknessSlider.addEventListener('input', function () {
-        const thickness = parseFloat(thicknessSlider.value);
-        thicknessValue.innerHTML = `<h4>Thickness: ${thickness}</h4>`;
-    });
-    
-    roughnessSlider.addEventListener('input', function () {
-        const roughness = parseFloat(roughnessSlider.value);
-        roughnessValue.innerHTML = `<h4>Roughness: ${roughness}</h4>`;
-    });
+    // Additional setup code here if needed
 });
