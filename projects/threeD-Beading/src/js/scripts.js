@@ -37,12 +37,11 @@ orbit.update();
 
 bkgTextureLoader = new RGBELoader()
     .setPath('textures/')
-    .load('venice_sunset_1k.hdr', function (texture) {
+    .load('spruit_sunrise_1k.hdr', function (texture) {
         texture.mapping = THREE.EquirectangularReflectionMapping;
 
         scene.background = texture;
-        // scene.backgroundBlur = 0.5;
-        scene.background.blur = 3.5;
+        scene.backgroundBlurriness = 1;
 
         scene.environment = texture;
     })
@@ -89,12 +88,16 @@ window.addEventListener('mousemove', function(e) {
 });
 
 let sphereColor = 0xFFEA00;
-let sphereTransmission = 1;
+let sphereTransmission = 0.3;
 
 const colorSlider = document.getElementById('colorSlider');
 const colorValue = document.getElementById('colorValue');
-const opacitySlider = document.getElementById('opacitySlider');
-const opacityValue = document.getElementById('opacityValue');
+const transmissionSlider = document.getElementById('transmissionSlider');
+const transmissionValue = document.getElementById('transmissionValue');
+const thicknessSlider = document.getElementById('thicknessSlider');
+const thicknessValue = document.getElementById('thicknessValue');
+const roughnessSlider = document.getElementById('roughnessSlider');
+const roughnessValue = document.getElementById('roughnessValue');
 const undoButton = document.getElementById('undoButton');
 const redoButton = document.getElementById('redoButton');
 const exportButton = document.getElementById('exportButton');
@@ -105,10 +108,22 @@ colorSlider.addEventListener('input', function() {
     colorValue.textContent = `Hue: ${hue}`;
 });
 
-opacitySlider.addEventListener('input', function() {
-    const opacity = parseFloat(opacitySlider.value);
-    sphereTransmission = opacity;
-    opacityValue.textContent = `Opacity: ${opacity}`;
+transmissionSlider.addEventListener('input', function() {
+    const transmission = parseFloat(transmissionSlider.value);
+    sphereTransmission = transmission;
+    transmissionValue.textContent = `Transmission: ${transmission}`;
+});
+
+thicknessSlider.addEventListener('input', function() {
+    const thickness = parseFloat(thicknessSlider.value);
+    sphereThickness = thickness;
+    thicknessValue.textContent = `Thickness: ${thickness}`;
+});
+
+roughnessSlider.addEventListener('input', function() {
+    const roughness = parseFloat(roughnessSlider.value);
+    sphereRoughness = roughness;
+    roughnessValue.textContent = `Roughness: ${roughness}`;
 });
 
 undoButton.addEventListener('click', function() {
@@ -142,7 +157,8 @@ window.addEventListener('click', function(e) {
         color: sphereColor,
         metalness: 0,
         roughness: 0,
-        transmission: 0.5,
+        transmission: sphereTransmission,
+        thickness: 1,
     });
     const sphereMesh = new THREE.Mesh(sphereGeo, sphereMat);
     scene.add(sphereMesh);
@@ -191,6 +207,15 @@ function saveFile(strData, filename) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    function prevent3DInteraction(event) {
+        if (!renderer.domElement.contains(event.target)) {
+            console.log("Clicked outside of the 3D renderer");
+            event.stopPropagation();
+        }
+    }
+    document.body.addEventListener('click', prevent3DInteraction);
+
+
     const signBig = document.querySelector('.signBig');
     const closeButton = document.querySelector('.closeButton');
     const infoButton = document.querySelector('header span');
@@ -212,10 +237,10 @@ document.addEventListener('DOMContentLoaded', function () {
     infoButton.addEventListener('click', toggleSign);
 
     const colorValue = document.getElementById('colorValue');
-    const opacityValue = document.getElementById('opacityValue');
+    const transmissionValue = document.getElementById('transmissionValue');
     const sizeValue = document.getElementById('sizeValue');
     const colorSlider = document.getElementById('colorSlider');
-    const opacitySlider = document.getElementById('opacitySlider');
+    const transmissionSlider = document.getElementById('transmissionSlider');
     const sizeSlider = document.getElementById('sizeSlider');
 
     colorSlider.addEventListener('input', function () {
@@ -223,16 +248,9 @@ document.addEventListener('DOMContentLoaded', function () {
         colorValue.innerHTML = `<h4>Hue: ${hue}</h4>`;
     });
 
-    opacitySlider.addEventListener('input', function () {
-        const opacity = parseFloat(opacitySlider.value);
-        opacityValue.innerHTML = `<h4>Opacity: ${opacity}</h4>`;
+    transmissionSlider.addEventListener('input', function () {
+        const transmission = parseFloat(transmissionSlider.value);
+        transmissionValue.innerHTML = `<h4>Transmission: ${transmission}</h4>`;
     });
-
-    function prevent3DInteraction(event) {
-        if (!renderer.domElement.contains(event.target)) {
-            event.stopPropagation();
-        }
-    }
-
-    document.body.addEventListener('click', prevent3DInteraction);
+   
 });

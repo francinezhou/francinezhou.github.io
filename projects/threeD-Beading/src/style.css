@@ -86,7 +86,7 @@ header h1 {
 }
 
 .controlGroup {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
