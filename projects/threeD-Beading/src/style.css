@@ -72,7 +72,9 @@ header  {
     left: 20px;
     bottom: 20px;
     display: inline;
-    
+    backdrop-filter: blur(5px); 
+    background-color: rgba(255, 255, 255, 0.1); 
+   
 }
 
 .infoButton {
@@ -90,8 +92,8 @@ header h1 {
     left: 20px;
     display: flex;
     flex-direction: column;
-    backdrop-filter: blur(5px); /* Adjust the blur radius as needed */
-    background-color: rgba(255, 255, 255, 0.1); /* Adjust the background color and opacity */
+    backdrop-filter: blur(5px); 
+    background-color: rgba(255, 255, 255, 0.1); 
    
 }
 
