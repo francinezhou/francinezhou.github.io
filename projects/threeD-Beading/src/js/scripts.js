@@ -88,7 +88,9 @@ window.addEventListener('mousemove', function(e) {
 });
 
 let sphereColor = 0xFFEA00;
-let sphereTransmission = 0.3;
+let sphereTransmission = 0.8;
+let sphereThickness = 3;
+let sphereRoughness = 0.2;
 
 const colorSlider = document.getElementById('colorSlider');
 const colorValue = document.getElementById('colorValue');
@@ -98,6 +100,7 @@ const thicknessSlider = document.getElementById('thicknessSlider');
 const thicknessValue = document.getElementById('thicknessValue');
 const roughnessSlider = document.getElementById('roughnessSlider');
 const roughnessValue = document.getElementById('roughnessValue');
+
 const undoButton = document.getElementById('undoButton');
 const redoButton = document.getElementById('redoButton');
 const exportButton = document.getElementById('exportButton');
@@ -111,19 +114,19 @@ colorSlider.addEventListener('input', function() {
 transmissionSlider.addEventListener('input', function() {
     const transmission = parseFloat(transmissionSlider.value);
     sphereTransmission = transmission;
-    transmissionValue.textContent = `Transmission: ${transmission}`;
+    transmissionValue.textContent = `${transmission}`;
 });
 
 thicknessSlider.addEventListener('input', function() {
     const thickness = parseFloat(thicknessSlider.value);
     sphereThickness = thickness;
-    thicknessValue.textContent = `Thickness: ${thickness}`;
+    thicknessValue.textContent = `${thickness}`;
 });
 
 roughnessSlider.addEventListener('input', function() {
     const roughness = parseFloat(roughnessSlider.value);
     sphereRoughness = roughness;
-    roughnessValue.textContent = `Roughness: ${roughness}`;
+    roughnessValue.textContent = `${roughness}`;
 });
 
 undoButton.addEventListener('click', function() {
@@ -156,9 +159,9 @@ window.addEventListener('click', function(e) {
     const sphereMat = new THREE.MeshPhysicalMaterial({
         color: sphereColor,
         metalness: 0,
-        roughness: 0,
+        roughness: sphereRoughness,
         transmission: sphereTransmission,
-        thickness: 1,
+        thickness: sphereThickness,
     });
     const sphereMesh = new THREE.Mesh(sphereGeo, sphereMat);
     scene.add(sphereMesh);
@@ -236,12 +239,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     infoButton.addEventListener('click', toggleSign);
 
-    const colorValue = document.getElementById('colorValue');
-    const transmissionValue = document.getElementById('transmissionValue');
-    const sizeValue = document.getElementById('sizeValue');
     const colorSlider = document.getElementById('colorSlider');
+    const colorValue = document.getElementById('colorValue');
     const transmissionSlider = document.getElementById('transmissionSlider');
-    const sizeSlider = document.getElementById('sizeSlider');
+    const transmissionValue = document.getElementById('transmissionValue');
+    const thicknessSlider = document.getElementById('thicknessSlider');
+    const thicknessValue = document.getElementById('thicknessValue');
+    const roughnessSlider = document.getElementById('roughnessSlider');
+    const roughnessValue = document.getElementById('roughnessValue');
 
     colorSlider.addEventListener('input', function () {
         const hue = parseInt(colorSlider.value);
@@ -250,7 +255,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     transmissionSlider.addEventListener('input', function () {
         const transmission = parseFloat(transmissionSlider.value);
-        transmissionValue.innerHTML = `<h4>Transmission: ${transmission}</h4>`;
+        transmissionValue.innerHTML = `${transmission}`;
     });
    
+    thicknessSlider.addEventListener('input', function () {
+        const thickness = parseFloat(thicknessSlider.value);
+        thicknessValue.innerHTML = `<h4>Thickness: ${thickness}</h4>`;
+    });
+    
+    roughnessSlider.addEventListener('input', function () {
+        const roughness = parseFloat(roughnessSlider.value);
+        roughnessValue.innerHTML = `<h4>Roughness: ${roughness}</h4>`;
+    });
 });
