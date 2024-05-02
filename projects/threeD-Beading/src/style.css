@@ -95,6 +95,11 @@ header h1 {
    
 }
 
+.controlsSection {
+   
+    text-align: right;
+}
+
 .controlGroup {
     margin-bottom: 5px;
     display: flex;
@@ -154,6 +159,10 @@ header h1 {
 
 
 
+#undoRedoContainer {
+    display: flex;
+    justify-content: space-between;
+}
 
 button {
     line-height: 0.7;
@@ -214,18 +223,12 @@ button:hover {
     z-index: 999;
 }
 
-.signDecoBig {
-    position: absolute;
-    top: 0;
-    width: 565px;
-    height: 396px;
-}
 
 /* Close button styles */
 .closeButton {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 0px;
+    right: 0px;
     font-size: 20px;
 
     cursor: pointer;
