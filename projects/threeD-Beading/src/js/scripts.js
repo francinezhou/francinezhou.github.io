@@ -2,10 +2,10 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.130.1/build/three.m
 import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/controls/OrbitControls.js';
 import { RGBELoader } from "https://cdn.jsdelivr.net/npm/three@0.121.0/examples/jsm/loaders/RGBELoader.js";
 
-let renderer, 
-    scene, 
-    camera, 
-    orbit, 
+let renderer,
+    scene,
+    camera,
+    orbit,
     bkgTextureLoader;
 
 renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -15,7 +15,7 @@ document.body.appendChild(renderer.domElement);
 renderer.setClearColor(0xFEFEFE);
 
 scene = new THREE.Scene();
-scene.fog = new THREE.Fog( 0xa0a0a0, 10, 500 );
+scene.fog = new THREE.Fog(0xa0a0a0, 10, 500);
 
 camera = new THREE.PerspectiveCamera(
     45,
@@ -30,7 +30,7 @@ orbit.update();
 
 bkgTextureLoader = new RGBELoader()
     .setPath('textures/')
-    .load('142_hdrmaps_com_free_4K.hdr', function (texture) {
+    .load('soft-sunset.hdr', function(texture) {
         texture.mapping = THREE.EquirectangularReflectionMapping;
 
         scene.background = texture;
@@ -39,16 +39,16 @@ bkgTextureLoader = new RGBELoader()
         scene.environment = texture;
     });
 
-    const helper = new THREE.AxesHelper(20);
-    scene.add(helper);
+const helper = new THREE.AxesHelper(20);
+scene.add(helper);
 
 
 // Change the color attributes of the AxesHelper object to grey
 const colors = helper.geometry.attributes.color;
 colors.setXYZ(0, 0.9, 0.9, 0.9); // x-axis red to grey
-colors.setXYZ(1, 0.9, 0.9, 0.9); 
+colors.setXYZ(1, 0.9, 0.9, 0.9);
 colors.setXYZ(2, 0.9, 0.9, 0.9); // y-axis green to grey
-colors.setXYZ(3, 0.9, 0.9, 0.9); 
+colors.setXYZ(3, 0.9, 0.9, 0.9);
 colors.setXYZ(4, 0.9, 0.9, 0.9); // z-axis blue to grey
 
 const axesCheckbox = document.getElementById('axesCheckbox');
@@ -94,7 +94,6 @@ const thicknessSlider = document.getElementById('thicknessSlider');
 const thicknessValue = document.getElementById('thicknessValue');
 const roughnessSlider = document.getElementById('roughnessSlider');
 const roughnessValue = document.getElementById('roughnessValue');
-
 
 hueSlider.addEventListener('input', function() {
     const hue = parseInt(hueSlider.value);
@@ -153,11 +152,33 @@ redoButton.addEventListener('click', function() {
     }
 });
 
-exportButton.addEventListener('click', function () {
+exportButton.addEventListener('click', function() {
     requestAnimationFrame(captureAndDownload);
 });
 
 window.addEventListener('click', function(e) {
+    const hue = parseInt(hueSlider.value);
+    const noteNames = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]; // Define the note names
+    const octave = Math.floor(hue / 40) + 1; // Calculate the octave based on hue
+
+    // Calculate the index of the note name
+    const noteIndex = Math.floor((hue % 40) / 10);
+    const noteName = noteNames[noteIndex];
+
+    let note;
+    if (noteIndex % 2 === 0) {
+        note = `${noteName}${octave}`; // Combine the note name and octave
+    } else {
+        note = `${noteName}${octave}#`; // Combine the note name, sharp sign, and octave
+    }
+
+    if (note && isSoundOn) {
+        const synth = new Tone.Synth().toDestination();
+        // Set maximum volume
+        synth.volume.value = -20; // Adjust as needed (-12 dB is a reasonable starting point)
+        synth.triggerAttackRelease(note, "8n");
+    }
+
     const sphereGeo = new THREE.SphereGeometry(0.125, 30, 30);
     const sphereMat = new THREE.MeshPhysicalMaterial({
         color: new THREE.Color().setHSL(sphereHue, sphereSaturation / 100, sphereLightness / 100),
@@ -174,6 +195,8 @@ window.addEventListener('click', function(e) {
 
     undoneShapes = [];
 });
+
+
 
 const light = new THREE.DirectionalLight(0xfff0dd, 1);
 light.position.set(0, 5, 10);
@@ -233,7 +256,7 @@ function toggleSign() {
 closeButton.addEventListener('click', closeSign);
 
 infoButton.addEventListener('click', toggleSign);
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     function prevent3DInteraction(event) {
         if (!renderer.domElement.contains(event.target)) {
             console.log("Clicked outside of the 3D renderer");
@@ -243,4 +266,16 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.addEventListener('click', prevent3DInteraction);
 
     // Additional setup code here if needed
+});
+
+const toggleSoundButton = document.getElementById('toggleSoundButton');
+let isSoundOn = true;
+
+toggleSoundButton.addEventListener('click', function() {
+    isSoundOn = !isSoundOn; // Toggle sound state
+    if (isSoundOn) {
+        toggleSoundButton.textContent = 'Mute Sound';
+    } else {
+        toggleSoundButton.textContent = 'Unmute Sound';
+    }
 });

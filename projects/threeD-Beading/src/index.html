@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.typekit.net/ypn1yfx.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-
+    <script src="http://unpkg.com/tone"></script>
     <!-- <script type="importmap">
         {
             "imports": {
@@ -22,10 +22,7 @@
 
 </head>
 <body>
-    <header>
-        <h1>3D Beading </h1><span class="infoButton">ⓘ</span>
-    </header>
-
+    
     <div class="signBig">
         <div class="signText">
             <button class="closeButton">X</button>
@@ -48,7 +45,8 @@
         
     </div>
 
-    <div class="controlsWrapper">
+<div class="wrapper">
+    <div class="controlsWrapper colorWrapper">
      <h2 class="controlsSection">
         Color
      </h2>
@@ -67,10 +65,13 @@
             <input type="range" id="lightnessSlider" min="0" max="100" value="75" step="1" class="slider">
             <h3 class="liveInfo">Lightness:&nbsp;<span id="lightnessValue">75</span></h3>
         </div>
-    <h2 class="controlsSection">
-        <br>
-        Texture
-    </h2>
+    </div>
+
+    <div class="controlsWrapper textureWrapper">
+        <h2 class="controlsSection">
+            Texture
+        </h2>
+
         <div class="controlGroup">
             <label for="transmissionSlider"><span>0</span><span>1</span></label>
             <input type="range" id="transmissionSlider" min="0" max="1" value="1" step="0.01" class="slider">
@@ -86,20 +87,30 @@
             <input type="range" id="roughnessSlider" min="0" max="1" value="0" step="0.01" class="slider">
             <h3 class="liveInfo">Roughness:&nbsp;<span id="roughnessValue">0</span></h3>
         </div>
-        <br>
+        <!-- <button id="screenshotButton">Take Screenshot</button> -->
+    </div>
+
+    <div class="controlsWrapper">
+        <button id="toggleSoundButton">Mute Sound</button>
         <div class="controlCheckbox">
             <input type="checkbox" id="axesCheckbox" checked>
             <label for="axesCheckbox">Axes</label>
         </div>
-      
+
         <div id="undoRedoContainer">
             <button id="undoButton">Undo</button>
             <button id="redoButton">Redo</button>
         </div>
         <button id="exportButton">Export</button>
-
-        <!-- <button id="screenshotButton">Take Screenshot</button> -->
+    
+        <header>
+            <h1>3D Beading </h1><span class="infoButton">ⓘ</span>
+        </header>
+    
     </div>
+
+</div>
+
     <!-- <script src="./js/scripts.js" type="module">
         // import * as THREE from 'three';
         // import Stats from 'three/addons/libs/stats.module.js';
