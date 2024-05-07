@@ -85,8 +85,35 @@ header h1 {
     font-size: 1.5em;
     display: inline;
 }
+.leftWrapper {
+    position: absolute;
+    width: 30vw;
+    left: 0;
+    top:0;
+    display: flex;
+    flex-direction: column;
 
-.wrapper {
+}
+
+.shapeCard {
+   padding: 0.5em;
+}
+.shapeCard svg {
+    width:2.5em;
+    height:2.5em;
+}
+
+.sphereIcon {
+    width:2.5em;
+    height:2.5em;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #fff;
+    cursor: pointer;
+}
+    
+.bottomWrapper {
     position: absolute;
     width: 100vw;
     bottom: 0;
@@ -104,6 +131,7 @@ header h1 {
     background-color: rgba(255, 255, 255, 0.1); 
    
 }
+
 
 .colorWrapper {
     left: 20px;

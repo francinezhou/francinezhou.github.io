@@ -1,6 +1,7 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.130.1/build/three.module.js';
 import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/controls/OrbitControls.js';
 import { RGBELoader } from "https://cdn.jsdelivr.net/npm/three@0.121.0/examples/jsm/loaders/RGBELoader.js";
+import { IcosahedronGeometry } from 'https://cdn.jsdelivr.net/npm/three@0.130.1/build/three.module.js'; // Import IcosahedronGeometry
 
 let renderer,
     scene,
@@ -41,7 +42,6 @@ bkgTextureLoader = new RGBELoader()
 
 const helper = new THREE.AxesHelper(20);
 scene.add(helper);
-
 
 // Change the color attributes of the AxesHelper object to grey
 const colors = helper.geometry.attributes.color;
@@ -133,27 +133,22 @@ roughnessSlider.addEventListener('input', function() {
 });
 
 
-undoButton.addEventListener('click', function() {
-    const numUndoSteps = 1;
-    for (let i = 0; i < numUndoSteps; i++) {
-        if (shapesHistory.length > 0) {
-            const lastShape = shapesHistory.pop();
-            scene.remove(lastShape);
-            undoneShapes.push(lastShape);
-        }
-    }
+const leftWrapper = document.querySelector('.leftWrapper');
+const sphereCard = document.getElementById('sphereCard');
+const icosahedronCard = document.getElementById('icosahedronCard');
+
+let selectedShape = 'sphere'; // Default selected shape is 'sphere'
+
+sphereCard.addEventListener('click', function() {
+    selectedShape = 'sphere';
+    sphereCard.classList.add('selected');
+    icosahedronCard.classList.remove('selected');
 });
 
-redoButton.addEventListener('click', function() {
-    if (undoneShapes.length > 0) {
-        const lastShape = undoneShapes.pop();
-        scene.add(lastShape);
-        shapesHistory.push(lastShape);
-    }
-});
-
-exportButton.addEventListener('click', function() {
-    requestAnimationFrame(captureAndDownload);
+icosahedronCard.addEventListener('click', function() {
+    selectedShape = 'icosahedron';
+    icosahedronCard.classList.add('selected');
+    sphereCard.classList.remove('selected');
 });
 
 window.addEventListener('click', function(e) {
@@ -179,37 +174,55 @@ window.addEventListener('click', function(e) {
         synth.triggerAttackRelease(note, "8n");
     }
 
-    const sphereGeo = new THREE.SphereGeometry(0.125, 30, 30);
-    const sphereMat = new THREE.MeshPhysicalMaterial({
+    let shapeGeometry;
+    if (selectedShape === 'sphere') {
+        shapeGeometry = new THREE.SphereGeometry(0.125, 30, 30);
+    } else if (selectedShape === 'icosahedron') {
+        shapeGeometry = new IcosahedronGeometry(0.125); // Use IcosahedronGeometry for icosahedron shape
+    }
+
+    const shapeMaterial = new THREE.MeshPhysicalMaterial({
         color: new THREE.Color().setHSL(sphereHue, sphereSaturation / 100, sphereLightness / 100),
         metalness: 0,
         roughness: sphereRoughness,
         transmission: sphereTransmission,
         thickness: sphereThickness,
     });
-    const sphereMesh = new THREE.Mesh(sphereGeo, sphereMat);
-    scene.add(sphereMesh);
-    sphereMesh.position.copy(intersectionPoint);
+    const shapeMesh = new THREE.Mesh(shapeGeometry, shapeMaterial);
+    scene.add(shapeMesh);
+    shapeMesh.position.copy(intersectionPoint);
 
-    shapesHistory.push(sphereMesh);
+    shapesHistory.push(shapeMesh);
 
     undoneShapes = [];
 });
 
+const undoButton = document.getElementById('undoButton');
+const redoButton = document.getElementById('redoButton');
+const exportButton = document.getElementById('exportButton');
 
+undoButton.addEventListener('click', function() {
+    const numUndoSteps = 1;
+    for (let i = 0; i < numUndoSteps; i++) {
+        if (shapesHistory.length > 0) {
+            const lastShape = shapesHistory.pop();
+            scene.remove(lastShape);
+            undoneShapes.push(lastShape);
+        }
+    }
+});
 
-const light = new THREE.DirectionalLight(0xfff0dd, 1);
-light.position.set(0, 5, 10);
-scene.add(light);
+redoButton.addEventListener('click', function() {
+    if (undoneShapes.length > 0) {
+        const lastShape = undoneShapes.pop();
+        scene.add(lastShape);
+        shapesHistory.push(lastShape);
+    }
+});
 
-
-
-function animate() {
-    renderer.render(scene, camera);
-    requestAnimationFrame(animate);
-}
-
-animate();
+exportButton.addEventListener('click', function() {
+    requestAnimationFrame(captureAndDownload);
+});
 
 function captureAndDownload() {
     try {
@@ -279,3 +292,16 @@ toggleSoundButton.addEventListener('click', function() {
         toggleSoundButton.textContent = 'Unmute Sound';
     }
 });
+
+// Light setup
+const light = new THREE.DirectionalLight(0xfff0dd, 1);
+light.position.set(0, 5, 10);
+scene.add(light);
+
+// Animation loop
+function animate() {
+    renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+}
+
+animate();
