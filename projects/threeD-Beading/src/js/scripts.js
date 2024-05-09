@@ -304,9 +304,9 @@ let isSoundOn = true;
 toggleSoundButton.addEventListener('click', function() {
     isSoundOn = !isSoundOn; // Toggle sound state
     if (isSoundOn) {
-        toggleSoundButton.textContent = 'Mute Sound';
+        toggleSoundButton.textContent = 'Quiet';
     } else {
-        toggleSoundButton.textContent = 'Unmute Sound';
+        toggleSoundButton.textContent = 'Sound';
     }
 });
 
