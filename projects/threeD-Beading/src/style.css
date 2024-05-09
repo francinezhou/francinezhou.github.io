@@ -158,27 +158,30 @@ header h1 {
 
 .bottomWrapper {
     position: absolute;
-    width: 100vw;
+    width: 24vw;
     bottom: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     
 }
+.bottomWrapper .controlsWrapper {
+    margin-right: 1em;
+}
 .controlsWrapper {
-
     display: flex;
     width: fit-content;
     flex-direction: column;
     backdrop-filter: blur(5px); 
     background-color: rgba(255, 255, 255, 0.1); 
-   margin-right: 1em;
+   
    padding:0.1em;
 }
 
 .settingWrapper{
-    margin-left: auto;
-    margin-right: 0;
+    position: absolute;
+   right:0;
+   bottom: 0;
 }
 
 
