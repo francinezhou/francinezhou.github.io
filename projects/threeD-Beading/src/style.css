@@ -34,18 +34,36 @@ body {
 }
 
 
-h1, h2, h3, h4 {
+body {
+    font-family: finalsix, sans-serif;
+    letter-spacing: 0.09em;
+    font-style: normal; 
+    color: #fff;
+}
+
+a:link { text-decoration: none; color: inherit;}
+
+a:visited { text-decoration: none; color: inherit;}
+  
+a:active { text-decoration: none; }
+
+a:hover { text-decoration: #fff dotted underline;}
+
+h1 {
+    font-family: 'digibop';
+}
+
+ h2, h3, h4 {
     font-family: finalsix, sans-serif;
     font-weight: 300;
     font-style: normal;
+    
 }
 
-h1 {
-    font-style: italic;
-    margin: 0;
-    padding: 0;
-   
+p {
+    font-weight: 300;
 }
+
 
 h2 {
     margin: 0;
@@ -58,12 +76,6 @@ h3 {
 }
 
 
-body {
-    font-family: finalsix, sans-serif;
-    font-weight: 300;
-    font-style: normal; 
-}
-
 header, .signBig, .controlsWrapper{
     cursor:auto;
 }
@@ -72,9 +84,8 @@ header  {
     position: relative;
 
     display: inline;
-    backdrop-filter: blur(5px); 
-    background-color: rgba(255, 255, 255, 0.1); 
-   
+
+
 }
 
 .infoButton {
@@ -84,7 +95,12 @@ header  {
 header h1 {
     font-size: 1.5em;
     display: inline;
+    color: #fff;
+    /* color:transparent;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: white; */
 }
+
 .leftWrapper {
     position: absolute;
     width: 30vw;
@@ -97,22 +113,49 @@ header h1 {
 
 .shapeCard {
    padding: 0.5em;
+   display: flex;
+
+   align-self: center;
+   justify-items: center;
 }
+
 .shapeCard svg {
     width:2.5em;
     height:2.5em;
+    cursor: pointer;
+  
+    -webkit-filter: drop-shadow( 1px -1px 3px rgba(1, 1, 1, 0.25));
+    filter: drop-shadow( 1px -1px 3px rgba(1, 1, 1, 0.25));
+
+    
+}
+
+.icon {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #fff;
+    cursor: pointer;
+  
+    -webkit-filter: drop-shadow( 1px -1px 3px rgba(1, 1, 1, 0.25));
+    filter: drop-shadow( 1px -1px 3px rgba(1, 1, 1, 0.25));
+
 }
 
 .sphereIcon {
     width:2.5em;
     height:2.5em;
     border-radius: 50%;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #fff;
-    cursor: pointer;
 }
     
+.cubeIcon {
+    width:1.8em;
+    height: 1.8em;
+    transform: rotate(45deg);
+
+}
+
+
+
 .bottomWrapper {
     position: absolute;
     width: 100vw;
@@ -219,7 +262,7 @@ button {
     /* border-radius: 3px; */
     /* color: var(--inverse-color); */
     text-transform: uppercase;
-    color: black;
+    color: #fff;
     background: rgba(255, 255, 255, 0.3);
     border: 0px;
     outline: none;
@@ -239,34 +282,63 @@ button:hover {
     position: fixed;
     width: 450px;
     height: 300px;
-    background-color: white;
-    border-radius: 5px;
-    top: 48%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     /* margin-left: auto;
     margin-right: auto; */
-    border-style: solid;
+    /* border-style: solid;
     border-color: gray;
-    border-width: 1px;
-    /* display: block;  */
+    border-width: 1px; */
     z-index: 999;
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(5px);
+   
 }
 
+.signFrame {
+    position: absolute;
+    width:100%;
+}
+.signFrame svg{ 
+    width:100%;
+}
+
+  .cls-1 {
+    opacity: .15;
+  }
+
+  .cls-1, .cls-2 {
+    fill: #fff;
+  }
+
+  .cls-3 {
+    fill: none;
+    stroke: #fff;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+  }
+
+
+#logo {
+    -webkit-filter: drop-shadow( 1px -1px 3px rgba(1, 1, 1, 0.25));
+    filter: drop-shadow( 1px -1px 3px rgba(1, 1, 1, 0.25));
+}
+
+#textBg {
+    background-color: white;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+   
+}
 .signText {
-    position: relative;
-    height: 85%;
-    width: 78%;
-    margin-top: 40px;
+    position: absolute;
+    bottom:1%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     display: flex;
     flex-direction: column;
-
     z-index: 999;
+    text-shadow: rgb(155, 155, 155) 1px 0 10px;
 }
 
 
