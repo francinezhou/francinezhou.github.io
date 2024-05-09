@@ -31,7 +31,7 @@ orbit.update();
 
 bkgTextureLoader = new RGBELoader()
     .setPath('textures/')
-    .load('soft-sunset.hdr', function(texture) {
+    .load('lonely_road_afternoon_puresky_4k.hdr', function(texture) {
         texture.mapping = THREE.EquirectangularReflectionMapping;
 
         scene.background = texture;
@@ -40,21 +40,21 @@ bkgTextureLoader = new RGBELoader()
         scene.environment = texture;
     });
 
-const helper = new THREE.AxesHelper(20);
-scene.add(helper);
-
-// Change the color attributes of the AxesHelper object to grey
-const colors = helper.geometry.attributes.color;
-colors.setXYZ(0, 0.9, 0.9, 0.9); // x-axis red to grey
-colors.setXYZ(1, 0.9, 0.9, 0.9);
-colors.setXYZ(2, 0.9, 0.9, 0.9); // y-axis green to grey
-colors.setXYZ(3, 0.9, 0.9, 0.9);
-colors.setXYZ(4, 0.9, 0.9, 0.9); // z-axis blue to grey
-
-const axesCheckbox = document.getElementById('axesCheckbox');
-axesCheckbox.addEventListener('change', function() {
-    helper.visible = axesCheckbox.checked;
-});
+    const helper = new THREE.AxesHelper(20);
+    scene.add(helper);
+    
+    // Change the color attributes of the AxesHelper object to grey
+    const colors = helper.geometry.attributes.color;
+    colors.setXYZ(0, 0.9, 0.9, 0.9); // x-axis red to grey
+    colors.setXYZ(1, 0.9, 0.9, 0.9);
+    colors.setXYZ(2, 0.9, 0.9, 0.9); // y-axis green to grey
+    colors.setXYZ(3, 0.9, 0.9, 0.9);
+    colors.setXYZ(4, 0.9, 0.9, 0.9); // z-axis blue to grey
+    
+    const axesCheckbox = document.getElementById('axesCheckbox');
+    axesCheckbox.addEventListener('change', function() {
+        helper.visible = axesCheckbox.checked;
+    });
 
 const mouse = new THREE.Vector2();
 const intersectionPoint = new THREE.Vector3();
@@ -136,6 +136,7 @@ roughnessSlider.addEventListener('input', function() {
 const leftWrapper = document.querySelector('.leftWrapper');
 const sphereCard = document.getElementById('sphereCard');
 const icosahedronCard = document.getElementById('icosahedronCard');
+const cubeCard = document.getElementById('cubeCard'); // Add this line to get the cube card element
 
 let selectedShape = 'sphere'; // Default selected shape is 'sphere'
 
@@ -143,11 +144,20 @@ sphereCard.addEventListener('click', function() {
     selectedShape = 'sphere';
     sphereCard.classList.add('selected');
     icosahedronCard.classList.remove('selected');
+    cubeCard.classList.remove('selected'); // Ensure cube card is not selected
 });
 
 icosahedronCard.addEventListener('click', function() {
     selectedShape = 'icosahedron';
     icosahedronCard.classList.add('selected');
+    sphereCard.classList.remove('selected');
+    cubeCard.classList.remove('selected'); // Ensure cube card is not selected
+});
+
+cubeCard.addEventListener('click', function() {
+    selectedShape = 'cube'; // Set selected shape to cube
+    cubeCard.classList.add('selected'); // Add selected class to cube card
+    icosahedronCard.classList.remove('selected');
     sphereCard.classList.remove('selected');
 });
 
@@ -179,6 +189,8 @@ window.addEventListener('click', function(e) {
         shapeGeometry = new THREE.SphereGeometry(0.125, 30, 30);
     } else if (selectedShape === 'icosahedron') {
         shapeGeometry = new IcosahedronGeometry(0.125); // Use IcosahedronGeometry for icosahedron shape
+    } else if (selectedShape === 'cube') {
+        shapeGeometry = new THREE.BoxGeometry(0.25, 0.25, 0.25); // Use BoxGeometry for cube shape
     }
 
     const shapeMaterial = new THREE.MeshPhysicalMaterial({
@@ -191,6 +203,11 @@ window.addEventListener('click', function(e) {
     const shapeMesh = new THREE.Mesh(shapeGeometry, shapeMaterial);
     scene.add(shapeMesh);
     shapeMesh.position.copy(intersectionPoint);
+
+    // Rotate the cube 45 degrees
+    if (selectedShape === 'cube') {
+        shapeMesh.rotateZ(Math.PI / 4);
+    }
 
     shapesHistory.push(shapeMesh);
 
