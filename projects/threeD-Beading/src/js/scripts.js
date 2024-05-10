@@ -16,7 +16,7 @@ document.body.appendChild(renderer.domElement);
 renderer.setClearColor(0xFEFEFE);
 
 scene = new THREE.Scene();
-scene.fog = new THREE.Fog(0xa0a0a0, 10, 500);
+// scene.fog = new THREE.Fog(0xa0a0a0, 10, 500);
 
 camera = new THREE.PerspectiveCamera(
     45,
@@ -75,7 +75,7 @@ window.addEventListener('mousemove', function(e) {
 });
 
 let sphereHue = 0xFFEA00;
-let sphereTransmission = 1;
+let sphereTransmission = 0.95;
 let sphereThickness = 3;
 let sphereRoughness = 0.2;
 let sphereSaturation = 100;
@@ -314,6 +314,12 @@ toggleSoundButton.addEventListener('click', function() {
 const light = new THREE.DirectionalLight(0xfff0dd, 1);
 light.position.set(0, 5, 10);
 scene.add(light);
+
+// Create AmbientLight
+const ambientLight = new THREE.AmbientLight(0xffffff, 1); // Color: white, Intensity: 0.5
+
+// Add AmbientLight to the scene
+scene.add(ambientLight);
 
 // Animation loop
 function animate() {
