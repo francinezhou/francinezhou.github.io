@@ -2,7 +2,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.130.1/build/three.m
 import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/controls/OrbitControls.js';
 import { RGBELoader } from "https://cdn.jsdelivr.net/npm/three@0.121.0/examples/jsm/loaders/RGBELoader.js";
 import { IcosahedronGeometry } from 'https://cdn.jsdelivr.net/npm/three@0.130.1/build/three.module.js'; // Import IcosahedronGeometry
-import * as Tone from "https://cdn.jsdelivr.net/npm/tone@14.8.26/build/Tone.js";
+// import * as Tone from "https://cdn.jsdelivr.net/npm/tone@14.8.26/build/Tone.js";
 
 let renderer,
     scene,
