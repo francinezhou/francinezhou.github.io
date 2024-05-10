@@ -40,21 +40,21 @@ bkgTextureLoader = new RGBELoader()
         scene.environment = texture;
     });
 
-    const helper = new THREE.AxesHelper(20);
-    scene.add(helper);
-    
-    // Change the color attributes of the AxesHelper object to grey
-    const colors = helper.geometry.attributes.color;
-    colors.setXYZ(0, 0.9, 0.9, 0.9); // x-axis red to grey
-    colors.setXYZ(1, 0.9, 0.9, 0.9);
-    colors.setXYZ(2, 0.9, 0.9, 0.9); // y-axis green to grey
-    colors.setXYZ(3, 0.9, 0.9, 0.9);
-    colors.setXYZ(4, 0.9, 0.9, 0.9); // z-axis blue to grey
-    
-    const axesCheckbox = document.getElementById('axesCheckbox');
-    axesCheckbox.addEventListener('change', function() {
-        helper.visible = axesCheckbox.checked;
-    });
+const helper = new THREE.AxesHelper(20);
+scene.add(helper);
+
+// Change the color attributes of the AxesHelper object to grey
+const colors = helper.geometry.attributes.color;
+colors.setXYZ(0, 0.9, 0.9, 0.9); // x-axis red to grey
+colors.setXYZ(1, 0.9, 0.9, 0.9);
+colors.setXYZ(2, 0.9, 0.9, 0.9); // y-axis green to grey
+colors.setXYZ(3, 0.9, 0.9, 0.9);
+colors.setXYZ(4, 0.9, 0.9, 0.9); // z-axis blue to grey
+
+const axesCheckbox = document.getElementById('axesCheckbox');
+axesCheckbox.addEventListener('change', function() {
+    helper.visible = axesCheckbox.checked;
+});
 
 const mouse = new THREE.Vector2();
 const intersectionPoint = new THREE.Vector3();
@@ -288,7 +288,7 @@ closeButton.addEventListener('click', closeSign);
 infoButton.addEventListener('click', toggleSign);
 document.addEventListener('DOMContentLoaded', function() {
     function prevent3DInteraction(event) {
-        if (!renderer.domElement.contains(event.target)) {
+        if (!renderer.domElement.contains(event.target) && isSoundOn) {
             console.log("Clicked outside of the 3D renderer");
             event.stopPropagation();
         }
