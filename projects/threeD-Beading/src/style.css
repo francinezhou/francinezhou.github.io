@@ -151,23 +151,24 @@ header h1 {
     width:1.8em;
     height: 1.8em;
     transform: rotate(45deg);
-
 }
 
 
 
 .bottomWrapper {
     position: absolute;
-    width: 24vw;
+    width: 23vw;
     bottom: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     
 }
+
 .bottomWrapper .controlsWrapper {
     margin-right: 1em;
 }
+
 .controlsWrapper {
     display: flex;
     width: fit-content;
