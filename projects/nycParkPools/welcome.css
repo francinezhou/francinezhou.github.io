@@ -115,7 +115,7 @@ header a:active { text-decoration: none; }
 }
 
 .titleText:hover ~ .clearwavy{
-    text-decoration: skyblue wavy underline;
+    text-decoration: rgb(194, 236, 243) wavy underline;
 }
 
 
