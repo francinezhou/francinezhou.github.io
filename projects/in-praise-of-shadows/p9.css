@@ -168,7 +168,7 @@ h2 a:active { text-decoration: none; }
   left: 0;
   z-index: 0; 
   overflow-y: hidden;
-  /* filter: brightness(1.75); */
+  filter: drop-shadow(0px 1px 4px rgb(0 0 0 / 0.5));
 }
 
 
