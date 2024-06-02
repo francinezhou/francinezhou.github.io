@@ -184,6 +184,10 @@ opacity: 0.5;
 
 
 /* background visuals */
+.transition {
+  transition: 1s; 
+}
+
 video {
   width: 100vw;
   height: 100vh;
