@@ -668,11 +668,13 @@ h4 {
 
 
 .main-content {
+    position: fixed;
     display: flex;
     flex-direction: column;
     /* justify-content: flex-end; */
     overflow-y: hidden;
     height: 100%;
+    width: 100vw;
 }
 
 #droppedImg-container {
@@ -955,7 +957,6 @@ h4 {
 
   .addCart {
     position: absolute;
-    
     padding: 10px;
     top: 0;
     right: 0;
@@ -1000,10 +1001,10 @@ h4 {
 
 .cartDrop {
   position: fixed;
-    width: 100%;
+    width: 100vw;
     height: calc(100% - 8vh); 
     min-width: 320px;
-    right: 0;
+   
     top: 8vh;
     z-index: 99;
     border-left: var(--border); 
@@ -1026,9 +1027,7 @@ h4 {
 
 .cartDrop h4 {
   width: 100%;
-  
- 
-  padding-top: 40px;
+  padding-top: 30px;
   padding-bottom: 10px;
   padding-left: 10px;
   padding-right: 15px;
@@ -1039,14 +1038,15 @@ h4 {
 
 
 .cartHeaderWrapper {
-  width: 0%;
-  position: fixed;
+  width: 100%;
+  position: absolute;
   z-index: 101;
   
 }
 
-.cartHeader {width: 100%;
-  position: relative;
+.cartHeader {
+  width: 100%;
+  /* position: relative; */
   text-align: right;
   background: #F3F3F3;
   z-index: 101;
@@ -1075,15 +1075,17 @@ h4 {
 @media (min-width: 800px) {
   .cartDrop {
     position: fixed;
-      width: 40%;
+      width: 40vw;
+      right: 0;
   }
   .cartHeaderWrapper {
-    width: 40%;
+    /* position: fixed; */
+    width: inherit;
   }
   }
   
 .cartItem {
-  
+  position: relative;
   display: flex;
   flex-direction: row;
   height: fit-content;
