@@ -1036,13 +1036,14 @@ h4 {
   z-index: 101;
 }
 
-
-.cartHeaderWrapper {
-  width: 100%;
-  position: absolute;
-  z-index: 101;
+@media (min-width: 800px) {
+  .cartDrop {
+    position: fixed;
+      width: 40vw;
+      right: 0;
+  }
+  }
   
-}
 
 .cartHeader {
   width: 100%;
@@ -1070,6 +1071,17 @@ h4 {
   font-weight: 35;
   font-style: italic;
   cursor: pointer;
+}
+
+
+.cartHeaderWrapper {
+  width: 100%;
+ 
+  z-index: 101;
+}
+
+.cartItemWrapper {
+
 }
 
 @media (min-width: 800px) {
