@@ -1,0 +1,151 @@
+@font-face {
+	src: url('MemoVF-MemoVFVF.woff2') format('woff2-variations');
+	font-family:'Memo';
+	font-style: normal;
+}
+
+@font-face {
+	src: url('WeafMono-Light.otf') format('woff2-variations');
+	font-family:'Weaf';
+	font-style: light;
+}
+
+@font-face {
+	src: url('WeafMono-Regular.otf') format('woff2-variations');
+	font-family:'Weaf';
+	font-style: normal;
+}
+
+body {
+	font-family:'Memo';
+	background-image: url(img/yellowStripe.jpg);
+	background-size: 20%;
+	cursor: url(img/northWestArrow.png),auto;
+}
+
+.wrapper {
+	padding: 10px;
+}
+h2, h4 {
+	margin: 0;
+}
+
+h4 {
+	font-size: 1.2rem;
+	font-family:'Weaf';
+	font-style: light;
+}
+
+.logoMemo {
+	font-size: 5rem;
+}
+.vfDelay span{
+	-webkit-animation: toSolid 5s linear infinite;
+	animation: toSolid 6s linear infinite;
+	animation-delay: calc(.5s* var(--i));
+  }
+  
+  
+  @keyframes toSolid {
+	0%, 100% {
+		font-variation-settings: "wght" 30;
+	}
+
+	50% {
+		font-variation-settings: "wght" 200;
+	}
+  }
+
+.hover {
+	cursor: url(img/point.png),auto;
+}
+.hover span:hover {
+    -webkit-animation: toOutline 4s linear forwards;
+    animation: toOutline 4s linear forwards;
+}
+
+@keyframes toOutline {
+    0%, 100%  {
+        font-variation-settings: "wght" 200;
+    }
+    50% {
+        font-variation-settings: "wght" 30;
+    }
+}
+
+.emojiMemo {
+	font-size: 2rem;
+}
+
+.fontPreviewCaption {
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom:1rem;
+}
+
+
+
+input {
+	background: none;
+	border: none;
+  }
+
+  input:focus {
+	background: white;
+	text-decoration: solid;
+	
+  }
+
+.testerText {
+	font-size: 6rem;
+	-webkit-appearance: none;
+    background: none;
+	border: none;
+	border-radius: 0;
+	outline: none;
+
+  }
+
+.memo {
+	font-family:'Memo';
+}
+
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 2px;
+    background-color: #C6C6C6;
+	cursor: url(img/raisedHand.png),auto;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #FFAA00; /* Orangeish yellow */
+	cursor: url(img/raisedHand.png),auto;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #FFAA00; /* Orangeish yellow */
+	cursor: url(img/raisedHand.png),auto;
+}
+
+input[type="range"]::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #FFAA00; /* Orangeish yellow */
+	cursor: url(img/raisedHand.png),auto;
+}
+
+/* cursor: url(img/fistedHandSign.png),auto; */

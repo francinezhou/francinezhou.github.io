@@ -24,17 +24,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const fontSerifValue = document.getElementById('fontSerifValue');
     const testerText = document.querySelector('.testerText');
 
+    // Initial values
+    let contrast = fontContrastSlider.value;
+    let serif = fontSerifSlider.value;
+
+    function updateFontVariationSettings() {
+        testerText.style.fontVariationSettings = `"xopq" ${contrast}, "SERF" ${serif}`;
+    }
+
     // Update font contrast
     fontContrastSlider.addEventListener('input', (e) => {
-        const contrast = e.target.value;
+        contrast = e.target.value;
         fontContrastValue.textContent = contrast;  // Update the displayed font weight value
-        testerText.style.fontVariationSettings = `"xopq" ${contrast}`;
+        updateFontVariationSettings();
     });
 
     // Update serif value
     fontSerifSlider.addEventListener('input', (e) => {
-        const serif = e.target.value;
+        serif = e.target.value;
         fontSerifValue.textContent = serif;  // Update the displayed serif value
-        testerText.style.fontVariationSettings = `"SERF" ${serif}`;
+        updateFontVariationSettings();
     });
+
+    // Initialize the font settings on load
+    updateFontVariationSettings();
 });

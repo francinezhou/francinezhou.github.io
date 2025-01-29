@@ -1,0 +1,275 @@
+[
+  {
+    "title": "RVS Basic",
+    "zhName": "基本美术体",
+    "writingSystems": [
+      "Simplified Chinese",
+      "Traditional Chinese",
+      "Latin",
+      "Japanese Hiragana",
+      "Japanese Katakana",
+      "Emoji"
+    ],
+    "writingSystemsIcon": [
+      "简",
+      "繁",
+      "Aa",
+      "あ",
+      "ア",
+      "☺"
+    ],
+    "technology": [
+      "OpenType",
+      "Variable Font"
+    ],
+    "supportedLanguages": "",
+    "availableFormats": "OTF",
+    "OpenType Features": "风格变体 Stylistic alternates\n语言特形 Language forms\n连字 Ligatures",
+    "designer": "厉致谦（Li Zhiqian）",
+    "designDate": 2020,
+    "versionNo": 1.001,
+    "Glyph Count": "",
+    "fontStyles": ""
+  },
+  {
+    "title": "Memo",
+    "zhName": "",
+    "writingSystems": [
+      "Simplified Chinese",
+      "Latin",
+      "Emoji"
+    ],
+    "writingSystemsIcon": [
+      "简",
+      "Aa",
+      "☺"
+    ],
+    "technology": [
+      "OpenType",
+      "Variable Font"
+    ],
+    "supportedLanguages": "Afrikaans, Albanian, Asu, Basque, Bemba, Bena, Breton, Catalan, Chiga, Colognian, Cornish, Croatian, Czech, Danish, Dutch, Embu, English, Esperanto, Estonian, Faroese, Filipino, Finnish, French, Friulian, Galician, German, Gusii, Hungarian, Indonesian, Irish, Italian, Kabuverdianu, Kalenjin, Kamba, Kikuyu, Kinyarwanda, Latvian, Lithuanian, Lower, Sorbian, Luo, Luxembourgish, Luyia, Machame, Makhuwa-Meetto, Makonde, Malagasy, Maltese, Manx, Meru ,Morisyen ,North Ndebele, Norwegian, Bokmål, Norwegian, Nynorsk, Nyankole, Oromo, Polish, Portuguese, Quechua, Romanian, Romansh, Rombo, Rundi, Rwa, Samburu, Sango, Sangu, Scottish, Gaelic, Sena, Serbian, Shambala, Shona, Slovak, Soga, Somali, Spanish, Swahili, Swedish, Swiss German, Taita, Teso, Turkish, Upper Sorbian, Uzbek (Latin), Volapük, Vunjo Walser, Welsh, Western Frisian, Zulu",
+    "availableFormats": "OTF, TTF, Variable TTFV",
+    "OpenType Features": "aalt, halt, ccm, dnom, frac, fwid, locl, nuire, pnum, sine, ss01, subs, sups, tnum, vert, vert2, kern, mark, mkmk",
+    "designer": "厉致谦（Li Zhiqian）",
+    "designDate": 2022,
+    "versionNo": 1,
+    "Glyph Count": 793,
+    "fontStyles": ""
+  },
+  {
+    "title": "Dinkie Pixel",
+    "zhName": "丁卯点阵体",
+    "writingSystems": [
+      "Simplified Chinese",
+      "Traditional Chinese",
+      "Latin",
+      "Japanese Hiragana",
+      "Japanese Katakana",
+      "Cyrillic",
+      "Greek",
+      "Arabic",
+      "Persian",
+      "Hebrew"
+    ],
+    "writingSystemsIcon": [
+      "简",
+      "繁",
+      "Aa",
+      "あ",
+      "ア",
+      
+      "☺"
+    ],
+    "technology": [
+      "OpenType"
+    ],
+    "supportedLanguages": "简体中文 (GB2312), 繁體中文(BIG-5), 日本語(JIS), English, Spanish, German, French, Italian, Russian, Greek, Arabic, Persian, Hebrew",
+    "availableFormats": "OTF",
+    "OpenType Features": "风格变体 Stylistic alternates\n语言特形 Language forms\n连字 Ligatures\n多样数字设计 Numerals",
+    "designer": "刘育黎（Willie Liu）",
+    "designDate": "2018–2020",
+    "versionNo": 0.01,
+    "Glyph Count": "",
+    "fontStyles": "7px, 9px"
+  },
+  {
+    "title": "Kuusi Sans",
+    "zhName": "",
+    "writingSystems": [
+      "Simplified Chinese",
+      "Latin",
+      "Emoji"
+    ],
+    "writingSystemsIcon": [
+      "简",
+      "Aa",
+      "☺"
+    ],
+    "technology": [
+      "OpenType",
+      "Variable Font"
+    ],
+    "supportedLanguages": "Abenaki, Afaan Oromo, Afar, Afrikaans, Albanian, Alsatian, Amis, Anuta, Aragonese, Aranese, Aromanian, Arrernte, Arvanitic, Asturian, Atayal, Aymara, Bashkir, Basque, Bemba, Bikol, Bislama, Bosnian, Breton, Cape Verdean, Catalan, Cebuano, Chamorro, Chavacano, Chichewa, Chickasaw, Chinese Pinyin, Cimbrian, Cofan, Corsican, Creek, Crimean Tatar, Croatian, Czech, Danish, Dawan, Delaware, Dholuo, Drehu, Dutch, English, Estonian, Faroese, Fijian, Filipino, Finnish, Folkspraak, French, Frisian, Friulian, Gagauz, Galician, Ganda, Genoese, German, Gikuyu, Gooniyandi, Greenlandic, Guadeloupean, Gwichin, Haitian Creole, Han, Hawaiian, Hiligaynon, Hopi, Hotcak, Hungarian, Icelandic, Ido, Ilocano, Indonesian, Interglossa, Interlingua, Irish, Istroromanian, Italian, Jamaican, Javanese, Jerriais, Kaingang, Kala Lagaw Ya, Kapampangan, Kaqchikel, Karakalpak, Karelian, Kashubian, Kikongo, Kinyarwanda, Kiribati, Kirundi, Klingon, Kurdish, Ladin, Latin, Latino Sine, Latvian, Lithuanian, Lojban, Lombard, Low Saxon, Luxembourgish, Maasai, Makhuwa, Malay, Maltese, Manx, Maori, Marquesan, Meglenoromanian, Meriam Mir, Mirandese, Mohawk, Moldovan, Montagnais, Montenegrin, Murrinhpatha, Nagamese Creole, Ndebele, Neapolitan, Ngiyambaa, Niuean, Noongar, Norwegian, Novial, Occidental, Occitan, Oshiwambo, Ossetian, Palauan, Papiamento, Piedmontese, Polish, Portuguese, Potawatomi, Qeqchi, Quechua, Rarotongan, Romanian, Romansh, Rotokas, Sami Inari, Sami Lule, Sami Northern, Sami Southern, Samoan, Sango, Saramaccan, Sardinian, Scottish Gaelic, Serbian, Seri, Seychellois, Shawnee, Shona, Sicilian, Silesian, Slovak, Slovenian, Slovio, Somali, Sorbian Lower, Sorbian Upper, Sotho Northern, Sotho Southern, Spanish, Sranan, Sundanese, Swahili, Swazi, Swedish, Tagalog, Tahitian, Tetum, Tok Pisin, Tokelauan, Tongan, Tshiluba, Tsonga, Tswana, Tumbuka, Turkish, Turkmen, Tuvaluan, Tzotzil, Ukrainian, Uzbek, Venetian, Vepsian, Volapuk, Voro, Wallisian, Walloon, Waraywaray, Warlpiri, Wayuu, Welsh, Wikmungkan, Wiradjuri, Wolof, Xavante, Xhosa, Yapese, Yindjibarndi, Zapotec, Zulu, Zuni",
+    "availableFormats": "OTF, TTF, Variable TTFV",
+    "OpenType Features": "aalt, ccmp，locl，subs，sinf，sups，numr，dnom，frac，lnum，pnum，tnum，onum，case，liga，kern，ss01，ss02，ss03，zero，hist，dlig",
+    "designer": "窦颖秋（Denise Dou）\n厉致谦",
+    "designDate": "2020–2023",
+    "versionNo": 1.1,
+    "Glyph Count": 536,
+    "fontStyles": ""
+  },
+  {
+    "title": "Xingkai Next",
+    "zhName": "行楷 Next",
+    "writingSystems": [
+      "Simplified Chinese",
+      "Latin"
+    ],
+    "writingSystemsIcon": [
+      "简",
+      "Aa"
+    ],
+    "technology": [
+      "OpenType"
+    ],
+    "supportedLanguages": "",
+    "availableFormats": "OTF",
+    "OpenType Features": "风格变体 Stylistic alternates\n语境特形 Contextual alternates\n连字 Ligatures\n多样数字设计 Numerals\n绘文字 Emoji",
+    "designer": "厉致谦（Li Zhiqian）",
+    "designDate": 2017,
+    "versionNo": 2,
+    "Glyph Count": "",
+    "fontStyles": "20, 35, 55, 80, 100, 100 rounded, 140, 190, 230, 260, 300"
+  },
+  {
+    "title": "Astronomer",
+    "zhName": "光启明朝体",
+    "writingSystems": [
+      "Simplified Chinese",
+      "Traditional Chinese",
+      "Latin"
+    ],
+    "writingSystemsIcon": [
+      "简",
+      "繁",
+      "Aa"
+    ],
+    "technology": [
+      "OpenType"
+    ],
+    "supportedLanguages": "",
+    "availableFormats": "OTF",
+    "OpenType Features": "风格变体 Stylistic alternates\n语境特形 Contextual alternates\n连字 Ligatures",
+    "designer": "厉致谦（Li Zhiqian）",
+    "designDate": 2018,
+    "versionNo": 1,
+    "Glyph Count": "",
+    "fontStyles": ""
+  },
+  {
+    "title": "Ellenda",
+    "zhName": "",
+    "writingSystems": [
+      "Latin"
+    ],
+    "writingSystemsIcon": [
+      "Aa"
+    ],
+    "technology": [
+      "OpenType"
+    ],
+    "supportedLanguages": "English, German, Nederlands, Spanish, Portuguese, French, Italian, Romanian, Polish, Czech, Slovak, Turkish, Azerbaijani…",
+    "availableFormats": "OTF",
+    "OpenType Features": "标准连字 Standard ligatures\n风格连字 Stylistic ligatures\n风格变体 Stylistic alternates\n小型大写字母 Small caps\n大写标点 Case-sensitive forms",
+    "designer": "郑初阳（Zheng Chuyang）",
+    "designDate": "",
+    "versionNo": 1,
+    "Glyph Count": "",
+    "fontStyles": "Regular"
+  },
+  {
+    "title": "FAUSTINA",
+    "zhName": "",
+    "writingSystems": [
+      "Simplified Chinese",
+      "Latin",
+      "Cyrillic",
+      "Arabic",
+      "Emoji"
+    ],
+    "writingSystemsIcon": "",
+    "technology": [
+      "OpenType"
+    ],
+    "supportedLanguages": "English, German, Nederlands, Spanish, Portuguese, French, Italian, Romanian, Polish, Czech, Slovak, Russian, Turkish, Azerbaijani, Arabic, Persian, Urdu, Uyghur, Kazakh (Arabic), Krigiz (Arabic), Emoji…",
+    "availableFormats": "OTF",
+    "OpenType Features": "位置变体 Positional Alternates\n语境特形 Contextual alternates",
+    "designer": "郑初阳（Zheng Chuyang）\nLuise Schenker",
+    "designDate": "2010–2018",
+    "versionNo": "",
+    "Glyph Count": "",
+    "fontStyles": "Black"
+  },
+  {
+    "title": "Ryan Serif",
+    "zhName": "",
+    "writingSystems": [
+      "Latin"
+    ],
+    "writingSystemsIcon": [
+      "Aa"
+    ],
+    "technology": [
+      "OpenType"
+    ],
+    "supportedLanguages": "English, Español, Português, Deutsch, Français, Türkçe, Italian, Polski, Nederlands, Tiếng Việt, Català, Latin…",
+    "availableFormats": "OTF",
+    "OpenType Features": "风格变体 Stylistic alternates\n语言特形 Language forms\n语境特形 Contextual alternates",
+    "designer": "刘昱晖（Ryan Lau）",
+    "designDate": "",
+    "versionNo": 1,
+    "Glyph Count": "",
+    "fontStyles": "Light, Semilight, Regular"
+  },
+  {
+    "title": "Meiloi",
+    "zhName": "槑来黑",
+    "writingSystems": [
+      "Latin"
+    ],
+    "writingSystemsIcon": [
+      "Aa"
+    ],
+    "technology": "",
+    "supportedLanguages": "",
+    "availableFormats": "",
+    "OpenType Features": "",
+    "designer": "",
+    "designDate": "",
+    "versionNo": "",
+    "Glyph Count": "",
+    "fontStyles": ""
+  },
+  {
+    "title": "Weaf Mono",
+    "zhName": "",
+    "writingSystems": [
+      "Simplified Chinese",
+      "Latin"
+    ],
+    "writingSystemsIcon": [
+      "简",
+      "Aa"
+    ],
+    "technology": "",
+    "supportedLanguages": "",
+    "availableFormats": "",
+    "OpenType Features": "",
+    "designer": "",
+    "designDate": "",
+    "versionNo": "",
+    "Glyph Count": "",
+    "fontStyles": ""
+  }
+]

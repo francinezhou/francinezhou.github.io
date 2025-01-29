@@ -12,6 +12,21 @@ function limitImageDimensions(img, maxWidth, maxHeight) {
 }
 
 
+
+function limitImageDimensions(img, maxWidth, maxHeight) {
+    const aspectRatio = img.width / img.height;
+    if (img.width > maxWidth || img.height > maxHeight) {
+        if (aspectRatio > 1) {
+            img.width = maxWidth;
+            img.height = maxWidth / aspectRatio;
+        } else {
+            img.height = maxHeight;
+            img.width = maxHeight * aspectRatio;
+        }
+    }
+}
+
+
 fetch('products.json')
     .then(response => response.json())
     .then(data => {
@@ -366,3 +381,4 @@ document.querySelectorAll('.addCart').forEach((button, index) => {
     .catch(error => console.error(error));
 
     
+

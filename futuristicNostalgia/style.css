@@ -1,39 +1,83 @@
 @font-face {
-	src: url('MemoVF-MemoVFVF.woff2') format('woff2-variations');
-	font-family:'Memo';
+	src: url('asset/FuturisticNostalgia-VFVF.woff2') format('woff2-variations');
+	font-family:'FuturisticNostalgiaVF';
+	font-style: normal;
+}
+
+
+@font-face {
+	src: url('asset/FuturisticNostalgia-VFVF.woff') format('woff-variations');
+	font-family:'FuturisticNostalgiaVF';
 	font-style: normal;
 }
 
 @font-face {
-	src: url('WeafMono-Light.otf') format('woff2-variations');
-	font-family:'Weaf';
-	font-style: light;
-}
-
-@font-face {
-	src: url('WeafMono-Regular.otf') format('woff2-variations');
-	font-family:'Weaf';
+	src: url('asset/FuturisticNostalgia-Regular.woff2') format('woff2-variations');
+	font-family:'FuturisticNostalgia';
 	font-style: normal;
 }
+
+
+@font-face {
+	src: url('asset/FuturisticNostalgia-RegularSerif.woff2') format('woff2-variations');
+	font-family:'FuturisticNostalgia-RegularSerif';
+	font-style: normal;
+}
+
+
+@font-face {
+	src: url('asset/FuturisticNostalgia-ContrastSans.woff2') format('woff2-variations');
+	font-family:'FuturisticNostalgia';
+	font-style: medium;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 
 body {
-	font-family:'Memo';
-	background-image: url(img/yellowStripe.jpg);
-	background-size: 20%;
+	font-family:'FuturisticNostalgia', 'Courier New', Courier, monospace;
+	height: 300%;
+
+	background: linear-gradient(0deg, rgba(200, 213, 162, 1) 0%, rgba(238, 234, 177, 1) 43%, rgba(233, 214, 162, 1) 67%, rgba(231, 165, 96, 1) 100%);
 	cursor: url(img/northWestArrow.png),auto;
 }
 
 .wrapper {
-	padding: 10px;
+	height: 2000px;
+	width: 100vw;
+	padding: 20px;
 }
+
+h1, h2, h3, h4 {
+	font-weight: unset;
+}
+
+h1 {
+	font-family:'FuturisticNostalgia-RegularSerif';
+	font-size: 5rem;
+	font-weight: unset;
+	margin: 0;
+}
+
+
 h2, h4 {
 	margin: 0;
 }
 
 h4 {
 	font-size: 1.2rem;
-	font-family:'Weaf';
-	font-style: light;
+	font-family:'FuturisticNostalgia';
+	font-style: normal;
+}
+
+p {
+	font-family:'FuturisticNostalgia', Courier;
 }
 
 .logoMemo {
@@ -48,11 +92,11 @@ h4 {
   
   @keyframes toSolid {
 	0%, 100% {
-		font-variation-settings: "wght" 30;
+		font-variation-settings: "SERF" 0;
 	}
 
 	50% {
-		font-variation-settings: "wght" 200;
+		font-variation-settings: "SERF" 100;
 	}
   }
 
@@ -78,6 +122,7 @@ h4 {
 }
 
 .fontPreviewCaption {
+	font-family:'FuturisticNostalgia', 'Courier New', Courier, monospace;
 	position: relative;
 	width: 100%;
 	display: flex;
@@ -99,6 +144,7 @@ input {
   }
 
 .testerText {
+	font-family:'FuturisticNostalgiaVF';
 	font-size: 6rem;
 	-webkit-appearance: none;
     background: none;
@@ -108,9 +154,7 @@ input {
 
   }
 
-.memo {
-	font-family:'Memo';
-}
+
 /* 
 .memoWeightSlider:hover {
 	cursor: url(img/raisedHand.png),auto;

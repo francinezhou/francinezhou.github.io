@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="logoGraphic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.84 138.39">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3d9ee7;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1" data-name="Layer 1">
+    <g id="logoSvg1">
+      <path id="logoSDot" class="cls-1" d="M28.92,18.56c-5.13,0-9.28-4.16-9.28-9.28S23.79,0,28.92,0s9.28,4.16,9.28,9.28-4.16,9.28-9.28,9.28Z"/>
+      <circle id="logoLDot" class="cls-1" cx="28.92" cy="109.47" r="28.92"/>
+      <rect id="logoYi" class="cls-1" x="3.52" y="28.35" width="50.81" height="7.59" rx="2.84" ry="2.84"/>
+      <rect id="logoEr" class="cls-1" x="3.52" y="45.1" width="50.81" height="7.59" rx="2.83" ry="2.83"/>
+      <rect id="logoSan" class="cls-1" x="3.52" y="61.86" width="50.81" height="7.59" rx="2.84" ry="2.84"/>
+    </g>
+  </g>
+</svg>

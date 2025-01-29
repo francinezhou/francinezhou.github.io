@@ -685,9 +685,9 @@ h4 {
   /* border-bottom: var(--border); */
 }
 
-#droppedImg-container img {
+/* #droppedImg-container img {
   cursor: not-allowed;
-}
+} */
 
 .int-grid {
   position: fixed;
@@ -852,7 +852,6 @@ h4 {
   #list-container {
       position: absolute;
       width: 40%;
-      height: 30%;
       min-width: 320px;
       right: 0; 
       bottom: unset;
