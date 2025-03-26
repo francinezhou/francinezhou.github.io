@@ -30,57 +30,34 @@ const myEl = document.getElementById("myEl");
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '51c0316e31mshee4f7efa52e21a5p1bb922jsnffdf78609987',
-		'X-RapidAPI-Host': 'open-weather13.p.rapidapi.com'
+		'x-rapidapi-key': 'f01b2ee287mshd6e9c6c6dc7813ep12a790jsnb756494ead87',
+		'x-rapidapi-host': 'moon-phase.p.rapidapi.com'
 	}
 };
 
-
-// wrap the `try` function in an asynchronous function. 
-
 async function fetchData() {
+    const url = 'https://moon-phase.p.rapidapi.com/advanced?lat=51.4768&lon=-0.0004&date=2025-03-26';    // Format current date to YYYY-MM-DD
+    const currentDateTime = new Date();
+    const formattedDate = currentDateTime.toISOString().split('T')[0];
+    
+    // Construct the URL with London coordinates and dynamic date
+    // const url = `https://moon-phase.p.rapidapi.com/advanced?lat=51.4768&lon=-0.0004&date=${formattedDate}`;
+    
     try {
+        const response = await fetch(url, options);
+        const result = await response;
+        
+        console.log('Moon API Response:', result);
+        
         // Get today's and yesterday's dates
         const today = new Date();
         const yesterday = new Date();
         yesterday.setDate(yesterday.getDate() - 1);
         
-        // Moon phase fetching (moved to front)
-        const currentDate = new Date().toISOString().slice(0, 19).replace('T', '-');
-        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-        
-        const moonUrl = `https://moon-api1.p.rapidapi.com/phase?date-time=${currentDate}&timezone=${timezone}&angle-units=deg`;
-        const moonOptions = {
-            method: 'GET',
-            headers: {
-                'x-rapidapi-key': 'f01b2ee287mshd6e9c6c6dc7813ep12a790jsnb756494ead87',
-                'x-rapidapi-host': 'moon-api1.p.rapidapi.com'
-            }
-        };
+      
 
-        const moonResponse = await fetch(moonUrl, moonOptions);
-        const moonResult = await moonResponse.json();
-        const phase = moonResult.phase;
-        
-        // Add console logs for moon data
-        console.log('Moon Data:', moonResult);
-        console.log('Moon Phase:', phase);
-        
-        // Update logo opacity based on moon phase
-        const logoElement = document.querySelector('.logo');
-        logoElement.style.color = `rgba(0, 0, 0, ${phase})`;
-
-        // Rest of the existing code...
         const todayFormatted = today.toISOString().split('T')[0];
         const yesterdayFormatted = yesterday.toISOString().split('T')[0];
-        
-        // Weather API call
-        const weatherUrl = 'https://open-weather13.p.rapidapi.com/city/new york/EN';
-        const weatherResponse = await fetch(weatherUrl, options);
-        const weatherResult = await weatherResponse.text();
-        const weatherData = JSON.parse(weatherResult);
-        const currentTemp = weatherData.main.temp;
-        const windSpeed = weatherData.wind.speed;
         
         // Sun data API calls - separate calls for today and yesterday
         const todaySunResponse = await fetch(`https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400&date=${todayFormatted}`);
@@ -119,6 +96,9 @@ async function fetchData() {
         // Calculate time difference in hours (absolute value)
         const timeDiff = Math.abs(now.getTime() - darkestMoment.getTime()) / (1000 * 60 * 60);
         
+         // STEP 2: Figure out the range of the number you want.
+
+
         // Map the time difference to slant angle
         // When closer to darkest moment (timeDiff = 0) -> more slanted (45)
         // When further from darkest moment (timeDiff = 12) -> less slanted (0)
@@ -172,32 +152,29 @@ async function fetchData() {
             y9: y9Slant
         });
 
-        console.log(weatherData);
+       
         console.log('Astronomical twilight begins:', astroTwilightBegin);
         console.log('Astronomical twilight ends:', astroTwilightEnd);
 
-        console.log("windSpeed", windSpeed); // range between 0, 113
-        console.log("currentTemp", currentTemp);
 
-        // STEP 2: Figure out the range of the number you want.
-        const hue = map(currentTemp, -15, 106, 209, 360);
-        const lightness = map(currentTemp, -15, 106, 92, 50);
 
-        body.style.backgroundColor = `hsl(${hue}%, 100%, ${lightness}%)`;
-
-        // const slantAngle = map(windSpeed, 0, 10, 0, 5)
-        // myEl.style.fontVariationSettings = `"wght" 500, "slnt" ${slantAngle}`;
-        // console.log("slantAngle", slantAngle);
+       
+        
+        // Console log the raw response first
+        console.log('Moon API Response:', result);
+        
+        // Then we can parse the JSON later once we verify the response
+        // const moonData = await response.json();
+        // console.log('Moon Data:', moonData);
 
         return { 
-            weather: weatherData, 
             astroTwilightBegin, 
             astroTwilightEnd,
             darkestMoment,
-            moonPhase: phase 
+            moonPhase: result 
         };
     } catch (error) {
-        console.error(error);
+        console.error('Moon API Error:', error);
     }
 }
 
@@ -230,39 +207,3 @@ fetchData();
 function map(value, low1, high1, low2, high2) {
     return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
 }
-
-async function updateMoonPhase() {
-    const currentDate = new Date().toISOString().slice(0, 19).replace('T', '-');
-    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    
-    const url = `https://moon-api1.p.rapidapi.com/phase?date-time=${currentDate}&timezone=${timezone}&angle-units=deg`;
-    const options = {
-        method: 'GET',
-        headers: {
-            'x-rapidapi-key': 'f01b2ee287mshd6e9c6c6dc7813ep12a790jsnb756494ead87',
-            'x-rapidapi-host': 'moon-api1.p.rapidapi.com'
-        }
-    };
-
-    try {
-        const response = await fetch(url, options);
-        const result = await response.json();
-        
-        // Assuming the API returns phase as a value between 0 and 1
-        // If not, you'll need to normalize the value
-        const phase = result.phase;
-        
-        // Update logo opacity based on moon phase
-        const logoElement = document.querySelector('.logo');
-        logoElement.style.color = `rgba(0, 0, 0, ${phase})`;
-        
-    } catch (error) {
-        console.error('Error fetching moon phase:', error);
-    }
-}
-
-// Update immediately when page loads
-updateMoonPhase();
-
-// Update every hour
-setInterval(updateMoonPhase, 3600000);
