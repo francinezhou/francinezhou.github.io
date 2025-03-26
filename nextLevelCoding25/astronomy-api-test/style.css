@@ -1,0 +1,82 @@
+/* @font-face {
+	src: url('font/MoonPhasesVariableVF.ttf') format('woff2-variations'),
+        url('font/MoonPhasesVariableVF.ttf') format('truetype');
+	font-family:'Moon Phases';
+	font-style: normal;
+} */
+/* https://moon-phases-variable.glitch.me/ */
+/* src: url("https://cdn.glitch.me/35ebd99c-f16c-4979-af7e-8f5646b71768%2FMoonPhasesVariableVF.ttf?v=1636215724851")
+format("truetype"); */
+
+/* phase: 100 (new moon) -> waxing cresent (right side)
+-> 500 (full) -> 900 (new);  
+weight: 4-80 */
+/* font-variation-settings: "phas" 100, "wght" 20; */
+
+@font-face {
+	src: url('font/GT-Planar-Trial-VF.ttf') format('truetype-variations');
+	font-family:'GT-Planar';
+	font-style: normal;
+    font-variation-settings: "wght" 400, "slnt" 0;
+}
+/* slant: -45 (left) -> 0 -> 45 (right);  
+weight: 100-900 */
+/* font-variation-settings: "slnt" -45, "wght" 300 */
+
+
+body{
+    font-family:'GT-Planar', Helvetica, sans-serif;
+    font-style: normal;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+#myEl{
+    margin:0;
+    line-height:1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) ;/* skew(10deg)*/
+    font-size: 8em;
+   
+    /* font-variation-settings: "wght" 500, "slnt" -25; */
+}
+
+.logo {
+    font-family:'GT-Planar';
+    font-style: normal;
+    font-variation-settings: "wght" 400, "slnt" 30;
+    filter: drop-shadow(0 0 0.75rem grey);
+}
+
+.rMark {
+    font-size: 0.2em;
+    position: relative;
+    bottom: -0.4em;
+}
+
+
+
+/* .logoMoon {
+	font-family:'Moon Phases';
+	font-style: normal;
+    font-size: 0.8em;
+    position: relative; 
+    top: 0.1em; 
+    font-variation-settings: "phas" 300, "wght" 80;
+animation: moonloop 1slinear infinite;
+}
+
+@keyframes moonloop {
+    0%   { font-variation-settings: "phas" 100, "wght" 20;}
+    100% { font-variation-settings: "phas" 900, "wght" 20; }
+  }
+   */
+
+
+
+
+
