@@ -103,9 +103,6 @@ async function fetchData() {
         // Calculate the midpoint (darkest moment)
         const darkestMoment = new Date((twilightEndDate.getTime() + twilightBeginDate.getTime()) / 2);
         
-        // Get current time
-        const now = new Date();
-        
         // Calculate time difference in hours (absolute value)
         const timeDiff = Math.abs(now.getTime() - darkestMoment.getTime()) / (1000 * 60 * 60);
         
@@ -131,16 +128,16 @@ async function fetchData() {
         const step = slantAngle / 4;
         
         // Positive progression for right side (n6 to y9)
-        const n6Slant = step * 1;  // 25% of the way
-        const o7Slant = step * 2;  // 50% of the way
-        const m8Slant = step * 3;  // 75% of the way
-        const y9Slant = slantAngle; // 100%
+        const n6Slant = step * 1 *-1;  // 25% of the way
+        const o7Slant = step * 2 *-1;  // 50% of the way
+        const m8Slant = step * 3 *-1;  // 75% of the way
+        const y9Slant = slantAngle *-1; // 100%
         
         // Negative progression for left side (a1 to r4)
-        const a1Slant = -slantAngle;  // -100%
-        const s2Slant = -m8Slant;  // -75%
-        const t3Slant = -o7Slant;  // -50%
-        const r4Slant = -n6Slant;  // -25%
+        const a1Slant = slantAngle ;  // -100%
+        const s2Slant = m8Slant *-1;  // -75%
+        const t3Slant = o7Slant *-1;  // -50%
+        const r4Slant =  n6Slant *-1;  // -25%
         
         // Apply the calculated values
         a1.style.fontVariationSettings = `"wght" 500, "slnt" ${a1Slant}`;
@@ -169,8 +166,6 @@ async function fetchData() {
         console.log('Astronomical twilight begins:', astroTwilightBegin);
         console.log('Astronomical twilight ends:', astroTwilightEnd);
 
-        // After calculating the slant angle
-        updateAngleAxis(slantAngle);
 
         // Then we can parse the JSON later once we verify the response
         // const moonData = await response.json();
@@ -217,44 +212,3 @@ fetchData();
 function map(value, low1, high1, low2, high2) {
     return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
 }
-
-// Add this function to update the axis display
-function updateAngleAxis(angle) {
-    const indicator = document.querySelector('.angle-indicator');
-    const angleValue = document.querySelector('.angle-value');
-    
-    if (indicator && angleValue) {
-        // Convert the angle to degrees for display
-        const degrees = (angle * 180 / Math.PI).toFixed(1);
-        
-        // Update the indicator rotation
-        indicator.style.transform = `rotate(${degrees}deg)`;
-        
-        // Update the angle value text
-        angleValue.textContent = `${degrees}°`;
-    }
-}
-
-// Simplified slider setup
-function setupAngleSlider() {
-    const slider = document.querySelector('.angle-slider');
-    const angleValue = document.querySelector('.angle-value');
-
-    if (slider && angleValue) {
-        slider.addEventListener('input', function(e) {
-            const degrees = e.target.value;
-            
-            // Update the angle value text
-            angleValue.textContent = `${degrees}°`;
-            
-            // Update your logo rotation
-            const logoElement = document.querySelector('.myEl');
-            if (logoElement) {
-                logoElement.style.transform = `rotate(${degrees}deg)`;
-            }
-        });
-    }
-}
-
-// Call this when your page loads
-document.addEventListener('DOMContentLoaded', setupAngleSlider);
