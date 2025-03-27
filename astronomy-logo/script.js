@@ -1,31 +1,5 @@
-// MOON API
-// const url = 'https://moon-api1.p.rapidapi.com/phase?date-time=2009-07-11-09-30-00&timezone=%2B3&angle-units=deg';
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'x-rapidapi-key': 'f01b2ee287mshd6e9c6c6dc7813ep12a790jsnb756494ead87',
-// 		'x-rapidapi-host': 'moon-api1.p.rapidapi.com'
-// 	}
-// };
-
-//  step 1 use async
-//  step 2 use dot text
-// ( async () => {
-//     try {
-//         const response = await fetch(url, options);
-//         const result = await response.text();
-//         const dataObject = JSON.parse(result)
-//         console.log(dataObject);
-//     } catch (error) {
-//         console.error(error);
-//     }
-// } )
-
-
-
-
 const body = document.body;
-const myEl = document.getElementById("myEl");
+const myEl = document.querySelectorAll(".myEl"); 
 
 const options = {
 	method: 'GET',
@@ -36,18 +10,58 @@ const options = {
 };
 
 async function fetchData() {
-    const url = 'https://moon-phase.p.rapidapi.com/advanced?lat=51.4768&lon=-0.0004&date=2025-03-26';    // Format current date to YYYY-MM-DD
-    const currentDateTime = new Date();
-    const formattedDate = currentDateTime.toISOString().split('T')[0];
-    
-    // Construct the URL with London coordinates and dynamic date
-    // const url = `https://moon-phase.p.rapidapi.com/advanced?lat=51.4768&lon=-0.0004&date=${formattedDate}`;
-    
+
     try {
-        const response = await fetch(url, options);
-        const result = await response;
+        const url = 'https://moon-phase.p.rapidapi.com/advanced';
         
-        console.log('Moon API Response:', result);
+        // Debug: Check if we can find the element
+        const logoElement = document.querySelector('.myEl');
+        console.log('Found element:', logoElement);  // This will help us see if the element exists
+        
+        if (!logoElement) {
+            throw new Error('Could not find element with class "myEl"');
+        }
+        
+        const response = await fetch(url, options);
+        const result = await response.json();
+        
+        console.log('Raw API Response:', result);
+        
+        if (!result || !result.moon) {
+            throw new Error('Invalid API response structure');
+        }
+        
+        // Get current time
+        const now = new Date();
+        const currentTime = now.getHours() * 60 + now.getMinutes(); // Convert to minutes
+
+        // Convert API sunrise and sunset times to minutes
+        const twilightBegin = result.sun.sunrise_timestamp.split(':');
+        const twilightEnd = result.sun.sunset_timestamp.split(':');
+        const twilightBeginMinutes = parseInt(twilightBegin[0]) * 60 + parseInt(twilightBegin[1]);
+        const twilightEndMinutes = parseInt(twilightEnd[0]) * 60 + parseInt(twilightEnd[1]);
+
+        // Check if current time is between twilight begin and end
+        if (currentTime >= twilightBeginMinutes && currentTime <= twilightEndMinutes) {
+            // It's daytime
+            document.body.style.backgroundColor = 'white';
+            logoElement.style.background = 'linear-gradient(#000000, #000000)';
+            document.querySelector('.rMark').style.color = 'black';
+        }
+        
+        const illuminationStr = result.moon.illumination;
+        const illumination = parseInt(illuminationStr) / 100;
+        
+        if (isNaN(illumination)) {
+            throw new Error('Invalid illumination value');
+        }
+        
+        // Update logo opacity
+        logoElement.style.color = `rgba(0, 0, 0, ${illumination})`;
+        
+        console.log('Moon Illumination:', illumination);
+        console.log('Moon Phase Name:', result.moon.phase_name);
+        console.log('Moon Emoji:', result.moon.emoji);
         
         // Get today's and yesterday's dates
         const today = new Date();
@@ -55,7 +69,6 @@ async function fetchData() {
         yesterday.setDate(yesterday.getDate() - 1);
         
       
-
         const todayFormatted = today.toISOString().split('T')[0];
         const yesterdayFormatted = yesterday.toISOString().split('T')[0];
         
@@ -156,16 +169,13 @@ async function fetchData() {
         console.log('Astronomical twilight begins:', astroTwilightBegin);
         console.log('Astronomical twilight ends:', astroTwilightEnd);
 
+        // After calculating the slant angle
+        updateAngleAxis(slantAngle);
 
-
-       
-        
-        // Console log the raw response first
-        console.log('Moon API Response:', result);
-        
         // Then we can parse the JSON later once we verify the response
         // const moonData = await response.json();
         // console.log('Moon Data:', moonData);
+
 
         return { 
             astroTwilightBegin, 
@@ -207,3 +217,44 @@ fetchData();
 function map(value, low1, high1, low2, high2) {
     return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
 }
+
+// Add this function to update the axis display
+function updateAngleAxis(angle) {
+    const indicator = document.querySelector('.angle-indicator');
+    const angleValue = document.querySelector('.angle-value');
+    
+    if (indicator && angleValue) {
+        // Convert the angle to degrees for display
+        const degrees = (angle * 180 / Math.PI).toFixed(1);
+        
+        // Update the indicator rotation
+        indicator.style.transform = `rotate(${degrees}deg)`;
+        
+        // Update the angle value text
+        angleValue.textContent = `${degrees}°`;
+    }
+}
+
+// Simplified slider setup
+function setupAngleSlider() {
+    const slider = document.querySelector('.angle-slider');
+    const angleValue = document.querySelector('.angle-value');
+
+    if (slider && angleValue) {
+        slider.addEventListener('input', function(e) {
+            const degrees = e.target.value;
+            
+            // Update the angle value text
+            angleValue.textContent = `${degrees}°`;
+            
+            // Update your logo rotation
+            const logoElement = document.querySelector('.myEl');
+            if (logoElement) {
+                logoElement.style.transform = `rotate(${degrees}deg)`;
+            }
+        });
+    }
+}
+
+// Call this when your page loads
+document.addEventListener('DOMContentLoaded', setupAngleSlider);
