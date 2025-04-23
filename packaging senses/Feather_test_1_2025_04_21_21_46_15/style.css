@@ -36,8 +36,8 @@ body {
 }
 
 .cocktail {
-  width: 800px;
-  height: 800px;
+  width: 600px;
+  height: 600px;
   border-radius: 20px;
   overflow: hidden;
   background: white;
