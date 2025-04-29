@@ -27,109 +27,54 @@
      const linerPalette = ["#795e6c", "#9e6261", "#6f4644", "#727829", "#677482"];
      const palette = ["#7b4800", "#002185", "#003c32", "#fcd300", "#ff2702", "#6b9404"];
 
-     fetch(opensheet_uri)
-         .then(function (response) {
-             return response.json();
-         })
-         .then(function (data) {
-             data.forEach((cocktail, index) => {
-                 const sweetness = parseInt(cocktail.sweetness);
-                 const abv = parseFloat(cocktail.abv);
-                 const containerID = `cocktail-${index}`;
+ // Create the parent container once
+const parentContainer = document.createElement('div');
+parentContainer.id = 'parent-container';
+document.body.appendChild(parentContainer);
 
-                 // Create a new container div for each canvas
-                 const container = document.createElement('div');
-                 container.classList.add('cocktail');
-                 container.id = containerID;
-                 
-                 // Add title and info
-                 const title = document.createElement('div');
-                 title.classList.add('cocktail-title');
-                 title.textContent = cocktail.nameEN;
-                 container.appendChild(title);
-                 
-                 const info = document.createElement('div');
-                 info.classList.add('cocktail-info');
-                 info.textContent = `${cocktail.abv}% ABV | ${cocktail.flavors}`;
-                 container.appendChild(info);
-                 
-                 document.body.appendChild(container);
+fetch(opensheet_uri)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        data.forEach((cocktail, index) => {
+            const sweetness = parseInt(cocktail.sweetness);
+            const abv = parseFloat(cocktail.abv);
+            const containerID = `cocktail-${index}`;
 
-                 // Create new p5 instance for each feather
-                 new p5((p) => {
-                     p.setup = () => {
-                         // Use regular 2D canvas instead of WEBGL
-                         const canvas = p.createCanvas(300, 600);
-                         canvas.parent(containerID);
-                         p.pixelDensity(1);
-                         p.angleMode(p.DEGREES);
-                         p.background(240);
-                         
-                         // Initialize brush for this instance
-                         brush.setup(p);
+            // Create a new container div for each canvas
+            const container = document.createElement('div');
+            container.classList.add('cocktail');
+            container.id = containerID;
+            
+            // Add title and info
+            const title = document.createElement('div');
+            title.classList.add('cocktail-title');
+            title.textContent = cocktail.nameEN;
+            container.appendChild(title);
+            
+            const info = document.createElement('div');
+            info.classList.add('cocktail-info');
+            info.textContent = `${cocktail.abv}% ABV | ${cocktail.flavors}`;
+            container.appendChild(info);
+            
+            // Append to the parent container instead of body
+            parentContainer.appendChild(container);
 
-                         const featherMaturity = p.map(abv, 3, 35, 2, 0.8);
+            // Create p5 instance
+            new p5((p) => {
+                p.setup = () => {
+                    const canvas = p.createCanvas(300, 600);
+                    canvas.parent(containerID);
+                    p.pixelDensity(1);
+                    p.angleMode(p.DEGREES);
+                    p.background(240);
 
-                         // Create brushes for this feather
-                         brush.add(`liner-${index}`, {
-                             type: "custom",
-                             weight: 5,
-                             vibration: 0.5,
-                             definition: 1,
-                             quality: 40,
-                             opacity: 100,
-                             spacing: 0.5,
-                             blend: true,
-                             pressure: {
-                                 type: "standard",
-                                 curve: [0.2, 0.25],
-                                 min_max: [0.8, 2]
-                             },
-                             tip: (_m) => {
-                                 _m.rotate(30), _m.rect(-1.5, -1.5, 3, 3), _m.rect(1, 1, 1, 1);
-                             },
-                             rotate: "none"
-                         });
-
-                         brush.add(`watercolor-${index}`, {
-                             type: "custom",
-                             weight: 30,
-                             vibration: 2,
-                             definition: 0.5,
-                             quality: 8,
-                             opacity: 23,
-                             spacing: 0.6,
-                             blend: true,
-                             pressure: {
-                                 type: "standard",
-                                 curve: [0.15, 0.25],
-                                 min_max: [featherMaturity, featherMaturity + 1.2]
-                             },
-                             tip: (_m) => {
-                                 _m.rotate(45), _m.rect(-1.5, -1.5, 3, 3), _m.rect(1, 1, 1, 1);
-                             },
-                             rotate: "natural"
-                         });
-
-                         // Draw spine
-                         brush.pick(`liner-${index}`);
-                         brush.stroke(p.random(linerPalette));
-                         brush.strokeWeight(1);
-                         
-                         const spinePoints = [[50, 550], [200, 500], [350, 400], [500, 200]];
-                         brush.spline(spinePoints, 1);
-
-                         // Draw feather lines
-                         brush.pick(`watercolor-${index}`);
-                         const numFeatherLines = 24;
-                         for (let i = 0; i < numFeatherLines; i++) {
-                             drawFeatherLine(p, i, numFeatherLines, spinePoints, false);
-                             drawFeatherLine(p, i, numFeatherLines, spinePoints, true);
-                         }
-                     };
-                 });
-             });
-         })
-         .catch(function (err) {
-             console.log("Something went wrong!", err);
-         });
+                    // (your existing feather drawing logic here)
+                };
+            });
+        });
+    })
+    .catch(function (err) {
+        console.log("Something went wrong!", err);
+    });
