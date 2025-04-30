@@ -10,7 +10,6 @@ fetch(opensheet_uri)
         return response.json();
     })
     .then(function (data) {
-        console.log(data)
         // Create a canvas for each cocktail
         data.forEach(cocktail => {
             const sweetness = parseInt(cocktail.sweetness);
@@ -36,83 +35,21 @@ class FeatherCanvas {
         // Create a new p5 instance
         new p5((p) => {
             p.setup = () => {
-                // p.createCanvas(this.canvasWidth, this.canvasHeight);
-                // p.background(240);
-                // this.drawFeather(p);
-                // C.createCanvas();
-
-                p.createCanvas(this.canvasWidth, this.canvasHeight, WEBGL);
-                p.pixelDensity(2), p.angleMode(p.DEGREES);
-                p.translate(-p.width / 2, -p.height / 2);
+                p.createCanvas(this.canvasWidth, this.canvasHeight);
                 p.background(240);
                 this.drawFeather(p);
-
-                
-               
             };
         });
     }
 
     drawFeather(p) {
         // Feather drawing logic
-        const featherMaturity = p.map(this.abv, 0, 40, 0, 20);
+        const featherMaturity = p.map(this.abv, 3, 35, 30, 0);
         
-        // Log the current watercolor brush pressure range
-        const minPressure = featherMaturity;
-        const maxPressure = featherMaturity + 1.2;
-        console.log('Current Brush Pressure Range: min =', minPressure, 'max =', maxPressure);
-
-        // CREATE YOUR OWN BRUSHES
-        brush.add("liner", {
-            type: "custom",
-            weight: 5,
-            vibration: 0.5,
-            definition: 1,
-            quality: 40,
-            opacity: 100,
-            spacing: 0.5,
-            blend: true,
-            pressure: {
-                type: "standard",
-                curve: [0.2, 0.25],
-                min_max: [0.8, 2]
-            },
-            tip: (_m) => {
-                _m.rotate(30), _m.rect(-1.5, -1.5, 3, 3), _m.rect(1, 1, 1, 1);
-            },
-            rotate: "none"
-        });
-
-        brush.add("watercolor", {
-            type: "custom",
-            weight: 30,
-            vibration: 2,
-            definition: 0.5,
-            quality: 8,
-            opacity: 23,
-            spacing: 0.6,
-            blend: true,
-            pressure: {
-                type: "standard",
-                curve: [0.15, 0.25],
-                min_max: [featherMaturity, featherMaturity + 1.2] // Using featherMaturity to control pressure
-            },
-            tip: (_m) => {
-                _m.rotate(45), _m.rect(-1.5, -1.5, 3, 3), _m.rect(1, 1, 1, 1);
-            },
-            rotate: "natural"
-        });
-
-        // Log the current watercolor brush pressure
-        let watercolorPressure = p.map(this.abv, 0, 40, minPressure, maxPressure);
-        console.log('Current Watercolor Brush Pressure:', watercolorPressure);
-
         // Example feather drawing logic
         p.strokeWeight(2); // Thicker stroke for visibility
         p.stroke(0);
         p.fill(255, 0, 0, featherMaturity); // Example color based on abv
-
-        
 
         // Draw a simple feather shape (you can customize this)
         p.beginShape();
@@ -120,12 +57,6 @@ class FeatherCanvas {
         p.bezierVertex(450, 350, 450, 450, 400, 400);
         p.bezierVertex(350, 450, 350, 350, 400, 400);
         p.endShape();
-
-        
-               
-        
-             
-            
     }
 }
 
@@ -151,7 +82,7 @@ const C = {
         this.main = createCanvas(this.width, this.height, WEBGL), pixelDensity(this.pD), this.main.id(this.css), this.resize();
     }
 };
-C.setSize(800, 800, 1, 'mainCanvas');
+C.setSize(800, 800, 1, 'mainCanvas')
 
 function windowResized() {
     C.resize();
@@ -198,44 +129,15 @@ brush.add("watercolor", {
     rotate: "natural"
 });
 
-
-// Colors HSL 
-let linerPalette = [
-    "hsl(20, 40%, 50%)", // fruity
-    "hsl(350, 30%, 55%)", // floral
-    "hsl(100, 30%, 40%)", // tea
-    "hsl(60, 30%, 40%)", // herb
-    "hsl(20, 25%, 40%)", //wood
-    "hsl(10, 70%, 40%)", // spiced
-    "hsl(210, 15%, 50%)"  //savoury
-];
-
-let palette = [
-    "hsl(55, 100%, 60%)",  // Sourness
-    "hsl(340, 80%, 60%)",  // Sweetness
-    "hsl(30, 100%, 30%)",  // Bitterness
-    "hsl(10, 100%, 50%)",  // Spicyness
-    "hsl(195, 100%, 35%)", // Saltiness
-]
-
-
-// Function to pick 3 random colors from the palette
-function getRandomPaletteSubset(palette, size = 3) {
-    let selectedColors = [];
-    while (selectedColors.length < size) {
-        let randomColor = random(palette);
-        if (!selectedColors.includes(randomColor)) {
-            selectedColors.push(randomColor);
-        }
-    }
-    return selectedColors;
-}
+// colors
+let linerPalette = ["#795e6c", "#9e6261", "#6f4644", "#727829", "#677482"];
+let palette = ["#7b4800", "#002185", "#003c32", "#fcd300", "#ff2702", "#6b9404"];
 
 // Function to draw one feather line, mirrored if specified
+// mirror false is right side, mirror true is left side
 function drawFeatherLine(i, numFeatherLines, spinePoints, mirror = false) {
-    // Pick from the pre-selected 3 random colors for the watercolor brush
-    const selectedColors = getRandomPaletteSubset(palette, 3);
-    brush.stroke(selectedColors[i % 3]); // Rotate through the 3 colors
+    // Pick random color and weight for watercolor brush
+    brush.stroke(random(palette));
     brush.strokeWeight(random(2, 3.5));
 
     // Determine the progress along the spine
