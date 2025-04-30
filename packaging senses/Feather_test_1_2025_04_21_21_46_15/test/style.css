@@ -47,7 +47,7 @@ html{
   }
   
 
-  #mainCanvas {
+  /* #mainCanvas {
     position: absolute; 
     z-index: 0; 
     margin: auto; 
@@ -58,4 +58,4 @@ html{
   
   #p5_loading {
     display:none;
-  }
+  } */

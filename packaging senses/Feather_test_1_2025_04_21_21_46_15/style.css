@@ -1,20 +1,11 @@
 
 
-html, body {
+html{
   height: 100%;
 }
   
-body { 
-  padding: 0;
-  margin: 0;
-  display: flex;
 
-}
-  
 
-canvas {
-  display: block;
-}
 
 
 body {
@@ -22,10 +13,8 @@ body {
   padding: 0;
   
   font-family: sans-serif;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
+ 
+ 
 }
 
 
@@ -34,6 +23,7 @@ body {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  align-items: flex-start;
   padding: 20px;
 }
 
@@ -49,6 +39,7 @@ body {
 canvas {
   /* width: 100% !important;
   height: 100% !important; */
+  aspect-ratio: inherit;
   visibility: visible !important;
   display: block;
 }

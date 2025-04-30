@@ -1,3 +1,8 @@
+const parentContainer = document.createElement('div');
+parentContainer.id = 'parent-container';
+document.body.appendChild(parentContainer);
+
+
 // save your sheet ID and name of the tab as variables for use
 let sheetID = "1xw9LbJNTwGl7zYzxNBh6XXO8HXbsuWXI9pHuOUDqxr8";
 let tabName = 'cocktails';
@@ -37,6 +42,7 @@ class FeatherCanvas {
             p.setup = () => {
                 p.createCanvas(this.canvasWidth, this.canvasHeight);
                 p.background(240);
+                 //   brush.load();
                 this.drawFeather(p);
             };
         });
@@ -57,6 +63,10 @@ class FeatherCanvas {
         p.bezierVertex(450, 350, 450, 450, 400, 400);
         p.bezierVertex(350, 450, 350, 350, 400, 400);
         p.endShape();
+
+        // brush.set("HB", "#002185", 1);
+        // let spinePoints = [[0, 50], [10, 300], [50, 400], [500, 200]];
+        // brush.spline(spinePoints, 1);
     }
 }
 
@@ -217,6 +227,7 @@ function drawFeatherLine(i, numFeatherLines, spinePoints, mirror = false) {
     brush.spline(featherPoints, 1);
 }
 
+
 function setup() {
     // Canvas should be WEBGL!!
     C.createCanvas();
@@ -224,6 +235,8 @@ function setup() {
     translate(-width / 2, -height / 2);
 
     background(240);
+
+    
 
     // Draw feather spine
     brush.pick("liner")
@@ -245,4 +258,5 @@ function setup() {
     for (let i = 0; i < numFeatherLines; i++) {
         drawFeatherLine(i, numFeatherLines, spinePoints, true);
     }
+    
 }
