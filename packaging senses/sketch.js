@@ -1,37 +1,3 @@
- // Define brushes globally (before any instance starts)
- brush.add("liner", {
-    type: "custom", 
-    weight: 5, 
-    vibration: 0.5, 
-    definition: 1, 
-    quality: 40,
-    opacity: 100, 
-    spacing: 0.5, 
-    blend: true,
-    pressure: { 
-        type: "standard", 
-        curve: [0.2, 0.25], 
-        min_max: [0.8, 2] },
-    tip: (_m) => { _m.rotate(30); _m.rect(-1.5, -1.5, 3, 3); },
-    rotate: "none"
-  });
-
-  brush.add("watercolor", {
-    type: "custom", 
-    weight: 30, 
-    vibration: 2, 
-    definition: 0.5, 
-    quality: 8,
-    opacity: 23, 
-    spacing: 0.6, 
-    blend: true,
-    pressure: { 
-        type: "standard", 
-        curve: [0.15, 0.25], 
-        min_max: [2.5, 1] },
-    tip: (_m) => { _m.rotate(45); _m.rect(-1.5, -1.5, 3, 3); },
-    rotate: "natural"
-  });
 
 //Colors
 const linerPalette = [
@@ -57,8 +23,79 @@ const sheetID = "1xw9LbJNTwGl7zYzxNBh6XXO8HXbsuWXI9pHuOUDqxr8";
 const tabName = 'cocktails';
 const opensheet_uri = `https://opensheet.elk.sh/${sheetID}/${tabName}`;
 
-const canvasWidth = 600;
-const canvasHeight = 600;
+// const canvasWidth = 600;
+// const canvasHeight = 600;
+
+
+function createCanvasObject(p, w, h, pD, cssID) {
+  return {
+    loaded: false,
+    width: w,
+    height: h,
+    pD: pD,
+    css: cssID,
+    prop() { return this.height / this.width },
+    isLandscape() { return window.innerHeight <= window.innerWidth * this.prop() },
+    resize() {
+      const el = document.getElementById(this.css);
+      if (!el) return;
+      if (this.isLandscape()) {
+        el.style.height = "100%";
+        el.style.removeProperty('width');
+      } else {
+        el.style.removeProperty('height');
+        el.style.width = "100%";
+      }
+    },
+    createCanvas() {
+      this.main = p.createCanvas(this.width, this.height, p.WEBGL);
+      p.pixelDensity(this.pD);
+      this.main.id(this.css);
+      this.resize();
+      
+    }
+  };
+}
+
+
+function windowResized() {
+  C.resize();
+}
+
+ // Define brushes globally 
+ brush.add("liner", {
+  type: "custom", 
+  weight: 5, 
+  vibration: 0.5, 
+  definition: 1, 
+  quality: 40,
+  opacity: 100, 
+  spacing: 0.5, 
+  blend: true,
+  pressure: { 
+      type: "standard", 
+      curve: [0.2, 0.25], 
+      min_max: [0.8, 2] },
+  tip: (_m) => { _m.rotate(30); _m.rect(-1.5, -1.5, 3, 3); },
+  rotate: "none"
+});
+
+brush.add("watercolor", {
+  type: "custom", 
+  weight: 30, 
+  vibration: 2, 
+  definition: 0.5, 
+  quality: 8,
+  opacity: 23, 
+  spacing: 0.6, 
+  blend: true,
+  pressure: { 
+      type: "standard", 
+      curve: [0.15, 0.25], 
+      min_max: [0.5, 2] },
+  tip: (_m) => { _m.rotate(45); _m.rect(-1.5, -1.5, 3, 3); },
+  rotate: "natural"
+});
 
 
   fetch(opensheet_uri)
@@ -72,26 +109,40 @@ const canvasHeight = 600;
         parentContainer.appendChild(container);
 
         new p5((p) => {
+
           p.setup = () => {
+            
+            
+            //order matters! first canvas then load brush
+            //otherwise scaling weird
+            C = createCanvasObject(p, 700, 700, 1, `canvas-${index}`);
+            C.createCanvas();
+            C.main.parent(container);
+            
+            // p5.brush internally binds to: p.drawingContext & p.canvas & uses createGraphics() under the hood
             brush.instance(p);
             brush.load();
             
-
-            p.createCanvas(canvasWidth, canvasHeight, p.WEBGL).parent(container);
-            p.pixelDensity(2);
             p.angleMode(p.DEGREES);
+            p.translate(-p.width / 2, -p.height / 2);
+
             p.background(240);
-            p.translate(-canvasWidth / 2, -canvasHeight / 2 );
+            console.log("p.width:", p.width, "p.height:", p.height);
+            console.log("line from (0,0) to (600,600)");
+           
+           
 
-            // Spine (same for now)
-            const spinePoints = [[0, 250], [120, 200], [180, 120], [250, 50]];
-
-            // Liner spine
+            // Draw feather spine
             brush.pick("liner");
+            
             brush.stroke(p.random(linerPalette));
             brush.strokeWeight(1);
+            const spinePoints = [[50, 550], [200, 500], [350, 400], [500, 200]];
             brush.spline(spinePoints, 1);
 
+           
+           
+           
             // ABV controls brush pressure
             brush.pick("watercolor");
             const abv = parseFloat(cocktail.abv);
@@ -99,18 +150,39 @@ const canvasHeight = 600;
 
             for (let i = 0; i < numLines; i++) {
               drawFeatherLine(p, i, numLines, spinePoints, false);
+            }
+
+            for (let i = 0; i < numLines; i++) {
               drawFeatherLine(p, i, numLines, spinePoints, true);
             }
 
-            // Label
+           
+
+           
+          
+            
+            //border
             p.push();
-            p.fill(0);
-            p.noStroke();
-            p.textSize(14);
-            p.textAlign(p.LEFT, p.TOP);
-            p.text(`${cocktail.nameEN}`, 10, 10);
-            p.text(`${cocktail.abv}% ABV`, 10, 30);
+            p.stroke(255, 0, 0);
+            p.noFill();
+            p.rect(0, 0, p.width, p.height);
             p.pop();
+           
+            // brush.pick("marker");
+            // Set the brush color and draw a line
+            //brush.line(x1, y1, x2, y2)
+           
+            
+            
+            // // Label
+            // p.push();
+            // p.fill(0);
+            // p.noStroke();
+            // p.textSize(14);
+            // p.textAlign(p.LEFT, p.TOP);
+            // p.text(`${cocktail.nameEN}`, 10, 10);
+            // p.text(`${cocktail.abv}% ABV`, 10, 30);
+            // p.pop();
           };
           p.draw = () => {};
         });
@@ -167,3 +239,4 @@ const canvasHeight = 600;
 
     brush.spline(feather, 1);
   }
+

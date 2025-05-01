@@ -89,7 +89,10 @@ const C = {
         this.width = w, this.height = h, this.pD = p, this.css = css;
     },
     createCanvas() {
-        this.main = createCanvas(this.width, this.height, WEBGL), pixelDensity(this.pD), this.main.id(this.css), this.resize();
+        this.main = createCanvas(this.width, this.height, WEBGL), 
+        pixelDensity(this.pD), 
+        this.main.id(this.css), 
+        this.resize();
     }
 };
 C.setSize(800, 800, 1, 'mainCanvas')
