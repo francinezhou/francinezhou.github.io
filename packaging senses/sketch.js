@@ -33,17 +33,38 @@
     rotate: "natural"
   });
 
-  const linerPalette = ["#795e6c", "#9e6261", "#6f4644", "#727829", "#677482"];
-  const palette = ["#7b4800", "#002185", "#003c32", "#fcd300", "#ff2702", "#6b9404"];
-  const parentContainer = document.getElementById('parent-container');
+//Colors
+const linerPalette = [
+  "hsl(20, 40%, 50%)", // fruity
+  "hsl(350, 30%, 55%)", // floral
+  "hsl(100, 30%, 40%)", // tea
+  "hsl(60, 30%, 40%)", // herb
+  "hsl(20, 25%, 40%)", //wood
+  "hsl(10, 70%, 40%)", // spiced
+  "hsl(210, 15%, 50%)"  //savoury
+];
 
-  const sheetID = "1xw9LbJNTwGl7zYzxNBh6XXO8HXbsuWXI9pHuOUDqxr8";
-  const tabName = 'cocktails';
-  const opensheet_uri = `https://opensheet.elk.sh/${sheetID}/${tabName}`;
+const palette = [
+  "hsl(55, 100%, 60%)",  // Sourness
+  "hsl(340, 80%, 60%)",  // Sweetness
+  "hsl(30, 100%, 30%)",  // Bitterness
+  "hsl(10, 100%, 50%)",  // Spicyness
+  "hsl(195, 100%, 35%)", // Saltiness
+];
+const parentContainer = document.getElementById('parent-container');
+
+const sheetID = "1xw9LbJNTwGl7zYzxNBh6XXO8HXbsuWXI9pHuOUDqxr8";
+const tabName = 'cocktails';
+const opensheet_uri = `https://opensheet.elk.sh/${sheetID}/${tabName}`;
+
+const canvasWidth = 600;
+const canvasHeight = 600;
+
 
   fetch(opensheet_uri)
     .then(res => res.json())
     .then(data => {
+      console.log(data);
       data.forEach((cocktail, index) => {
         const container = document.createElement('div');
         container.classList.add('cocktail');
@@ -54,15 +75,16 @@
           p.setup = () => {
             brush.instance(p);
             brush.load();
+            
 
-            p.createCanvas(300, 300, p.WEBGL).parent(container);
+            p.createCanvas(canvasWidth, canvasHeight, p.WEBGL).parent(container);
             p.pixelDensity(2);
             p.angleMode(p.DEGREES);
             p.background(240);
-            p.translate(-150, -150);
+            p.translate(-canvasWidth / 2, -canvasHeight / 2 );
 
             // Spine (same for now)
-            const spinePoints = [[50, 250], [120, 200], [180, 120], [250, 50]];
+            const spinePoints = [[0, 250], [120, 200], [180, 120], [250, 50]];
 
             // Liner spine
             brush.pick("liner");
@@ -97,7 +119,7 @@
 
   function drawFeatherLine(p, i, num, points, mirror = false) {
     brush.stroke(p.random(palette));
-    brush.strokeWeight(p.random(2, 3.5));
+    brush.strokeWeight(p.random(1, 3.5));
 
     let baseProgress = 0.4 + (i / num) * 0.6;
     let spineSegment = baseProgress * (points.length - 1);
