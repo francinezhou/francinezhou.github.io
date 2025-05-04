@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'SourceHanMono';
+  src:  url('fonts/SourceHanMono-Regular.woff2') format('woff2'),
+        url('fonts/SourceHanMono-Regular.otf') format('opentype');
+  font-style: normal;    
+  font-weight: 400;
+}
+
+html{
+    height: 100%;
+  }
+    
+body {
+    margin: 0;
+    padding: 0;
+    
+    font-family: 'SourceHanMono';
+    font-weight: 400;
+}
+
+#parent-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+
+.cocktail {
+  width: 700px;
+  height: 700px;
+  /* padding: 5px;  */
+  position: relative;
+  display: inline-block;
+ 
+}
+
+.cocktail-info {
+  display: block;
+  /* display: none; */
+  width: 70%;
+  position: absolute;
+  bottom: 0;
+  /* left: 0; */
+  right: 0;
+  padding: 0.5em;
+  
+  font-size: 14px;
+  line-height: 1.4;
+  font-family: sans-serif;
+}
+
+
+canvas {
+  /* image-rendering: auto;
+  aspect-ratio: 1/1; */
+  /* width: 100% !important;
+  height: auto !important; */
+  display: block;
+  visibility: visible !important;
+}
+
+

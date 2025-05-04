@@ -17,14 +17,31 @@ body {
   padding: 10px;
 }
 
-  
 
-.cocktail { 
+.cocktail {
   width: 700px;
   height: 700px;
   /* padding: 5px;  */
+  position: relative;
+  display: inline-block;
  
 }
+
+.cocktail-info {
+  display: block;
+  /* display: none; */
+  width: 70%;
+  position: absolute;
+  bottom: 0;
+  /* left: 0; */
+  right: 0;
+  padding: 0.5em;
+  
+  font-size: 14px;
+  line-height: 1.4;
+  font-family: sans-serif;
+}
+
 
 canvas {
   /* image-rendering: auto;
@@ -34,4 +51,5 @@ canvas {
   display: block;
   visibility: visible !important;
 }
+
 
