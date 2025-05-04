@@ -145,8 +145,8 @@ function windowResized() {
             const abv = parseFloat(cocktail.abv);
 
             // Dynamically map ABV to pressure range
-            const minVal = p.map(abv, 0, 40, 0, 0.5);
-            const maxVal = p.map(abv, 0, 40, 2, 3);
+            const minVal = p.map(abv, 0, 40, 0, 3.5);
+            const maxVal = p.map(abv, 0, 40, 1, 5);
             
             // Create a custom watercolor brush definition for this instance
             brush.add(`watercolor-${index}`, {
@@ -160,11 +160,14 @@ function windowResized() {
               blend: true,
               pressure: {
                 type: "standard",
-                curve: [0.15, 0.25],
+                curve: [0.15, 0.25],// Values for the bell curve
                 min_max: [minVal, maxVal]
               },
-              tip: (_m) => { _m.rotate(45); _m.rect(-1.5, -1.5, 3, 3); },
-              rotate: "natural"
+              tip: (_m) => { 
+                // in this example, the tip is composed of two squares, rotated 45 degrees
+                // Always execute drawing functions within the _m buffer!
+                _m.rotate(45); _m.rect(-1.5, -1.5, 3, 3); },
+              rotate: "natural",
             });
             
             // Pick the custom brush and draw
@@ -238,7 +241,7 @@ for (let i = 0; i < numFeatherLines; i++) {
 
   function drawFeatherLine(p, i, num, points, mirror = false) {
     brush.stroke(p.random(palette));
-    brush.strokeWeight(p.random(1, 3.5));
+    brush.strokeWeight(3);
 
     let baseProgress = 0.4 + (i / num) * 0.6;
     let spineSegment = baseProgress * (points.length - 1);
