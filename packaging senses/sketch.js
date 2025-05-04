@@ -80,22 +80,22 @@ function windowResized() {
   rotate: "none"
 });
 
-brush.add("watercolor", {
-  type: "custom", 
-  weight: 30, 
-  vibration: 2, 
-  definition: 0.5, 
-  quality: 8,
-  opacity: 23, 
-  spacing: 0.6, 
-  blend: true,
-  pressure: { 
-      type: "standard", 
-      curve: [0.15, 0.25], 
-      min_max: [0.5, 2] },
-  tip: (_m) => { _m.rotate(45); _m.rect(-1.5, -1.5, 3, 3); },
-  rotate: "natural"
-});
+// brush.add("watercolor", {
+//   type: "custom", 
+//   weight: 30, 
+//   vibration: 2, 
+//   definition: 0.5, 
+//   quality: 8,
+//   opacity: 23, 
+//   spacing: 0.6, 
+//   blend: true,
+//   pressure: { 
+//       type: "standard", 
+//       curve: [0.15, 0.25], 
+//       min_max: [0.5, 2] },
+//   tip: (_m) => { _m.rotate(45); _m.rect(-1.5, -1.5, 3, 3); },
+//   rotate: "natural"
+// });
 
 
   fetch(opensheet_uri)
@@ -141,22 +141,69 @@ brush.add("watercolor", {
             brush.spline(spinePoints, 1);
 
            
-           
-           
-            // ABV controls brush pressure
-            brush.pick("watercolor");
+
             const abv = parseFloat(cocktail.abv);
-            const numLines = Math.floor(p.map(abv, 0, 40, 0, 24));
 
-            for (let i = 0; i < numLines; i++) {
-              drawFeatherLine(p, i, numLines, spinePoints, false);
-            }
-
-            for (let i = 0; i < numLines; i++) {
-              drawFeatherLine(p, i, numLines, spinePoints, true);
-            }
+            // Dynamically map ABV to pressure range
+            const minVal = p.map(abv, 0, 40, 0, 0.5);
+            const maxVal = p.map(abv, 0, 40, 2, 3);
+            
+            // Create a custom watercolor brush definition for this instance
+            brush.add(`watercolor-${index}`, {
+              type: "custom",
+              weight: 30,
+              vibration: 2,
+              definition: 0.5,
+              quality: 8,
+              opacity: 23,
+              spacing: 0.6,
+              blend: true,
+              pressure: {
+                type: "standard",
+                curve: [0.15, 0.25],
+                min_max: [minVal, maxVal]
+              },
+              tip: (_m) => { _m.rotate(45); _m.rect(-1.5, -1.5, 3, 3); },
+              rotate: "natural"
+            });
+            
+            // Pick the custom brush and draw
+            brush.pick(`watercolor-${index}`);
+            
+            const numFeatherLines = 24;
+for (let i = 0; i < numFeatherLines; i++) {
+  drawFeatherLine(p, i, numFeatherLines, spinePoints, false);
+  drawFeatherLine(p, i, numFeatherLines, spinePoints, true);
+}
 
            
+            // // ABV controls brush pressure
+            // brush.pick("watercolor");
+           
+            // const numLines = Math.floor(p.map(abv, 0, 40, 0, 24));
+
+            // for (let i = 0; i < numLines; i++) {
+            //   drawFeatherLine(p, i, numLines, spinePoints, false);
+            // }
+
+            // for (let i = 0; i < numLines; i++) {
+            //   drawFeatherLine(p, i, numLines, spinePoints, true);
+            // }
+
+           
+
+            // // Draw feather lines
+            // brush.pick("watercolor");
+            // const numFeatherLines = 24;
+
+            // // Right side lines
+            // for (let i = 0; i < numFeatherLines; i++) {
+            //   drawFeatherLine(p, i, numFeatherLines, spinePoints, false);
+            // }
+            // // Left side lines (mirrored)
+            // for (let i = 0; i < numFeatherLines; i++) {
+            //   drawFeatherLine(p, i, numFeatherLines, spinePoints, true);
+            // }
 
            
           
