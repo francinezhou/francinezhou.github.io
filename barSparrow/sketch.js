@@ -120,6 +120,8 @@ function windowResized() {
         nameDiv.classList.add('cocktail-name');
         nameDiv.textContent = `{${cocktail.nameEN.trim()}} ${cocktail.nameCN.trim()}`;
 
+        // Ingredients div
+        
         // Flavors div
         const flavorsDiv = document.createElement('div');
         flavorsDiv.classList.add('cocktail-flavors');
