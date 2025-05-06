@@ -20,7 +20,7 @@ const flavorColorMap = {
 //   "hsl(195, 100%, 35%)", // Saltiness
 // ];
 
-const parentContainer = document.getElementById('parent-container');
+const cocktailContainer = document.getElementById('cocktail-container');
 
 const sheetID = "1xw9LbJNTwGl7zYzxNBh6XXO8HXbsuWXI9pHuOUDqxr8";
 const tabName = 'cocktails';
@@ -109,7 +109,7 @@ function windowResized() {
         const container = document.createElement('div');
         container.classList.add('cocktail');
         container.id = `cocktail-${index}`;
-        parentContainer.appendChild(container);
+        cocktailContainer.appendChild(container);
 
         //Text info div
         const info = document.createElement('div');
@@ -170,7 +170,7 @@ function windowResized() {
             // CREATE CANVAS
             //order matters! first canvas then load brush
             //otherwise scaling weird
-            C = createCanvasObject(p, 700, 700, 1, `canvas-${index}`);
+            C = createCanvasObject(p, 600, 600, 1, `canvas-${index}`);
             C.createCanvas();
             C.main.parent(container);
             
