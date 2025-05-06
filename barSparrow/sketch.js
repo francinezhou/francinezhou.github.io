@@ -6,11 +6,11 @@ const flavorColorMap = {
   herbaceous: "hsl(60, 30%, 40%)",
   fruity: "hsl(20, 40%, 50%)",
   floral: "hsl(350, 30%, 55%)",
-  
-  wood: "hsl(20, 25%, 40%)",
+  woody: "hsl(20, 25%, 40%)",
   spiced: "hsl(10, 70%, 40%)",
   savoury: "hsl(210, 15%, 50%)"
 };
+
 
 // let palette = [
 //   "hsl(55, 100%, 60%)",  // Sourness
@@ -120,8 +120,15 @@ function windowResized() {
         nameDiv.classList.add('cocktail-name');
         nameDiv.textContent = `{${cocktail.nameEN.trim()}} ${cocktail.nameCN.trim()}`;
 
-        // Ingredients div
-        
+
+       // Ingredients div
+        const ingredientsDiv = document.createElement('div');
+        ingredientsDiv.classList.add('cocktail-ingredients');
+        if (cocktail.ingredientsEN?.trim()) {
+          ingredientsDiv.textContent = cocktail.ingredientsEN.trim();
+        }
+
+     
         // Flavors div
         const flavorsDiv = document.createElement('div');
         flavorsDiv.classList.add('cocktail-flavors');
@@ -148,8 +155,10 @@ function windowResized() {
         // Append all child divs to the info box
         info.appendChild(nameDiv);
         info.appendChild(flavorsDiv);
+        info.appendChild(ingredientsDiv);
         info.appendChild(palateDiv);
         info.appendChild(abvDiv);
+        
         
         container.appendChild(info);
         
@@ -158,7 +167,7 @@ function windowResized() {
 
           p.setup = () => {
             
-            
+            // CREATE CANVAS
             //order matters! first canvas then load brush
             //otherwise scaling weird
             C = createCanvasObject(p, 700, 700, 1, `canvas-${index}`);
@@ -174,10 +183,13 @@ function windowResized() {
 
             p.background(240);
 
-           
-           
 
-            // Draw feather spine
+
+           
+          
+
+            // DRAW FEATHER SPINE
+            
             brush.pick("liner");
 
 
@@ -186,27 +198,61 @@ function windowResized() {
             // Example: "flavors": "spiced, herbal" → "spiced" is used
             // If need to change spine color, reorder JSON flavor tag 
             const firstFlavor = cocktail.flavors?.split(",")[0]?.trim().toLowerCase();
-            brush.stroke(flavorColorMap[firstFlavor] || "black"); // fallback to black if no match
+            brush.stroke(flavorColorMap[firstFlavor] || "grey"); // fallback to black if no match
 
             brush.strokeWeight(1);
 
-            const x1 = 50;
+            const x1 = 100; // start point bottom left
             const y1 = 500;
+            
+            
+            const x5 = 450; // end point top right
+            const y5 = 150;
+
+            // Even division along the straight path
+            const dx = x5 - x1;
+            const dy = y5 - y1;
+
+            const x2 = x1 + dx / 3;
+            const y2 = y1 + dy / 3;
+
+
+            const x4 = x1 + dx * 2 / 3;
+            const y4 = y1 + dy * 2 / 3;
+
+
+
+            // Apply curve offsets to bend the spine
+            const curveOffsetX = -10;     // set to 20 or -20 for horizontal bending
+            const curveOffsetY = -20;   // negative bends upward, positive downward
+
             const spinePoints = [
               [x1, y1],
-              [x1 + 150, y1 - 50],
-              [x1 + 300, y1 - 180],
-              [x1 + 400, y1 - 350]
+              [x2 + curveOffsetX, y2 + curveOffsetY],
+            
+              [x4 + curveOffsetX, y4 + curveOffsetY],
+              [x5, y5]
             ];
+
+            
             brush.spline(spinePoints, 1); //0-1
 
-           
+            console.log(spinePoints);
+            // END of spine code
 
+
+
+            
+            
             const abv = parseFloat(cocktail.abv);
+            
+
 
             // Dynamically map ABV to pressure range
-            const minVal = p.map(abv, 0, 40, 0, 3.5);
-            const maxVal = p.map(abv, 0, 40, 1, 3);
+            const spacingVal = p.map(abv, 0, 40, 0.6, 0.3);
+
+            const minVal = p.map(abv, 0, 40, 0.15, 1.5);
+            const maxVal = p.map(abv, 0, 40, 1, 2);
             
             // Create a custom watercolor brush definition for this instance
             brush.add(`watercolor-${index}`, {
@@ -216,13 +262,12 @@ function windowResized() {
               definition: 0.5,
               quality: 8,
               opacity: 23,
-              spacing: 0.6,
+              spacing: spacingVal,
               blend: true,
               pressure: {
                 type: "standard",
                 curve: [0.15, 0.25],// Values for the bell curve
-                // min_max: [minVal, maxVal]
-                min_max: [0.5, 2]
+                min_max: [minVal, maxVal]
               },
               tip: (_m) => { 
                 // in this example, the tip is composed of two squares, rotated 45 degrees
@@ -231,6 +276,10 @@ function windowResized() {
               rotate: "natural",
             });
       
+            console.log(`ABV: ${abv} → spacing: ${spacingVal.toFixed(2)} | pressure min_max: [${minVal.toFixed(2)}, ${maxVal.toFixed(2)}]`);
+
+            console.log(`ABV: ${abv} → pressure min_max: [${minVal.toFixed(2)}, ${maxVal.toFixed(2)}]`);
+
             
             // Dynamically generate feather palette based on cocktail's palate values
             const featherPalette = [];
@@ -262,8 +311,8 @@ function windowResized() {
               const level = parseInt(cocktail.bitterness);
               if (level > 0) {
                 const hue = 30;
-                const saturation = 70;
-                const lightness = 90 - level * 20; // 65, 45, 25
+                const saturation = 60;
+                const lightness = 90 - level * 25; // 
                 featherPalette.push(`hsl(${hue}, ${saturation}%, ${lightness}%)`);
               }
             }
@@ -292,7 +341,7 @@ function windowResized() {
             
 
 
-            // Draw feather lines
+            // DRAW FEATHER LINES
             // brush.pick(`marker`);
             brush.pick(`watercolor-${index}`);
 
@@ -305,61 +354,45 @@ function windowResized() {
             brush.bleed(0.5, "out", 1); //0-0.5, in/out, 1
 
             const numFeatherLines = 24;
-            // for (let i = 0; i < numFeatherLines; i++) {
-            //   drawFeatherLine(p, i, numFeatherLines, spinePoints, false);
-            //   drawFeatherLine(p, i, numFeatherLines, spinePoints, true);
-            // }
-
            
             for (let i = 0; i < numFeatherLines; i++) {
+              // Right side lines
               drawFeatherLine(p, i, numFeatherLines, spinePoints, false, featherPalette);
+              // Left side lines (mirrored)
               drawFeatherLine(p, i, numFeatherLines, spinePoints, true, featherPalette);
             }
-            
-            // // ABV controls brush pressure
-            // brush.pick("watercolor");
-           
-            // const numLines = Math.floor(p.map(abv, 0, 40, 0, 24));
-
-            // for (let i = 0; i < numLines; i++) {
-            //   drawFeatherLine(p, i, numLines, spinePoints, false);
-            // }
-
-            // for (let i = 0; i < numLines; i++) {
-            //   drawFeatherLine(p, i, numLines, spinePoints, true);
-            // }
-
-           
-
-            // // Draw feather lines
-            // brush.pick("watercolor");
-            // const numFeatherLines = 24;
-
-            // // Right side lines
-            // for (let i = 0; i < numFeatherLines; i++) {
-            //   drawFeatherLine(p, i, numFeatherLines, spinePoints, false);
-            // }
-            // // Left side lines (mirrored)
-            // for (let i = 0; i < numFeatherLines; i++) {
-            //   drawFeatherLine(p, i, numFeatherLines, spinePoints, true);
-            // }
-
-           
           
+
+            // DRAW FLAVORS STROKES based on data
+            // DRAW FLOWER PETALS for floral flavor
+            if (cocktail.flavors?.toLowerCase().includes("floral")) {
+              drawFloralStrokes(p, spinePoints, "floral");
+            }
             
-            //border
+            
+            if (cocktail.flavors?.toLowerCase().includes("herbaceous")) {
+              drawHerbStrokes(p);
+            }
+            
+           
+              // DRAW SPRAY STROKES for savoury flavor
+              if (cocktail.flavors?.toLowerCase().includes("savoury")) {
+                drawSavouryStrokes(p);
+              }
+              
+  
+  
+          
+    
+            
+            // DRAW CANVAS BORDER
             p.push();
             p.stroke(255, 0, 0);
             p.noFill();
             p.rect(0, 0, p.width, p.height);
             p.pop();
-           
-            // brush.pick("marker");
-            // Set the brush color and draw a line
-            //brush.line(x1, y1, x2, y2)
-           
-            
-     
+          
+
           };
           p.draw = () => {};
         });
@@ -369,68 +402,203 @@ function windowResized() {
 // Function to draw one feather line, mirrored if specified
 // mirror false is right side, mirror true is left side
 function drawFeatherLine(p, i, num, points, mirror = false, palette = []) {
-    if (palette.length === 0) return; // skip if no colors available when palate value=0
+  if (palette.length === 0) return;
 
-    // Pick random color and weight for watercolor brush
-    brush.stroke(p.random(palette));
-    brush.strokeWeight(3);
+  brush.stroke(p.random(palette));
+  brush.strokeWeight(3);
 
-    // Determine the progress along the spine
-    let baseProgress = 0.4 + (i / num) * 0.6;
-    let spineSegment = baseProgress * (points.length - 1);
-    let segmentIndex = Math.floor(spineSegment);
-    let segmentProgress = spineSegment - segmentIndex;
+  // Determine progress along the spine
+  const baseProgress = 0.2 + (i / num) * 0.7; //  starting positon // ideally add up to 1
+  let spineSegment = baseProgress * (points.length - 1);
+  let segmentIndex = Math.floor(spineSegment);
+  let segmentProgress = spineSegment - segmentIndex;
 
-    // Handle case where progress exceeds spine length
-    if (segmentIndex >= points.length - 1) {
-      segmentIndex = points.length - 2;
-      segmentProgress = 1;
-    }
-
-    // Interpolate starting point between spine segments
-    let startX = p.lerp(points[segmentIndex][0], points[segmentIndex + 1][0], segmentProgress);
-    let startY = p.lerp(points[segmentIndex][1], points[segmentIndex + 1][1], segmentProgress);
-
-    // Calculate perpendicular offset direction
-    let dx = points[segmentIndex + 1][0] - points[segmentIndex][0];
-    let dy = points[segmentIndex + 1][1] - points[segmentIndex][1];
-    let len = Math.sqrt(dx * dx + dy * dy);
-    let perpX = -dy / len;
-    let perpY = dx / len;
-
-    // Apply offset
-    let offset = 15;
-    if (mirror) {
-      startX -= perpX * offset;
-      startY -= perpY * offset;
-    } else {
-      startX += perpX * offset;
-      startY += perpY * offset;
-    }
-    
-    // Length and angle variation with bell curve progression
-    let featherLen = (i * -2 + 150) * (1 + i / 36);
-    let bell = Math.sin(i / num * Math.PI);
-    featherLen *= 0.4 + bell * 0.6;
-    let angle = (i + 45) * 2;
-
-    // Mirror direction if on left side
-    let endX = mirror ? startX - featherLen : startX + featherLen;
-    let endY = mirror
-      ? startY - featherLen * p.tan(angle * p.PI / 180)
-      : startY + featherLen * p.tan(angle * p.PI / 180);
-
-    // Create the spline feather shape
-    const feather = mirror
-      ? [[startX, startY], 
-         [startX - featherLen / 3, startY + angle / 6],
-         [startX - featherLen * 2 / 3, startY + angle / 8], 
-         [endX, endY]]
-      : [[startX, startY], 
-         [startX + featherLen / 3, startY - angle / 6],
-         [startX + featherLen * 2 / 3, startY - angle / 8], 
-         [endX, endY]];
-
-    brush.spline(feather, 1);
+  if (segmentIndex >= points.length - 1) {
+    segmentIndex = points.length - 2;
+    segmentProgress = 1;
   }
 
+  // Interpolate the point on the spine
+  const interpolate = (a, b, t) => [p.lerp(a[0], b[0], t), p.lerp(a[1], b[1], t)];
+  const spineStart = points[segmentIndex];
+  const spineEnd = points[segmentIndex + 1];
+  const [startX, startY] = interpolate(spineStart, spineEnd, segmentProgress);
+
+  // Calculate spine tangent and normal
+  const segDx = spineEnd[0] - spineStart[0];
+  const segDy = spineEnd[1] - spineStart[1];
+  const len = Math.sqrt(segDx * segDx + segDy * segDy);
+  const nx = -segDy / len;
+  const ny = segDx / len;
+  
+  const spineAngle = Math.atan2(segDy, segDx); // radians
+
+  // Offset from the spine (perpendicular)
+  const offset = 15;
+  const ox = nx * offset;
+  const oy = ny * offset;
+
+  const fx = startX + ox;
+  const fy = startY + oy;
+
+  // Feather length and curve variation
+  let featherLen = (i * -2 + 150) * (1 + i / 36);
+  let bell = Math.sin(i / num * Math.PI);
+  featherLen *= 0.5 + bell * 0.6; // general length + exponential length
+
+  // Angle away from spine increases along feather
+  const angleOffset = p.map(i, 0, num - 1, 3, 10); // from flat to steep // change last 2 values
+  const featherAngle = spineAngle + p.radians(angleOffset);
+
+  const endX = fx + featherLen * Math.cos(featherAngle);
+  const endY = fy + featherLen * Math.sin(featherAngle);
+
+  // Define control points once
+  const controlPoints = [
+    [fx, fy],
+    [fx + featherLen / 3, fy - angleOffset / 2], // [1/3 interval between fX & endX (don't change), change y value to control curvature]
+    [fx + featherLen * 2 / 3, fy - angleOffset * 4], // [2/3 interval, change]
+    [endX, endY]
+  ];
+
+  if (i === 0) {
+    console.log("First feather line coords:", controlPoints);
+  } else if (i === num - 1) {
+    console.log("Last feather line coords:", controlPoints);
+  }
+
+  if (mirror) {
+    const reflect = (x, y) => {
+      const vx = x - startX;
+      const vy = y - startY;
+      const dot = vx * nx + vy * ny;
+      return [x - 2 * dot * nx, y - 2 * dot * ny];
+    };
+
+    const mirroredFeather = controlPoints.map(([x, y]) => reflect(x, y)).reverse();
+    brush.spline(mirroredFeather, 1);
+  } else {
+    brush.spline(controlPoints, 1);
+  }
+}
+function drawFloralStrokes(p, spinePoints, flavorKey = "floral") {
+  const color = flavorColorMap[flavorKey];
+  if (!color || spinePoints.length < 2) return;
+
+  brush.pick("liner");
+  brush.stroke(color);
+  brush.strokeWeight(1);
+
+  const numPetals = 5;
+  const petalLength = 90;
+  const petalCurve = 45;
+  const petalOffset = 30;
+
+  const petal = [
+    [0, 0],
+    [petalLength / 2, -petalCurve],
+    [petalLength, 0]
+  ];
+
+  const transform = (pts, cx, cy, angle) =>
+    pts.map(([px, py]) => {
+      const rx = px * Math.cos(angle) - py * Math.sin(angle);
+      const ry = px * Math.sin(angle) + py * Math.cos(angle);
+      return [cx + rx, cy + ry];
+    });
+
+  for (let i = 0; i < numPetals; i++) {
+    const baseProgress = 0.1 + (i / numPetals) * 0.8;
+    let segIndex = Math.floor(baseProgress * (spinePoints.length - 1));
+    let segT = baseProgress * (spinePoints.length - 1) - segIndex;
+
+    if (segIndex >= spinePoints.length - 1) {
+      segIndex = spinePoints.length - 2;
+      segT = 1;
+    }
+
+    const interpolate = (a, b, t) => [p.lerp(a[0], b[0], t), p.lerp(a[1], b[1], t)];
+    const start = spinePoints[segIndex];
+    const end = spinePoints[segIndex + 1];
+    const [anchorX, anchorY] = interpolate(start, end, segT);
+
+    const dx = end[0] - start[0];
+    const dy = end[1] - start[1];
+    const spineAngle = Math.atan2(dy, dx);
+
+    const spiralRotation = p.radians(i * 1); // 20° offset each step
+
+    // Offset the petal root slightly outward from spine
+    const ox = Math.cos(spineAngle + spiralRotation) * petalOffset;
+    const oy = Math.sin(spineAngle + spiralRotation) * petalOffset;
+    const petalX = anchorX + ox;
+    const petalY = anchorY + oy;
+
+    // Final rotation: along spine + outward angle
+    const finalAngle = spineAngle + spiralRotation;
+
+    const rotatedPetal = transform(petal, petalX, petalY, finalAngle);
+    brush.spline(rotatedPetal, 1);
+
+    if (i === 0) console.log("First floral petal:", rotatedPetal);
+  }
+}
+
+
+
+  function drawHerbStrokes(p, flavorKey = "herbaceous") {
+    const flavorColor = flavorColorMap[flavorKey];
+
+    brush.pick("liner");
+    brush.stroke(flavorColor);
+    brush.strokeWeight(1);
+
+  const strokes = [
+    [[320, 200], [325, 190], [330, 180]], // top right
+    [[270, 190], [265, 180], [260, 170]], // top left
+    [[350, 310], [360, 300], [370, 290]], // right middle
+    [[250, 320], [240, 310], [230, 300]], // left middle
+    [[290, 400], [300, 410], [310, 420]], // bottom center
+  ];
+
+  for (let curve of strokes) {
+    brush.spline(curve, 1);
+  }
+
+    // Reset state to prevent leak into the next canvas
+    brush.noFill();
+}
+
+function drawSavouryStrokes(p, flavorKey = "savoury") {
+  const flavorColor = flavorColorMap[flavorKey];
+
+  brush.pick("marker2");
+  brush.stroke(flavorColor);
+  brush.strokeWeight(1);
+
+  brush.fill("hsl(211, 100.00%, 79.60%)");
+  brush.noStroke();
+  brush.noHatch();
+  brush.noField();
+
+  const saltPolygons = [
+    [[345, 289.5], [348, 290.5], [349, 293.5], [347, 296.5], [344, 296.5], [342, 294], [342.5, 291]],
+    [[202, 117], [199.5, 115], [200, 112], [202.5, 110], [205.5, 110.5], [207, 113.5], [205.5, 116.5]],
+    [[171.5, 116], [170, 114.5], [170.5, 112], [173, 111], [175, 112], [175.5, 114.5], [174, 116]],
+    [[52.5, 198.5], [55.5, 196.5], [59, 198.5], [59, 202.5], [55.5, 204], [52.5, 202]],
+    [[79, 109.5], [76.5, 109], [75.5, 106.5], [76.5, 104], [79.5, 103.5], [81, 105.5], [81, 108]],
+    [[1.5, 33.5], [4, 31.5], [7.5, 33], [8, 36.5], [5, 38.5], [2, 37]]
+  ];
+  
+
+  for (let shape of saltPolygons) {
+    brush.polygon(shape);
+  }
+
+  // Reset state to prevent leak into the next canvas
+  brush.noFill();
+}
+
+
+
+// brush.flowLine(x, y, length, dir)

@@ -20,7 +20,6 @@ body {
     /* font-weight: 400; */
    
 }
-
 #parent-container {
   display: flex;
   flex-wrap: wrap;
@@ -30,6 +29,16 @@ body {
   padding: 10px;
 }
 
+canvas {
+  /* image-rendering: auto;
+  aspect-ratio: 1/1; */
+  /* width: 100% !important;
+  height: auto !important; */
+  position: absolute;
+  top: 0;
+  display: block;
+  visibility: visible !important;
+}
 
 .cocktail {
   width: 700px;
@@ -41,28 +50,30 @@ body {
 }
 
 .cocktail-info {
-  display: block;
+ 
   /* display: none; */
   width: 70%;
-  position: absolute;
-  bottom: 0;
+  height: 100%;
+  position: relative;
+
   /* left: 0; */
   right: 0;
-  padding: 0.5em;
-  
+ 
+  padding-left: 30%;
   font-size: 14px;
   line-height: 1.4;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  z-index: 99;
 }
 
 
-canvas {
-  /* image-rendering: auto;
-  aspect-ratio: 1/1; */
-  /* width: 100% !important;
-  height: auto !important; */
-  display: block;
-  visibility: visible !important;
+.cocktail-name, .cocktail-ingredients, .cocktail-flavors {
+  width: 100%;
 }
+
+
 
 
