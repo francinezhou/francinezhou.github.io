@@ -37,7 +37,6 @@ body {
     padding: 0;
     font-family: 'Source Han Mono';
     font-weight: normal;
-    overflow-x: scroll;
     /* overflow-y: hidden; */
     font-weight: 400;
 }
@@ -70,14 +69,17 @@ p {
 }
 
 .parent-container {
+  position: absolute;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  justify-content: space-between;
+  overflow-x: scroll;
 }
 
 header {
+  background-color: white;
   position: fixed;
   width: 100vw;
   height: 5vh;
@@ -88,13 +90,13 @@ header {
 
 #cocktail-container {
   position: absolute;
-  width: max-content;
+  /* width: max-content; */
   height: 95vh;
   bottom: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  gap: 5px;
+  /* gap: 5px; */
   /* justify-content: center; */
   align-items: flex-start;
 
@@ -102,41 +104,49 @@ header {
 
 .cocktail {
   position: relative;
-  width: 600px;
+  width: 500px;
   height: 100%;
   display: block;
+  border-right: 1px black solid;
+  overflow: clip;
+  background-color: rgb(240, 240, 240);
+  z-index:99;
 }
 
 
 canvas {
-  /* image-rendering: auto;
-  aspect-ratio: 1/1; */
-  /* width: 100% !important;
-  height: auto !important; */
+  width: 600px;
+  /* height: 600px; */
   position: absolute;
-  top: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   display: block;
   visibility: visible !important;
   width: 600px;
-  /* height: 100%; */
+
+  z-index: -1;
 }
 
 header, .cocktail-info {
   padding: 0.5rem;
 }
+
+
 .cocktail-info {
   position: absolute;
     width: 100%;
     height: 30%;
     top: 70%;
     /* right: 0; */
-    padding: 1rem;
+    padding: 2rem;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     flex-direction: column;
     justify-content: flex-start;
     /* align-items: flex-end; */
-    z-index: 99;
+    /* z-index: 99; */
 }
 
 

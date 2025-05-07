@@ -29,41 +29,39 @@ const opensheet_uri = `https://opensheet.elk.sh/${sheetID}/${tabName}`;
 
 
 
-// Object for creation and real-time resize of canvas
-function createCanvasObject(p, w, h, pD, cssID) {
-  return {
-    loaded: false,
-    width: w,
-    height: h,
-    pD: pD,
-    css: cssID,
-    prop() { return this.height / this.width },
-    isLandscape() { return window.innerHeight <= window.innerWidth * this.prop() },
-    resize() {
-      const el = document.getElementById(this.css);
-      if (!el) return;
-      if (this.isLandscape()) {
-        el.style.height = "100%";
-        el.style.removeProperty('width');
-      } else {
-        el.style.removeProperty('height');
-        el.style.width = "100%";
-      }
-    },
-    createCanvas() {
-      this.main = p.createCanvas(this.width, this.height, p.WEBGL);
-      p.pixelDensity(this.pD);
-      this.main.id(this.css);
-      this.resize();
+// // Object for creation and real-time resize of canvas
+// function createCanvasObject(p, w, h, pD, cssID) {
+//   return {
+//     loaded: false,
+//     width: w,
+//     height: h,
+//     pD: pD,
+//     css: cssID,
+//     prop() { return this.height / this.width },
+//     isLandscape() { return window.innerHeight <= window.innerWidth * this.prop() },
+//     resize() {
+//       const el = document.getElementById(this.css);
+//       if (!el) return;
+//       if (this.isLandscape()) {
+//         el.style.height = "100%";
+//         el.style.removeProperty('width');
+//       } else {
+//         el.style.removeProperty('height');
+//         el.style.width = "100%";
+//       }
+//     },
+//     createCanvas() {
+//       this.main = p.createCanvas(this.width, this.height, p.WEBGL);
+//       p.pixelDensity(this.pD);
+//       this.main.id(this.css);
+//       this.resize();
       
-    }
-  };
-}
-
-
-function windowResized() {
-  C.resize();
-}
+//     }
+//   };
+// }
+// function windowResized() {
+//   C.resize();
+// }
 
  // Define brushes globally 
  brush.add("liner", {
@@ -144,7 +142,7 @@ function windowResized() {
 
         const palateDiv = document.createElement('p');
         palateDiv.classList.add('cocktail-palate');
-        ["sourness", "sweetness", "bitterness", "spicyness", "saltiness"].forEach((key) => {
+        ["sour", "sweet", "bitter", "spicy", "salty"].forEach((key) => {
           const val = parseInt(cocktail[key]);
           const span = document.createElement('span');
           span.textContent = `${key}: ${val}`;
@@ -153,7 +151,7 @@ function windowResized() {
 
         const abvDiv = document.createElement('p');
         abvDiv.classList.add('cocktail-abv');
-        abvDiv.textContent = `ABV ${cocktail.abv}%`;
+        abvDiv.textContent = `${cocktail.abv}% ABV`;
 
         const priceDiv = document.createElement('p');
         priceDiv.classList.add('cocktail-price');
@@ -163,8 +161,10 @@ function windowResized() {
 
         // Append into row containers
         row1.appendChild(nameDiv);
-        row2.appendChild(flavorsDiv);
+
         row2.appendChild(ingredientsDiv);
+        row2.appendChild(flavorsDiv);
+
         row3.appendChild(palateDiv);
         row3.appendChild(abvDiv);
         row3.appendChild(priceDiv);
@@ -185,9 +185,13 @@ function windowResized() {
             // CREATE CANVAS
             //order matters! first canvas then load brush
             //otherwise scaling weird
-            C = createCanvasObject(p, 600, 600, 1, `canvas-${index}`);
-            C.createCanvas();
-            C.main.parent(container);
+            // C = createCanvasObject(p, 600, 600, 1, `canvas-${index}`);
+            // C.createCanvas();
+            // C.main.parent(container);
+            let cnv = p.createCanvas(600, 600, p.WEBGL);
+cnv.id(`canvas-${index}`);
+cnv.parent(container);
+p.pixelDensity(1); // Optional, if needed
             
             // p5.brush internally binds to: p.drawingContext & p.canvas & uses createGraphics() under the hood
             brush.instance(p);
@@ -301,7 +305,7 @@ function windowResized() {
 
             // Sourness → Yellow-green hue
             {
-              const level = parseInt(cocktail.sourness);
+              const level = parseInt(cocktail.sour);
               if (level > 0) {
                 const hue = 55;
                 const saturation = 100;
@@ -312,7 +316,7 @@ function windowResized() {
             
             // Sweetness → Pink hue
             {
-              const level = parseInt(cocktail.sweetness);
+              const level = parseInt(cocktail.sweet);
               if (level > 0) {
                 const hue = 340;
                 const saturation = 80;
@@ -323,7 +327,7 @@ function windowResized() {
             
             // Bitterness → Dark orange
             {
-              const level = parseInt(cocktail.bitterness);
+              const level = parseInt(cocktail.bitter);
               if (level > 0) {
                 const hue = 30;
                 const saturation = 60;
@@ -334,7 +338,7 @@ function windowResized() {
             
             // Spicyness → Red hue
             {
-              const level = parseInt(cocktail.spicyness);
+              const level = parseInt(cocktail.spicy);
               if (level > 0) {
                 const hue = 10;
                 const saturation = 100;
@@ -345,7 +349,7 @@ function windowResized() {
             
             // Saltiness → Cyan hue
             {
-              const level = parseInt(cocktail.saltiness);
+              const level = parseInt(cocktail.salty);
               if (level > 0) {
                 const hue = 195;
                 const saturation = 90;
@@ -400,12 +404,12 @@ function windowResized() {
           
     
             
-            // DRAW CANVAS BORDER
-            p.push();
-            p.stroke(255, 0, 0);
-            p.noFill();
-            p.rect(0, 0, p.width, p.height);
-            p.pop();
+            // // DRAW CANVAS BORDER
+            // p.push();
+            // p.stroke(255, 0, 0);
+            // p.noFill();
+            // p.rect(0, 0, p.width, p.height);
+            // p.pop();
           
 
           };
