@@ -76,6 +76,7 @@ const opensheet_uri = `https://opensheet.elk.sh/${sheetID}/${tabName}`;
   pressure: { 
       type: "standard", 
       curve: [0.2, 0.25], 
+      
       min_max: [0.8, 2] },
   tip: (_m) => { _m.rotate(30); _m.rect(-1.5, -1.5, 3, 3); },
   rotate: "none"
@@ -123,17 +124,33 @@ const opensheet_uri = `https://opensheet.elk.sh/${sheetID}/${tabName}`;
         const row3 = document.createElement('div');
         row3.classList.add('row-3');
 
-        // Existing elements (unchanged in logic)
         const nameDiv = document.createElement('h2');
         nameDiv.classList.add('cocktail-name');
-        nameDiv.textContent = `{${cocktail.nameEN.trim()}} ${cocktail.nameCN.trim()}`;
+        const nameWords = cocktail.nameEN.trim().split(/\s+/);
+        const firstWord = nameWords[0];
+        const lastWord = nameWords[nameWords.length - 1];
+        const middleWords = nameWords.slice(1, -1).join(" ");
+        
+        let nameEnLine = `{&nbsp;<span style="white-space: nowrap;">${firstWord}</span>`;
+        
+        if (middleWords) {
+          nameEnLine += ` ${middleWords} `;
+        } else if (nameWords.length === 2) {
+          nameEnLine += ' '; // add space between first and last if only two words
+        }
+        
+        nameEnLine += `<span style="white-space: nowrap;">${lastWord}</span>&nbsp;}`;
+        
+        nameDiv.innerHTML = `${nameEnLine}<br>&nbsp;&nbsp;${cocktail.nameCN.trim()}`;
+
+        
 
         const ingredientsDiv = document.createElement('p');
         ingredientsDiv.classList.add('cocktail-ingredients');
         if (cocktail.ingredientsEN?.trim()) {
-          ingredientsDiv.textContent = cocktail.ingredientsEN.trim();
+          ingredientsDiv.innerHTML = `${cocktail.ingredientsEN.trim()}<br>`;
         }
-
+        
         const flavorsDiv = document.createElement('p');
         flavorsDiv.classList.add('cocktail-flavors');
         if (cocktail.flavors?.trim()) {
@@ -153,7 +170,7 @@ const opensheet_uri = `https://opensheet.elk.sh/${sheetID}/${tabName}`;
         abvDiv.classList.add('cocktail-abv');
         abvDiv.textContent = `${cocktail.abv}% ABV`;
 
-        const priceDiv = document.createElement('p');
+        const priceDiv = document.createElement('h3');
         priceDiv.classList.add('cocktail-price');
         if (cocktail.price?.trim()) {
           priceDiv.textContent = `¥${cocktail.price.trim()}`;
@@ -162,13 +179,14 @@ const opensheet_uri = `https://opensheet.elk.sh/${sheetID}/${tabName}`;
         // Append into row containers
         row1.appendChild(nameDiv);
 
+        row2.appendChild(priceDiv);
         row2.appendChild(ingredientsDiv);
-        row2.appendChild(flavorsDiv);
+
+        row3.appendChild(flavorsDiv);
 
         row3.appendChild(palateDiv);
         row3.appendChild(abvDiv);
-        row3.appendChild(priceDiv);
-
+       
         // Append rows into main info box
         info.appendChild(row1);
         info.appendChild(row2);
@@ -268,17 +286,18 @@ p.pixelDensity(1); // Optional, if needed
 
 
             // Dynamically map ABV to pressure range
-            const spacingVal = p.map(abv, 0, 40, 0.6, 0.3);
+            const vibrationVal = p.map(abv, 0, 40, 4, 0.5); 
+            const spacingVal = p.map(abv, 0, 40, 0.55, 0.4);
 
-            const minVal = p.map(abv, 0, 40, 0.15, 1.5);
-            const maxVal = p.map(abv, 0, 40, 1, 2);
+            const minVal = p.map(abv, 0, 40, 0.5, 1.75);
+            const maxVal = p.map(abv, 0, 40, 1.5, 2);
             
             // Create a custom watercolor brush definition for this instance
             brush.add(`watercolor-${index}`, {
               type: "custom",
               weight: 30,
-              vibration: 2,
-              definition: 0.5,
+              vibration: vibrationVal,
+              // definition: 0.5,
               quality: 8,
               opacity: 23,
               spacing: spacingVal,
@@ -288,10 +307,10 @@ p.pixelDensity(1); // Optional, if needed
                 curve: [0.15, 0.25],// Values for the bell curve
                 min_max: [minVal, maxVal]
               },
-              tip: (_m) => { 
-                // in this example, the tip is composed of two squares, rotated 45 degrees
-                // Always execute drawing functions within the _m buffer!
-                _m.rotate(45); _m.rect(-1.5, -1.5, 3, 3); },
+                tip: (_m) => { 
+                  // in this example, the tip is composed of two squares, rotated 45 degrees
+                  // Always execute drawing functions within the _m buffer!
+                  _m.rotate(45); _m.rect(-1.5, -1.5, 3, 3); },
               rotate: "natural",
             });
       
@@ -399,7 +418,12 @@ p.pixelDensity(1); // Optional, if needed
                 drawSavouryStrokes(p);
               }
               
-  
+
+            // DRAW FRUITY STEM for fruity flavor
+            if (cocktail.flavors?.toLowerCase().includes("fruity")) {
+              drawFruityStem(p, spinePoints, firstFlavor);
+            }
+              
   
           
     
@@ -616,6 +640,56 @@ function drawSavouryStrokes(p, flavorKey = "savoury") {
 
   // Reset state to prevent leak into the next canvas
   brush.noFill();
+}
+
+
+brush.add("liner-stem", {
+  type: "custom", 
+  weight: 5, 
+  vibration: 0.5, 
+  definition: 1, 
+  quality: 40,
+  opacity: 100, 
+  spacing: 0.5, 
+  blend: true,
+  pressure: { 
+    type: "standard", 
+    curve: [0.2, 0.25], 
+    min_max: [0.8, 1] // Half of original max (was 2)
+  },
+  tip: (_m) => { _m.rotate(30); _m.rect(-1.5, -1.5, 3, 3); },
+  rotate: "none"
+});
+
+
+function drawFruityStem(p, spinePoints, firstFlavor) {
+  if (!spinePoints || spinePoints.length < 2) return;
+
+  const color = flavorColorMap[firstFlavor] || "grey";
+
+  brush.pick("liner-stem");
+  brush.stroke(color);
+  brush.strokeWeight(1.5);
+
+  const offset = 8;
+
+  const [x1, y1] = spinePoints[0];
+  const [xB, yB] = spinePoints[1];
+
+  // x2/y2 is now midpoint between spinePoints[0] and spinePoints[1]
+  const x2 = (x1 + xB) / 2;
+  const y2 = (y1 + yB) / 2;
+
+  const midX = (x1 + x2) / 2;
+  const midY = (y1 + y2) / 2;
+
+  const offsetPoints = [
+    [x1 - offset, y1 - offset],
+    [midX - offset, midY - offset],
+    [x2 - offset, y2 - offset]
+  ];
+
+  brush.spline(offsetPoints, 1);
 }
 
 
