@@ -183,9 +183,10 @@ const opensheet_uri = `https://opensheet.elk.sh/${sheetID}/${tabName}`;
         row2.appendChild(ingredientsDiv);
 
         row3.appendChild(flavorsDiv);
+        row3.appendChild(abvDiv);
+       
 
         row3.appendChild(palateDiv);
-        row3.appendChild(abvDiv);
        
         // Append rows into main info box
         info.appendChild(row1);
@@ -286,8 +287,8 @@ p.pixelDensity(1); // Optional, if needed
 
 
             // Dynamically map ABV to pressure range
-            const vibrationVal = p.map(abv, 0, 40, 4, 0.5); 
-            const spacingVal = p.map(abv, 0, 40, 0.55, 0.4);
+            const vibrationVal = p.map(abv, 0, 40, 4, 0.2); 
+            const spacingVal = p.map(abv, 0, 40, 0.9, 0.4);
 
             const minVal = p.map(abv, 0, 40, 0.5, 1.75);
             const maxVal = p.map(abv, 0, 40, 1.5, 2);
@@ -338,8 +339,8 @@ p.pixelDensity(1); // Optional, if needed
               const level = parseInt(cocktail.sweet);
               if (level > 0) {
                 const hue = 340;
-                const saturation = 80;
-                const lightness = 85 - level * 15; // 70, 55, 40
+                const saturation = 75;
+                const lightness = 90 - level * 20; // 70, 55, 40
                 featherPalette.push(`hsl(${hue}, ${saturation}%, ${lightness}%)`);
               }
             }
@@ -419,14 +420,19 @@ p.pixelDensity(1); // Optional, if needed
               }
               
 
+              if (cocktail.flavors?.toLowerCase().includes("spiced")) {
+                drawSpicedStrokes(p);
+              }
+
             // DRAW FRUITY STEM for fruity flavor
             if (cocktail.flavors?.toLowerCase().includes("fruity")) {
               drawFruityStem(p, spinePoints, firstFlavor);
             }
               
-  
-          
-    
+            if (cocktail.flavors?.toLowerCase().includes("tea")) {
+              drawTeaLeafCurves(p);
+            }
+            
             
             // // DRAW CANVAS BORDER
             // p.push();
@@ -524,6 +530,7 @@ function drawFeatherLine(p, i, num, points, mirror = false, palette = []) {
     brush.spline(controlPoints, 1);
   }
 }
+
 function drawFloralStrokes(p, spinePoints, flavorKey = "floral") {
   const color = flavorColorMap[flavorKey];
   if (!color || spinePoints.length < 2) return;
@@ -532,92 +539,88 @@ function drawFloralStrokes(p, spinePoints, flavorKey = "floral") {
   brush.stroke(color);
   brush.strokeWeight(1);
 
-  const numPetals = 5;
+  const numPetals = 4;
   const petalLength = 90;
   const petalCurve = 45;
-  const petalOffset = 30;
-
-  const petal = [
-    [0, 0],
-    [petalLength / 2, -petalCurve],
-    [petalLength, 0]
-  ];
-
-  const transform = (pts, cx, cy, angle) =>
-    pts.map(([px, py]) => {
-      const rx = px * Math.cos(angle) - py * Math.sin(angle);
-      const ry = px * Math.sin(angle) + py * Math.cos(angle);
-      return [cx + rx, cy + ry];
-    });
+  const petalOffset = 70;
 
   for (let i = 0; i < numPetals; i++) {
-    const baseProgress = 0.1 + (i / numPetals) * 0.8;
-    let segIndex = Math.floor(baseProgress * (spinePoints.length - 1));
-    let segT = baseProgress * (spinePoints.length - 1) - segIndex;
+    const baseProgress = 0.3 + (i / numPetals) * 0.7;
+    let segmentIndex = Math.floor(baseProgress * (spinePoints.length - 1));
+    let segmentProgress = baseProgress * (spinePoints.length - 1) - segmentIndex;
 
-    if (segIndex >= spinePoints.length - 1) {
-      segIndex = spinePoints.length - 2;
-      segT = 1;
+    if (segmentIndex >= spinePoints.length - 1) {
+      segmentIndex = spinePoints.length - 2;
+      segmentProgress = 1;
     }
 
     const interpolate = (a, b, t) => [p.lerp(a[0], b[0], t), p.lerp(a[1], b[1], t)];
-    const start = spinePoints[segIndex];
-    const end = spinePoints[segIndex + 1];
-    const [anchorX, anchorY] = interpolate(start, end, segT);
+    const start = spinePoints[segmentIndex];
+    const end = spinePoints[segmentIndex + 1];
+    const [spineX, spineY] = interpolate(start, end, segmentProgress);
 
     const dx = end[0] - start[0];
     const dy = end[1] - start[1];
-    const spineAngle = Math.atan2(dy, dx);
+    const angle = Math.atan2(dy, dx);
 
-    const spiralRotation = p.radians(i * 1); // 20° offset each step
+    const len = Math.sqrt(dx * dx + dy * dy);
+    const nx = -dy / len;
+    const ny = dx / len;
 
-    // Offset the petal root slightly outward from spine
-    const ox = Math.cos(spineAngle + spiralRotation) * petalOffset;
-    const oy = Math.sin(spineAngle + spiralRotation) * petalOffset;
-    const petalX = anchorX + ox;
-    const petalY = anchorY + oy;
+    const petal = [
+      [0, 0],
+      [petalLength / 2, -petalCurve],
+      [petalLength, 0]
+    ];
 
-    // Final rotation: along spine + outward angle
-    const finalAngle = spineAngle + spiralRotation;
+    const petalShapeRight = petal.map(([x, y]) => [x, -y]); // Flip Y for right side only
 
-    const rotatedPetal = transform(petal, petalX, petalY, finalAngle);
-    brush.spline(rotatedPetal, 1);
+    const transform = (pts, cx, cy, angle) =>
+      pts.map(([px, py]) => {
+        const rx = px * Math.cos(angle) - py * Math.sin(angle);
+        const ry = px * Math.sin(angle) + py * Math.cos(angle);
+        return [cx + rx, cy + ry];
+      });
 
-    if (i === 0) console.log("First floral petal:", rotatedPetal);
+    const petalRight = transform(petalShapeRight, spineX, spineY, angle).map(([x, y]) => [x + nx * petalOffset, y + ny * petalOffset]);
+    const petalLeft = transform(petal, spineX, spineY, angle).map(([x, y]) => [x - nx * petalOffset, y - ny * petalOffset]);
+
+    brush.spline(petalRight, 1);
+    brush.spline(petalLeft, 1);
   }
 }
 
 
 
-  function drawHerbStrokes(p, flavorKey = "herbaceous") {
-    const flavorColor = flavorColorMap[flavorKey];
+function drawHerbStrokes(p, flavorKey = "herbaceous") {
+  const flavorColor = flavorColorMap[flavorKey];
 
-    brush.pick("liner");
-    brush.stroke(flavorColor);
-    brush.strokeWeight(1);
+  brush.pick("liner");
+  brush.stroke(flavorColor);
+  brush.strokeWeight(1);
 
   const strokes = [
-    [[320, 200], [325, 190], [330, 180]], // top right
-    [[270, 190], [265, 180], [260, 170]], // top left
-    [[350, 310], [360, 300], [370, 290]], // right middle
-    [[250, 320], [240, 310], [230, 300]], // left middle
-    [[290, 400], [300, 410], [310, 420]], // bottom center
+    [[420, 490], [430, 480], [440, 470]], // upper right
+    [[400, 490], [410, 480], [420, 470]], // upper left
+    [[450, 460], [460, 455], [470, 450]], // mid right
+    [[400, 460], [410, 455], [420, 450]], // mid left
+    [[430, 420], [440, 415], [450, 410]], // bottom center
   ];
 
   for (let curve of strokes) {
     brush.spline(curve, 1);
   }
 
-    // Reset state to prevent leak into the next canvas
-    brush.noFill();
+  brush.noFill(); // Reset state
 }
+
 
 function drawSavouryStrokes(p, flavorKey = "savoury") {
   const flavorColor = flavorColorMap[flavorKey];
 
-  brush.pick("marker2");
+  // brush.pick("marker2");
   brush.stroke(flavorColor);
-  brush.strokeWeight(1);
+  // brush.strokeWeight(1);
 
   brush.fill("hsl(211, 100.00%, 79.60%)");
   brush.noStroke();
@@ -625,7 +628,6 @@ function drawSavouryStrokes(p, flavorKey = "savoury") {
   brush.noField();
 
   const saltPolygons = [
-    [[345, 289.5], [348, 290.5], [349, 293.5], [347, 296.5], [344, 296.5], [342, 294], [342.5, 291]],
     [[202, 117], [199.5, 115], [200, 112], [202.5, 110], [205.5, 110.5], [207, 113.5], [205.5, 116.5]],
     [[171.5, 116], [170, 114.5], [170.5, 112], [173, 111], [175, 112], [175.5, 114.5], [174, 116]],
     [[52.5, 198.5], [55.5, 196.5], [59, 198.5], [59, 202.5], [55.5, 204], [52.5, 202]],
@@ -662,6 +664,25 @@ brush.add("liner-stem", {
 });
 
 
+function drawSpicedStrokes(p) {
+  // Set visual style
+  brush.noStroke();
+  brush.noHatch();
+  brush.fill(flavorColorMap["spiced"], 75); // soft fill color
+
+  const radiusRange = [4, 6];
+
+  for (let i = 0; i < 5; i++) {
+    const x = p.random(350, 500); // arbitrary canvas-safe range
+    const y = p.random(300, 500);
+    const radius = p.random(...radiusRange);
+    brush.circle(x, y, radius, true); // hand-drawn circle
+  }
+
+  brush.noFill(); // clean up state
+}
+
+
 function drawFruityStem(p, spinePoints, firstFlavor) {
   if (!spinePoints || spinePoints.length < 2) return;
 
@@ -690,6 +711,75 @@ function drawFruityStem(p, spinePoints, firstFlavor) {
   ];
 
   brush.spline(offsetPoints, 1);
+}
+
+
+
+function drawHerbStrokes(p, flavorKey = "herbaceous") {
+  const flavorColor = flavorColorMap[flavorKey];
+
+  brush.pick("liner");
+  brush.stroke(flavorColor);
+  brush.strokeWeight(1);
+
+  const yOffset = -80;
+
+  const strokes = [
+    [[420, 490 + yOffset], [430, 480 + yOffset], [440, 470 + yOffset]], // upper right
+    [[400, 490 + yOffset], [410, 480 + yOffset], [420, 470 + yOffset]], // upper left
+    [[450, 460 + yOffset], [460, 455 + yOffset], [470, 450 + yOffset]], // mid right
+    [[400, 460 + yOffset], [410, 455 + yOffset], [420, 450 + yOffset]], // mid left
+    [[430, 420 + yOffset], [440, 415 + yOffset], [450, 410 + yOffset]], // bottom center
+  ];
+
+  for (let curve of strokes) {
+    brush.spline(curve, 1);
+  }
+
+  brush.noFill(); // Reset state
+}
+
+
+function drawTeaLeafCurves(p) {
+  const x1 = 100;
+  const y1 = 300;
+
+  const x5 = 450;
+  const y5 = 150;
+
+  const dx = x5 - x1;
+  const dy = y5 - y1;
+
+  const x2 = x1 + dx / 3;
+  const y2 = y1 + dy / 3;
+
+  const x4 = x1 + dx * 2 / 3;
+  const y4 = y1 + dy * 2 / 3;
+
+  const offset = 30; // how far out the leaf curves bend
+
+  const color = flavorColorMap["tea"] || "grey";
+  brush.pick("liner");
+  brush.stroke(color);
+  brush.strokeWeight(1);
+
+  // Left leaf stroke
+  const leftCurve = [
+    [x1, y1],
+    [x2 - offset, y2],
+    [x4 - offset, y4],
+    [x5, y5]
+  ];
+  brush.spline(leftCurve, 1);
+
+  // Right leaf stroke
+  const rightCurve = [
+    [x1, y1],
+    [x2 + offset, y2],
+    [x4 + offset, y4],
+    [x5, y5]
+  ];
+  brush.spline(rightCurve, 1);
 }
 
 
