@@ -184,11 +184,31 @@ header, .cocktail-info {
 }
 
 .row-3 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+flex-wrap: wrap;
   margin-left: calc(100% / 7  );
+  /* justify-content: space-between; */
   /* height: 30%; */
 }
 
+
+.cocktail-flavors {
+  width: 60%;
+  margin-bottom: 1rem;
+}
+.cocktail-abv {
+  width: 30%;
+}
+
+/* .cocktail-abv {
+  align-self: flex-end;
+  white-space: nowrap;
+} */
+
 .cocktail-palate {
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -196,13 +216,10 @@ header, .cocktail-info {
 }
 .cocktail-palate span {
   display: inline-block;
- 
+ width: 30%;
 }
 
 
-.cocktail-abv {
-  width: 50%;
-}
 
 
 /* .cocktail-name, .cocktail-ingredients, .cocktail-flavors {
