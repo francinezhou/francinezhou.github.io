@@ -110,58 +110,73 @@ function windowResized() {
         container.classList.add('cocktail');
         container.id = `cocktail-${index}`;
         cocktailContainer.appendChild(container);
-
-        //Text info div
+      
+        // Text info div
         const info = document.createElement('div');
         info.classList.add('cocktail-info');
-        
-        // Name div
-        const nameDiv = document.createElement('div');
+      
+        // Create row containers
+        const row1 = document.createElement('div');
+        row1.classList.add('row-1');
+
+        const row2 = document.createElement('div');
+        row2.classList.add('row-2');
+
+        const row3 = document.createElement('div');
+        row3.classList.add('row-3');
+
+        // Existing elements (unchanged in logic)
+        const nameDiv = document.createElement('h2');
         nameDiv.classList.add('cocktail-name');
         nameDiv.textContent = `{${cocktail.nameEN.trim()}} ${cocktail.nameCN.trim()}`;
 
-
-       // Ingredients div
-        const ingredientsDiv = document.createElement('div');
+        const ingredientsDiv = document.createElement('p');
         ingredientsDiv.classList.add('cocktail-ingredients');
         if (cocktail.ingredientsEN?.trim()) {
           ingredientsDiv.textContent = cocktail.ingredientsEN.trim();
         }
 
-     
-        // Flavors div
-        const flavorsDiv = document.createElement('div');
+        const flavorsDiv = document.createElement('p');
         flavorsDiv.classList.add('cocktail-flavors');
         if (cocktail.flavors?.trim()) {
           flavorsDiv.textContent = cocktail.flavors.trim();
         }
-        
-        // Palate div
-        const palateDiv = document.createElement('div');
+
+        const palateDiv = document.createElement('p');
         palateDiv.classList.add('cocktail-palate');
         ["sourness", "sweetness", "bitterness", "spicyness", "saltiness"].forEach((key) => {
           const val = parseInt(cocktail[key]);
-          const pSpan = document.createElement('span');
-          pSpan.textContent = `${key}: ${val}`;
-          pSpan.style.marginRight = '0.5em';
-          palateDiv.appendChild(pSpan);
+          const span = document.createElement('span');
+          span.textContent = `${key}: ${val}`;
+          palateDiv.appendChild(span);
         });
-        
-        // ABV div
-        const abvDiv = document.createElement('div');
+
+        const abvDiv = document.createElement('p');
         abvDiv.classList.add('cocktail-abv');
         abvDiv.textContent = `ABV ${cocktail.abv}%`;
-        
-        // Append all child divs to the info box
-        info.appendChild(nameDiv);
-        info.appendChild(flavorsDiv);
-        info.appendChild(ingredientsDiv);
-        info.appendChild(palateDiv);
-        info.appendChild(abvDiv);
-        
-        
-        container.appendChild(info);
-        
+
+        const priceDiv = document.createElement('p');
+        priceDiv.classList.add('cocktail-price');
+        if (cocktail.price?.trim()) {
+          priceDiv.textContent = `¥${cocktail.price.trim()}`;
+        }
+
+        // Append into row containers
+        row1.appendChild(nameDiv);
+        row2.appendChild(flavorsDiv);
+        row2.appendChild(ingredientsDiv);
+        row3.appendChild(palateDiv);
+        row3.appendChild(abvDiv);
+        row3.appendChild(priceDiv);
+
+        // Append rows into main info box
+        info.appendChild(row1);
+        info.appendChild(row2);
+        info.appendChild(row3);
+
+
+
+        container.appendChild(info);        
 
         new p5((p) => {
 
