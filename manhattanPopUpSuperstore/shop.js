@@ -213,6 +213,18 @@ fetch('products.json')
 
         // Append cartItem to cartDrop
         cartDrop.appendChild(cartItem);
+        updateCartDot(); // Update cartDot after adding
+    }
+
+    // Helper to update cartDot opacity based on cart item count
+    function updateCartDot() {
+        const cartDot = document.querySelector('.cartDot');
+        const cartItems = cartDrop.querySelectorAll('.cartItem');
+        if (cartItems.length > 0) {
+            cartDot.style.opacity = '1';
+        } else {
+            cartDot.style.opacity = '0';
+        }
     }
 
 const addCartButtons = document.querySelectorAll('.addCart');
@@ -371,8 +383,7 @@ document.querySelectorAll('.addCart').forEach((button, index) => {
             });
             
             addCart.addEventListener('click', function () {
-                document.querySelector(".cartDot").style.opacity = '1';
-                
+                updateCartDot(); // Use the new function
             });
             
 
