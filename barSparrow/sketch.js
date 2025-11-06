@@ -22,7 +22,7 @@ const flavorColorMap = {
 
 const cocktailContainer = document.getElementById('cocktail-container');
 
-const sheetID = "1xw9LbJNTwGl7zYzxNBh6XXO8HXbsuWXI9pHuOUDqxr8";
+const sheetID = "1gAnIeFz4b5oYkaMCb2e_RVVDl2huBw9yzY6ChZzvICk";
 const tabName = 'cocktails';
 const opensheet_uri = `https://opensheet.elk.sh/${sheetID}/${tabName}`;
 
