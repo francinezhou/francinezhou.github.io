@@ -9,14 +9,24 @@ let params = {
   stroke: "#2b3030",
   strokeWeight: 10,
   leaf_distance: 50,
+  pole_x: 100
 };
 
 let gui;
 let paperTexture;
 let bgStartColor, bgEndColor;
+let flower_center_x;
+
+let pole_base_width = 40;
+let pole_base_height = 200;
+let pole_base_center_x;
+
+let pole_body_width = pole_base_width / 2;
+let pole_body_height = 300;
+let pole_body_center_x;
 
 function preload() {
-  paperTexture = loadImage('/assets/Paper-Texture-5.jpg');
+ // paperTexture = loadImage('/assets/Paper-Texture-5.jpg');
   
 
 }
@@ -27,7 +37,6 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 
   colorMode(HSB);
-
 
 
   // Create GUI
@@ -41,6 +50,8 @@ function setup() {
   gui.addColor(params, 'stroke');
   gui.add(params, 'strokeWeight', 0, 20);
   gui.add(params, 'leaf_distance', 0, 200);
+  gui.add(params, 'pole_x', 0, 900);
+
   // // Add Folders
   // var folder1 = gui.addFolder('FolderNameA');
   // folder1.add(params, 'x', -500, 500);
@@ -53,7 +64,7 @@ function setup() {
 
 }
 
-let flower_center_x;
+
 
 
 /* - - Draw - - */
@@ -64,7 +75,7 @@ function draw() {
 
 
 // Set the blend mode.
-  blendMode(SOFT_LIGHT);
+  //blendMode(SOFT_LIGHT);
   // Display  paper texture
  // image(paperTexture, 0, 0);
 
@@ -72,9 +83,26 @@ function draw() {
 //  blendMode(BLEND);
 
 
+//poleBase, poleBody;
+  let pole_base_center_x = params.pole_x - pole_base_width / 2;
+  let pole_body_center_x = params.pole_x - pole_body_width / 2;
+
+  fill(255, 0, 0, 128);
+  noStroke();
+  
+
+  // draw pole base
+  rect(pole_base_center_x, windowHeight - 100 - pole_base_height, pole_base_width, pole_base_height);
+  // draw pole body
+  rect(pole_body_center_x, 100, pole_body_width, pole_body_height);
+
+  console.log(pole_body_center_x);
+
+
   fill(params.fill);
   stroke(params.stroke);
   strokeWeight(params.strokeWeight);
+
 
   let flower_center_x = windowWidth/2+params.x;
 
@@ -109,7 +137,8 @@ function windowResized() {
 
   //Draws a linear gradient on the screen using a for loop and lerpColor
 function gradientFilter() {
-  let bgStartColor = color(210, 90, 15);
+   let bgStartColor = color(210, 30, 95);
+  //let bgStartColor = color(210, 90, 15);
   let bgEndColor = color(270, 40, 22);
 
   for (let y = 0; y < height; y += 1) {
