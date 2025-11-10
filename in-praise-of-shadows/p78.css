@@ -1,0 +1,280 @@
+/* * {
+    cursor: url(imgs/cursor90.png),auto;
+} */
+
+
+body {
+    background-color: #969486;
+	animation-name: backgroundColorPalette;
+	animation-duration: 5s;
+	animation-iteration-count: 1;
+	animation-direction: alternate;
+	animation-timing-function: linear; 
+	/* linear is enabled default, it’s not necessary to add it make it work but it can make your code more expressive */
+}
+
+@keyframes backgroundColorPalette {
+	0% {
+		background: black;
+	}
+	
+	50% {
+		background: #56554C;
+	}
+
+	100% {
+		background: #969486;
+	}
+}
+
+h1, h2, h3, p {
+    color: white;
+    font-family: "dnp-shuei-nmincho-std", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+ 
+p {
+    line-height: 1.5;
+}
+
+h2 {
+    font-size: 1.2rem;
+    line-height: 1.2;
+   
+}
+
+
+.btm-nav {
+    position:fixed;
+    bottom: 0;
+    padding-bottom: 5px;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 1rem;
+    background-color: #969486;
+	animation-name: backgroundColorPalette;
+	animation-duration: 5s;
+	animation-iteration-count: 1;
+	animation-direction: alternate;
+	animation-timing-function: linear; 
+}
+
+.menu {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease; 
+    cursor: pointer;
+    z-index: 99;
+}
+
+.menu:hover {
+    letter-spacing: 2rem; 
+    -webkit-animation: text_blur 1.5s; 
+  }
+
+@-webkit-keyframes text_blur {
+    0% { -webkit-filter: blur(0px);}
+    50% { -webkit-filter: blur(2px);}
+    100% { -webkit-filter: blur(0px);}
+}
+
+
+a:link { text-decoration: none; color: white;}
+
+a:visited { text-decoration: none; color: white;}
+
+a:hover { text-decoration: none; color: white;}
+
+a:active { text-decoration: none; }
+
+/* main box */
+.box {
+    position: fixed;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    pointer-events: none;
+    z-index: 20;
+  }
+  
+  .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  }
+  
+  .column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  align-items: center;
+  padding: 5px;
+
+  }
+  
+  #Layer_1 {
+    width: 110px;
+    height: 110px;
+     }
+  
+.cls-1 {
+  fill: #5B5B57;
+  fill-opacity: 1;
+  stroke: white;
+  stroke-width: 1.5px; 
+  transition: 0.5s ease;
+ 
+}
+
+  /* @media screen and (orientation:landscape) { */
+/* main box */
+@media screen and (min-width: 600px) {
+    .wrapper {
+      height: 500px;
+    }
+    .box {
+      width: 490px;
+    }
+    .row {
+      align-items: center;
+     margin-top: 19px;
+     margin-bottom: 19px;
+    }
+    .column {
+      flex: 1;
+      height: 100%;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    #Layer_1 {
+      padding-left: 10px;
+      padding-right: 10px;
+      width: 100%;
+      height: 100%;
+    }
+    }
+
+
+.square {
+   position: absolute;
+   margin-left: auto;
+   margin-right: auto;
+   width: 250px;
+   height: 350px;
+   top: 5%;
+    border: 2px dotted black;
+    padding: 10px;
+}
+
+.wrapper {
+    margin: 60px;
+    margin-top: 80px; 
+    margin-bottom: 90px; 
+    padding: 0;
+    height: auto;
+
+}
+article {
+    -webkit-columns: 2 13vw;
+    -moz-columns: 2 13vw;
+    columns: 2 13vw;
+    column-gap: 50vw;
+    padding-left: 20px;
+    padding-right: 20px;
+    z-index: 0;
+} 
+
+.text7{
+    text-align: right;
+    color: white;
+    font-family: "dnp-shuei-nmincho-std", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5;
+}
+
+.text7 p:nth-child(2n) {
+    text-align: left;
+}
+
+p {
+    margin-top: 0em;
+    margin-bottom: 0;
+}
+  
+@media (max-width: 734px) {
+    p {
+        display: inline;
+    }
+}
+
+@media (max-width: 480px) {
+    /* text overflow for mobile  */
+    .wrapper {
+        margin: 20px;
+        margin-bottom: 70px; 
+    }
+    article {
+        -webkit-columns: 2 200px;
+        -moz-columns: 2 200px;
+        columns: 2 200px;
+        padding: 0;
+    }
+  }
+
+.text8 {
+    padding-top: 1000px;
+}
+
+#room {
+    width: 40vw;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    z-index: 10;
+    
+    position: fixed;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* margin-top: 25px;
+    margin-bottom: 15px; */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    cursor: pointer;
+}
+
+.text7 {
+    opacity: 0;
+    transition: 2s ease-in-out;
+}
+
+#room:hover ~ .wrapper > .text7 {
+    opacity: 1;
+}
+
+/* next page link button */
+.next a{
+    text-decoration: none;
+    color: #828282;
+    opacity: 0;
+    cursor: pointer;
+}
+.next a:hover {
+     text-decoration: none; color: white;
+     opacity: 1;
+  }
+
+.next:hover {
+  
+}

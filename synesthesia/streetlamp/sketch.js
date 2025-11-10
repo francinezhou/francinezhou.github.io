@@ -1,14 +1,18 @@
 /* - - Streetlamp - - */
+let song;
+let fft;
+let spectrum;
 
 let params = {
-  pole_x: 100,
+  pole_x: 300,
   pole_y_offset: 0,
-  pole_height: 450,
+  pole_height: 500,
   lantern_opacity: 120, // Opacity for lantern glass (0-255)
   polar_rotation: 0, // Rotation angle for polar pattern (0-360 degrees)
   polar_opacity: 120, // Opacity for polar shapes (0-255)
   polar_num_shapes: 6, // Number of shapes in polar pattern
-  polar_sway: 0 // Extent of swaying motion (0-30 degrees)
+  polar_sway: 0, // Extent of swaying motion (0-30 degrees)
+  polar_disperse: 1.0 // Dispersion factor for polar shapes (0.5-2.0)
 };
 
 let gui;
@@ -41,26 +45,31 @@ let lantern_bottom_y; // Store lantern bottom Y to link with polar (for ground p
 function preload() {
  // paperTexture = loadImage('/assets/Paper-Texture-5.jpg');
 
+   // Load the audio file
+  song = loadSound('assets/audio.mp3');
+
 }
 
 
 /* - - Setup - - */
 function setup() {
   createCanvas(windowWidth, windowHeight);
-
   colorMode(HSB);
 
+  // Initialize FFT analyzer
+  fft = new p5.FFT();
 
   // Create GUI
   gui = new dat.GUI();
   gui.add(params, 'pole_x', 100, 1200);
-  gui.add(params, 'pole_y_offset', 0, 200);
-  gui.add(params, 'pole_height', 200, 500);
+  gui.add(params, 'pole_y_offset', 0, 100);
+  gui.add(params, 'pole_height', 200, 600);
   gui.add(params, 'lantern_opacity', 0, 255).name('Lantern Opacity');
   gui.add(params, 'polar_rotation', 0, 360).name('Polar Rotation');
   gui.add(params, 'polar_opacity', 0, 255).name('Polar Opacity');
   gui.add(params, 'polar_num_shapes', 0, 18).step(1).name('Polar Num Shapes');
   gui.add(params, 'polar_sway', 0, 30).name('Sway');
+  gui.add(params, 'polar_disperse', 0.5, 2.0).name('Polar Disperse');
 
   
 
@@ -342,21 +351,22 @@ function drawPolar() {
 
   
   // Warm colors in RGB with adjustable opacity
+  // Apply dispersion factor to distance values to control how spread out the shapes are
   // Warm orange-red (using more shapes for outer ring)
   fill(255, 140, 80, params.polar_opacity);
-  polarPolygons(params.polar_num_shapes * 2.5, 4, 40, 180);
+  polarPolygons(params.polar_num_shapes * 2.5, 4, 40, 180 * params.polar_disperse);
   
   // Warm orange
   fill(255, 165, 40, params.polar_opacity);
-  polarPolygons(params.polar_num_shapes, 4, 40, 150);
+  polarPolygons(params.polar_num_shapes, 4, 40, 150 * params.polar_disperse);
   
   // Warm yellow-orange
   fill(255, 200, 100, params.polar_opacity);
-  polarPolygons(params.polar_num_shapes, 4, 80, 100);
+  polarPolygons(params.polar_num_shapes, 4, 80, 100 * params.polar_disperse);
   
   // Warm yellow
   fill(255, 220, 130, params.polar_opacity);
-  polarPolygons(params.polar_num_shapes, 4, 40, 100);
+  polarPolygons(params.polar_num_shapes, 4, 40, 100 * params.polar_disperse);
   
   pop(); // This restores the previous colorMode (HSB)
 }

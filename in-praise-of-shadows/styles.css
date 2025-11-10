@@ -1,0 +1,316 @@
+body {
+  background-color: black;
+ 
+}
+
+h1, h2, h3, p {
+  color: white;
+  font-family: "dnp-shuei-nmincho-std", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  text-align: center;
+  font-size: 200px;
+  line-height: 1.2;
+  letter-spacing: 2rem;
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+h2 {
+font-size: 1.2rem;
+line-height: 1.2;
+}
+
+h3 {
+  text-align: center;
+  font-size: 20px;
+}
+
+/* main box */
+
+.wrapper {
+height: 100vh;
+z-index: 5;
+}
+.box {
+  position: fixed;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.row {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+width: 100%;
+}
+
+.column {
+display: flex;
+flex-direction: column;
+flex-basis: 100%;
+align-items: center;
+padding: 5px;
+}
+
+#Layer_1 {
+  width: 110px;
+  height: 110px;
+  }
+
+path {
+  fill: white;
+}
+    
+/* @media screen and (orientation:landscape) { */
+  @media screen and (min-width: 600px) {
+    .wrapper {
+      height: 500px;
+    }
+    .box {
+     
+      width: 490px;
+     
+    }
+    .row {
+      align-items: center;
+     margin-top: 19px;
+     margin-bottom: 19px;
+    }
+    .column {
+      flex: 1;
+      height: 100%;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    #Layer_1 {
+      padding-left: 10px;
+      padding-right: 10px;
+      width: 100%;
+      height: 100%;
+    }
+    }
+
+/* stroke animation */
+path {
+  -webkit-animation: blinker 3s linear ;
+  -webkit-animation-play-state: inherit;
+  animation: blinker 3s linear ;
+  animation-play-state: running;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+#_阝{ animation-delay: 0s; }
+#_人 { animation-delay: 2s; }
+#_云 { animation-delay: 4s; }
+#_医 { animation-delay: 6s; }
+#_殳 { animation-delay: 8s; }
+#_羽 { animation-delay: 10s; }
+#_礻{ animation-delay: 12s; }
+#_乚 { animation-delay: 14s; }
+#_言 { animation-delay: 16s; }
+#_替 { animation-delay: 18s; }
+
+/* stroke opacity memory */
+
+
+a path:link { fill: white;}
+
+a:visited { fill-opacity: 0; }
+
+a:hover { fill-opacity: 0.5;}
+
+a:active { }
+
+/* hover for stroke opacity change */
+
+/* path:hover.cls-1 {
+opacity: 0.5;
+} */
+
+/* target child with fa class on parent hover*/
+
+/* control child fa's opacity on both parent and self hover*/
+/* path:hover > .cls-1 :hover 
+{
+  fill-opacity: 1;
+} */
+
+/* svg:hover > #_陰 {
+opacity: 0.5;
+}
+svg:hover > #st_阝:hover {
+opacity: 1;
+} */
+/* #_陰:hover > #yin path {
+fill: red;
+} */
+
+/* working */
+/* 
+#Layer_1:hover .cls-1 {
+fill: white;
+} */
+/* working */
+
+/* path:hover ~ .cls-1{
+fill: aquamarine;
+} */
+
+
+/* #_阝:hover {
+fill: aquamarine;
+}
+#Layer_1 > #_阝:hover ~ path {
+fill: red;
+}
+#st_阝:hover #Layer_1 .cls-1 {
+opacity: 0.5;
+} */
+
+
+/* background visuals */
+.transition {
+  transition: 1s; 
+}
+
+video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1; 
+  opacity: 0;
+  }
+  
+  #sand, #branch, #statue {
+    width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1; 
+  opacity: 0;
+  }
+
+  #branch, #statue  {
+  filter: blur(6px);
+  -webkit-filter: blur(6px);
+  }
+
+/* bottom text ENGLISH */
+.en-title {
+  position:fixed;
+  bottom: 0%;
+  padding-bottom: 5px;
+  width: 100%;
+  text-align: center;
+  letter-spacing: -1.5px;
+  z-index: 99;
+  opacity: 1;
+  transition: 1s ease-in-out;
+}
+
+span {
+ font-size: 20px;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
+span {
+  -webkit-animation: in 1s ease;
+}
+
+span:hover {
+  -webkit-animation: out 1s ;
+}
+
+@-webkit-keyframes in {
+  from   { -webkit-transform: translateY(-20px); }
+  to { -webkit-transform: translateY(0px);}
+}
+
+@-webkit-keyframes out {
+  0%   { -webkit-transform: translateY(0px); }
+  100% { -webkit-transform: translateY(-20px); }
+}
+
+
+/* bottom text JAPANESE */
+
+.jp-title1, .jp-title2, .jp-title3{
+  position:fixed;
+  bottom: 0;
+  padding-bottom: 5px;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.5rem;
+  opacity: 0;
+  transition: 1s ease-in;
+}
+
+
+/* Mobile breakpoint */
+@media (max-width: 480px) {
+/* automatic wave for mobile  */
+.en-title {
+  position:fixed;
+  bottom: 0%;
+  padding-bottom: 5px;
+  width: 100%;
+  letter-spacing: -1.5px;
+  text-align: center;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease; 
+  cursor: pointer;
+  z-index: 99;
+}
+
+.en-title span :hover {
+  -webkit-animation: wavy 2s; 
+}
+
+.en-title span {
+  position: relative;
+  display: inline-block;
+  padding-left: 0%;
+  padding-right: 0%;
+  animation: wavy 5s infinite;
+  animation-delay: calc(.2s * var(--i));
+}
+@-webkit-keyframes wavy {
+  0%,40%,100% {
+    transform: translateY(0)
+  }
+  20% {
+    transform: translateY(-20px)
+  }
+} 
+
+}
