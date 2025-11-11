@@ -63,6 +63,8 @@ h2 {
 }
 
 
+a:link { cursor: pointer !important}
+
 h2 a:link { text-decoration: none; color: black;}
 
 h2 a:visited { text-decoration: none; color: black;}
