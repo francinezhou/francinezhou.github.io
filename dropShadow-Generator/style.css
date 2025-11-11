@@ -76,9 +76,9 @@ body {
     width: 6px;
     height: 40px;
     background: #000;
-    top: 10px; /* so it sticks near the edge */
+    top: 10px;
     left: 50%;
-    transform-origin: 50% 50px; /* pivot from center of dial */
+    transform-origin: 50% 50px;
     transform: translateX(-50%) rotate(135deg);
     border-radius: 3px;
   }
@@ -99,5 +99,21 @@ body {
     font-weight: 600;
     border: 1px solid #ddd;
     pointer-events: none;
+  }
+  
+  /* corner style */
+  .corner-row {
+    display: flex;
+    gap: .75rem;
+    margin-top: .35rem;
+  }
+  
+  .corner-opt {
+    display: flex;
+    gap: .25rem;
+    align-items: center;
+    font-size: .7rem;
+    text-transform: none;
+    font-weight: 400;
   }
   
