@@ -2,6 +2,8 @@ body {
     background-color: #dadada;
 }
 
+
+
 h1, h2, h3, p {
    
     font-family: "dnp-shuei-nmincho-std", sans-serif;
@@ -60,7 +62,7 @@ h2 {
     100% { -webkit-filter: blur(0px);}
 }
 
-a:link { cursor: pointer !important}
+ p {cursor: pointer !important}
 
 h2 a:link { text-decoration: none; color: white;}
 
