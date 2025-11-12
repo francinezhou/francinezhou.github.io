@@ -10,23 +10,25 @@ const shadowColorInput = el('shadowColor');
 const roundRadiusInput = el('roundRadius');
 const applyBtn = el('applyBtn');
 const downloadBtn = el('downloadBtn');
+const unionBtn = el('unionBtn');
 const previewWrap = el('previewWrap');
 
 const angleDial = el('angleDial');
 const dialKnob = el('dialKnob');
 const angleDisplay = el('angleDisplay');
-
 const cornerRadios = document.querySelectorAll('input[name="cornerStyle"]');
 
-// start at 225° on the dial (0 = top, clockwise)
+// start at 225° (dial coords: 0 = top, clockwise)
 let currentDialAngle = 225;
 let lastOutputSVG = '';
+let lastOpts = null; // store last generation options for union
 
 // snapping config
 const SNAP_STEP = 5;
 const IMPORTANT_ANGLES = [45, 135, 225, 315];
 const IMPORTANT_THRESHOLD = 6;
 
+/* ========== file load ========== */
 fileInput.addEventListener('change', e => {
   const file = e.target.files[0];
   if (!file) return;
@@ -35,6 +37,7 @@ fileInput.addEventListener('change', e => {
   reader.readAsText(file);
 });
 
+/* ========== corner style ========== */
 cornerRadios.forEach(r => {
   r.addEventListener('change', () => {
     const val = getCornerStyle();
@@ -47,7 +50,9 @@ function getCornerStyle() {
   return checked ? checked.value : 'sharp';
 }
 
+/* ========== dial logic ========== */
 function snapAngle(deg) {
+  // favor the four diagonals
   for (const imp of IMPORTANT_ANGLES) {
     if (Math.abs(deg - imp) <= IMPORTANT_THRESHOLD) {
       return imp;
@@ -100,15 +105,17 @@ window.addEventListener('touchmove', e => {
 window.addEventListener('mouseup', () => dialActive = false);
 window.addEventListener('touchend', () => dialActive = false);
 
-// init dial to 225
+// init dial
 setDialAngle(currentDialAngle);
 
+/* ========== main generate ========== */
 applyBtn.addEventListener('click', () => {
   if (!svgInput.value.trim()) {
     alert('Paste or load an SVG first.');
     return;
   }
 
+  // dial (0 top, cw) -> svg (0 right, cw)
   const svgAngle = currentDialAngle - 90;
 
   const opts = {
@@ -120,12 +127,14 @@ applyBtn.addEventListener('click', () => {
     cornerStyle: getCornerStyle(),
     roundRadiusPx: parseFloat(roundRadiusInput.value) * INCH_TO_PX
   };
+  lastOpts = opts;
 
   const out = makeShadowSVG(svgInput.value, opts);
   lastOutputSVG = out;
   previewWrap.innerHTML = out;
 });
 
+/* ========== download ========== */
 downloadBtn.addEventListener('click', () => {
   if (!lastOutputSVG) {
     alert('Generate first.');
@@ -142,6 +151,117 @@ downloadBtn.addEventListener('click', () => {
   URL.revokeObjectURL(url);
 });
 
+/* ========== union button ========== */
+unionBtn.addEventListener('click', () => {
+  if (!lastOutputSVG) {
+    alert('Generate first.');
+    return;
+  }
+  if (!lastOpts) {
+    alert('No generation options found.');
+    return;
+  }
+
+  // this is the amount we "fattened" the shadow copies visually
+  const growPx = lastOpts.outlinePx * 0.4;
+
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(lastOutputSVG, 'image/svg+xml');
+  const rootSvg = doc.documentElement;
+  const shadowGroupEl = doc.getElementById('shadowGroup');
+
+  if (!shadowGroupEl) {
+    alert('Could not find shadow group in SVG.');
+    return;
+  }
+
+  const serializer = new XMLSerializer();
+  const viewBoxAttr = rootSvg.getAttribute('viewBox') || '0 0 1000 1000';
+  const widthAttr = rootSvg.getAttribute('width') || '';
+  const heightAttr = rootSvg.getAttribute('height') || '';
+
+  // serialize only the yellow copies
+  const shadowChildrenMarkup = Array.from(shadowGroupEl.children)
+    .map(ch => serializer.serializeToString(ch))
+    .join('\n');
+
+  if (!shadowChildrenMarkup.trim()) {
+    alert('Shadow group had no children to union.');
+    return;
+  }
+
+  // temp svg in same coordinates
+  let tempSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBoxAttr}"`;
+  if (widthAttr) tempSvg += ` width="${widthAttr}"`;
+  if (heightAttr) tempSvg += ` height="${heightAttr}"`;
+  tempSvg += `>${shadowChildrenMarkup}</svg>`;
+
+  // set up paper
+  const canvas = document.createElement('canvas');
+  paper.setup(canvas);
+  paper.project.clear();
+
+  paper.project.importSVG(tempSvg, {
+    expandShapes: true,
+    insert: true
+  });
+
+  // all path-like items
+  const items = paper.project.getItems({ class: paper.PathItem });
+  if (!items.length) {
+    alert('Shadow group had no paths after import.');
+    return;
+  }
+
+  // 1) apply transforms so each copy is in its real spot
+  items.forEach(it => it.applyMatrix());
+
+  // 2) expand/fatten each copy into real geometry (paperjs-offset)
+  const expanded = [];
+  items.forEach(it => {
+    if (growPx > 0 && typeof it.offset === 'function') {
+      const off = it.offset(growPx);
+      if (off) {
+        off.fillColor = it.fillColor;
+        expanded.push(off);
+      } else {
+        expanded.push(it);
+      }
+    } else {
+      expanded.push(it);
+    }
+  });
+
+  // 3) union
+  let merged = expanded[0].clone();
+  for (let i = 1; i < expanded.length; i++) {
+    merged = merged.unite(expanded[i]);
+  }
+
+  // preserve color
+  const firstFill = expanded[0].fillColor || new paper.Color('black');
+  merged.fillColor = firstFill;
+  merged.strokeColor = null;
+
+  // export back
+  const mergedSvgString = paper.project.exportSVG({ asString: true });
+  const mergedDoc = parser.parseFromString(mergedSvgString, 'image/svg+xml');
+  const mergedRoot = mergedDoc.documentElement;
+
+  // take nodes inside exported <svg>
+  const mergedInner = Array.from(mergedRoot.childNodes)
+    .map(node => serializer.serializeToString(node))
+    .join('\n');
+
+  // put merged path back into original group (keeps mask attr)
+  shadowGroupEl.innerHTML = mergedInner;
+
+  const finalSvg = serializer.serializeToString(rootSvg);
+  lastOutputSVG = finalSvg;
+  previewWrap.innerHTML = finalSvg;
+});
+
+/* ========== SVG builder (copies + mask) ========== */
 function makeShadowSVG(svgString, opts) {
   const parser = new DOMParser();
   const doc = parser.parseFromString(svgString, 'image/svg+xml');
@@ -158,7 +278,7 @@ function makeShadowSVG(svgString, opts) {
   const stepX = Math.cos(rad) * opts.stepPx;
   const stepY = Math.sin(rad) * opts.stepPx;
 
-  // grow shadow source a bit
+  // visual correction: fatten each copy with hard corners
   const SHADOW_GROW_PX = opts.outlinePx * 0.4;
 
   const shadowPieces = [];
@@ -168,10 +288,13 @@ function makeShadowSVG(svgString, opts) {
     children.forEach(ch => {
       const c = ch.cloneNode(true);
       c.setAttribute('fill', opts.shadowColor);
+      // hard, non-rounded "live offset"
       c.setAttribute('stroke', opts.shadowColor);
       c.setAttribute('stroke-width', SHADOW_GROW_PX.toFixed(3));
-      c.setAttribute('stroke-linejoin', 'round');
-      c.setAttribute('stroke-linecap', 'round');
+      c.setAttribute('stroke-linejoin', 'miter');
+      c.setAttribute('stroke-linecap', 'butt');
+      c.setAttribute('stroke-miterlimit', '12');
+
       c.setAttribute(
         'transform',
         (c.getAttribute('transform') || '') + ` translate(${tx.toFixed(3)},${ty.toFixed(3)})`
@@ -192,7 +315,6 @@ function makeShadowSVG(svgString, opts) {
     }
   }
 
-  // artboard just big enough
   const dx = stepX * opts.steps;
   const dy = stepY * opts.steps;
   const pad = opts.outlinePx + 10;
@@ -203,14 +325,13 @@ function makeShadowSVG(svgString, opts) {
   const fittedVbW = maxX - minX;
   const fittedVbH = maxY - minY;
 
-  // mask with corner style
+  // mask (imaginary offset)
   const expandedLetters = children.map(ch => {
     const c = ch.cloneNode(true);
     c.setAttribute('fill', 'black');
     c.setAttribute('stroke', 'black');
 
     let strokeW = (opts.outlinePx * 2);
-
     if (opts.cornerStyle === 'round') {
       strokeW += (opts.roundRadiusPx * 2);
       c.setAttribute('stroke-linejoin', 'round');
@@ -240,7 +361,7 @@ function makeShadowSVG(svgString, opts) {
      width="${widthAttr}" height="${heightAttr}"
      viewBox="${minX} ${minY} ${fittedVbW} ${fittedVbH}">
   <defs>${maskStr}</defs>
-  <g mask="url(#${maskId})">
+  <g id="shadowGroup" name="shadowGroup" mask="url(#${maskId})">
     ${shadowPieces.join('\n')}
   </g>
   ${originals}
