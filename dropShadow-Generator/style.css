@@ -44,6 +44,7 @@ body {
     color: #fff;
     border-radius: .25rem;
     cursor: pointer;
+    display: inline-block;
   }
   
   #previewWrap {
@@ -79,7 +80,7 @@ body {
     top: 10px;
     left: 50%;
     transform-origin: 50% 50px;
-    transform: translateX(-50%) rotate(135deg);
+    transform: translateX(-50%) rotate(225deg);
     border-radius: 3px;
   }
   
